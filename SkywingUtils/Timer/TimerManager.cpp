@@ -111,9 +111,9 @@ Environment:
 
 swutil::SharedPtr< TimerRegistration >
 TimerManager::CreateTimer(
-	__in OnTimerCompletionProc TimerCompletionRoutine,
-	__in void * TimerContext1,
-	__in void * TimerContext2
+	nwn2dev__in OnTimerCompletionProc TimerCompletionRoutine,
+	nwn2dev__in void * TimerContext1,
+	nwn2dev__in void * TimerContext2
 	)
 /*++
 
@@ -165,7 +165,7 @@ Environment:
 
 void
 TimerManager::CancelTimer(
-	__in TimerRegistration * Timer
+	nwn2dev__in TimerRegistration * Timer
 	)
 /*++
 
@@ -320,9 +320,9 @@ Environment:
 
 void
 TimerManager::InvalidateTimerExpiration(
-	__in TimerRegistration * Timer,
-	__in ULONG Period,
-	__in ULONG Epoch
+	nwn2dev__in TimerRegistration * Timer,
+	nwn2dev__in ULONG Period,
+	nwn2dev__in ULONG Epoch
 	)
 /*++
 
@@ -432,7 +432,7 @@ Environment:
 
 void
 TimerManager::OnTimerRegistrationActivate(
-	__in TimerRegistration * Timer
+	nwn2dev__in TimerRegistration * Timer
 	)
 /*++
 
@@ -463,7 +463,7 @@ Environment:
 
 void
 TimerManager::OnTimerRegistrationInactivate(
-	__in TimerRegistration * Timer
+	nwn2dev__in TimerRegistration * Timer
 	)
 /*++
 
@@ -493,10 +493,10 @@ Environment:
 }
 
 TimerRegistration::TimerRegistration(
-	__in TimerManager & TimerMgr,
-	__in TimerManager::OnTimerCompletionProc TimerCompletionRoutine,
-	__in void * TimerContext1,
-	__in void * TimerContext2
+	nwn2dev__in TimerManager & TimerMgr,
+	nwn2dev__in TimerManager::OnTimerCompletionProc TimerCompletionRoutine,
+	nwn2dev__in void * TimerContext1,
+	nwn2dev__in void * TimerContext2
 	)
 /*++
 
@@ -572,7 +572,7 @@ Environment:
 
 ULONG
 TimerRegistration::Dispatch(
-	__in ULONG Now
+	nwn2dev__in ULONG Now
 	)
 /*++
 

@@ -38,8 +38,8 @@ public:
 
 	inline
 	NWScriptBridge(
-		__in IDebugTextOut * TextOut,
-		__in NWScriptVM::ExecDebugLevel DebugLevel
+		nwn2dev__in IDebugTextOut * TextOut,
+		nwn2dev__in NWScriptVM::ExecDebugLevel DebugLevel
 		)
 	: m_TextOut( TextOut ),
 	  m_DebugLevel( DebugLevel ),
@@ -66,7 +66,7 @@ public:
 
 	bool
 	PrepareForRunScript(
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	inline
@@ -88,7 +88,7 @@ public:
 	inline
 	bool
 	IsDebugLevel(
-		__in NWScriptVM::ExecDebugLevel DebugLevel
+		nwn2dev__in NWScriptVM::ExecDebugLevel DebugLevel
 		)
 	{
 		return (m_DebugLevel >= DebugLevel);
@@ -97,7 +97,7 @@ public:
 	inline
 	void
 	SetDebugLevel(
-		__in NWScriptVM::ExecDebugLevel DebugLevel
+		nwn2dev__in NWScriptVM::ExecDebugLevel DebugLevel
 		)
 	{
 		m_DebugLevel = DebugLevel;
@@ -125,10 +125,10 @@ public:
 	void
 	NWSCRIPTACTAPI
 	OnExecuteAction(
-		__in NWScriptVM & ScriptVM,
-		__in NWScriptStack & VMStack,
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWScriptVM & ScriptVM,
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -140,7 +140,7 @@ public:
 	EngineStructurePtr
 	NWSCRIPTACTAPI
 	CreateEngineStructure(
-		__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
 		);
 
 	//
@@ -164,8 +164,8 @@ public:
 	bool
 	NWSCRIPTACTAPI
 	OnExecuteActionFromJIT(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -192,11 +192,11 @@ public:
 	bool
 	NWSCRIPTACTAPI
 	OnExecuteActionFromJITFast(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments,
 		__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-		__in size_t NumCmds,
-		__in uintptr_t * CmdParams
+		nwn2dev__in size_t NumCmds,
+		nwn2dev__in uintptr_t * CmdParams
 		);
 
 
@@ -208,7 +208,7 @@ public:
 	virtual
 	void
 	StackPushInt(
-		__in int Int
+		nwn2dev__in int Int
 		);
 
 	virtual
@@ -220,7 +220,7 @@ public:
 	virtual
 	void
 	StackPushFloat(
-		__in float Float
+		nwn2dev__in float Float
 		);
 
 	virtual
@@ -232,19 +232,19 @@ public:
 	virtual
 	void
 	StackPushString(
-		__in const char * String
+		nwn2dev__in const char * String
 		);
 
 	virtual
 	void
 	StackPushString(
-		__in const std::string & String
+		nwn2dev__in const std::string & String
 		);
 
 	virtual
 	void
 	StackPushStringAsNeutral(
-		__in const NeutralString & String
+		nwn2dev__in const NeutralString & String
 		);
 
 	std::string
@@ -260,7 +260,7 @@ public:
 	virtual
 	void
 	StackPushObjectId(
-		__in NWN::OBJECTID ObjectId
+		nwn2dev__in NWN::OBJECTID ObjectId
 		);
 
 	virtual
@@ -272,7 +272,7 @@ public:
 	virtual
 	void
 	StackPushVector(
-		__in const NWN::Vector3 & Vector
+		nwn2dev__in const NWN::Vector3 & Vector
 		);
 
 	virtual
@@ -284,13 +284,13 @@ public:
 	virtual
 	void
 	StackPushEngineStructure(
-		__in EngineStructurePtr Struct
+		nwn2dev__in EngineStructurePtr Struct
 		);
 
 	virtual
 	EngineStructurePtr
 	StackPopEngineStructure(
-		__in ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 		);
 
 
@@ -350,8 +350,8 @@ private:
 
 	void
 	ExecuteActionServiceHandler(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -362,9 +362,9 @@ private:
 
 	void
 	PushParametersToServerVMStack(
-		__in NWScriptStack & VMStack,
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -375,9 +375,9 @@ private:
 
 	void
 	PopReturnValueFromServerVMStack(
-		__in NWScriptStack & VMStack,
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -386,7 +386,7 @@ private:
 
 	unsigned long
 	GetTypeSize(
-		__in NWACTION_TYPE Type
+		nwn2dev__in NWACTION_TYPE Type
 		);
 
 	IDebugTextOut                             * m_TextOut;
@@ -417,9 +417,9 @@ public:
 
 	inline
 	EngineStructureBridge(
-		__in ENGINE_STRUCTURE_NUMBER EngineType,
-		__in NWN2Server::CVirtualMachineCmdImplementer * CmdImplementer,
-		__in void * Representation
+		nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType,
+		nwn2dev__in NWN2Server::CVirtualMachineCmdImplementer * CmdImplementer,
+		nwn2dev__in void * Representation
 		)
 	: EngineStructure( EngineType ),
 	  m_CmdImplementer( CmdImplementer ),
@@ -443,7 +443,7 @@ public:
 	virtual
 	bool
 	CompareEngineStructure(
-		__in const EngineStructure * Other
+		nwn2dev__in const EngineStructure * Other
 		) const;
 
 	//

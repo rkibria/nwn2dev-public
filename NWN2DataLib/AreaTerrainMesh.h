@@ -152,7 +152,7 @@ public:
 	inline
 	void
 	AddTerrainVertex(
-		__in const TerrainVertex & Vertex
+		nwn2dev__in const TerrainVertex & Vertex
 		)
 	{
 		m_TerrainVerticies.push_back( Vertex );
@@ -161,7 +161,7 @@ public:
 	inline
 	void
 	AddTerrainFace(
-		__in const TerrainFace & Face
+		nwn2dev__in const TerrainFace & Face
 		)
 	{
 		m_TerrainFaces.push_back( Face );
@@ -170,7 +170,7 @@ public:
 	inline
 	void
 	AddTerrainGrass(
-		__in const TerrainGrass & Grass
+		nwn2dev__in const TerrainGrass & Grass
 		)
 	{
 		m_TerrainGrass.push_back( Grass );
@@ -195,7 +195,7 @@ public:
 	inline
 	const NWN::ResRef32 &
 	GetTexture(
-		__in size_t i
+		nwn2dev__in size_t i
 		)
 	{
 		if (i >= RTL_NUMBER_OF( m_Textures ) )
@@ -207,7 +207,7 @@ public:
 	inline
 	void
 	SetTextures(
-		__in const NWN::ResRef32 * Textures // [ 6 ]
+		nwn2dev__in const NWN::ResRef32 * Textures // [ 6 ]
 		)
 	{
 		memcpy( &m_Textures[ 0 ], Textures, sizeof( m_Textures ) );
@@ -216,7 +216,7 @@ public:
 	inline
 	const NWN::NWNRGB &
 	GetTextureColor(
-		__in size_t i
+		nwn2dev__in size_t i
 		) const
 	{
 		if (i >= RTL_NUMBER_OF( m_TextureColor ) )
@@ -228,7 +228,7 @@ public:
 	inline
 	void
 	SetTextureColor(
-		__in const NWN::NWNRGB * TextureColor // [ 6 ]
+		nwn2dev__in const NWN::NWNRGB * TextureColor // [ 6 ]
 		)
 	{
 		memcpy( &m_TextureColor[ 0 ], TextureColor, sizeof( m_TextureColor ) );
@@ -238,7 +238,7 @@ public:
 	inline
 	const DdsImage &
 	GetImage(
-		__in size_t Index
+		nwn2dev__in size_t Index
 		) const
 	{
 		if (Index >= RTL_NUMBER_OF( m_Images ))
@@ -250,7 +250,7 @@ public:
 	inline
 	DdsImage &
 	GetImage(
-		__in size_t Index
+		nwn2dev__in size_t Index
 		)
 	{
 		if (Index >= RTL_NUMBER_OF( m_Images ))
@@ -262,9 +262,9 @@ public:
 	inline
 	unsigned long
 	GetColorMask(
-		__in int x,
-		__in int y,
-		__in unsigned long Index
+		nwn2dev__in int x,
+		nwn2dev__in int y,
+		nwn2dev__in unsigned long Index
 		) const
 	{
 		if (Index > 7)

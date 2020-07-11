@@ -20,12 +20,12 @@ Abstract:
 #include "TrxFileReader.h"
 
 TrxFileReader::TrxFileReader(
-	__in MeshManager & MeshMgr,
-	__in const std::string & FileName,
-	__in bool LoadOnlyDimensions,
-	__in MODE Mode, /* = ModeTRX */
-	__in IDebugTextOut * TextWriter, /* = NULL */
-	__in bool RefuseDisplayOnlyModels /* = false */
+	nwn2dev__in MeshManager & MeshMgr,
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__in bool LoadOnlyDimensions,
+	nwn2dev__in MODE Mode, /* = ModeTRX */
+	nwn2dev__in IDebugTextOut * TextWriter, /* = NULL */
+	nwn2dev__in bool RefuseDisplayOnlyModels /* = false */
 	)
 /*++
 
@@ -194,7 +194,7 @@ Environment:
 
 void
 TrxFileReader::ParseTrxFile(
-	__in MeshManager & MeshMgr
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -417,8 +417,8 @@ Environment:
 
 void
 TrxFileReader::DecodeAreaSurfaceWalkmesh(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -995,7 +995,7 @@ Environment:
 
 void
 TrxFileReader::DecodeAreaWidthHeight(
-	__in PCRESOURCE_HEADER ResHeader
+	nwn2dev__in PCRESOURCE_HEADER ResHeader
 	)
 /*++
 
@@ -1031,8 +1031,8 @@ Environment:
 
 void
 TrxFileReader::DecodeWalkable(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -1062,8 +1062,8 @@ Environment:
 
 void
 TrxFileReader::DecodeWater(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -1174,8 +1174,8 @@ Environment:
 
 void
 TrxFileReader::DecodeTerrain(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -1288,8 +1288,8 @@ Environment:
 
 void
 TrxFileReader::DecodeCollisionMesh(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -1351,8 +1351,8 @@ Environment:
 
 void
 TrxFileReader::DecodeRigidMesh(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -1389,8 +1389,8 @@ Environment:
 
 void
 TrxFileReader::DecodeSkinMesh(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 
@@ -1423,8 +1423,8 @@ Environment:
 template< typename T >
 void
 TrxFileReader::DecodeSimpleMesh(
-	__in PCRESOURCE_HEADER ResHeader,
-	__in MeshManager & MeshMgr,
+	nwn2dev__in PCRESOURCE_HEADER ResHeader,
+	nwn2dev__in MeshManager & MeshMgr,
 	__inout T & Mesh
 	)
 /*++
@@ -1516,7 +1516,7 @@ Environment:
 
 void
 TrxFileReader::DecodeCollisionSpheres(
-	__in PCRESOURCE_HEADER ResHeader
+	nwn2dev__in PCRESOURCE_HEADER ResHeader
 	)
 /*++
 
@@ -1585,7 +1585,7 @@ Environment:
 
 void
 TrxFileReader::DecodeHookPoint(
-	__in PCRESOURCE_HEADER ResHeader
+	nwn2dev__in PCRESOURCE_HEADER ResHeader
 	)
 /*++
 
@@ -1633,7 +1633,7 @@ Environment:
 
 void
 TrxFileReader::DecodeHairPoint(
-	__in PCRESOURCE_HEADER ResHeader
+	nwn2dev__in PCRESOURCE_HEADER ResHeader
 	)
 /*++
 
@@ -1675,7 +1675,7 @@ Environment:
 
 void
 TrxFileReader::DecodeHelmPoint(
-	__in PCRESOURCE_HEADER ResHeader
+	nwn2dev__in PCRESOURCE_HEADER ResHeader
 	)
 /*++
 

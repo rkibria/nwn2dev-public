@@ -39,8 +39,8 @@ private:
 public:
 
 	WorldView(
-		__in ResourceManager & ResMan,
-		__in IDebugTextOut * TextWriter,
+		nwn2dev__in ResourceManager & ResMan,
+		nwn2dev__in IDebugTextOut * TextWriter,
 		__in_opt HWND Parent = NULL
 		);
 
@@ -55,8 +55,8 @@ public:
 
 	WorldObjectPtr
 	CreateWorldObject(
-		__in const std::vector< std::string > & MDBResRefs,
-		__in const std::string & GR2ResRef
+		nwn2dev__in const std::vector< std::string > & MDBResRefs,
+		nwn2dev__in const std::string & GR2ResRef
 		);
 	//
 	// Show or hide the window.
@@ -65,7 +65,7 @@ public:
 	inline
 	void
 	Show(
-		__in bool Show
+		nwn2dev__in bool Show
 		)
 	{
 		if (Show)
@@ -81,7 +81,7 @@ public:
 	static
 	bool
 	RegisterClasses(
-		__in bool Register
+		nwn2dev__in bool Register
 		);
 
 private:
@@ -92,9 +92,9 @@ private:
 
 	bool
 	DrawWireframeMesh(
-		__in HDC hdc,
-		__in COLORREF Color,
-		__in const WorldObject * Object
+		nwn2dev__in HDC hdc,
+		nwn2dev__in COLORREF Color,
+		nwn2dev__in const WorldObject * Object
 		);
 
 	//
@@ -104,11 +104,11 @@ private:
 	template< typename T >
 	bool
 	DrawSimpleWireframeMesh(
-		__in HDC hdc,
-		__in COLORREF Color,
-		__in const T & Mesh,
-		__in const WorldObject * Object,
-		__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
+		nwn2dev__in HDC hdc,
+		nwn2dev__in COLORREF Color,
+		nwn2dev__in const T & Mesh,
+		nwn2dev__in const WorldObject * Object,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
 		);
 
 	//
@@ -119,10 +119,10 @@ private:
 	template< typename T >
 	bool
 	DrawSimpleWireframeMesh2(
-		__in HDC hdc,
-		__in const T & Mesh,
-		__in const WorldObject * Object,
-		__in NWN::NWN2_BodyPieceSlot Slot
+		nwn2dev__in HDC hdc,
+		nwn2dev__in const T & Mesh,
+		nwn2dev__in const WorldObject * Object,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot
 		);
 
 	//
@@ -137,10 +137,10 @@ private:
 	DrawSimpleWireframeMesh3(
 		__inout std::vector< POINT > & Points,
 		__inout std::vector< INT > & PolyCounts,
-		__in const T & Mesh,
-		__in const WorldObject * Object,
-		__in NWN::NWN2_BodyPieceSlot Slot,
-		__in bool Reserve
+		nwn2dev__in const T & Mesh,
+		nwn2dev__in const WorldObject * Object,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot,
+		nwn2dev__in bool Reserve
 		);
 
 	//
@@ -149,10 +149,10 @@ private:
 
 	bool
 	DrawBones(
-		__in HDC hdc,
-		__in COLORREF Color,
-		__in const WorldObject * Object,
-		__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
+		nwn2dev__in HDC hdc,
+		nwn2dev__in COLORREF Color,
+		nwn2dev__in const WorldObject * Object,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
 		);
 
 	//
@@ -162,9 +162,9 @@ private:
 
 	bool
 	DrawBones2(
-		__in HDC hdc,
-		__in const WorldObject * Object,
-		__in NWN::NWN2_BodyPieceSlot Slot
+		nwn2dev__in HDC hdc,
+		nwn2dev__in const WorldObject * Object,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot
 		);
 
 	//
@@ -177,10 +177,10 @@ private:
 	DrawBones3(
 		__inout std::vector< POINT > & Points,
 		__inout std::vector< BYTE > & Types,
-		__in const ModelSkeleton * Skeleton,
-		__in const WorldObject * Object,
-		__in NWN::NWN2_BodyPieceSlot Slot,
-		__in bool Reserve
+		nwn2dev__in const ModelSkeleton * Skeleton,
+		nwn2dev__in const WorldObject * Object,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot,
+		nwn2dev__in bool Reserve
 		);
 
 	//
@@ -189,9 +189,9 @@ private:
 
 	bool
 	ClientToGame(
-		__in const POINT &pt,
-		__out NWN::Vector3 &v,
-		__in bool Clip = true
+		nwn2dev__in const POINT &pt,
+		nwn2dev__out NWN::Vector3 &v,
+		nwn2dev__in bool Clip = true
 		);
 
 	//
@@ -200,9 +200,9 @@ private:
 
 	bool
 	GameToClient(
-		__in const NWN::Vector3 &v,
-		__out POINT &pt,
-		__in bool Clip = true
+		nwn2dev__in const NWN::Vector3 &v,
+		nwn2dev__out POINT &pt,
+		nwn2dev__in bool Clip = true
 		);
 
 	//
@@ -212,7 +212,7 @@ private:
 	bool
 	GameToClient(
 		__inout RECT & rc,
-		__in bool Clip = true
+		nwn2dev__in bool Clip = true
 		);
 
 	//
@@ -222,8 +222,8 @@ private:
 
 	bool
 	GameToClientMesh(
-		__in const NWN::Vector3 &v,
-		__out POINT &pt
+		nwn2dev__in const NWN::Vector3 &v,
+		nwn2dev__out POINT &pt
 		);
 
 	//
@@ -240,7 +240,7 @@ private:
 
 	void
 	SetDefaultCameraParameters(
-		__in Camera * C
+		nwn2dev__in Camera * C
 		);
 
 	//
@@ -250,9 +250,9 @@ private:
 
 	bool
 	CalcLineOfSightRay(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
-		__out float & Distance
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
+		nwn2dev__out float & Distance
 		);
 
 	//
@@ -261,7 +261,7 @@ private:
 
 	void
 	RecalculateMapRect(
-		__in const RECT * ClientRect
+		nwn2dev__in const RECT * ClientRect
 		);
 
 	//
@@ -279,7 +279,7 @@ private:
 	inline
 	void
 	RedrawWorldWindowOnly(
-		__in bool DrawNow
+		nwn2dev__in bool DrawNow
 		)
 	{
 		UINT Flags;
@@ -307,7 +307,7 @@ private:
 	inline
 	bool
 	IsKeyDown(
-		__in UINT vk
+		nwn2dev__in UINT vk
 		) const
 	{
 		return GetKeyState( vk ) & 0x8000 ? true : false;
@@ -319,9 +319,9 @@ private:
 
 	void
 	DrawWorldWindow(
-		__in HWND hwnd,
-		__in PAINTSTRUCT & ps,
-		__in const RECT & UpdateRect
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in PAINTSTRUCT & ps,
+		nwn2dev__in const RECT & UpdateRect
 		);
 
 	//
@@ -332,18 +332,18 @@ private:
 	LRESULT
 	CALLBACK
 	WorldViewWindowProc_s(
-		__in HWND hwnd,
-		__in UINT uMsg,
-		__in WPARAM wParam,
-		__in LPARAM lParam
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in UINT uMsg,
+		nwn2dev__in WPARAM wParam,
+		nwn2dev__in LPARAM lParam
 		);
 
 	LRESULT
 	WorldViewWindowProc(
-		__in HWND hwnd,
-		__in UINT uMsg,
-		__in WPARAM wParam,
-		__in LPARAM lParam
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in UINT uMsg,
+		nwn2dev__in WPARAM wParam,
+		nwn2dev__in LPARAM lParam
 		);
 
 	//
@@ -353,87 +353,87 @@ private:
 	// WM_CLOSE
 	void
 	OnClose(
-		__in HWND hwnd
+		nwn2dev__in HWND hwnd
 		);
 
 	// WM_DESTROY
 	void
 	OnDestroy(
-		__in HWND hwnd
+		nwn2dev__in HWND hwnd
 		);
 
 	// WM_GETMINMAXINFO
 	void
 	OnGetMinMaxInfo(
-		__in HWND hwnd,
+		nwn2dev__in HWND hwnd,
 		__inout LPMINMAXINFO lpMinMaxInfo
 		);
 
 	// WM_PAINT
 	void
 	OnPaint(
-		__in HWND hwnd
+		nwn2dev__in HWND hwnd
 		);
 
 	// WM_PRINTCLIENT
 	void
 	OnPrintClient(
-		__in HWND hwnd,
-		__in HDC hdc,
-		__in UINT DrawFlags
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in HDC hdc,
+		nwn2dev__in UINT DrawFlags
 		);
 
 	// WM_SIZE
 	void
 	OnSize(
-		__in HWND hwnd,
-		__in UINT state,
-		__in int cx,
-		__in int cy
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in UINT state,
+		nwn2dev__in int cx,
+		nwn2dev__in int cy
 		);
 
 	// WM_MOVE
 	void
 	OnMove(
-		__in HWND hwnd,
-		__in int x,
-		__in int y
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in int x,
+		nwn2dev__in int y
 		);
 
 	// WM_KEYDOWN & WM_KEYUP
 	void
 	OnKey(
-		__in HWND hwnd,
-		__in UINT vk,
-		__in BOOL fDown,
-		__in int cRepeat,
-		__in UINT flags
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in UINT vk,
+		nwn2dev__in BOOL fDown,
+		nwn2dev__in int cRepeat,
+		nwn2dev__in UINT flags
 		);
 
 	// WM_MOUSEMOVE
 	void
 	OnMouseMove(
-		__in HWND hwnd,
-		__in int x,
-		__in int y,
-		__in UINT keyFlags
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in int x,
+		nwn2dev__in int y,
+		nwn2dev__in UINT keyFlags
 		);
 
 	// WM_MOUSEWHEEL
 	void
 	OnMouseWheel(
-		__in HWND hwnd,
-		__in int xPos,
-		__in int yPos,
-		__in int zDelta,
-		__in UINT fwKeys
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in int xPos,
+		nwn2dev__in int yPos,
+		nwn2dev__in int zDelta,
+		nwn2dev__in UINT fwKeys
 		);
 
 	// WM_NOTIFY
 	LRESULT
 	OnNotify(
-		__in HWND hwnd,
-		__in int idFrom,
+		nwn2dev__in HWND hwnd,
+		nwn2dev__in int idFrom,
 		__inout NMHDR * pnmhdr
 		);
 

@@ -19,7 +19,7 @@ Abstract:
 
 template< typename ResRefT >
 BifFileReader< ResRefT >::BifFileReader(
-	__in const std::string & FileName
+	nwn2dev__in const std::string & FileName
 	)
 /*++
 
@@ -145,8 +145,8 @@ Environment:
 template< typename ResRefT >
 typename BifFileReader< ResRefT >::FileHandle
 BifFileReader< ResRefT >::OpenFile(
-	__in const ResRefT & FileName,
-	__in ResType Type
+	nwn2dev__in const ResRefT & FileName,
+	nwn2dev__in ResType Type
 	)
 /*++
 
@@ -187,7 +187,7 @@ Environment:
 template< typename ResRefT >
 typename BifFileReader< ResRefT >::FileHandle
 BifFileReader< ResRefT >::OpenFileByIndex(
-	__in typename FileId FileIndex
+	nwn2dev__in typename FileId FileIndex
 	)
 /*++
 
@@ -232,7 +232,7 @@ Environment:
 template< typename ResRefT >
 bool
 BifFileReader< ResRefT >::CloseFile(
-	__in typename BifFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename BifFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -268,10 +268,10 @@ Environment:
 template< typename ResRefT >
 bool
 BifFileReader< ResRefT >::ReadEncapsulatedFile(
-	__in FileHandle File,
-	__in size_t Offset,
-	__in size_t BytesToRead,
-	__out size_t * BytesRead,
+	nwn2dev__in FileHandle File,
+	nwn2dev__in size_t Offset,
+	nwn2dev__in size_t BytesToRead,
+	nwn2dev__out size_t * BytesRead,
 	__out_bcount( BytesToRead ) void * Buffer
 	)
 /*++
@@ -352,7 +352,7 @@ Environment:
 template< typename ResRefT >
 size_t
 BifFileReader< ResRefT >::GetEncapsulatedFileSize(
-	__in typename BifFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename BifFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -393,7 +393,7 @@ Environment:
 template< typename ResRefT >
 typename BifFileReader< ResRefT >::ResType
 BifFileReader< ResRefT >::GetEncapsulatedFileType(
-	__in typename BifFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename BifFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -434,9 +434,9 @@ Environment:
 template< typename ResRefT >
 bool
 BifFileReader< ResRefT >::GetEncapsulatedFileEntry(
-	__in typename FileId FileIndex,
-	__out typename ResRefT & ResRef,
-	__out ResType & Type
+	nwn2dev__in typename FileId FileIndex,
+	nwn2dev__out typename ResRefT & ResRef,
+	nwn2dev__out ResType & Type
 	)
 /*++
 
@@ -511,8 +511,8 @@ Environment:
 template< typename ResRefT >
 typename BifFileReader< ResRefT >::AccessorType
 BifFileReader< ResRefT >::GetResourceAccessorName(
-	__in FileHandle File,
-	__out std::string & AccessorName
+	nwn2dev__in FileHandle File,
+	nwn2dev__out std::string & AccessorName
 	)
 /*++
 

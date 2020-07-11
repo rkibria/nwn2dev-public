@@ -53,7 +53,7 @@ public:
 	//
 
 	NWScriptReader(
-		__in const char * NcsFileName
+		nwn2dev__in const char * NcsFileName
 		);
 
 	//
@@ -64,11 +64,11 @@ public:
 	//
 
 	NWScriptReader(
-		__in const char * ScriptName,
+		nwn2dev__in const char * ScriptName,
 		__in_bcount( ScriptInstructionLen ) const unsigned char * ScriptInstructions,
-		__in size_t ScriptInstructionLen,
+		nwn2dev__in size_t ScriptInstructionLen,
 		__in_ecount( SymbolTableSize ) const SymbolTableRawEntry * SymTab,
-		__in size_t SymbolTableSize
+		nwn2dev__in size_t SymbolTableSize
 		);
 
 	~NWScriptReader(
@@ -79,7 +79,7 @@ public:
 	//
 
 	NWScriptReader(
-		__in NWScriptReader & other
+		nwn2dev__in NWScriptReader & other
 		);
 
 	//
@@ -94,9 +94,9 @@ public:
 
 	void
 	StoreInternalState(
-		__out const unsigned char * & ScriptInstructions,
-		__out size_t & ScriptInstructionLen,
-		__out SymbolTableRawEntryVec & SymTab
+		nwn2dev__out const unsigned char * & ScriptInstructions,
+		nwn2dev__out size_t & ScriptInstructionLen,
+		nwn2dev__out SymbolTableRawEntryVec & SymTab
 		);
 
 	//
@@ -105,8 +105,8 @@ public:
 
 	void
 	ResetInstructionBuffer(
-		__in const unsigned char * ScriptInstructions,
-		__in size_t ScriptInstructionsLen
+		nwn2dev__in const unsigned char * ScriptInstructions,
+		nwn2dev__in size_t ScriptInstructionsLen
 		);
 
 	//
@@ -121,8 +121,8 @@ public:
 
 	void
 	ReadInstruction(
-		__out UCHAR & Opcode,
-		__out UCHAR & TypeOpcode
+		nwn2dev__out UCHAR & Opcode,
+		nwn2dev__out UCHAR & TypeOpcode
 		);
 
 	//
@@ -163,7 +163,7 @@ public:
 
 	std::string
 	ReadString(
-		__in ULONG Length
+		nwn2dev__in ULONG Length
 		);
 
 	//
@@ -176,8 +176,8 @@ public:
 
 	void
 	PatchBYTE(
-		__in ULONG Offset,
-		__in UCHAR Byte
+		nwn2dev__in ULONG Offset,
+		nwn2dev__in UCHAR Byte
 		);
 
 	//
@@ -187,7 +187,7 @@ public:
 
 	void
 	SetInstructionPointer(
-		__in ULONG InstructionPointer
+		nwn2dev__in ULONG InstructionPointer
 		);
 
 	//
@@ -196,7 +196,7 @@ public:
 
 	void
 	AdvanceInstructionPointer(
-		__in ULONG Increment
+		nwn2dev__in ULONG Increment
 		);
 
 	//
@@ -226,7 +226,7 @@ public:
 	inline
 	void
 	SetPatchState(
-		__in NCSPatchState PatchState
+		nwn2dev__in NCSPatchState PatchState
 		)
 	{
 		m_PatchState = PatchState;
@@ -260,7 +260,7 @@ public:
 	inline
 	void
 	SetScriptName(
-		__in const std::string & Name
+		nwn2dev__in const std::string & Name
 		)
 	{
 		m_Name = Name;
@@ -309,7 +309,7 @@ public:
 	inline
 	void
 	SetAnalyzeState(
-		__in ScriptAnalyzeState * AnalyzeState
+		nwn2dev__in ScriptAnalyzeState * AnalyzeState
 		)
 	{
 		if (m_AnalyzeState.ArgumentTypes != NULL)
@@ -329,9 +329,9 @@ public:
 
 	bool
 	GetSymbolName(
-		__in ULONG PC,
-		__out std::string & SymbolName,
-		__in bool FindNearest = false
+		nwn2dev__in ULONG PC,
+		nwn2dev__out std::string & SymbolName,
+		nwn2dev__in bool FindNearest = false
 		);
 
 	//
@@ -340,7 +340,7 @@ public:
 
 	bool
 	LoadSymbols(
-		__in const std::string & NDBFileName
+		nwn2dev__in const std::string & NDBFileName
 		);
 
 private:

@@ -117,7 +117,7 @@ public:
 	inline
 	void
 	AddSphere(
-		__in const CollisionSphere & Sphere
+		nwn2dev__in const CollisionSphere & Sphere
 		)
 	{
 		m_Spheres.push_back( Sphere );
@@ -150,8 +150,8 @@ public:
 	inline
 	void
 	CopyFileItem(
-		__in const ItemFile & ItemS,
-		__out Item & ItemD
+		nwn2dev__in const ItemFile & ItemS,
+		nwn2dev__out Item & ItemD
 		)
 	{
 		ItemD.BoneIndex = ItemS.BoneIndex;

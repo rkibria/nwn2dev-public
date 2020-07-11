@@ -142,8 +142,8 @@ public:
 	inline
 	void
 	CopyFileVertex(
-		__in const VertexFile & FVert,
-		__out Vertex & Vert
+		nwn2dev__in const VertexFile & FVert,
+		nwn2dev__out Vertex & Vert
 		)
 	{
 		Vert.LocalPos  = FVert.Position;
@@ -157,8 +157,8 @@ public:
 	inline
 	void
 	CopyFileFace(
-		__in const FaceFile & FFace,
-		__out Face & Face
+		nwn2dev__in const FaceFile & FFace,
+		nwn2dev__out Face & Face
 		)
 	{
 		for (size_t i = 0; i < 3; i += 1)

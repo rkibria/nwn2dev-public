@@ -53,7 +53,7 @@ Abstract:
 #include "../ProjectGlobal/ProjGlobalDefs.h"
 #include "../SkywingUtils/SkywingUtils.h"
 #include "../NWNBaseLib/NWNBaseLib.h"
-#include "../NWN2MathLib/NWN2MathLib.h"
-#include "../Granny2Lib/Granny2Lib.h"
+// #include "../NWN2MathLib/NWN2MathLib.h"
+// #include "../Granny2Lib/Granny2Lib.h"
 
 #endif

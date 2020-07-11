@@ -20,14 +20,14 @@ Abstract:
 typedef
 bool
 (__stdcall * GrannyConvertFileToRawProc)(
-	__in const char * SourceFile,
-	__in const char * DestinationFile
+	nwn2dev__in const char * SourceFile,
+	nwn2dev__in const char * DestinationFile
 	);
 
 int
 __cdecl
 main(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) char * * argv
 	)
 /*++

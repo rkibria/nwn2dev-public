@@ -8,9 +8,9 @@
 //
 bool
 swutil::UTF8Encode(
-	__in const std::string & Text,
-	__out std::string & Result,
-	__in UINT Codepage /* = CP_ACP */
+	nwn2dev__in const std::string & Text,
+	nwn2dev__out std::string & Result,
+	nwn2dev__in UINT Codepage /* = CP_ACP */
 	)
 {
 	try
@@ -95,8 +95,8 @@ swutil::UTF8Encode(
 //
 bool
 swutil::UTF8Encode(
-	__in const std::wstring & Text,
-	__out std::string & Result
+	nwn2dev__in const std::wstring & Text,
+	nwn2dev__out std::string & Result
 	)
 {
 	try
@@ -148,8 +148,8 @@ swutil::UTF8Encode(
 //
 bool
 swutil::UTF8Decode(
-	__in const std::string & UTF8,
-	__out std::wstring & Result
+	nwn2dev__in const std::string & UTF8,
+	nwn2dev__out std::wstring & Result
 	)
 {
 	try
@@ -201,9 +201,9 @@ swutil::UTF8Decode(
 //
 bool
 swutil::AnsiToUnicode(
-	__in const std::string & Ansi,
-	__out std::wstring & Result,
-	__in UINT Codepage /* = CP_ACP */
+	nwn2dev__in const std::string & Ansi,
+	nwn2dev__out std::wstring & Result,
+	nwn2dev__in UINT Codepage /* = CP_ACP */
 	)
 {
 	try
@@ -247,9 +247,9 @@ swutil::AnsiToUnicode(
 //
 bool
 swutil::UnicodeToAnsi(
-	__in const std::wstring & Unicode,
-	__out std::string & Result,
-	__in UINT Codepage /* = CP_ACP */
+	nwn2dev__in const std::wstring & Unicode,
+	nwn2dev__out std::string & Result,
+	nwn2dev__in UINT Codepage /* = CP_ACP */
 	)
 {
 	try

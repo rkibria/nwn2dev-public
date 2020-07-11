@@ -49,8 +49,8 @@ public:
 	//
 
 	KeyFileReader(
-		__in const std::string & FileName,
-		__in const std::string & InstallDir
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in const std::string & InstallDir
 		);
 
 	//
@@ -68,8 +68,8 @@ public:
 	virtual
 	FileHandle
 	OpenFile(
-		__in const ResRefIf & ResRef,
-		__in ResType Type
+		nwn2dev__in const ResRefIf & ResRef,
+		nwn2dev__in ResType Type
 		);
 
 	//
@@ -79,7 +79,7 @@ public:
 	virtual
 	FileHandle
 	OpenFileByIndex(
-		__in FileId FileIndex
+		nwn2dev__in FileId FileIndex
 		);
 
 	//
@@ -89,7 +89,7 @@ public:
 	virtual
 	bool
 	CloseFile(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		);
 
 	//
@@ -100,10 +100,10 @@ public:
 	virtual
 	bool
 	ReadEncapsulatedFile(
-		__in FileHandle File,
-		__in size_t Offset,
-		__in size_t BytesToRead,
-		__out size_t * BytesRead,
+		nwn2dev__in FileHandle File,
+		nwn2dev__in size_t Offset,
+		nwn2dev__in size_t BytesToRead,
+		nwn2dev__out size_t * BytesRead,
 		__out_bcount( BytesToRead ) void * Buffer
 		);
 
@@ -114,7 +114,7 @@ public:
 	virtual
 	size_t
 	GetEncapsulatedFileSize(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		);
 
 	//
@@ -124,7 +124,7 @@ public:
 	virtual
 	ResType
 	GetEncapsulatedFileType(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		);
 
 	//
@@ -135,9 +135,9 @@ public:
 	virtual
 	bool
 	GetEncapsulatedFileEntry(
-		__in FileId FileIndex,
-		__out typename ResRefIf & ResRef,
-		__out ResType & Type
+		nwn2dev__in FileId FileIndex,
+		nwn2dev__out typename ResRefIf & ResRef,
+		nwn2dev__out ResType & Type
 		);
 
 	//
@@ -156,8 +156,8 @@ public:
 	virtual
 	AccessorType
 	GetResourceAccessorName(
-		__in FileHandle File,
-		__out std::string & AccessorName
+		nwn2dev__in FileHandle File,
+		nwn2dev__out std::string & AccessorName
 		);
 
 private:
@@ -168,8 +168,8 @@ private:
 
 	void
 	ParseKeyFile(
-		__in HANDLE File,
-		__in const std::string & InstallDir
+		nwn2dev__in HANDLE File,
+		nwn2dev__in const std::string & InstallDir
 		);
 
 	typedef BifFileReader< ResRefT > BifFileReaderT;
@@ -243,8 +243,8 @@ private:
 	inline
 	PCKEY_RESOURCE_DESCRIPTOR
 	LookupResourceKey(
-		__in const ResRefIf & Name,
-		__in ResType Type
+		nwn2dev__in const ResRefIf & Name,
+		nwn2dev__in ResType Type
 		) const
 	{
 		C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
@@ -271,7 +271,7 @@ private:
 	inline
 	PCKEY_RESOURCE_DESCRIPTOR
 	LookupResourceKey(
-		__in ResID ResourceId
+		nwn2dev__in ResID ResourceId
 		) const
 	{
 		if (ResourceId >= m_KeyResDir.size( ))

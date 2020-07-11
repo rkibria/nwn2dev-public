@@ -27,7 +27,7 @@ public:
 
 	inline
 	FileWrapper(
-		__in HANDLE File = INVALID_HANDLE_VALUE
+		nwn2dev__in HANDLE File = INVALID_HANDLE_VALUE
 		)
 		: m_File( File ),
 		  m_View( NULL ),
@@ -59,8 +59,8 @@ public:
 	inline
 	void
 	SetFileHandle(
-		__in HANDLE File,
-		__in bool AsSection = true
+		nwn2dev__in HANDLE File,
+		nwn2dev__in bool AsSection = true
 		)
 	{
 		m_File         = File;
@@ -112,7 +112,7 @@ public:
 	void
 	SetExternalView(
 		__in_bcount( ViewSize ) const unsigned char * View,
-		__in ULONGLONG ViewSize
+		nwn2dev__in ULONGLONG ViewSize
 		)
 	{
 		m_Offset       = 0;
@@ -129,8 +129,8 @@ public:
 	void
 	ReadFile(
 		__out_bcount( Length ) void * Buffer,
-		__in size_t Length,
-		__in const char * Description
+		nwn2dev__in size_t Length,
+		nwn2dev__in const char * Description
 		)
 	{
 		DWORD Transferred;
@@ -186,8 +186,8 @@ public:
 	inline
 	void
 	SeekOffset(
-		__in ULONGLONG Offset,
-		__in const char * Description
+		nwn2dev__in ULONGLONG Offset,
+		nwn2dev__in const char * Description
 		)
 	{
 		LONG  Low;
@@ -284,20 +284,20 @@ private:
 	void *
 	__cdecl
 	xmemcpy(
-		__out_bcount_full_opt(_Size) void * _Dst,
-		__in_bcount_opt(_Size) const void * _Src,
-		__in size_t _Size
+		nwn2dev__out_bcount_full_opt(_Size) void * _Dst,
+		nwn2dev__in_bcount_opt(_Size) const void * _Src,
+		nwn2dev__in size_t _Size
 		)
 	{
-		__try
+		// __try
 		{
 			return (memcpy( _Dst, _Src, _Size ));
 		}
-		__except( (GetExceptionCode( ) == EXCEPTION_IN_PAGE_ERROR ) ?
-		          EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH )
-		{
-			ThrowInPageError( );
-		}
+		// __except( (GetExceptionCode( ) == EXCEPTION_IN_PAGE_ERROR ) ?
+		          // EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH )
+		// {
+			// ThrowInPageError( );
+		// }
 	}
 
 	HANDLE          m_File;

@@ -89,9 +89,9 @@ public:
 
 	bool
 	Commit(
-		__in const std::string & FileName,
-		__in unsigned long FileType = 0,
-		__in unsigned long Flags = 0
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in unsigned long FileType = 0,
+		nwn2dev__in unsigned long Flags = 0
 		);
 
 	//
@@ -100,9 +100,9 @@ public:
 
 	bool
 	Commit(
-		__out std::vector< unsigned char > & Memory,
-		__in unsigned long FileType = 0,
-		__in unsigned long Flags = 0
+		nwn2dev__out std::vector< unsigned char > & Memory,
+		nwn2dev__in unsigned long FileType = 0,
+		nwn2dev__in unsigned long Flags = 0
 		);
 
 	//
@@ -113,7 +113,7 @@ public:
 	inline
 	void
 	SetDefaultFileType(
-		__in unsigned long FileType
+		nwn2dev__in unsigned long FileType
 		)
 	{
 		m_FileType = FileType;
@@ -133,8 +133,8 @@ public:
 
 	void
 	InitializeFromResourceAccessor(
-		__in IResourceAccessor< ResRefIf > * Accessor,
-		__in bool CheckForDuplicates = false
+		nwn2dev__in IResourceAccessor< ResRefIf > * Accessor,
+		nwn2dev__in bool CheckForDuplicates = false
 		);
 
 	//
@@ -145,8 +145,8 @@ public:
 
 	void
 	InitializeFromResourceAccessor(
-		__in DirectoryFileReader< ResRefIf > * Accessor,
-		__in bool CheckForDuplicates = false
+		nwn2dev__in DirectoryFileReader< ResRefIf > * Accessor,
+		nwn2dev__in bool CheckForDuplicates = false
 		);
 
 	//
@@ -156,8 +156,8 @@ public:
 
 	bool
 	RemoveFile(
-		__in const ResRefIf & ResRef,
-		__in ResType Type
+		nwn2dev__in const ResRefIf & ResRef,
+		nwn2dev__in ResType Type
 		);
 
 	//
@@ -176,9 +176,9 @@ public:
 
 	void
 	AddFile(
-		__in const ResRefIf & ResRef,
-		__in ResType Type,
-		__in const std::string & SourceFileName
+		nwn2dev__in const ResRefIf & ResRef,
+		nwn2dev__in ResType Type,
+		nwn2dev__in const std::string & SourceFileName
 		);
 
 	//
@@ -190,9 +190,9 @@ public:
 
 	void
 	AddFile(
-		__in const ResRefIf & ResRef,
-		__in ResType Type,
-		__in const swutil::SharedByteVec & Buffer
+		nwn2dev__in const ResRefIf & ResRef,
+		nwn2dev__in ResType Type,
+		nwn2dev__in const swutil::SharedByteVec & Buffer
 		);
 
 	//
@@ -203,10 +203,10 @@ public:
 
 	void
 	AddFile(
-		__in const ResRefIf & ResRef,
-		__in ResType Type,
+		nwn2dev__in const ResRefIf & ResRef,
+		nwn2dev__in ResType Type,
 		__in_ecount( FileSize ) const void * FileContents,
-		__in size_t FileSize
+		nwn2dev__in size_t FileSize
 		);
 
 private:
@@ -254,7 +254,7 @@ private:
 		void
 		Write(
 			__in_bcount( Length ) const void * Data,
-			__in size_t Length
+			nwn2dev__in size_t Length
 			)
 		{
 			if (Length == 0)
@@ -312,7 +312,7 @@ private:
 		void
 		Read(
 			__out_bcount( Length ) void * Data,
-			__in size_t Length
+			nwn2dev__in size_t Length
 			)
 		{
 			if (Length == 0)
@@ -367,8 +367,8 @@ private:
 		inline
 		void
 		SeekOffset(
-			__in ULONGLONG Offset,
-			__in const char * Description
+			nwn2dev__in ULONGLONG Offset,
+			nwn2dev__in const char * Description
 			)
 		{
 			LONG  Low;
@@ -411,9 +411,9 @@ private:
 
 	void
 	CommitInternal(
-		__in ErfWriteContext * Context,
-		__in unsigned long FileType,
-		__in unsigned long Flags
+		nwn2dev__in ErfWriteContext * Context,
+		nwn2dev__in unsigned long FileType,
+		nwn2dev__in unsigned long Flags
 		);
 
 	//
@@ -436,9 +436,9 @@ private:
 
 	void
 	BuildHeader(
-		__out ERF_HEADER & Header,
-		__in unsigned long FileType,
-		__in unsigned long FileVersion
+		nwn2dev__out ERF_HEADER & Header,
+		nwn2dev__in unsigned long FileType,
+		nwn2dev__in unsigned long FileVersion
 		);
 
 	//
@@ -448,7 +448,7 @@ private:
 	void
 	WriteKeyList(
 		__inout ERF_HEADER & Header,
-		__in ErfWriteContext * Context
+		nwn2dev__in ErfWriteContext * Context
 		);
 
 	//
@@ -458,7 +458,7 @@ private:
 	void
 	WriteResourceList(
 		__inout ERF_HEADER & Header,
-		__in ErfWriteContext * Context
+		nwn2dev__in ErfWriteContext * Context
 		);
 
 	//
@@ -468,7 +468,7 @@ private:
 	void
 	WriteResourceContentList(
 		__inout ERF_HEADER & Header,
-		__in ErfWriteContext * Context
+		nwn2dev__in ErfWriteContext * Context
 		);
 
 	//
@@ -519,9 +519,9 @@ private:
 
 		inline
 		ErfPendingFile(
-			__in const ResRefIf & ResRef,
-			__in typename ErfFileWriter::ResType ResType,
-			__in const std::string & FileName
+			nwn2dev__in const ResRefIf & ResRef,
+			nwn2dev__in typename ErfFileWriter::ResType ResType,
+			nwn2dev__in const std::string & FileName
 			)
 		{
 			this->ResRef  = ResRef;
@@ -556,10 +556,10 @@ private:
 
 		inline
 		ErfPendingFile(
-			__in const ResRefIf & ResRef,
-			__in typename ErfFileWriter::ResType ResType,
+			nwn2dev__in const ResRefIf & ResRef,
+			nwn2dev__in typename ErfFileWriter::ResType ResType,
 			__in_ecount( FileSize ) const void * FileContents,
-			__in size_t FileSize
+			nwn2dev__in size_t FileSize
 			)
 		{
 			this->ResRef  = ResRef;
@@ -574,9 +574,9 @@ private:
 
 		inline
 		ErfPendingFile(
-			__in const ResRefIf & ResRef,
-			__in typename ErfFileWriter::ResType ResType,
-			__in const swutil::SharedByteVec & Buffer
+			nwn2dev__in const ResRefIf & ResRef,
+			nwn2dev__in typename ErfFileWriter::ResType ResType,
+			nwn2dev__in const swutil::SharedByteVec & Buffer
 			)
 		{
 			this->ResRef  = ResRef;

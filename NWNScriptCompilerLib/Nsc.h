@@ -912,18 +912,18 @@ public:
 	typedef
 	bool
 	(__stdcall * ResLoadFileProc) (
-		__in const NWN::ResRef32 & ResRef,
-		__in NWN::ResType Type,
+		nwn2dev__in const NWN::ResRef32 & ResRef,
+		nwn2dev__in NWN::ResType Type,
 		__deref_out_bcount( *FileSize ) void * * FileContents,
-		__out size_t * FileSize,
-		__in void * Context
+		nwn2dev__out size_t * FileSize,
+		nwn2dev__in void * Context
 		);
 
 	typedef
 	bool
 	(__stdcall * ResUnloadFileProc) (
-		__in void * FileContents,
-		__in void * Context
+		nwn2dev__in void * FileContents,
+		nwn2dev__in void * Context
 		);
 
 	// @cmember Constructor.
@@ -933,9 +933,9 @@ public:
 	//
 
 	NscCompiler (
-		__in ResourceManager & ResMan,
-		__in bool EnableExtensions,
-		__in bool SaveSymbolTable = false
+		nwn2dev__in ResourceManager & ResMan,
+		nwn2dev__in bool EnableExtensions,
+		nwn2dev__in bool SaveSymbolTable = false
 		);
 
 	// @cmember Destructor.
@@ -956,14 +956,14 @@ public:
 
 	NscResult
 	NscCompileScript (
-		__in const NWN::ResRef32 & ScriptName,
-		__in int CompilerVersion,
-		__in bool Optimize,
-		__in bool IgnoreIncludes,
-		__in IDebugTextOut * ErrorOutput,
-		__in UINT32 CompilerFlags,
-		__out std::vector< UINT8 > & Code,
-		__out std::vector< UINT8 > & DebugSymbols
+		nwn2dev__in const NWN::ResRef32 & ScriptName,
+		nwn2dev__in int CompilerVersion,
+		nwn2dev__in bool Optimize,
+		nwn2dev__in bool IgnoreIncludes,
+		nwn2dev__in IDebugTextOut * ErrorOutput,
+		nwn2dev__in UINT32 CompilerFlags,
+		nwn2dev__out std::vector< UINT8 > & Code,
+		nwn2dev__out std::vector< UINT8 > & DebugSymbols
 		);
 
 	// @cmember Compile script from in-memory source text.
@@ -976,16 +976,16 @@ public:
 
 	NscResult
 	NscCompileScript (
-		__in const NWN::ResRef32 & ScriptName,
+		nwn2dev__in const NWN::ResRef32 & ScriptName,
 		__in_bcount( ScriptTextLength ) const void * ScriptText,
-		__in size_t ScriptTextLength,
-		__in int CompilerVersion,
-		__in bool Optimize,
-		__in bool IgnoreIncludes,
-		__in IDebugTextOut * ErrorOutput,
-		__in UINT32 CompilerFlags,
-		__out std::vector< UINT8 > & Code,
-		__out std::vector< UINT8 > & DebugSymbols
+		nwn2dev__in size_t ScriptTextLength,
+		nwn2dev__in int CompilerVersion,
+		nwn2dev__in bool Optimize,
+		nwn2dev__in bool IgnoreIncludes,
+		nwn2dev__in IDebugTextOut * ErrorOutput,
+		nwn2dev__in UINT32 CompilerFlags,
+		nwn2dev__out std::vector< UINT8 > & Code,
+		nwn2dev__out std::vector< UINT8 > & DebugSymbols
 		);
 
 	// @cmember Disassemble script from in-memory instruction stream.
@@ -997,8 +997,8 @@ public:
 	void
 	NscDisassembleScript (
 		__in_bcount( CodeLength ) const void * Code,
-		__in size_t CodeLength,
-		__out std::string & Disassembly
+		nwn2dev__in size_t CodeLength,
+		nwn2dev__out std::string & Disassembly
 		);
 
 	// @cmember Lookup name of an action service handler by ordinal.
@@ -1010,7 +1010,7 @@ public:
 
 	const char *
 	NscGetActionName (
-		__in int Action
+		nwn2dev__in int Action
 		);
 
 	// @cmember Return prototype information for an action service handler.
@@ -1021,8 +1021,8 @@ public:
 
 	bool
 	NscGetActionPrototype (
-		__in int Action,
-		__out NscPrototypeDefinition & Prototype
+		nwn2dev__in int Action,
+		nwn2dev__out NscPrototypeDefinition & Prototype
 		);
 
 	// @cmember Return prototype information for a function by name.
@@ -1033,8 +1033,8 @@ public:
 
 	bool
 	NscGetFunctionPrototype (
-		__in const char * FunctionName,
-		__out NscPrototypeDefinition & Prototype
+		nwn2dev__in const char * FunctionName,
+		nwn2dev__out NscPrototypeDefinition & Prototype
 		);
 
 	// @cmember Return the name of the script entry point, if any (else NULL).
@@ -1075,7 +1075,7 @@ public:
 	inline
 	void
 	NscSetIncludePaths (
-		__in const std::vector< std::string > IncludePaths
+		nwn2dev__in const std::vector< std::string > IncludePaths
 		)
 	{
 		m_IncludePaths = IncludePaths;
@@ -1091,7 +1091,7 @@ public:
 
 	void
 	NscSetCompilerErrorPrefix (
-		__in const char * ErrorPrefix
+		nwn2dev__in const char * ErrorPrefix
 		);
 
 	// @cmember Add external resource accessor functions.
@@ -1102,9 +1102,9 @@ public:
 
 	void
 	NscSetExternalResourceLoader (
-		__in void * Context,
-		__in ResLoadFileProc ResLoadFile,
-		__in ResUnloadFileProc ResUnloadFile
+		nwn2dev__in void * Context,
+		nwn2dev__in ResLoadFileProc ResLoadFile,
+		nwn2dev__in ResUnloadFileProc ResUnloadFile
 		);
 
 	// @cmember Enable or disable resource caching.
@@ -1116,7 +1116,7 @@ public:
 
 	void
 	NscSetResourceCacheEnabled (
-		__in bool EnableCache
+		nwn2dev__in bool EnableCache
 		);
 
 
@@ -1166,10 +1166,10 @@ public:
 
 	unsigned char *
 	LoadResource (
-		__in const char * pszName,
-		__in NwnResType nResType,
-		__out UINT32 * pulSize,
-		__out bool * pfAllocated
+		nwn2dev__in const char * pszName,
+		nwn2dev__in NwnResType nResType,
+		nwn2dev__out UINT32 * pulSize,
+		nwn2dev__out bool * pfAllocated
 		);
 
 private:
@@ -1187,7 +1187,7 @@ private:
 		inline
 		bool
 		operator< (
-			__in const ResourceCacheKey & other
+			nwn2dev__in const ResourceCacheKey & other
 			) const
 		{
 			return (ResType < other .ResType) ||
@@ -1197,7 +1197,7 @@ private:
 		inline
 		bool
 		operator== (
-			__in const ResourceCacheKey & other
+			nwn2dev__in const ResourceCacheKey & other
 			) const
 		{
 			return (ResType == other .ResType) &&
@@ -1223,9 +1223,9 @@ private:
 
 	bool
 	NscCompilerInitialize (
-		__in int CompilerVersion,
-		__in bool EnableExtensions,
-		__in IDebugTextOut * TextOut
+		nwn2dev__in int CompilerVersion,
+		nwn2dev__in bool EnableExtensions,
+		nwn2dev__in IDebugTextOut * TextOut
 		);
 
 	// @cmember Load a file from raw filesystem.
@@ -1238,8 +1238,8 @@ private:
 
 	unsigned char *
 	LoadFileFromDisk (
-		__in const char * pszKeyFile,
-		__out UINT32 * pulFileSize
+		nwn2dev__in const char * pszKeyFile,
+		nwn2dev__out UINT32 * pulFileSize
 		);
 
 	// @cmember Package prototype information for a symbol.
@@ -1253,8 +1253,8 @@ private:
 
 	bool
 	NscGatherPrototypeFromSymbol (
-		__in NscSymbol * Symbol,
-		__out NscPrototypeDefinition & Prototype
+		nwn2dev__in NscSymbol * Symbol,
+		nwn2dev__out NscPrototypeDefinition & Prototype
 		);
 
 	// @cmember Cache a resource for future fast path lookups.
@@ -1267,10 +1267,10 @@ private:
 	bool
 	NscCacheResource (
 		__in_bcount( ResFileLength ) unsigned char * ResFileContents,
-		__in UINT32 ResFileLength,
-		__in bool Allocated,
-		__in const NWN::ResRef32 & ResRef,
-		__in NWN::ResType ResType
+		nwn2dev__in UINT32 ResFileLength,
+		nwn2dev__in bool Allocated,
+		nwn2dev__in const NWN::ResRef32 & ResRef,
+		nwn2dev__in NWN::ResType ResType
 		);
 
 	// @cmember Flush the resource cache.

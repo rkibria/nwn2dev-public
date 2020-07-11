@@ -57,7 +57,7 @@ ref class NWScriptManagedSupport;
 	                                                             \
 	    inline                                                   \
 	    NWScriptEngineStructure##n(                              \
-	        __in EngineStructurePtr EngineStructure              \
+	        nwn2dev__in EngineStructurePtr EngineStructure              \
 	        )                                                    \
 	    : m_EngineStructure( NULL )                              \
 	    {                                                        \
@@ -133,7 +133,7 @@ public:
 
 	inline
 	NWScriptEngineStructure(
-		__in EngineStructurePtr && EngineStructure
+		nwn2dev__in EngineStructurePtr && EngineStructure
 		)
 	: m_EngineStructure( new EngineStructurePtr( EngineStructure ) )
 	{
@@ -195,11 +195,11 @@ public:
 	//
 
 	NWScriptProgram(
-		__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 		);
 
@@ -210,13 +210,13 @@ public:
 	//
 
 	NWScriptProgram(
-		__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in array< Byte > ^ ManagedAssembly,
-		__in NWScriptManagedSupport ^ ManagedSupport,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in array< Byte > ^ ManagedAssembly,
+		nwn2dev__in NWScriptManagedSupport ^ ManagedSupport,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 		);
 	
@@ -240,12 +240,12 @@ public:
 
 	int
 	ExecuteScript(
-		__in INWScriptStack * VMStack,
-		__in NWN::OBJECTID ObjectSelf,
+		nwn2dev__in INWScriptStack * VMStack,
+		nwn2dev__in NWN::OBJECTID ObjectSelf,
 		__in_ecount_opt( ParamCount ) const NWScriptParamString * Params,
-		__in size_t ParamCount,
-		__in int DefaultReturnCode,
-		__in ULONG Flags
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in int DefaultReturnCode,
+		nwn2dev__in ULONG Flags
 		);
 
 	//
@@ -256,7 +256,7 @@ public:
 	void
 	ExecuteScriptSituation(
 		__inout NWScriptSavedState ^ ScriptState,
-		__in NWN::OBJECTID ObjectSelf
+		nwn2dev__in NWN::OBJECTID ObjectSelf
 		);
 
 	//
@@ -293,7 +293,7 @@ public:
 
 	NWScriptSavedState ^
 	DuplicateSavedState(
-		__in NWScriptSavedState ^ SourceState
+		nwn2dev__in NWScriptSavedState ^ SourceState
 		);
 
 	//
@@ -302,13 +302,13 @@ public:
 
 	void
 	PushSavedState(
-		__in NWScriptSavedState ^ SourceState,
-		__in INWScriptStack * Stack,
-		__out UInt32 * ResumeMethodId,
-		__out NWNScriptLib::PROGRAM_COUNTER * ResumeMethodPC,
-		__out UInt32 * SaveGlobalCount,
-		__out UInt32 * SaveLocalCount,
-		__out NWN::OBJECTID * CurrentActionObjectSelf
+		nwn2dev__in NWScriptSavedState ^ SourceState,
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__out UInt32 * ResumeMethodId,
+		nwn2dev__out NWNScriptLib::PROGRAM_COUNTER * ResumeMethodPC,
+		nwn2dev__out UInt32 * SaveGlobalCount,
+		nwn2dev__out UInt32 * SaveLocalCount,
+		nwn2dev__out NWN::OBJECTID * CurrentActionObjectSelf
 		);
 
 	//
@@ -317,12 +317,12 @@ public:
 
 	NWScriptSavedState ^
 	PopSavedState(
-		__in INWScriptStack * Stack,
-		__in UInt32 ResumeMethodId,
-		__in NWNScriptLib::PROGRAM_COUNTER ResumeMethodPC,
-		__in UInt32 SaveGlobalCount,
-		__in UInt32 SaveLocalCount,
-		__in NWN::OBJECTID CurrentActionObjectSelf
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in UInt32 ResumeMethodId,
+		nwn2dev__in NWNScriptLib::PROGRAM_COUNTER ResumeMethodPC,
+		nwn2dev__in UInt32 SaveGlobalCount,
+		nwn2dev__in UInt32 SaveLocalCount,
+		nwn2dev__in NWN::OBJECTID CurrentActionObjectSelf
 		);
 
 	//
@@ -341,7 +341,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushInt(
-		__in Int32 i
+		nwn2dev__in Int32 i
 		);
 
 	//
@@ -360,7 +360,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushFloat(
-		__in Single i
+		nwn2dev__in Single i
 		);
 
 	//
@@ -379,7 +379,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushString(
-		__in String ^ s
+		nwn2dev__in String ^ s
 		);
 
 	//
@@ -398,7 +398,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushObjectId(
-		__in UInt32 o
+		nwn2dev__in UInt32 o
 		);
 
 	//
@@ -422,7 +422,7 @@ public:
 	inline                                                          \
 	void                                                            \
 	Intrinsic_VMStackPushEngineStructure##n(                        \
-	    __in NWScriptEngineStructure##n ^ EngineStructure           \
+	    nwn2dev__in NWScriptEngineStructure##n ^ EngineStructure           \
 	    )                                                           \
 	{                                                               \
 		try                                                         \
@@ -462,8 +462,8 @@ public:
 	inline                                                          \
 	bool                                                            \
 	Intrinsic_CompareEngineStructure##n(                            \
-	    __in NWScriptEngineStructure##n ^ EngineStructure1,         \
-	    __in NWScriptEngineStructure##n ^ EngineStructure2          \
+	    nwn2dev__in NWScriptEngineStructure##n ^ EngineStructure1,         \
+	    nwn2dev__in NWScriptEngineStructure##n ^ EngineStructure2          \
 	    )                                                           \
 	{                                                               \
 		try                                                         \
@@ -503,7 +503,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushEngineStructure(
-		__in INWScriptEngineStructure ^ EngineStructure
+		nwn2dev__in INWScriptEngineStructure ^ EngineStructure
 		);
 
 	//
@@ -513,7 +513,7 @@ public:
 	virtual
 	INWScriptEngineStructure ^
 	Intrinsic_VMStackPopEngineStructure(
-		__in int EngType
+		nwn2dev__in int EngType
 		);
 
 	//
@@ -523,8 +523,8 @@ public:
 	virtual
 	bool
 	Intrinsic_CompareEngineStructure(
-		__in INWScriptEngineStructure ^ EngineStructure1,
-		__in INWScriptEngineStructure ^ EngineStructure2
+		nwn2dev__in INWScriptEngineStructure ^ EngineStructure1,
+		nwn2dev__in INWScriptEngineStructure ^ EngineStructure2
 		);
 
 	//
@@ -534,7 +534,7 @@ public:
 	virtual
 	INWScriptEngineStructure ^
 	Intrinsic_CreateEngineStructure(
-		__in int EngType
+		nwn2dev__in int EngType
 		);
 
 	//
@@ -544,8 +544,8 @@ public:
 	virtual
 	void
 	Intrinsic_ExecuteActionService(
-		__in UInt32 ActionId,
-		__in UInt32 NumArguments
+		nwn2dev__in UInt32 ActionId,
+		nwn2dev__in UInt32 NumArguments
 		);
 
 	//
@@ -557,10 +557,10 @@ public:
 	void
 	Intrinsic_StoreState(
 		__in_opt array< Object ^ > ^ Globals,
-		__in array< Object ^ > ^ Locals,
-		__in UInt32 ResumeMethodPC,
-		__in UInt32 ResumeMethodId,
-		__in IGeneratedScriptProgram ^ ProgramObject
+		nwn2dev__in array< Object ^ > ^ Locals,
+		nwn2dev__in UInt32 ResumeMethodPC,
+		nwn2dev__in UInt32 ResumeMethodId,
+		nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 		);
 
 	//
@@ -570,9 +570,9 @@ public:
 	virtual
 	Object ^
 	Intrinsic_ExecuteActionServiceFast(
-		__in UInt32 ActionId,
-		__in UInt32 NumArguments,
-		__in ... array< Object ^ > ^ Arguments
+		nwn2dev__in UInt32 ActionId,
+		nwn2dev__in UInt32 NumArguments,
+		nwn2dev__in ... array< Object ^ > ^ Arguments
 		);
 
 	//
@@ -582,7 +582,7 @@ public:
 	virtual
 	NWScript::NeutralStringStorage
 	Intrinsic_AllocateNeutralString(
-		__in String ^ Str
+		nwn2dev__in String ^ Str
 		);
 
 	//
@@ -592,7 +592,7 @@ public:
 	virtual
 	void
 	Intrinsic_DeleteNeutralString(
-		__in NWScript::NeutralStringStorage % Str
+		nwn2dev__in NWScript::NeutralStringStorage % Str
 		);
 
 	//
@@ -602,7 +602,7 @@ public:
 	virtual
 	String ^
 	Intrinsic_NeutralStringToString(
-		__in NWScript::NeutralStringStorage % Str
+		nwn2dev__in NWScript::NeutralStringStorage % Str
 		);
 
 	//
@@ -612,7 +612,7 @@ public:
 	virtual
 	void
 	Intrinsic_CheckScriptAbort(
-		__in bool ActionSucceeded
+		nwn2dev__in bool ActionSucceeded
 		);
 
 private:
@@ -629,7 +629,7 @@ private:
 	array< Object ^ > ^
 	ConvertParameterList(
 		__in_ecount_opt( ParamCount ) const NWScriptParamString * Params,
-		__in size_t ParamCount
+		nwn2dev__in size_t ParamCount
 		);
 
 
@@ -639,11 +639,11 @@ private:
 
 	NWScriptSavedState ^
 	CreateSavedState(
-		__in array< Object ^ > ^ Globals,
-		__in array< Object ^ > ^ Locals,
-		__in UInt32 ResumeSubroutinePC,
-		__in UInt32 ResumeSubroutineId,
-		__in IGeneratedScriptProgram ^ ProgramObject
+		nwn2dev__in array< Object ^ > ^ Globals,
+		nwn2dev__in array< Object ^ > ^ Locals,
+		nwn2dev__in UInt32 ResumeSubroutinePC,
+		nwn2dev__in UInt32 ResumeSubroutineId,
+		nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 		);
 
 
@@ -654,11 +654,11 @@ private:
 
 	void
 	FastInvokeActionServiceHandler(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments,
 		__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-		__in size_t NumCmds,
-		__in uintptr_t * CmdParams
+		nwn2dev__in size_t NumCmds,
+		nwn2dev__in uintptr_t * CmdParams
 		);
 
 
@@ -668,8 +668,8 @@ private:
 
 	void
 	PushVariablesToStack(
-		__in INWScriptStack * Stack,
-		__in array< Object ^ > ^ Vars
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in array< Object ^ > ^ Vars
 		);
 
 	//
@@ -678,8 +678,8 @@ private:
 
 	array< Object ^ > ^
 	PopVariablesFromStack(
-		__in INWScriptStack * Stack,
-		__in UInt32 SaveVarCount
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in UInt32 SaveVarCount
 		);
 
 
@@ -689,10 +689,10 @@ private:
 
 	void
 	GenerateProgramCode(
-		__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-		__in NWN::OBJECTID ObjectInvalid,
-		__in String ^ Name
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in String ^ Name
 		);
 
 
@@ -702,7 +702,7 @@ private:
 
 	NWACTION_TYPE
 	GetNWScriptType(
-		__in Object ^ MSILVariable
+		nwn2dev__in Object ^ MSILVariable
 		);
 
 	//
@@ -711,7 +711,7 @@ private:
 
 	NWACTION_TYPE
 	GetNWScriptType(
-		__in Type ^ MSILType
+		nwn2dev__in Type ^ MSILType
 		);
 
 
@@ -724,7 +724,7 @@ private:
 
 	void
 	ErrorException(
-		__in Exception ^ Excpt
+		nwn2dev__in Exception ^ Excpt
 		);
 
 	//
@@ -733,7 +733,7 @@ private:
 
 	INWScriptStack::NeutralString
 	ConvertStringToNeutral(
-		__in String ^ Str
+		nwn2dev__in String ^ Str
 		);
 
 
@@ -744,8 +744,8 @@ private:
 
 	void
 	InstantiateManagedScript(
-		__in array< Byte > ^ ManagedAssembly,
-		__in NWScriptManagedSupport ^ ManagedSupport
+		nwn2dev__in array< Byte > ^ ManagedAssembly,
+		nwn2dev__in NWScriptManagedSupport ^ ManagedSupport
 		);
 
 	//
@@ -755,8 +755,8 @@ private:
 
 	Assembly ^
 	InstantiateManagedScriptResolveAssembly(
-		__in Object ^ Sender,
-		__in ResolveEventArgs ^ Args
+		nwn2dev__in Object ^ Sender,
+		nwn2dev__in ResolveEventArgs ^ Args
 		);
 
 	//
@@ -765,8 +765,8 @@ private:
 
 	void
 	SaveManagedInterfaceDll(
-		__in const NWScriptAnalyzer * Analyzer,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 		);
 
@@ -777,7 +777,7 @@ private:
 
 	void
 	DiscoverEntryPointParameters(
-		__in const NWScriptAnalyzer * Analyzer
+		nwn2dev__in const NWScriptAnalyzer * Analyzer
 		);
 
 
@@ -788,7 +788,7 @@ private:
 	inline
 	bool
 	IsDebugLevel(
-		__in ULONG DebugLevel
+		nwn2dev__in ULONG DebugLevel
 		)
 	{
 		return ((m_TextOut != NULL) && (m_DebugLevel >= DebugLevel));

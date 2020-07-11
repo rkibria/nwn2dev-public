@@ -92,9 +92,9 @@ public:
 
 	NWScriptCodeGenerator(
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in Type ^ HostInterfaceType,
-		__in Type ^ ScriptInterfaceType
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in Type ^ HostInterfaceType,
+		nwn2dev__in Type ^ ScriptInterfaceType
 		);
 
 	//
@@ -117,13 +117,13 @@ public:
 
 	void
 	GenerateProgramCode(
-		__in const NWScriptAnalyzer * Analyzer,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-		__in String ^ Name,
-		__in Encoding ^ StringEncoding,
-		__out ProgramInfo % Program
+		nwn2dev__in String ^ Name,
+		nwn2dev__in Encoding ^ StringEncoding,
+		nwn2dev__out ProgramInfo % Program
 		);
 
 	//
@@ -132,13 +132,13 @@ public:
 	
 	void
 	GenerateInterfaceLayerCode(
-		__in const NWScriptAnalyzer * Analyzer,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-		__in String ^ Name,
-		__in Encoding ^ StringEncoding,
-		__out ProgramInfo % Program
+		nwn2dev__in String ^ Name,
+		nwn2dev__in Encoding ^ StringEncoding,
+		nwn2dev__out ProgramInfo % Program
 		);
 
 private:
@@ -216,15 +216,15 @@ private:
 
 	void
 	SetupCodeGeneration(
-		__in const NWScriptAnalyzer * Analyzer,
-		__in INWScriptActions * ActionHandler,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in INWScriptActions * ActionHandler,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-		__in String ^ Name,
-		__in Encoding ^ StringEncoding,
-		__in bool InterfaceLayer,
-		__out AssemblyBuilder ^ % Assembly,
-		__out ModuleBuilder ^ % Module,
-		__out bool % SaveAsm
+		nwn2dev__in String ^ Name,
+		nwn2dev__in Encoding ^ StringEncoding,
+		nwn2dev__in bool InterfaceLayer,
+		nwn2dev__out AssemblyBuilder ^ % Assembly,
+		nwn2dev__out ModuleBuilder ^ % Module,
+		nwn2dev__out bool % SaveAsm
 		);
 
 	//
@@ -233,7 +233,7 @@ private:
 
 	ILGenContext ^
 	CreateILGenContext(
-		__in const NWScriptAnalyzer * Analyzer,
+		nwn2dev__in const NWScriptAnalyzer * Analyzer,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 		);
 
@@ -243,11 +243,11 @@ private:
 
 	AssemblyBuilder ^
 	GenerateProgramAssembly(
-		__in AppDomain ^ Domain,
-		__in String ^ Name,
+		nwn2dev__in AppDomain ^ Domain,
+		nwn2dev__in String ^ Name,
 		__in_opt String ^ OutputDir,
-		__in bool SaveAsm,
-		__in bool InterfaceLayer
+		nwn2dev__in bool SaveAsm,
+		nwn2dev__in bool InterfaceLayer
 		);
 
 	//
@@ -256,7 +256,7 @@ private:
 
 	ModuleBuilder ^
 	GenerateProgramModule(
-		__in AssemblyBuilder ^ Assembly
+		nwn2dev__in AssemblyBuilder ^ Assembly
 		);
 
 	//
@@ -265,9 +265,9 @@ private:
 
 	TypeBuilder ^
 	GenerateProgramType(
-		__in ModuleBuilder ^ Module,
-		__in String ^ Name,
-		__in NWN::OBJECTID ObjectInvalid
+		nwn2dev__in ModuleBuilder ^ Module,
+		nwn2dev__in String ^ Name,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid
 		);
 
 	//
@@ -276,9 +276,9 @@ private:
 
 	TypeBuilder ^
 	GenerateInterfaceLayerType(
-		__in ModuleBuilder ^ Module,
-		__in String ^ Name,
-		__in NWN::OBJECTID ObjectInvalid
+		nwn2dev__in ModuleBuilder ^ Module,
+		nwn2dev__in String ^ Name,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid
 		);
 
 	//
@@ -287,7 +287,7 @@ private:
 
 	void
 	RetrieveJITIntrinsicsTypeInfo(
-		__in Type ^ NWScriptJITIntrinsicsType
+		nwn2dev__in Type ^ NWScriptJITIntrinsicsType
 		);
 
 	//
@@ -296,8 +296,8 @@ private:
 
 	MethodInfo ^
 	GenerateCloneScriptProgram(
-		__in TypeBuilder ^ ProgramType,
-		__in ConstructorBuilder ^ ProgCtor
+		nwn2dev__in TypeBuilder ^ ProgramType,
+		nwn2dev__in ConstructorBuilder ^ ProgCtor
 		);
 
 	//
@@ -306,7 +306,7 @@ private:
 
 	MethodInfo ^
 	GenerateLoadScriptGlobals(
-		__in TypeBuilder ^ ProgramType
+		nwn2dev__in TypeBuilder ^ ProgramType
 		);
 
 	//
@@ -315,7 +315,7 @@ private:
 
 	MethodInfo ^
 	GenerateExecuteScript(
-		__in TypeBuilder ^ ProgramType
+		nwn2dev__in TypeBuilder ^ ProgramType
 		);
 
 	//
@@ -325,7 +325,7 @@ private:
 
 	MethodInfo ^
 	GenerateExecuteScriptSituation(
-		__in TypeBuilder ^ ProgramType
+		nwn2dev__in TypeBuilder ^ ProgramType
 		);
 
 	//
@@ -334,9 +334,9 @@ private:
 
 	PropertyBuilder ^
 	GenerateReadOnlyProperty(
-		__in TypeBuilder ^ ParentType,
-		__in FieldBuilder ^ BackingField,
-		__in String ^ PropertyName
+		nwn2dev__in TypeBuilder ^ ParentType,
+		nwn2dev__in FieldBuilder ^ BackingField,
+		nwn2dev__in String ^ PropertyName
 		);
 
 	//
@@ -345,9 +345,9 @@ private:
 
 	FieldBuilder ^
 	GenerateLiteralField(
-		__in TypeBuilder ^ ParentType,
-		__in String ^ FieldName,
-		__in Object ^ FieldLiteralValue
+		nwn2dev__in TypeBuilder ^ ParentType,
+		nwn2dev__in String ^ FieldName,
+		nwn2dev__in Object ^ FieldLiteralValue
 		);
 
 	//
@@ -357,7 +357,7 @@ private:
 
 	void
 	GenerateGlobals(
-		__in TypeBuilder ^ ProgramType
+		nwn2dev__in TypeBuilder ^ ProgramType
 		);
 
 	//
@@ -382,7 +382,7 @@ private:
 
 	void
 	GenerateSubroutineCode(
-		__in SubroutineGenContext ^ Sub
+		nwn2dev__in SubroutineGenContext ^ Sub
 		);
 
 	//
@@ -392,7 +392,7 @@ private:
 
 	void
 	AnnotateSpecialVariables(
-		__in SubroutineGenContext ^ Sub
+		nwn2dev__in SubroutineGenContext ^ Sub
 		);
 
 	//
@@ -401,9 +401,9 @@ private:
 
 	void
 	GenerateMSILForIRInstruction(
-		__in SubroutineGenContext ^ Sub,
-		__in SubroutineControlFlow ^ Flow,
-		__in NWScriptInstruction & IRInstr
+		nwn2dev__in SubroutineGenContext ^ Sub,
+		nwn2dev__in SubroutineControlFlow ^ Flow,
+		nwn2dev__in NWScriptInstruction & IRInstr
 		);
 
 
@@ -414,45 +414,45 @@ private:
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in Int32 i
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in Int32 i
 		);
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in UInt32 o // NWN::OBJECTID
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in UInt32 o // NWN::OBJECTID
 		);
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in Single f
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in Single f
 		);
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in String ^ s
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in String ^ s
 		);
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in LocalBuilder ^ Local
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in LocalBuilder ^ Local
 		);
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in NWScriptVariable * Var
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	void
 	GenerateVMStackPush(
-		__in ILGenerator ^ ILGen,
-		__in Type ^ ArgType,
-		__in short ArgSlot
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in Type ^ ArgType,
+		nwn2dev__in short ArgSlot
 		);
 
 	//
@@ -462,14 +462,14 @@ private:
 
 	void
 	GenerateVMStackPop(
-		__in ILGenerator ^ ILGen,
-		__in LocalBuilder ^ Local
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in LocalBuilder ^ Local
 		);
 
 	void
 	GenerateVMStackPop(
-		__in ILGenerator ^ ILGen,
-		__in NWScriptVariable * Var
+		nwn2dev__in ILGenerator ^ ILGen,
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 
@@ -480,7 +480,7 @@ private:
 
 	LocalBuilder ^
 	AcquireLocal(
-		__in Type ^ LocalType
+		nwn2dev__in Type ^ LocalType
 		);
 
 	//
@@ -490,7 +490,7 @@ private:
 
 	void
 	ReleaseLocal(
-		__in LocalBuilder ^ Local
+		nwn2dev__in LocalBuilder ^ Local
 		);
 
 	//
@@ -499,7 +499,7 @@ private:
 
 	LocalBuilder ^
 	CreateLocal(
-		__in NWScriptVariable * Var
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	
@@ -511,7 +511,7 @@ private:
 
 	Type ^
 	GenerateSubroutineRetType(
-		__in const NWScriptSubroutine * IRSub
+		nwn2dev__in const NWScriptSubroutine * IRSub
 		);
 
 	//
@@ -521,7 +521,7 @@ private:
 
 	Type ^
 	BuildCompositeReturnType(
-		__in const NWScriptSubroutine * IRSub
+		nwn2dev__in const NWScriptSubroutine * IRSub
 		);
 
 	//
@@ -530,9 +530,9 @@ private:
 
 	LocalBuilder ^
 	GeneratePackReturnValue(
-		__in const NWScriptSubroutine * IRSub,
+		nwn2dev__in const NWScriptSubroutine * IRSub,
 		__in_ecount( ReturnValueCount ) NWScriptVariable * * ReturnValues,
-		__in size_t ReturnValueCount
+		nwn2dev__in size_t ReturnValueCount
 		);
 
 	//
@@ -541,10 +541,10 @@ private:
 
 	void
 	GenerateUnpackReturnValue(
-		__in const NWScriptSubroutine * IRSub,
-		__in MethodBuilder ^ MSILSub,
+		nwn2dev__in const NWScriptSubroutine * IRSub,
+		nwn2dev__in MethodBuilder ^ MSILSub,
 		__in_ecount( ReturnValueCount ) NWScriptVariable * * ReturnValues,
-		__in size_t ReturnValueCount
+		nwn2dev__in size_t ReturnValueCount
 		);
 
 
@@ -554,9 +554,9 @@ private:
 
 	void
 	GenerateExecuteActionService(
-		__in NWSCRIPT_ACTION CalledActionId,
-		__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-		__in size_t ParamCount
+		nwn2dev__in NWSCRIPT_ACTION CalledActionId,
+		nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+		nwn2dev__in size_t ParamCount
 		);
 
 	//
@@ -565,10 +565,10 @@ private:
 
 	void
 	GenerateExecuteActionServiceSlow(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-		__in size_t ParamCount,
-		__in size_t ReturnCount,
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t ReturnCount,
 		__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 		);
 
@@ -579,10 +579,10 @@ private:
 
 	void
 	GenerateExecuteActionServiceFast(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-		__in size_t ParamCount,
-		__in size_t ReturnCount,
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t ReturnCount,
 		__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 		);
 
@@ -594,10 +594,10 @@ private:
 
 	void
 	GenerateExecuteActionServiceFastDirect(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-		__in size_t ParamCount,
-		__in size_t ReturnCount,
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t ReturnCount,
 		__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 		);
 
@@ -607,9 +607,9 @@ private:
 
 	MethodInfo ^
 	AcquireFastDirectActionServiceStub(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in size_t ParamCount,
-		__in size_t SrcParams
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t SrcParams
 		);
 
 	//
@@ -618,9 +618,9 @@ private:
 
 	MethodInfo ^
 	GenerateFastDirectActionServiceStub(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in size_t ParamCount,
-		__in size_t SrcParams
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t SrcParams
 		);
 
 #endif // NWSCRIPT_DIRECT_FAST_ACTION_CALLS
@@ -631,10 +631,10 @@ private:
 
 	void
 	GenerateExecuteActionServiceSlowViaStub(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-		__in size_t ParamCount,
-		__in size_t ReturnCount,
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t ReturnCount,
 		__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 		);
 
@@ -644,9 +644,9 @@ private:
 
 	MethodInfo ^
 	AcquireSlowActionServiceStub(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in size_t ParamCount,
-		__in size_t SrcParams
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t SrcParams
 		);
 
 	//
@@ -655,9 +655,9 @@ private:
 
 	MethodInfo ^
 	GenerateSlowActionServiceStub(
-		__in PCNWACTION_DEFINITION CalledAction,
-		__in size_t ParamCount,
-		__in size_t SrcParams
+		nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+		nwn2dev__in size_t ParamCount,
+		nwn2dev__in size_t SrcParams
 		);
 
 
@@ -677,8 +677,8 @@ private:
 
 	MethodInfo ^
 	GenerateOptimizedNWNCompatibleActionServiceStub(
-		__in String ^ ActionName,
-		__in String ^ StubName
+		nwn2dev__in String ^ ActionName,
+		nwn2dev__in String ^ StubName
 		);
 
 	//
@@ -687,7 +687,7 @@ private:
 
 	MethodInfo ^
 	GenerateOptAction_GetStringLength(
-		__in String ^ StubName
+		nwn2dev__in String ^ StubName
 		);
 
 	//
@@ -696,7 +696,7 @@ private:
 
 	MethodInfo ^
 	GenerateOptAction_GetStringLeft(
-		__in String ^ StubName
+		nwn2dev__in String ^ StubName
 		);
 
 	//
@@ -705,7 +705,7 @@ private:
 
 	MethodInfo ^
 	GenerateOptAction_GetStringRight(
-		__in String ^ StubName
+		nwn2dev__in String ^ StubName
 		);
 
 	//
@@ -714,7 +714,7 @@ private:
 
 	MethodInfo ^
 	GenerateOptAction_IntToString(
-		__in String ^ StubName
+		nwn2dev__in String ^ StubName
 		);
 
 	//
@@ -723,7 +723,7 @@ private:
 
 	MethodInfo ^
 	GenerateOptAction_GetSubString(
-		__in String ^ StubName
+		nwn2dev__in String ^ StubName
 		);
 
 	//
@@ -734,24 +734,24 @@ private:
 
 	void
 	GenerateLoadVariable(
-		__in NWScriptVariable * Var
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	void
 	GenerateLoadVariable(
-		__in NWScriptVariable * Var,
-		__in bool Box
+		nwn2dev__in NWScriptVariable * Var,
+		nwn2dev__in bool Box
 		);
 
 	void
 	GenerateStoreVariable(
-		__in NWScriptVariable * Var
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	void
 	GenerateStoreVariable(
-		__in NWScriptVariable * Var,
-		__in bool Unbox
+		nwn2dev__in NWScriptVariable * Var,
+		nwn2dev__in bool Unbox
 		);
 
 
@@ -761,9 +761,9 @@ private:
 
 	MethodBuilder ^
 	BeginNewSubroutine(
-		__in String ^ Name,
-		__in MethodAttributes Attributes,
-		__in Type ^ ReturnType,
+		nwn2dev__in String ^ Name,
+		nwn2dev__in MethodAttributes Attributes,
+		nwn2dev__in Type ^ ReturnType,
 		__in_opt array< Type ^ > ^ ParameterTypes
 		);
 
@@ -774,17 +774,17 @@ private:
 
 	void
 	GeneratePushDefaultValue(
-		__in Type ^ LocalType
+		nwn2dev__in Type ^ LocalType
 		);
 
 	void
 	GenerateSetDefaultValue(
-		__in LocalBuilder ^ Local
+		nwn2dev__in LocalBuilder ^ Local
 		);
 
 	void
 	GenerateSetDefaultValue(
-		__in NWScriptVariable * Var
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	
@@ -794,11 +794,11 @@ private:
 
 	void
 	GenerateCompare(
-		__in NWScriptVariable * Var1,
-		__in NWScriptVariable * Var2,
-		__in NWScriptVariable * Result,
-		__in OpCode Op,
-		__in bool Negate
+		nwn2dev__in NWScriptVariable * Var1,
+		nwn2dev__in NWScriptVariable * Var2,
+		nwn2dev__in NWScriptVariable * Result,
+		nwn2dev__in OpCode Op,
+		nwn2dev__in bool Negate
 		);
 
 
@@ -809,21 +809,21 @@ private:
 
 	void
 	GenerateBinaryOp(
-		__in NWScriptVariable * Var1,
-		__in NWScriptVariable * Var2,
-		__in NWScriptVariable * Result,
-		__in OpCode Op,
-		__in NWACTION_TYPE ReqType
+		nwn2dev__in NWScriptVariable * Var1,
+		nwn2dev__in NWScriptVariable * Var2,
+		nwn2dev__in NWScriptVariable * Result,
+		nwn2dev__in OpCode Op,
+		nwn2dev__in NWACTION_TYPE ReqType
 		);
 
 	void
 	GenerateBinaryOp(
-		__in NWScriptVariable * Var1,
-		__in NWScriptVariable * Var2,
-		__in NWScriptVariable * Result,
-		__in OpCode Op,
-		__in NWACTION_TYPE ReqType,
-		__in NWACTION_TYPE ReqRetType
+		nwn2dev__in NWScriptVariable * Var1,
+		nwn2dev__in NWScriptVariable * Var2,
+		nwn2dev__in NWScriptVariable * Result,
+		nwn2dev__in OpCode Op,
+		nwn2dev__in NWACTION_TYPE ReqType,
+		nwn2dev__in NWACTION_TYPE ReqRetType
 		);
 
 
@@ -834,19 +834,19 @@ private:
 
 	void
 	GenerateUnaryOp(
-		__in NWScriptVariable * Var,
-		__in NWScriptVariable * Result,
-		__in OpCode Op,
-		__in NWACTION_TYPE ReqType
+		nwn2dev__in NWScriptVariable * Var,
+		nwn2dev__in NWScriptVariable * Result,
+		nwn2dev__in OpCode Op,
+		nwn2dev__in NWACTION_TYPE ReqType
 		);
 
 	void
 	GenerateUnaryOp(
-		__in NWScriptVariable * Var,
-		__in NWScriptVariable * Result,
-		__in OpCode Op,
-		__in NWACTION_TYPE ReqType,
-		__in NWACTION_TYPE ReqRetType
+		nwn2dev__in NWScriptVariable * Var,
+		nwn2dev__in NWScriptVariable * Result,
+		nwn2dev__in OpCode Op,
+		nwn2dev__in NWACTION_TYPE ReqType,
+		nwn2dev__in NWACTION_TYPE ReqRetType
 		);
 
 
@@ -860,10 +860,10 @@ private:
 
 	void
 	GenerateUpcastBinaryOp(
-		__in NWScriptVariable * Var1,
-		__in NWScriptVariable * Var2,
-		__in NWScriptVariable * Result,
-		__in OpCode Op
+		nwn2dev__in NWScriptVariable * Var1,
+		nwn2dev__in NWScriptVariable * Var2,
+		nwn2dev__in NWScriptVariable * Result,
+		nwn2dev__in OpCode Op
 		);
 
 
@@ -874,13 +874,13 @@ private:
 
 	void
 	GenerateSaveState(
-		__in MethodInfo ^ ResumeSub,
-		__in UInt32 ResumeSubId,
-		__in PROGRAM_COUNTER ResumeSubPC,
+		nwn2dev__in MethodInfo ^ ResumeSub,
+		nwn2dev__in UInt32 ResumeSubId,
+		nwn2dev__in PROGRAM_COUNTER ResumeSubPC,
 		__in_ecount( SaveLocalCount ) NWScriptVariable * * SaveLocals,
-		__in size_t SaveLocalCount,
+		nwn2dev__in size_t SaveLocalCount,
 		__in_ecount( SaveGlobalCount ) NWScriptVariable * * SaveGlobals,
-		__in size_t SaveGlobalCount
+		nwn2dev__in size_t SaveGlobalCount
 		);
 
 
@@ -899,7 +899,7 @@ private:
 
 	void
 	GenerateThrowException(
-		__in String ^ Description
+		nwn2dev__in String ^ Description
 		);
 
 
@@ -936,7 +936,7 @@ private:
 
 	void
 	GenerateBox(
-		__in NWACTION_TYPE Type
+		nwn2dev__in NWACTION_TYPE Type
 		);
 
 	//
@@ -945,7 +945,7 @@ private:
 
 	void
 	GenerateUnbox(
-		__in NWACTION_TYPE Type
+		nwn2dev__in NWACTION_TYPE Type
 		);
 
 
@@ -955,7 +955,7 @@ private:
 
 	void
 	BuildControlFlowMap(
-		__in SubroutineGenContext ^ Sub
+		nwn2dev__in SubroutineGenContext ^ Sub
 		);
 
 	//
@@ -965,9 +965,9 @@ private:
 
 	void
 	EnqueueChildFlows(
-		__in SubroutineGenContext ^ Sub,
-		__in SubroutineControlFlow ^ Flow,
-		__in NWScriptControlFlow * IRFlow
+		nwn2dev__in SubroutineGenContext ^ Sub,
+		nwn2dev__in SubroutineControlFlow ^ Flow,
+		nwn2dev__in NWScriptControlFlow * IRFlow
 		);
 
 
@@ -977,12 +977,12 @@ private:
 
 	Type ^
 	GetVariableType(
-		__in NWScriptVariable * Var
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	Type ^
 	GetVariableType(
-		__in NWACTION_TYPE ActionType
+		nwn2dev__in NWACTION_TYPE ActionType
 		);
 
 	//
@@ -991,7 +991,7 @@ private:
 
 	NWACTION_TYPE
 	GetNWScriptType(
-		__in Type ^ MSILType
+		nwn2dev__in Type ^ MSILType
 		);
 
 	//
@@ -1000,7 +1000,7 @@ private:
 
 	NWScriptSubroutine *
 	GetIRSubroutine(
-		__in PROGRAM_COUNTER PC
+		nwn2dev__in PROGRAM_COUNTER PC
 		);
 
 	//
@@ -1009,7 +1009,7 @@ private:
 
 	MethodBuilder ^
 	GetMSILSubroutine(
-		__in PROGRAM_COUNTER PC
+		nwn2dev__in PROGRAM_COUNTER PC
 		);
 
 	//
@@ -1018,7 +1018,7 @@ private:
 
 	SubroutineAttributes ^
 	GetMSILSubroutineAttributes(
-		__in PROGRAM_COUNTER PC
+		nwn2dev__in PROGRAM_COUNTER PC
 		);
 
 	//
@@ -1027,8 +1027,8 @@ private:
 
 	LocalBuilder ^
 	GetLocalVariable(
-		__in SubroutineGenContext ^ Sub,
-		__in NWScriptVariable * Var
+		nwn2dev__in SubroutineGenContext ^ Sub,
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	//
@@ -1037,7 +1037,7 @@ private:
 
 	FieldInfo ^
 	GetGlobalVariable(
-		__in NWScriptVariable * Var
+		nwn2dev__in NWScriptVariable * Var
 		);
 
 	//
@@ -1046,8 +1046,8 @@ private:
 
 	SubroutineControlFlow ^
 	GetControlFlow(
-		__in SubroutineGenContext ^ Sub,
-		__in PROGRAM_COUNTER PC
+		nwn2dev__in SubroutineGenContext ^ Sub,
+		nwn2dev__in PROGRAM_COUNTER PC
 		);
 
 	//
@@ -1056,7 +1056,7 @@ private:
 
 	Label
 	GetLabel(
-		__in NWScriptLabel * Label
+		nwn2dev__in NWScriptLabel * Label
 		);
 
 	//
@@ -1065,7 +1065,7 @@ private:
 
 	Label
 	GetLabel(
-		__in NWScriptControlFlow * Flow
+		nwn2dev__in NWScriptControlFlow * Flow
 		);
 
 	//
@@ -1074,7 +1074,7 @@ private:
 
 	const char *
 	GetIRInstructionName(
-		__in NWScriptInstruction::INSTR Instr
+		nwn2dev__in NWScriptInstruction::INSTR Instr
 		);
 
 	//
@@ -1085,8 +1085,8 @@ private:
 
 	bool
 	IsIgnoredCallInstr(
-		__in SubroutineGenContext ^ Sub,
-		__in NWScriptSubroutine * CalledSub
+		nwn2dev__in SubroutineGenContext ^ Sub,
+		nwn2dev__in NWScriptSubroutine * CalledSub
 		);
 
 
@@ -1096,8 +1096,8 @@ private:
 
 	String ^
 	GenerateAsmName(
-		__in String ^ Name,
-		__in bool InterfaceLayer
+		nwn2dev__in String ^ Name,
+		nwn2dev__in bool InterfaceLayer
 		);
 
 	//
@@ -1106,7 +1106,7 @@ private:
 
 	String ^
 	GenerateProgramNamespace(
-		__in String ^ Name
+		nwn2dev__in String ^ Name
 		);
 
 
@@ -1118,8 +1118,8 @@ private:
 
 	void
 	AssertTypeEqual(
-		__in Type ^ Type1,
-		__in Type ^ Type2
+		nwn2dev__in Type ^ Type1,
+		nwn2dev__in Type ^ Type2
 		);
 	
 
@@ -1131,7 +1131,7 @@ private:
 	inline
 	bool
 	IsDebugLevel(
-		__in ULONG DebugLevel
+		nwn2dev__in ULONG DebugLevel
 		)
 	{
 		return ((m_TextOut != NULL) && (m_DebugLevel >= DebugLevel));

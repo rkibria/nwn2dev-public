@@ -23,8 +23,8 @@ enum { MAX_DICE = 100 };
 static
 unsigned long
 RollDice(
-	__in unsigned long NumDice,
-	__in unsigned long Sides
+	nwn2dev__in unsigned long NumDice,
+	nwn2dev__in unsigned long Sides
 	)
 /*++
 

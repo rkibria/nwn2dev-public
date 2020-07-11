@@ -16,7 +16,7 @@ namespace swutil
 	inline
 	LONG_PTR
 	InterlockedIncrementPtr(
-		__in LONG_PTR volatile * Addened
+		nwn2dev__in LONG_PTR volatile * Addened
 		)
 	{
 #ifdef _WIN64
@@ -29,7 +29,7 @@ namespace swutil
 	inline
 	LONG_PTR
 	InterlockedDecrementPtr(
-		__in LONG_PTR volatile * Addend
+		nwn2dev__in LONG_PTR volatile * Addend
 		)
 	{
 #ifdef _WIN64
@@ -198,7 +198,7 @@ namespace swutil
 
 	public:
 
-		ScopedRef( __in IRef * Ref )
+		ScopedRef( nwn2dev__in IRef * Ref )
 			: m_Ref( Ref )
 		{
 			if (!m_Ref->Reference())
@@ -226,7 +226,7 @@ namespace swutil
 
 	public:
 
-		ScopedDeref( __in IRef * Ref )
+		ScopedDeref( nwn2dev__in IRef * Ref )
 			: m_Ref( Ref )
 		{
 		}
@@ -252,7 +252,7 @@ namespace swutil
 	// Deleter callback type for the shared buffer.
 	//
 	// template< class T >
-	// typedef void (* BufferDeleter)( __in T * p );
+	// typedef void (* BufferDeleter)( nwn2dev__in T * p );
 
 	//
 	// Default deleter implementation for operator delete [].
@@ -261,7 +261,7 @@ namespace swutil
 	inline
 	void
 	BufferDeleterDelete(
-		__in T *p
+		nwn2dev__in T *p
 		)
 	{
 		delete [] p;
@@ -284,7 +284,7 @@ namespace swutil
 	inline
 	LONG_PTR *
 	SharedPtrAllocSharedState(
-		__in LONG_PTR Initializer
+		nwn2dev__in LONG_PTR Initializer
 		)
 	{
 		LONG_PTR * SharedState;
@@ -305,7 +305,7 @@ namespace swutil
 	inline
 	void
 	SharedPtrDeleteSharedState(
-		__in LONG_PTR * SharedState
+		nwn2dev__in LONG_PTR * SharedState
 		)
 	{
 		HeapFree( GetProcessHeap( ), 0, SharedState );
@@ -320,7 +320,7 @@ namespace swutil
 	//
 	template<
 		class T /*,
-		void (* Deleter)( __in T * p ) = BufferDeleterDelete< T >  */
+		void (* Deleter)( nwn2dev__in T * p ) = BufferDeleterDelete< T >  */
 		>
 	class SharedBuffer
 	{
@@ -328,8 +328,8 @@ namespace swutil
 	public:
 
 		SharedBuffer(
-			__in T *Buf,
-			__in size_t Size
+			nwn2dev__in T *Buf,
+			nwn2dev__in size_t Size
 			)
 			: m_Buf( Buf ),
 			  m_Size( Size ),
@@ -356,7 +356,7 @@ namespace swutil
 		{
 		}
 
-		SharedBuffer( __in const SharedBuffer & Other )
+		SharedBuffer( nwn2dev__in const SharedBuffer & Other )
 			: m_Buf( Other.m_Buf ),
 			  m_Size( Other.m_Size ),
 			  m_SharedState( Other.m_SharedState )
@@ -380,7 +380,7 @@ namespace swutil
 		}
 
 		SharedBuffer& operator=(
-			__in const SharedBuffer & Other
+			nwn2dev__in const SharedBuffer & Other
 			)
 		{
 			if (m_SharedState == Other.m_SharedState)
@@ -469,7 +469,7 @@ namespace swutil
 	// Deleter callback type for the shared pointer.
 	//
 	// template< class T >
-	// typedef void (* SharedPtrDeleter)( __in T * p );
+	// typedef void (* SharedPtrDeleter)( nwn2dev__in T * p );
 
 	//
 	// Default deleter implementation for operator delete.
@@ -478,7 +478,7 @@ namespace swutil
 	inline
 	void
 	SharedPtrDeleterDelete(
-		__in T *p
+		nwn2dev__in T *p
 		)
 	{
 		delete p;
@@ -499,7 +499,7 @@ namespace swutil
 	//
 	template<
 		class T /*,
-		void (* Deleter)( __in T * p ) = SharedPtrDeleterDelete< T >  */
+		void (* Deleter)( nwn2dev__in T * p ) = SharedPtrDeleterDelete< T >  */
 		>
 	class SharedPtr
 	{
@@ -507,7 +507,7 @@ namespace swutil
 	public:
 
 		SharedPtr(
-			__in T *Ptr
+			nwn2dev__in T *Ptr
 			)
 			: m_Ptr( Ptr ),
 			  m_SharedState( NULL )
@@ -540,7 +540,7 @@ namespace swutil
 		{
 		}
 
-		SharedPtr( __in const SharedPtr & Other )
+		SharedPtr( nwn2dev__in const SharedPtr & Other )
 			: m_Ptr( Other.m_Ptr ),
 			  m_SharedState( Other.m_SharedState )
 		{
@@ -563,7 +563,7 @@ namespace swutil
 		}
 
 		SharedPtr& operator=(
-			__in const SharedPtr & Other
+			nwn2dev__in const SharedPtr & Other
 			)
 		{
 			if (m_SharedState == Other.m_SharedState)
@@ -590,8 +590,8 @@ namespace swutil
 		inline T * get() const { return m_Ptr; }
 		inline T & operator*() const { return *m_Ptr; }
 		inline T * operator->() const { return m_Ptr; }
-		inline bool operator==(__in const T * t) const { return m_Ptr == t; }
-		inline bool operator!=(__in const T * t) const { return m_Ptr != t; }
+		inline bool operator==(nwn2dev__in const T * t) const { return m_Ptr == t; }
+		inline bool operator!=(nwn2dev__in const T * t) const { return m_Ptr != t; }
 
 		inline
 		void
@@ -679,7 +679,7 @@ namespace swutil
 	inline                                                             \
 	void *                                                             \
 	operator new(                                                      \
-	    __in size_t s                                                  \
+	    nwn2dev__in size_t s                                                  \
 	    )                                                              \
 	{                                                                  \
 	    void * p;                                                      \
@@ -695,7 +695,7 @@ namespace swutil
 	inline                                                             \
 	void                                                               \
 	operator delete(                                                   \
-		__in void * p                                                  \
+		nwn2dev__in void * p                                                  \
 		)                                                              \
 	{                                                                  \
 		if (p == NULL)                                                 \
@@ -707,7 +707,7 @@ namespace swutil
 	inline                                                             \
 	void *                                                             \
 	operator new[ ](                                                   \
-	    __in size_t s                                                  \
+	    nwn2dev__in size_t s                                                  \
 	    )                                                              \
 	{                                                                  \
 	    void * p;                                                      \
@@ -723,7 +723,7 @@ namespace swutil
 	inline                                                             \
 	void                                                               \
 	operator delete[ ](                                                \
-		__in void * p                                                  \
+		nwn2dev__in void * p                                                  \
 		)                                                              \
 	{                                                                  \
 		if (p == NULL)                                                 \

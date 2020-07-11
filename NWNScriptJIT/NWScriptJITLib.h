@@ -45,7 +45,7 @@ public:
 
 	inline
 	NWScriptJITLib(
-		__in const std::wstring & JITLibFileName
+		nwn2dev__in const std::wstring & JITLibFileName
 		)
 	: m_JITLib( NULL )
 	{
@@ -145,7 +145,7 @@ public:
 	inline
 	void
 	DeleteProgram(
-		__in NWSCRIPT_JITPROGRAM Program
+		nwn2dev__in NWSCRIPT_JITPROGRAM Program
 		)
 	{
 		m_NWScriptDeleteProgram( Program );
@@ -159,7 +159,7 @@ public:
 	inline
 	void
 	DeleteSavedState(
-		__in NWSCRIPT_JITRESUME ResumeState
+		nwn2dev__in NWSCRIPT_JITRESUME ResumeState
 		)
 	{
 		m_NWScriptDeleteSavedState( ResumeState );
@@ -173,7 +173,7 @@ public:
 	inline
 	void
 	DeleteManagedSupport(
-		__in NWSCRIPT_JITMANAGEDSUPPORT ManagedSupportHandle
+		nwn2dev__in NWSCRIPT_JITMANAGEDSUPPORT ManagedSupportHandle
 		)
 	{
 		m_NWScriptDeleteManagedSupport( ManagedSupportHandle );
@@ -187,12 +187,12 @@ public:
 	inline
 	int
 	ExecuteScript(
-		__in NWSCRIPT_JITPROGRAM Program,
-		__in INWScriptStack * Stack,
-		__in NWN::OBJECTID ObjectSelf,
-		__in const NWScriptParamVec & Params,
-		__in int DefaultReturnCode,
-		__in ULONG Flags
+		nwn2dev__in NWSCRIPT_JITPROGRAM Program,
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in NWN::OBJECTID ObjectSelf,
+		nwn2dev__in const NWScriptParamVec & Params,
+		nwn2dev__in int DefaultReturnCode,
+		nwn2dev__in ULONG Flags
 		)
 	{
 		std::vector< NWScriptParamString > ConvParams;
@@ -229,8 +229,8 @@ public:
 	inline
 	void
 	ExecuteScriptSituation(
-		__in NWSCRIPT_JITRESUME ResumeState,
-		__in NWN::OBJECTID ObjectSelf
+		nwn2dev__in NWSCRIPT_JITRESUME ResumeState,
+		nwn2dev__in NWN::OBJECTID ObjectSelf
 		)
 	{
 		m_NWScriptExecuteScriptSituation( ResumeState, ObjectSelf );
@@ -244,7 +244,7 @@ public:
 	inline
 	void
 	AbortScript(
-		__in NWSCRIPT_JITPROGRAM Program
+		nwn2dev__in NWSCRIPT_JITPROGRAM Program
 		)
 	{
 		m_NWScriptAbortScript( Program );
@@ -263,7 +263,7 @@ public:
 	inline
 	bool
 	IsScriptAborted(
-		__in NWSCRIPT_JITPROGRAM Program
+		nwn2dev__in NWSCRIPT_JITPROGRAM Program
 		) const
 	{
 		if (m_NWScriptIsScriptAborted( Program ))
@@ -280,7 +280,7 @@ public:
 	inline
 	NWSCRIPT_JITRESUME
 	GetSavedState(
-		__in NWSCRIPT_JITPROGRAM Program
+		nwn2dev__in NWSCRIPT_JITPROGRAM Program
 		)
 	{
 		NWSCRIPT_JITRESUME ResumeState;
@@ -298,7 +298,7 @@ public:
 	inline
 	NWSCRIPT_JITRESUME
 	DuplicateScriptSituation(
-		__in NWSCRIPT_JITRESUME SourceState
+		nwn2dev__in NWSCRIPT_JITRESUME SourceState
 		)
 	{
 		NWSCRIPT_JITRESUME ResumeState;
@@ -317,13 +317,13 @@ public:
 	inline
 	void
 	PushScriptSituation(
-		__in NWSCRIPT_JITRESUME SourceState,
-		__in INWScriptStack * VMStack,
-		__out PULONG ResumeMethodId,
-		__out NWSCRIPT_PROGRAM_COUNTER * ResumeMethodPC,
-		__out PULONG SaveGlobalCount,
-		__out PULONG SaveLocalCount,
-		__out NWN::OBJECTID * ObjectSelf
+		nwn2dev__in NWSCRIPT_JITRESUME SourceState,
+		nwn2dev__in INWScriptStack * VMStack,
+		nwn2dev__out PULONG ResumeMethodId,
+		nwn2dev__out NWSCRIPT_PROGRAM_COUNTER * ResumeMethodPC,
+		nwn2dev__out PULONG SaveGlobalCount,
+		nwn2dev__out PULONG SaveLocalCount,
+		nwn2dev__out NWN::OBJECTID * ObjectSelf
 		)
 	{
 		if (!m_NWScriptPushScriptSituation(
@@ -345,13 +345,13 @@ public:
 	inline
 	NWSCRIPT_JITRESUME
 	PopScriptSituation(
-		__in NWSCRIPT_JITPROGRAM Program,
-		__in INWScriptStack * VMStack,
-		__in ULONG ResumeMethodId,
-		__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
-		__in ULONG SaveGlobalCount,
-		__in ULONG SaveLocalCount,
-		__in NWN::OBJECTID ObjectSelf
+		nwn2dev__in NWSCRIPT_JITPROGRAM Program,
+		nwn2dev__in INWScriptStack * VMStack,
+		nwn2dev__in ULONG ResumeMethodId,
+		nwn2dev__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
+		nwn2dev__in ULONG SaveGlobalCount,
+		nwn2dev__in ULONG SaveLocalCount,
+		nwn2dev__in NWN::OBJECTID ObjectSelf
 		)
 	{
 		NWSCRIPT_JITRESUME ResumeState;
@@ -383,8 +383,8 @@ public:
 
 		inline
 		ManagedSupport(
-			__in NWScriptJITLib * JITLib,
-			__in NWSCRIPT_JITMANAGEDSUPPORT ManagedSupportHandle
+			nwn2dev__in NWScriptJITLib * JITLib,
+			nwn2dev__in NWSCRIPT_JITMANAGEDSUPPORT ManagedSupportHandle
 			)
 		: m_JITLib( JITLib ),
 		  m_ManagedSupportHandle( ManagedSupportHandle )
@@ -448,8 +448,8 @@ public:
 
 		inline
 		SavedState(
-			__in NWScriptJITLib * JITLib,
-			__in NWSCRIPT_JITRESUME ResumeState
+			nwn2dev__in NWScriptJITLib * JITLib,
+			nwn2dev__in NWSCRIPT_JITRESUME ResumeState
 			)
 		: m_JITLib( JITLib ),
 		  m_ResumeState( ResumeState )
@@ -481,7 +481,7 @@ public:
 		inline
 		void
 		ExecuteScriptSituation(
-			__in NWN::OBJECTID ObjectSelf
+			nwn2dev__in NWN::OBJECTID ObjectSelf
 			)
 		{
 			return m_JITLib->ExecuteScriptSituation(
@@ -531,8 +531,8 @@ public:
 
 		inline
 		Program(
-			__in NWScriptJITLib * JITLib,
-			__in NWSCRIPT_JITPROGRAM Program
+			nwn2dev__in NWScriptJITLib * JITLib,
+			nwn2dev__in NWSCRIPT_JITPROGRAM Program
 			)
 		: m_JITLib( JITLib ),
 		  m_Program( Program )
@@ -566,11 +566,11 @@ public:
 		inline
 		int
 		ExecuteScript(
-			__in INWScriptStack * Stack,
-			__in NWN::OBJECTID ObjectSelf,
-			__in const NWScriptParamVec & Params,
-			__in int DefaultReturnCode,
-			__in ULONG Flags
+			nwn2dev__in INWScriptStack * Stack,
+			nwn2dev__in NWN::OBJECTID ObjectSelf,
+			nwn2dev__in const NWScriptParamVec & Params,
+			nwn2dev__in int DefaultReturnCode,
+			nwn2dev__in ULONG Flags
 			)
 		{
 			return m_JITLib->ExecuteScript(
@@ -591,8 +591,8 @@ public:
 		inline
 		void
 		ExecuteScriptSituation(
-			__in SavedState * State,
-			__in NWN::OBJECTID ObjectSelf
+			nwn2dev__in SavedState * State,
+			nwn2dev__in NWN::OBJECTID ObjectSelf
 			)
 		{
 			return m_JITLib->ExecuteScriptSituation(
@@ -658,13 +658,13 @@ public:
 		inline
 		void
 		PushSavedState(
-			__in SavedState * State,
-			__in INWScriptStack * VMStack,
-			__out PULONG ResumeMethodId,
-			__out NWSCRIPT_PROGRAM_COUNTER * ResumeMethodPC,
-			__out PULONG SaveGlobalCount,
-			__out PULONG SaveLocalCount,
-			__out NWN::OBJECTID * ObjectSelf
+			nwn2dev__in SavedState * State,
+			nwn2dev__in INWScriptStack * VMStack,
+			nwn2dev__out PULONG ResumeMethodId,
+			nwn2dev__out NWSCRIPT_PROGRAM_COUNTER * ResumeMethodPC,
+			nwn2dev__out PULONG SaveGlobalCount,
+			nwn2dev__out PULONG SaveLocalCount,
+			nwn2dev__out NWN::OBJECTID * ObjectSelf
 			)
 		{
 			m_JITLib->PushScriptSituation(
@@ -685,12 +685,12 @@ public:
 		inline
 		SavedState
 		PopSavedState(
-			__in INWScriptStack * VMStack,
-			__in ULONG ResumeMethodId,
-			__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
-			__in ULONG SaveGlobalCount,
-			__in ULONG SaveLocalCount,
-			__in NWN::OBJECTID ObjectSelf
+			nwn2dev__in INWScriptStack * VMStack,
+			nwn2dev__in ULONG ResumeMethodId,
+			nwn2dev__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
+			nwn2dev__in ULONG SaveGlobalCount,
+			nwn2dev__in ULONG SaveLocalCount,
+			nwn2dev__in NWN::OBJECTID ObjectSelf
 			)
 		{
 			return SavedState(
@@ -710,12 +710,12 @@ public:
 		inline
 		SavedState::Ptr
 		PopSavedStatePtr(
-			__in INWScriptStack * VMStack,
-			__in ULONG ResumeMethodId,
-			__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
-			__in ULONG SaveGlobalCount,
-			__in ULONG SaveLocalCount,
-			__in NWN::OBJECTID ObjectSelf
+			nwn2dev__in INWScriptStack * VMStack,
+			nwn2dev__in ULONG ResumeMethodId,
+			nwn2dev__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
+			nwn2dev__in ULONG SaveGlobalCount,
+			nwn2dev__in ULONG SaveLocalCount,
+			nwn2dev__in NWN::OBJECTID ObjectSelf
 			)
 		{
 			return new SavedState(
@@ -759,14 +759,14 @@ public:
 	inline
 	Program
 	GenerateCode(
-		__in NWScriptReader * Script,
+		nwn2dev__in NWScriptReader * Script,
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount,
-		__in ULONG AnalysisFlags,
+		nwn2dev__in NWSCRIPT_ACTION ActionCount,
+		nwn2dev__in ULONG AnalysisFlags,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams = NULL
 		)
 	{
@@ -789,14 +789,14 @@ public:
 	inline
 	Program::Ptr
 	GenerateCodePtr(
-		__in NWScriptReader * Script,
+		nwn2dev__in NWScriptReader * Script,
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount,
-		__in ULONG AnalysisFlags,
+		nwn2dev__in NWSCRIPT_ACTION ActionCount,
+		nwn2dev__in ULONG AnalysisFlags,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams = NULL
 		)
 	{
@@ -828,12 +828,12 @@ public:
 	ManagedSupport
 	CreateManagedSupport(
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount,
-		__in ULONG AnalysisFlags,
+		nwn2dev__in NWSCRIPT_ACTION ActionCount,
+		nwn2dev__in ULONG AnalysisFlags,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams = NULL
 		)
 	{
@@ -856,12 +856,12 @@ public:
 	ManagedSupport::Ptr
 	CreateManagedSupportPtr(
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount,
-		__in ULONG AnalysisFlags,
+		nwn2dev__in NWSCRIPT_ACTION ActionCount,
+		nwn2dev__in ULONG AnalysisFlags,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams = NULL
 		)
 	{
@@ -941,14 +941,14 @@ private:
 	inline
 	NWSCRIPT_JITPROGRAM
 	InternalGenerateCode(
-		__in NWScriptReader * Script,
+		nwn2dev__in NWScriptReader * Script,
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount,
-		__in ULONG AnalysisFlags,
+		nwn2dev__in NWSCRIPT_ACTION ActionCount,
+		nwn2dev__in ULONG AnalysisFlags,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 		)
 	{
@@ -998,12 +998,12 @@ private:
 	NWSCRIPT_JITMANAGEDSUPPORT
 	InternalCreateManagedSupport(
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount,
-		__in ULONG AnalysisFlags,
+		nwn2dev__in NWSCRIPT_ACTION ActionCount,
+		nwn2dev__in ULONG AnalysisFlags,
 		__in_opt IDebugTextOut * TextOut,
-		__in ULONG DebugLevel,
-		__in INWScriptActions * ActionHandler,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in ULONG DebugLevel,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 		)
 	{

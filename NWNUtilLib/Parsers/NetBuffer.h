@@ -29,9 +29,9 @@ namespace NWN
 
 			ExoParseBuffer(
 				__in_bcount( ByteDataLength ) const void *ByteData,
-				__in size_t ByteDataLength,
-				__in_bcount_opt( BitDataLength ) const void *BitData,
-				__in size_t BitDataLength
+				nwn2dev__in size_t ByteDataLength,
+				nwn2dev__in_bcount_opt( BitDataLength ) const void *BitData,
+				nwn2dev__in size_t BitDataLength
 				);
 
 			inline ~ExoParseBuffer( )
@@ -56,7 +56,7 @@ namespace NWN
 			inline
 			bool
 			ReadCExoString(
-				__out [Out] String ^% Str
+				nwn2dev__out [Out] String ^% Str
 				)
 			{
 				return ReadCExoString( Str, 32 );
@@ -64,13 +64,13 @@ namespace NWN
 
 			bool
 			ReadCExoString(
-				__out [Out] String ^% Str,
-				__in size_t NumBits
+				nwn2dev__out [Out] String ^% Str,
+				nwn2dev__in size_t NumBits
 				);
 
 			bool
 			ReadCExoLocString(
-				__out [Out] ExoLocString ^ LocStr
+				nwn2dev__out [Out] ExoLocString ^ LocStr
 				);
 
 			//
@@ -80,7 +80,7 @@ namespace NWN
 			inline
 			bool
 			ReadSmallString(
-				__out [Out] String ^%String
+				nwn2dev__out [Out] String ^%String
 				)
 			{
 				return ReadSmallString( String, 8 );
@@ -88,8 +88,8 @@ namespace NWN
 
 			bool
 			ReadSmallString(
-				__out [Out] String ^%String,
-				__in size_t NumBits
+				nwn2dev__out [Out] String ^%String,
+				nwn2dev__in size_t NumBits
 				);
 
 			//
@@ -98,7 +98,7 @@ namespace NWN
 
 			bool
 			ReadCResRef16(
-				__out [Out] ResRef16 ^Ref
+				nwn2dev__out [Out] ResRef16 ^Ref
 				)
 			{
 				return ReadCResRef16( Ref, 16 );
@@ -106,8 +106,8 @@ namespace NWN
 
 			bool
 			ReadCResRef16(
-				__out [Out] ResRef16 ^Ref,
-				__in size_t NumBytes
+				nwn2dev__out [Out] ResRef16 ^Ref,
+				nwn2dev__in size_t NumBytes
 				)
 			{
 				NativeResRef16 NativeRef;
@@ -147,7 +147,7 @@ namespace NWN
 
 			bool
 			ReadCResRef32(
-				__out [Out] ResRef32 ^ Ref
+				nwn2dev__out [Out] ResRef32 ^ Ref
 				)
 			{
 				return ReadCResRef32( Ref, 32 );
@@ -155,8 +155,8 @@ namespace NWN
 
 			bool
 			ReadCResRef32(
-				__out [Out] ResRef32 ^ Ref,
-				__in size_t NumBytes
+				nwn2dev__out [Out] ResRef32 ^ Ref,
+				nwn2dev__in size_t NumBytes
 				)
 			{
 				NativeResRef32 NativeRef;
@@ -193,7 +193,7 @@ namespace NWN
 			inline
 			bool
 			ReadBOOL(
-				__out [Out] bool %Value
+				nwn2dev__out [Out] bool %Value
 				)
 			{
 				unsigned __int64 Bits;
@@ -209,7 +209,7 @@ namespace NWN
 			inline
 			bool
 			ReadCHAR(
-				__out [Out] signed char % Value
+				nwn2dev__out [Out] signed char % Value
 				)
 			{
 				return ReadCHAR( Value, 8 );
@@ -218,8 +218,8 @@ namespace NWN
 			inline
 			bool
 			ReadCHAR(
-				__out [Out] signed char %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] signed char %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 8)
@@ -249,7 +249,7 @@ namespace NWN
 			inline
 			bool
 			ReadSHORT(
-				__out [Out] signed short %Value
+				nwn2dev__out [Out] signed short %Value
 				)
 			{
 				return ReadSHORT( Value, 16 );
@@ -258,8 +258,8 @@ namespace NWN
 			inline
 			bool
 			ReadSHORT(
-				__out [Out] signed short %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] signed short %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 16)
@@ -289,7 +289,7 @@ namespace NWN
 			inline
 			bool
 			ReadINT(
-				__out [Out] signed int %Value
+				nwn2dev__out [Out] signed int %Value
 				)
 			{
 				return ReadINT( Value, 32 );
@@ -298,8 +298,8 @@ namespace NWN
 			inline
 			bool
 			ReadINT(
-				__out [Out] signed int %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] signed int %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 32)
@@ -329,7 +329,7 @@ namespace NWN
 			inline
 			bool
 			ReadINT64(
-				__out [Out] signed __int64 %Value
+				nwn2dev__out [Out] signed __int64 %Value
 				)
 			{
 				return ReadINT64( Value, 64 );
@@ -338,8 +338,8 @@ namespace NWN
 			inline
 			bool
 			ReadINT64(
-				__out [Out] signed __int64 %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] signed __int64 %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 64)
@@ -366,7 +366,7 @@ namespace NWN
 			inline
 			bool
 			ReadBYTE(
-				__out [Out] unsigned char %Value
+				nwn2dev__out [Out] unsigned char %Value
 				)
 			{
 				return ReadBYTE( Value, 8 );
@@ -375,8 +375,8 @@ namespace NWN
 			inline
 			bool
 			ReadBYTE(
-				__out [Out] unsigned char %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] unsigned char %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 8)
@@ -403,7 +403,7 @@ namespace NWN
 			inline
 			bool
 			ReadWORD(
-				__out [Out] unsigned short %Value
+				nwn2dev__out [Out] unsigned short %Value
 				)
 			{
 				return ReadWORD( Value, 16 );
@@ -412,8 +412,8 @@ namespace NWN
 			inline
 			bool
 			ReadWORD(
-				__out [Out] unsigned short %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] unsigned short %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 16)
@@ -440,7 +440,7 @@ namespace NWN
 			inline
 			bool
 			ReadDWORD(
-				__out [Out] unsigned long %Value
+				nwn2dev__out [Out] unsigned long %Value
 				)
 			{
 				return ReadDWORD( Value, 32 );
@@ -449,8 +449,8 @@ namespace NWN
 			inline
 			bool
 			ReadDWORD(
-				__out [Out] unsigned long %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] unsigned long %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 32)
@@ -478,7 +478,7 @@ namespace NWN
 			inline
 			bool
 			ReadDWORD(
-				__out [Out] uint32_t %Value
+				nwn2dev__out [Out] uint32_t %Value
 				)
 			{
 				return ReadDWORD( Value, 32 );
@@ -487,8 +487,8 @@ namespace NWN
 			inline
 			bool
 			ReadDWORD(
-				__out [Out] uint32_t %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] uint32_t %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 32)
@@ -516,7 +516,7 @@ namespace NWN
 			inline
 			bool
 			ReadDWORD64(
-				__out [Out] unsigned __int64 %Value
+				nwn2dev__out [Out] unsigned __int64 %Value
 				)
 			{
 				return ReadDWORD64( Value, 64 );
@@ -525,8 +525,8 @@ namespace NWN
 			inline
 			bool
 			ReadDWORD64(
-				__out [Out] unsigned __int64 %Value,
-				__in size_t NumBits
+				nwn2dev__out [Out] unsigned __int64 %Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 64)
@@ -554,7 +554,7 @@ namespace NWN
 			inline
 			bool
 			ReadFLOAT(
-				__out [Out] float %Value
+				nwn2dev__out [Out] float %Value
 				)
 			{
 				return ReadFLOAT( Value, sizeof( float ) * 8, 1.0 );
@@ -563,9 +563,9 @@ namespace NWN
 			inline
 			bool
 			ReadFLOAT(
-				__out [Out] float %Value,
-				__in size_t NumBits,
-				__in float Scale
+				nwn2dev__out [Out] float %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale
 				)
 			{
 				if ((NumBits == sizeof( float ) * 8) && (Scale == 1.0))
@@ -601,9 +601,9 @@ namespace NWN
 			inline
 			bool
 			ReadFLOAT(
-				__out [Out] float %Value,
-				__in float Scale1,
-				__in float Scale2
+				nwn2dev__out [Out] float %Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2
 				)
 			{
 				return ReadFLOAT( Value, Scale1, Scale2, sizeof( float ) * 8 );
@@ -612,10 +612,10 @@ namespace NWN
 			inline
 			bool
 			ReadFLOAT(
-				__out [Out] float %Value,
-				__in float Scale1,
-				__in float Scale2,
-				__in size_t NumBits
+				nwn2dev__out [Out] float %Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == sizeof( float ) * 8)
@@ -645,7 +645,7 @@ namespace NWN
 			inline
 			bool
 			ReadDOUBLE(
-				__out [Out] double %Value
+				nwn2dev__out [Out] double %Value
 				)
 			{
 				return ReadDOUBLE( Value, sizeof( double ) * 8, 1.0 );
@@ -654,9 +654,9 @@ namespace NWN
 			inline
 			bool
 			ReadDOUBLE(
-				__out [Out] double %Value,
-				__in size_t NumBits,
-				__in double Scale
+				nwn2dev__out [Out] double %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in double Scale
 				)
 			{
 				if ((NumBits == sizeof( double ) * 8) && (Scale == 1.0))
@@ -685,9 +685,9 @@ namespace NWN
 			inline
 			bool
 			ReadDOUBLE(
-				__out [Out] double %Value,
-				__in double Scale1,
-				__in double Scale2
+				nwn2dev__out [Out] double %Value,
+				nwn2dev__in double Scale1,
+				nwn2dev__in double Scale2
 				)
 			{
 				return ReadDOUBLE( Value, Scale1, Scale2, sizeof( float ) * 8 );
@@ -696,10 +696,10 @@ namespace NWN
 			inline
 			bool
 			ReadDOUBLE(
-				__out [Out] double %Value,
-				__in double Scale1,
-				__in double Scale2,
-				__in size_t NumBits
+				nwn2dev__out [Out] double %Value,
+				nwn2dev__in double Scale1,
+				nwn2dev__in double Scale2,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == sizeof( float ) * 8)
@@ -728,7 +728,7 @@ namespace NWN
 			inline
 			bool
 			ReadOBJECTID(
-				__out [Out] OBJECTID &ObjectId
+				nwn2dev__out [Out] OBJECTID &ObjectId
 				)
 			{
 				return m_ByteStream->GetField( ObjectId );
@@ -737,7 +737,7 @@ namespace NWN
 			inline
 			const void *
 			ReadVOIDPtr(
-				__in size_t FieldLength
+				nwn2dev__in size_t FieldLength
 				)
 			{
 				const void *DataPtr;
@@ -751,7 +751,7 @@ namespace NWN
 			inline
 			array< Byte > ^
 			ReadBytes(
-				__in size_t FieldLength
+				nwn2dev__in size_t FieldLength
 				)
 			{
 				unsigned char * DataPtr = (unsigned char *) ReadVOIDPtr( FieldLength );
@@ -779,7 +779,7 @@ namespace NWN
 			inline
 			bool
 			ReadVector3(
-				__out [Out] Vector3 %Value
+				nwn2dev__out [Out] Vector3 %Value
 				)
 			{
 				return ReadVector3( Value, sizeof( float ) * 8, 1.0 );
@@ -788,9 +788,9 @@ namespace NWN
 			inline
 			bool
 			ReadVector3(
-				__out [Out] Vector3 %Value,
-				__in size_t NumBits,
-				__in float Scale
+				nwn2dev__out [Out] Vector3 %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale
 				)
 			{
 				if (!ReadFLOAT( Value.x, NumBits, Scale ))
@@ -808,9 +808,9 @@ namespace NWN
 			inline
 			bool
 			ReadVector3(
-				__out [Out] Vector3 %Value,
-				__in float Scale1,
-				__in float Scale2
+				nwn2dev__out [Out] Vector3 %Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2
 				)
 			{
 				return ReadVector3( Value, Scale1, Scale2, sizeof( float ) * 8 );
@@ -819,10 +819,10 @@ namespace NWN
 			inline
 			bool
 			ReadVector3(
-				__out [Out] Vector3 %Value,
-				__in float Scale1,
-				__in float Scale2,
-				__in size_t NumBits
+				nwn2dev__out [Out] Vector3 %Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (!ReadFLOAT( Value.x, Scale1, Scale2, NumBits ))
@@ -840,7 +840,7 @@ namespace NWN
 			inline
 			bool
 			ReadVector2(
-				__out [Out] Vector2 %Value
+				nwn2dev__out [Out] Vector2 %Value
 				)
 			{
 				return ReadVector2( Value, sizeof( float ) * 8, 1.0 );
@@ -849,9 +849,9 @@ namespace NWN
 			inline
 			bool
 			ReadVector2(
-				__out [Out] Vector2 %Value,
-				__in size_t NumBits,
-				__in float Scale
+				nwn2dev__out [Out] Vector2 %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale
 				)
 			{
 				if (!ReadFLOAT( Value.x, NumBits, Scale ))
@@ -866,9 +866,9 @@ namespace NWN
 			inline
 			bool
 			ReadVector2(
-				__out [Out] Vector2 %Value,
-				__in float Scale1,
-				__in float Scale2
+				nwn2dev__out [Out] Vector2 %Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2
 				)
 			{
 				return ReadVector2( Value, Scale1, Scale2, sizeof( float ) * 8 );
@@ -877,10 +877,10 @@ namespace NWN
 			inline
 			bool
 			ReadVector2(
-				__out [Out] Vector2 %Value,
-				__in float Scale1,
-				__in float Scale2,
-				__in size_t NumBits
+				nwn2dev__out [Out] Vector2 %Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (!ReadFLOAT( Value.x, Scale1, Scale2, NumBits ))
@@ -895,7 +895,7 @@ namespace NWN
 			inline
 			bool
 			ReadColor(
-				__out [Out] NWNCOLOR %Value
+				nwn2dev__out [Out] NWNCOLOR %Value
 				)
 			{
 				unsigned char v;
@@ -926,8 +926,8 @@ namespace NWN
 			inline
 			bool
 			ReadNWN2_DataElement(
-				__out [Out] NWN2_DataElement ^ Element,
-				__in bool Server
+				nwn2dev__out [Out] NWN2_DataElement ^ Element,
+				nwn2dev__in bool Server
 				)
 			{
 				int Count;
@@ -1040,8 +1040,8 @@ namespace NWN
 			inline
 			bool
 			ReadBits(
-				__out [Out] unsigned __int64 %Value,
-				__in size_t Bits
+				nwn2dev__out [Out] unsigned __int64 %Value,
+				nwn2dev__in size_t Bits
 				)
 			{
 				unsigned __int64 ValueN;
@@ -1152,7 +1152,7 @@ namespace NWN
 			inline
 			void
 			SetHighestValidBitPos(
-				__in size_t HighestValidBitPos
+				nwn2dev__in size_t HighestValidBitPos
 				)
 			{
 				return m_BitStream->SetHighestValidBitPos( HighestValidBitPos );
@@ -1162,14 +1162,14 @@ namespace NWN
 
 			bool
 			ReadSigned(
-				__out [Out] unsigned __int64 &FieldBits,
-				__in size_t NumBits
+				nwn2dev__out [Out] unsigned __int64 &FieldBits,
+				nwn2dev__in size_t NumBits
 				);
 
 			bool
 			ReadUnsigned(
-				__out [Out] unsigned __int64 &FieldBits,
-				__in size_t NumBits
+				nwn2dev__out [Out] unsigned __int64 &FieldBits,
+				nwn2dev__in size_t NumBits
 				);
 
 			swutil::BufferParser * m_ByteStream;
@@ -1197,7 +1197,7 @@ namespace NWN
 
 			void
 			WriteCExoString(
-				__in String ^ Str
+				nwn2dev__in String ^ Str
 				)
 			{
 				WriteCExoString( Str, 32 );
@@ -1205,23 +1205,23 @@ namespace NWN
 
 			void
 			WriteCExoString(
-				__in String ^ Str,
-				__in size_t NumBits
+				nwn2dev__in String ^ Str,
+				nwn2dev__in size_t NumBits
 				);
 
 			void
 			WriteCExoLocString(
-				__in String ^ Str
+				nwn2dev__in String ^ Str
 				);
 
 			void
 			WriteCExoLocString(
-				__in NWN::ExoLocString ^ Str
+				nwn2dev__in NWN::ExoLocString ^ Str
 				);
 
 			void
 			WriteSmallString(
-				__in String ^ Str
+				nwn2dev__in String ^ Str
 				)
 			{
 				WriteSmallString( Str, 8 );
@@ -1229,14 +1229,14 @@ namespace NWN
 
 			void
 			WriteSmallString(
-				__in String ^ Str,
-				__in size_t NumBits
+				nwn2dev__in String ^ Str,
+				nwn2dev__in size_t NumBits
 				);
 
 			inline
 			void
 			WriteResRef16(
-				__in const ResRef16 ^ Ref
+				nwn2dev__in const ResRef16 ^ Ref
 				)
 			{
 				return WriteResRef16( Ref, 16 );
@@ -1245,8 +1245,8 @@ namespace NWN
 			inline
 			void
 			WriteResRef16(
-				__in const ResRef16 ^ Ref,
-				__in size_t NumBytes
+				nwn2dev__in const ResRef16 ^ Ref,
+				nwn2dev__in size_t NumBytes
 				)
 			{
 				array< Byte > ^ Data = System::Text::Encoding::UTF8->GetBytes( Ref->RefStr );
@@ -1269,7 +1269,7 @@ namespace NWN
 			inline
 			void
 			WriteResRef32(
-				__in const ResRef32 ^ Ref
+				nwn2dev__in const ResRef32 ^ Ref
 				)
 			{
 				return WriteResRef32( Ref, 32 );
@@ -1278,8 +1278,8 @@ namespace NWN
 			inline
 			void
 			WriteResRef32(
-				__in const ResRef32 ^ Ref,
-				__in size_t NumBytes
+				nwn2dev__in const ResRef32 ^ Ref,
+				nwn2dev__in size_t NumBytes
 				)
 			{
 				array< Byte > ^ Data = System::Text::Encoding::UTF8->GetBytes( Ref->RefStr );
@@ -1302,7 +1302,7 @@ namespace NWN
 			inline
 			void
 			WriteBOOL(
-				__in bool Value
+				nwn2dev__in bool Value
 				)
 			{
 				m_BitStream->AddFieldBit( Value );
@@ -1311,7 +1311,7 @@ namespace NWN
 			inline
 			void
 			WriteCHAR(
-				__in signed char Value
+				nwn2dev__in signed char Value
 				)
 			{
 				return WriteCHAR( Value, 8 );
@@ -1320,8 +1320,8 @@ namespace NWN
 			inline
 			void
 			WriteCHAR(
-				__in signed char Value,
-				__in size_t NumBits
+				nwn2dev__in signed char Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 8)
@@ -1336,7 +1336,7 @@ namespace NWN
 			inline
 			void
 			WriteSHORT(
-				__in signed short Value
+				nwn2dev__in signed short Value
 				)
 			{
 				return WriteSHORT( Value, 16 );
@@ -1345,8 +1345,8 @@ namespace NWN
 			inline
 			void
 			WriteSHORT(
-				__in signed short Value,
-				__in size_t NumBits
+				nwn2dev__in signed short Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 16)
@@ -1361,7 +1361,7 @@ namespace NWN
 			inline
 			void
 			WriteINT(
-				__in signed int Value
+				nwn2dev__in signed int Value
 				)
 			{
 				return WriteINT( Value, 32 );
@@ -1370,8 +1370,8 @@ namespace NWN
 			inline
 			void
 			WriteINT(
-				__in signed int Value,
-				__in size_t NumBits
+				nwn2dev__in signed int Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 32)
@@ -1386,7 +1386,7 @@ namespace NWN
 			inline
 			void
 			WriteINT64(
-				__in signed __int64 Value
+				nwn2dev__in signed __int64 Value
 				)
 			{
 				return WriteINT64( Value, 64 );
@@ -1395,8 +1395,8 @@ namespace NWN
 			inline
 			void
 			WriteINT64(
-				__in signed __int64 Value,
-				__in size_t NumBits
+				nwn2dev__in signed __int64 Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 64)
@@ -1411,7 +1411,7 @@ namespace NWN
 			inline
 			void
 			WriteBYTE(
-				__in unsigned char Value
+				nwn2dev__in unsigned char Value
 				)
 			{
 				return WriteBYTE( Value, 8 );
@@ -1420,8 +1420,8 @@ namespace NWN
 			inline
 			void
 			WriteBYTE(
-				__in unsigned char Value,
-				__in size_t NumBits
+				nwn2dev__in unsigned char Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 8)
@@ -1436,7 +1436,7 @@ namespace NWN
 			inline
 			void
 			WriteWORD(
-				__in unsigned short Value
+				nwn2dev__in unsigned short Value
 				)
 			{
 				return WriteWORD( Value, 16 );
@@ -1445,8 +1445,8 @@ namespace NWN
 			inline
 			void
 			WriteWORD(
-				__in unsigned short Value,
-				__in size_t NumBits
+				nwn2dev__in unsigned short Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 16)
@@ -1461,7 +1461,7 @@ namespace NWN
 			inline
 			void
 			WriteDWORD(
-				__in unsigned long Value
+				nwn2dev__in unsigned long Value
 				)
 			{
 				return WriteDWORD( Value, 32 );
@@ -1470,8 +1470,8 @@ namespace NWN
 			inline
 			void
 			WriteDWORD(
-				__in unsigned long Value,
-				__in size_t NumBits
+				nwn2dev__in unsigned long Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 32)
@@ -1486,7 +1486,7 @@ namespace NWN
 			inline
 			void
 			WriteDWORD64(
-				__in unsigned __int64 Value
+				nwn2dev__in unsigned __int64 Value
 				)
 			{
 				return WriteDWORD64( Value, 64 );
@@ -1495,8 +1495,8 @@ namespace NWN
 			inline
 			void
 			WriteDWORD64(
-				__in unsigned __int64 Value,
-				__in size_t NumBits
+				nwn2dev__in unsigned __int64 Value,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == 64)
@@ -1511,7 +1511,7 @@ namespace NWN
 			inline
 			void
 			WriteFLOAT(
-				__in float Value
+				nwn2dev__in float Value
 				)
 			{
 				return WriteFLOAT( Value, sizeof( float ) * 8, 1.0 );
@@ -1520,9 +1520,9 @@ namespace NWN
 			inline
 			void
 			WriteFLOAT(
-				__in float Value,
-				__in size_t NumBits,
-				__in float Scale
+				nwn2dev__in float Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale
 				)
 			{
 				if ((NumBits == sizeof( float ) * 8) && (Scale == 1.0))
@@ -1542,9 +1542,9 @@ namespace NWN
 			inline
 			void
 			WriteFLOAT(
-				__in float Value,
-				__in float Scale1,
-				__in float Scale2
+				nwn2dev__in float Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2
 				)
 			{
 				return WriteFLOAT( Value, Scale1, Scale2, sizeof( float ) * 8 );
@@ -1553,10 +1553,10 @@ namespace NWN
 			inline
 			void
 			WriteFLOAT(
-				__in float Value,
-				__in float Scale1,
-				__in float Scale2,
-				__in size_t NumBits
+				nwn2dev__in float Value,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2,
+				nwn2dev__in size_t NumBits
 				)
 			{
 				if (NumBits == sizeof( float ) * 8)
@@ -1603,7 +1603,7 @@ namespace NWN
 			inline
 			void
 			WriteOBJECTID(
-				__in OBJECTID ObjectId
+				nwn2dev__in OBJECTID ObjectId
 				)
 			{
 				m_ByteStream->AddField( ObjectId );
@@ -1613,7 +1613,7 @@ namespace NWN
 			void
 			WriteVOIDPtr(
 				__in_bcount( Length ) const void *Data,
-				__in size_t Length
+				nwn2dev__in size_t Length
 				)
 			{
 				m_ByteStream->AddData( Length, Data );
@@ -1622,7 +1622,7 @@ namespace NWN
 			inline
 			void
 			WriteVector3(
-				__in const Vector3 %Value
+				nwn2dev__in const Vector3 %Value
 				)
 			{
 				return WriteVector3( Value, sizeof( float ) * 8, 1.0 );
@@ -1631,9 +1631,9 @@ namespace NWN
 			inline
 			void
 			WriteVector3(
-				__in const Vector3 %Value,
-				__in size_t NumBits,
-				__in float Scale
+				nwn2dev__in const Vector3 %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale
 				)
 			{
 				WriteFLOAT( Value.x, NumBits, Scale );
@@ -1644,10 +1644,10 @@ namespace NWN
 			inline
 			void
 			WriteVector3(
-				__in const Vector3 %Value,
-				__in size_t NumBits,
-				__in float Scale1,
-				__in float Scale2
+				nwn2dev__in const Vector3 %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale1,
+				nwn2dev__in float Scale2
 				)
 			{
 				WriteFLOAT( Value.x, Scale1, Scale2, NumBits );
@@ -1658,7 +1658,7 @@ namespace NWN
 			inline
 			void
 			WriteVector2(
-				__in const Vector2 %Value
+				nwn2dev__in const Vector2 %Value
 				)
 			{
 				return WriteVector2( Value, sizeof( float ) * 8, 1.0 );
@@ -1667,9 +1667,9 @@ namespace NWN
 			inline
 			void
 			WriteVector2(
-				__in const Vector2 %Value,
-				__in size_t NumBits,
-				__in float Scale
+				nwn2dev__in const Vector2 %Value,
+				nwn2dev__in size_t NumBits,
+				nwn2dev__in float Scale
 				)
 			{
 				WriteFLOAT( Value.x, NumBits, Scale );
@@ -1679,7 +1679,7 @@ namespace NWN
 			inline
 			void
 			WriteColor(
-				__in const NWNCOLOR %Value
+				nwn2dev__in const NWNCOLOR %Value
 				)
 			{
 				WriteBYTE( (unsigned char) (Value.r * 255.0) );
@@ -1691,8 +1691,8 @@ namespace NWN
 			inline
 			void
 			WriteNWN2_DataElement(
-				__in NWN2_DataElement ^ Element,
-				__in bool Server
+				nwn2dev__in NWN2_DataElement ^ Element,
+				nwn2dev__in bool Server
 				)
 			{
 				WriteINT( (int) Element->Bools.Count );
@@ -1751,8 +1751,8 @@ namespace NWN
 			inline
 			void
 			WriteBits(
-				__in unsigned __int64 Value,
-				__in size_t Bits
+				nwn2dev__in unsigned __int64 Value,
+				nwn2dev__in size_t Bits
 				)
 			{
 				m_BitStream->AddFieldBits( Bits, Value );
@@ -1761,10 +1761,10 @@ namespace NWN
 			inline
 			void
 			GetBuffer(
-				__out [Out] unsigned char *% ByteBuffer,
-				__out [Out] size_t % ByteBufferLength,
-				__out [Out] unsigned char *% BitBuffer,
-				__out [Out] size_t % BitBufferLength
+				nwn2dev__out [Out] unsigned char *% ByteBuffer,
+				nwn2dev__out [Out] size_t % ByteBufferLength,
+				nwn2dev__out [Out] unsigned char *% BitBuffer,
+				nwn2dev__out [Out] size_t % BitBufferLength
 				)
 			{
 				unsigned char * BufferN;
@@ -1858,14 +1858,14 @@ namespace NWN
 
 			void
 			WriteSigned(
-				__in signed __int64 FieldBits,
-				__in size_t NumBits
+				nwn2dev__in signed __int64 FieldBits,
+				nwn2dev__in size_t NumBits
 				);
 
 			void
 			WriteUnsigned(
-				__in unsigned __int64 FieldBits,
-				__in size_t NumBits
+				nwn2dev__in unsigned __int64 FieldBits,
+				nwn2dev__in size_t NumBits
 				);
 
 			swutil::BufferBuilder * m_ByteStream;

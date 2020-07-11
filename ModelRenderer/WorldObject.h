@@ -37,10 +37,10 @@ public:
 	typedef swutil::SharedPtr< WorldObject > Ptr;
 
 	WorldObject(
-		__in ResourceManager & ResMan,
-		__in IDebugTextOut * TextWriter,
-		__in const std::vector< std::string > & MDBResRefs,
-		__in const std::string & GR2ResRef
+		nwn2dev__in ResourceManager & ResMan,
+		nwn2dev__in IDebugTextOut * TextWriter,
+		nwn2dev__in const std::vector< std::string > & MDBResRefs,
+		nwn2dev__in const std::string & GR2ResRef
 		);
 
 	virtual
@@ -53,9 +53,9 @@ public:
 
 	bool
 	IntersectRay(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
-		__out NWN::Vector3 & IntersectNormal,
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
+		nwn2dev__out NWN::Vector3 & IntersectNormal,
 		__out_opt float * IntersectDistance
 		) const;
 
@@ -65,8 +65,8 @@ public:
 
 	NWN::Vector3
 	LocalToWorld(
-		__in const NWN::Vector3 & v,
-		__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
+		nwn2dev__in const NWN::Vector3 & v,
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
 		) const;
 
 	//
@@ -84,7 +84,7 @@ public:
 	inline
 	const ModelCollider *
 	GetModel(
-		__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
 		) const
 	{
 		if ((size_t) Slot >= m_ModelParts.size( ))
@@ -100,7 +100,7 @@ public:
 	inline
 	const ModelSkeleton *
 	GetSkeleton(
-		__in NWN::NWN2_AnimatableSlot Slot = NWN::AS_DEFAULT
+		nwn2dev__in NWN::NWN2_AnimatableSlot Slot = NWN::AS_DEFAULT
 		) const
 	{
 		if (Slot != NWN::AS_DEFAULT)
@@ -116,7 +116,7 @@ public:
 	inline
 	const ModelSkeleton *
 	GetBodyPieceSkeleton(
-		__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
+		nwn2dev__in NWN::NWN2_BodyPieceSlot Slot = NWN::BPS_DEFAULT
 		) const
 	{
 		if (Slot == NWN::BPS_DEFAULT)
@@ -151,7 +151,7 @@ public:
 	inline
 	void
 	SetHeading(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		m_Heading = v;
@@ -162,7 +162,7 @@ public:
 	inline
 	void
 	SetRotation(
-		__in const NWN::Quaternion & Q
+		nwn2dev__in const NWN::Quaternion & Q
 		)
 	{
 		UpdateWorldTransformForRotation( Q );
@@ -171,7 +171,7 @@ public:
 	inline
 	void
 	SetFacing(
-		__in float f
+		nwn2dev__in float f
 		)
 	{
 		m_Facing = f;
@@ -198,7 +198,7 @@ public:
 	inline
 	void
 	SetPosition(
-		__in NWN::Vector3 & v
+		nwn2dev__in NWN::Vector3 & v
 		)
 	{
 		m_Position = v;
@@ -217,7 +217,7 @@ public:
 	inline
 	void
 	SetScale(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		const float Epsilon = 1e-7f;
@@ -260,12 +260,12 @@ private:
 
 	ModelColliderPtr
 	LoadModel(
-		__in const NWN::ResRef32 & ModelFile
+		nwn2dev__in const NWN::ResRef32 & ModelFile
 		);
 
 	ModelSkeletonPtr
 	LoadSkeleton(
-		__in const NWN::ResRef32 & SkeletonFile
+		nwn2dev__in const NWN::ResRef32 & SkeletonFile
 		);
 
 
@@ -275,15 +275,15 @@ private:
 
 	void
 	UpdateWorldTransformForHeading(
-		__in const NWN::Vector3 & Heading,
-		__in const NWN::Vector3 & Up,
-		__in const NWN::Vector3 & Scale
+		nwn2dev__in const NWN::Vector3 & Heading,
+		nwn2dev__in const NWN::Vector3 & Up,
+		nwn2dev__in const NWN::Vector3 & Scale
 		);
 
 	inline
 	void
 	UpdateWorldTransformForFacing(
-		__in float Facing
+		nwn2dev__in float Facing
 		)
 	{
 		NWN::Vector3 Heading;
@@ -303,13 +303,13 @@ private:
 
 	void
 	UpdateWorldTransformForRotation(
-		__in const NWN::Quaternion & Rotation
+		nwn2dev__in const NWN::Quaternion & Rotation
 		);
 
 	inline
 	void
 	UpdateWorldTransformForPosition(
-		__in const NWN::Vector3 & Position
+		nwn2dev__in const NWN::Vector3 & Position
 		)
 	{
 		m_WorldTrans._30 = Position.x;
@@ -321,8 +321,8 @@ private:
 
 	void
 	UpdateWorldTransformForScale(
-		__in const NWN::Vector3 & Scale,
-		__in const NWN::Vector3 & PrevScale
+		nwn2dev__in const NWN::Vector3 & Scale,
+		nwn2dev__in const NWN::Vector3 & PrevScale
 		);
 
 	//

@@ -51,7 +51,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -66,8 +66,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -84,8 +84,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -95,9 +95,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 
@@ -168,11 +168,11 @@ typedef std::vector< std::string > StringVec;
 
 void
 UpdateObjectInstanceFromTemplate(
-	__in const GffFileReader::GffStruct * TemplateStruct,
-	__in const GffFileReader::GffStruct * ObjStructIn,
+	nwn2dev__in const GffFileReader::GffStruct * TemplateStruct,
+	nwn2dev__in const GffFileReader::GffStruct * ObjStructIn,
 	__inout GffFileWriter::GffStruct * ObjStructOut,
-	__in const StringVec & ExcludeFields,
-	__in IDebugTextOut * TextOut
+	nwn2dev__in const StringVec & ExcludeFields,
+	nwn2dev__in IDebugTextOut * TextOut
 	)
 /*++
 
@@ -262,12 +262,12 @@ Environment:
 
 void
 ProcessArea(
-	__in const NWN::ResRef32 & AreaResRef,
-	__in ResourceManager & ResMan,
-	__in IDebugTextOut * TextOut,
-	__in unsigned long ObjectTypeMask,
-	__in const StringVec & TemplateNames,
-	__in const StringVec & ExcludeFields
+	nwn2dev__in const NWN::ResRef32 & AreaResRef,
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in unsigned long ObjectTypeMask,
+	nwn2dev__in const StringVec & TemplateNames,
+	nwn2dev__in const StringVec & ExcludeFields
 	)
 /*++
 
@@ -584,11 +584,11 @@ Environment:
 
 void
 LoadModule(
-	__in ResourceManager & ResMan,
-	__in const char * ModuleName,
-	__in const char * NWN2Home,
-	__in const char * InstallDir,
-	__in bool Erf16
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in const char * ModuleName,
+	nwn2dev__in const char * NWN2Home,
+	nwn2dev__in const char * InstallDir,
+	nwn2dev__in bool Erf16
 	)
 /*++
 
@@ -735,7 +735,7 @@ Environment:
 int
 __cdecl
 main(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) const char * * argv
 	)
 /*++

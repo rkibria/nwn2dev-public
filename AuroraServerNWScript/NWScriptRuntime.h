@@ -39,10 +39,10 @@ public:
 
 	inline
 	NWScriptRuntime(
-		__in IDebugTextOut * TextOut,
-		__in NWScriptBridge * Bridge,
-		__in const char * DllDir,
-		__in INWScriptJITPolicy * JITPolicy
+		nwn2dev__in IDebugTextOut * TextOut,
+		nwn2dev__in NWScriptBridge * Bridge,
+		nwn2dev__in const char * DllDir,
+		nwn2dev__in INWScriptJITPolicy * JITPolicy
 		)
 	: m_TextOut( TextOut ),
 	  m_Bridge( Bridge ),
@@ -97,7 +97,7 @@ public:
 
 	void
 	StoreSavedStateToStack(
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	//
@@ -106,10 +106,10 @@ public:
 
 	void
 	ExecuteScriptForServer(
-		__in NWSCRIPT_PROGRAM_COUNTER PC,
+		nwn2dev__in NWSCRIPT_PROGRAM_COUNTER PC,
 		__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-		__in int CodeSize,
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__in int CodeSize,
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	//
@@ -135,7 +135,7 @@ public:
 
 	void
 	SetDebugLevel(
-		__in NWScriptVM::ExecDebugLevel DebugLevel
+		nwn2dev__in NWScriptVM::ExecDebugLevel DebugLevel
 		);
 
 private:
@@ -180,8 +180,8 @@ private:
 		inline
 		bool
 		operator()(
-			__in const NWN::ResRef32 & left,
-			__in const NWN::ResRef32 & right
+			nwn2dev__in const NWN::ResRef32 & left,
+			nwn2dev__in const NWN::ResRef32 & right
 			) const
 		{
 			return memcmp( &left, &right, sizeof( left ) ) < 0;
@@ -198,7 +198,7 @@ private:
 
 		inline
 		DllDirectoryHolder(
-			__in const char * Dir
+			nwn2dev__in const char * Dir
 			)
 		{
 			SetDllDirectoryA( Dir );
@@ -220,7 +220,7 @@ private:
 
 	void
 	LoadJITEngine(
-		__in const char * DllDir
+		nwn2dev__in const char * DllDir
 		);
 
 	//
@@ -229,13 +229,13 @@ private:
 
 	void
 	RestoreSavedStateFromStack(
-		__in NWN2Server::CVirtualMachine * ServerVM,
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM,
 		__in_ecount( CodeSize ) const unsigned char * InstructionStream,
-		__in size_t CodeSize,
+		nwn2dev__in size_t CodeSize,
 		__deref_out ScriptCacheData * * ScriptData,
-		__out ScriptResumeData * ResumeData,
-		__out NWSCRIPT_PROGRAM_COUNTER & PC,
-		__out std::string & ScriptName
+		nwn2dev__out ScriptResumeData * ResumeData,
+		nwn2dev__out NWSCRIPT_PROGRAM_COUNTER & PC,
+		nwn2dev__out std::string & ScriptName
 		);
 
 	//
@@ -244,9 +244,9 @@ private:
 
 	bool
 	LoadScript(
-		__in const NWN::ResRef32 & ScriptName,
+		nwn2dev__in const NWN::ResRef32 & ScriptName,
 		__in_ecount( CodeSize ) const unsigned char * InstructionStream,
-		__in size_t CodeSize,
+		nwn2dev__in size_t CodeSize,
 		__deref_out ScriptCacheData * * ScriptData
 		);
 
@@ -257,8 +257,8 @@ private:
 
 	void
 	ConvertScriptParameters(
-		__out NWScriptParamVec & Params,
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__out NWScriptParamVec & Params,
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	//
@@ -275,8 +275,8 @@ private:
 
 	void
 	PopStackFromBridge(
-		__out NWScriptStack & VMStack,
-		__in ULONG SaveVarCount
+		nwn2dev__out NWScriptStack & VMStack,
+		nwn2dev__in ULONG SaveVarCount
 		);
 
 	//
@@ -285,9 +285,9 @@ private:
 
 	void
 	PushStackToBridge(
-		__in NWScriptStack & VMStack,
-		__in ULONG SaveVarCount,
-		__in NWScriptStack::STACK_POINTER Offset
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in ULONG SaveVarCount,
+		nwn2dev__in NWScriptStack::STACK_POINTER Offset
 		);
 
 	//
@@ -296,7 +296,7 @@ private:
 
 	bool
 	ShouldJITScript(
-		__in size_t ScriptCodeSize
+		nwn2dev__in size_t ScriptCodeSize
 		);
 
 	//
@@ -306,7 +306,7 @@ private:
 	void
 	LoadSymbols(
 		__inout NWScriptReader & Reader,
-		__in const std::string & ScriptName
+		nwn2dev__in const std::string & ScriptName
 		);
 
 	//
@@ -324,7 +324,7 @@ private:
 	inline
 	std::string
 	StrFromResRef(
-		__in const NWN::ResRef32 & ResRef
+		nwn2dev__in const NWN::ResRef32 & ResRef
 		) const
 	{
 		std::string   R;
@@ -355,7 +355,7 @@ private:
 	inline
 	NWN::ResRef32
 	ResRef32FromStr(
-		__in const std::string & Str
+		nwn2dev__in const std::string & Str
 		) const
 	{
 		NWN::ResRef32 ResRef;

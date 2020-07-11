@@ -48,9 +48,9 @@ public:
 	virtual
 	void
 	OnMeshManagerRegisterNewMesh(
-		__in void * MeshObject,
-		__in MeshLinkage * Linkage,
-		__in MeshLinkageTraits::MeshType Type
+		nwn2dev__in void * MeshObject,
+		nwn2dev__in MeshLinkage * Linkage,
+		nwn2dev__in MeshLinkageTraits::MeshType Type
 		) = 0;
 
 };
@@ -85,11 +85,11 @@ public:
 	typedef
 	bool
 	(__stdcall * ForEachMeshProc)(
-		__in void * MeshObject,
-		__in MeshLinkage * Linkage,
-		__in MeshLinkageTraits::MeshType Type,
-		__in void * Context1,
-		__in void * Context2
+		nwn2dev__in void * MeshObject,
+		nwn2dev__in MeshLinkage * Linkage,
+		nwn2dev__in MeshLinkageTraits::MeshType Type,
+		nwn2dev__in void * Context1,
+		nwn2dev__in void * Context2
 		);
 
 	//
@@ -99,8 +99,8 @@ public:
 
 	void
 	OnMeshRegister(
-		__in PLIST_ENTRY MeshLinks,
-		__in const MeshLinkageTraits * Traits
+		nwn2dev__in PLIST_ENTRY MeshLinks,
+		nwn2dev__in const MeshLinkageTraits * Traits
 		);
 
 	//
@@ -112,9 +112,9 @@ public:
 
 	void
 	ForEachMesh(
-		__in ForEachMeshProc EnumeratorProc,
-		__in void * Context1,
-		__in void * Context2
+		nwn2dev__in ForEachMeshProc EnumeratorProc,
+		nwn2dev__in void * Context1,
+		nwn2dev__in void * Context2
 		);
 
 	//
@@ -154,8 +154,8 @@ private:
 	template< class T, MeshType TypeCode >
 	void
 	InitializeMeshList(
-		__in int Reserved,
-		__in PLIST_ENTRY ListHead
+		nwn2dev__in int Reserved,
+		nwn2dev__in PLIST_ENTRY ListHead
 		);
 
 	//
@@ -166,7 +166,7 @@ private:
 	void
 	ForEachMesh_EnumerateMeshList(
 		__inout ForEachMeshCtx * Ctx,
-		__in PLIST_ENTRY ListHead
+		nwn2dev__in PLIST_ENTRY ListHead
 		);
 
 	//
@@ -176,7 +176,7 @@ private:
 	template< class T, MeshType TypeCode >
 	void
 	DeliverIncomingMeshNotification(
-		__in PLIST_ENTRY ListLinks
+		nwn2dev__in PLIST_ENTRY ListLinks
 		);
 
 	//

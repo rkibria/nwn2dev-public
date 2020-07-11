@@ -20,7 +20,7 @@ Abstract:
 
 void
 MeshLinkage::RegisterMesh(
-	__in MeshManager & MeshMgr
+	nwn2dev__in MeshManager & MeshMgr
 	)
 /*++
 

@@ -31,10 +31,10 @@ Abstract:
 
 
 NWScriptHost::NWScriptHost(
-	__in ResourceManager & ResMan,
-	__in swutil::TimerManager & TimerManager,
-	__in const AppParameters * Params,
-	__in IDebugTextOut * TextOut
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in swutil::TimerManager & TimerManager,
+	nwn2dev__in const AppParameters * Params,
+	nwn2dev__in IDebugTextOut * TextOut
 	)
 /*++
 
@@ -177,11 +177,11 @@ Environment:
 
 int
 NWScriptHost::RunScript(
-	__in const char * ScriptName,
-	__in NWN::OBJECTID ObjectId,
-	__in const ScriptParamVec & ScriptParameters,
-	__in int DefaultReturnCode, /*= 0 */
-	__in ULONG Flags /* = 0 */
+	nwn2dev__in const char * ScriptName,
+	nwn2dev__in NWN::OBJECTID ObjectId,
+	nwn2dev__in const ScriptParamVec & ScriptParameters,
+	nwn2dev__in int DefaultReturnCode, /*= 0 */
+	nwn2dev__in ULONG Flags /* = 0 */
 	)
 /*++
 
@@ -402,11 +402,11 @@ Environment:
 
 int
 NWScriptHost::RunScript(
-	__in const NWN::ResRef32 & ScriptName,
-	__in NWN::OBJECTID ObjectId,
-	__in const ScriptParamVec & ScriptParameters,
-	__in int DefaultReturnCode, /* = 0 */
-	__in ULONG Flags /* = 0 */
+	nwn2dev__in const NWN::ResRef32 & ScriptName,
+	nwn2dev__in NWN::OBJECTID ObjectId,
+	nwn2dev__in const ScriptParamVec & ScriptParameters,
+	nwn2dev__in int DefaultReturnCode, /* = 0 */
+	nwn2dev__in ULONG Flags /* = 0 */
 	)
 /*++
 
@@ -457,9 +457,9 @@ Environment:
 
 void
 NWScriptHost::RunScriptSituation(
-	__in NWScriptVM::VMState * ScriptState,
-	__in NWScriptJITLib::SavedState::Ptr & ScriptStateJIT,
-	__in NWScriptJITLib::Program::Ptr & ProgramJIT
+	nwn2dev__in NWScriptVM::VMState * ScriptState,
+	nwn2dev__in NWScriptJITLib::SavedState::Ptr & ScriptStateJIT,
+	nwn2dev__in NWScriptJITLib::Program::Ptr & ProgramJIT
 	)
 /*++
 
@@ -621,10 +621,10 @@ Environment:
 void
 NWSCRIPTACTAPI
 NWScriptHost::OnExecuteAction(
-	__in NWScriptVM & ScriptVM,
-	__in NWScriptStack & VMStack,
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWScriptVM & ScriptVM,
+	nwn2dev__in NWScriptStack & VMStack,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -708,8 +708,8 @@ Environment:
 bool
 NWSCRIPTACTAPI
 NWScriptHost::OnExecuteActionFromJIT(
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -792,11 +792,11 @@ Environment:
 bool
 NWSCRIPTACTAPI
 NWScriptHost::OnExecuteActionFromJITFast(
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments,
 	__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-	__in size_t NumCmds,
-	__in uintptr_t * CmdParams
+	nwn2dev__in size_t NumCmds,
+	nwn2dev__in uintptr_t * CmdParams
 	)
 /*++
 
@@ -933,7 +933,7 @@ Environment:
 EngineStructurePtr
 NWSCRIPTACTAPI
 NWScriptHost::CreateEngineStructure(
-	__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
+	nwn2dev__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
 	)
 /*++
 
@@ -1011,8 +1011,8 @@ Environment:
 
 NWScriptHost::NWScriptReaderPtr
 NWScriptHost::LoadScript(
-	__in const char * ScriptName,
-	__out NWScriptJITLib::Program::Ptr & JITProgram
+	nwn2dev__in const char * ScriptName,
+	nwn2dev__out NWScriptJITLib::Program::Ptr & JITProgram
 	)
 /*++
 
@@ -1245,9 +1245,9 @@ Environment:
 
 void
 NWScriptHost::CreateDeferredScriptSituation(
-	__in NWScriptVM & ScriptVM,
-	__in NWN::OBJECTID ObjectId,
-	__in ULONG DuePeriod
+	nwn2dev__in NWScriptVM & ScriptVM,
+	nwn2dev__in NWN::OBJECTID ObjectId,
+	nwn2dev__in ULONG DuePeriod
 	)
 /*++
 
@@ -1324,7 +1324,7 @@ Environment:
 
 bool
 NWScriptHost::OnDeferredScriptSituationTimer(
-	__in DeferredScriptSituation * Situation
+	nwn2dev__in DeferredScriptSituation * Situation
 	)
 /*++
 
@@ -1379,9 +1379,9 @@ Environment:
 bool
 __stdcall
 NWScriptHost::OnDeferredScriptSituationTimerThunk(
-	__in void * Context1,
-	__in void * Context2,
-	__in swutil::TimerRegistration * Timer
+	nwn2dev__in void * Context1,
+	nwn2dev__in void * Context2,
+	nwn2dev__in swutil::TimerRegistration * Timer
 	)
 /*++
 

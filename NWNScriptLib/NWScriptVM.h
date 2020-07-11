@@ -114,10 +114,10 @@ public:
 	//
 
 	NWScriptVM(
-		__in INWScriptActions * ActionHandler,
-		__in IDebugTextOut * TextOut,
+		nwn2dev__in INWScriptActions * ActionHandler,
+		nwn2dev__in IDebugTextOut * TextOut,
 		__in_ecount_opt( ActionCount ) PCNWACTION_DEFINITION ActionDefs = NULL,
-		__in NWSCRIPT_ACTION ActionCount = 0
+		nwn2dev__in NWSCRIPT_ACTION ActionCount = 0
 		);
 
 	~NWScriptVM(
@@ -159,12 +159,12 @@ public:
 
 	int
 	ExecuteScript(
-		__in NWScriptReaderPtr Script,
-		__in NWN::OBJECTID ObjectSelf,
-		__in NWN::OBJECTID ObjectInvalid,
-		__in const ScriptParamVec & Params,
-		__in int DefaultReturnCode = 0,
-		__in ULONG Flags = 0
+		nwn2dev__in NWScriptReaderPtr Script,
+		nwn2dev__in NWN::OBJECTID ObjectSelf,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in const ScriptParamVec & Params,
+		nwn2dev__in int DefaultReturnCode = 0,
+		nwn2dev__in ULONG Flags = 0
 		);
 
 	//
@@ -206,7 +206,7 @@ public:
 
 	void
 	SetDebugLevel(
-		__in ExecDebugLevel DebugLevel
+		nwn2dev__in ExecDebugLevel DebugLevel
 		);
 
 	//
@@ -232,7 +232,7 @@ public:
 	inline
 	bool
 	IsDebugLevel(
-		__in ExecDebugLevel DebugLevel
+		nwn2dev__in ExecDebugLevel DebugLevel
 		) const
 	{
 		return (m_DebugLevel >= DebugLevel);
@@ -260,10 +260,10 @@ public:
 	static
 	ULONG
 	Disassemble(
-		__in NWScriptReader * Script,
-		__out UCHAR & Opcode,
-		__out UCHAR & TypeOpcode,
-		__out ULONG & PCOffset
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__out UCHAR & Opcode,
+		nwn2dev__out UCHAR & TypeOpcode,
+		nwn2dev__out ULONG & PCOffset
 		)
 	{
 		return DecodeInstruction(
@@ -281,10 +281,10 @@ public:
 	static
 	void
 	GetInstructionNames(
-		__in UCHAR Opcode,
-		__in UCHAR TypeOpcode,
-		__deref __out const char * * OpcodeName,
-		__deref __out const char * * TypeOpcodeName
+		nwn2dev__in UCHAR Opcode,
+		nwn2dev__in UCHAR TypeOpcode,
+		__deref nwn2dev__out const char * * OpcodeName,
+		__deref nwn2dev__out const char * * TypeOpcodeName
 		)
 	{
 		*OpcodeName     = GetInstructionName( Opcode );
@@ -318,14 +318,14 @@ private:
 
 	int
 	ExecuteScriptInternal(
-		__in NWScriptReaderPtr & Script,
-		__in NWN::OBJECTID ObjectSelf,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in NWScriptReaderPtr & Script,
+		nwn2dev__in NWN::OBJECTID ObjectSelf,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__inout NWScriptStack & VMStack,
-		__in PROGRAM_COUNTER ProgramCounter,
+		nwn2dev__in PROGRAM_COUNTER ProgramCounter,
 		__in_opt const ScriptParamVec * Params,
-		__in int DefaultReturnCode,
-		__in ULONG Flags
+		nwn2dev__in int DefaultReturnCode,
+		nwn2dev__in ULONG Flags
 		);
 
 	//
@@ -334,8 +334,8 @@ private:
 
 	void
 	DebugPrint(
-		__in ExecDebugLevel Level,
-		__in __format_string const char * Fmt,
+		nwn2dev__in ExecDebugLevel Level,
+		nwn2dev__in __format_string const char * Fmt,
 		...
 		) const;
 
@@ -345,8 +345,8 @@ private:
 
 	void
 	ApplyNCSFixups(
-		__in NWScriptReader * Script,
-		__in bool HasParams
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__in bool HasParams
 		) const;
 
 	//
@@ -355,7 +355,7 @@ private:
 
 	bool
 	ScriptHasGlobals(
-		__in NWScriptReader * Script
+		nwn2dev__in NWScriptReader * Script
 		) const;
 
 	//
@@ -365,10 +365,10 @@ private:
 	static
 	ULONG
 	DecodeInstruction(
-		__in NWScriptReader * Script,
-		__out UCHAR & Opcode,
-		__out UCHAR & TypeOpcode,
-		__out ULONG & PCOffset
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__out UCHAR & Opcode,
+		nwn2dev__out UCHAR & TypeOpcode,
+		nwn2dev__out ULONG & PCOffset
 		);
 
 	//
@@ -377,14 +377,14 @@ private:
 
 	int
 	ExecuteInstructions(
-		__in NWScriptReaderPtr & Script,
-		__in NWN::OBJECTID ObjectSelf,
-		__in NWN::OBJECTID ObjectInvalid,
+		nwn2dev__in NWScriptReaderPtr & Script,
+		nwn2dev__in NWN::OBJECTID ObjectSelf,
+		nwn2dev__in NWN::OBJECTID ObjectInvalid,
 		__inout NWScriptStack & VMStack,
 		__in_opt const ScriptParamVec * Params,
-		__in bool NeedFixup,
-		__in int DefaultReturnCode,
-		__in ULONG Flags
+		nwn2dev__in bool NeedFixup,
+		nwn2dev__in int DefaultReturnCode,
+		nwn2dev__in ULONG Flags
 		);
 
 	//
@@ -403,8 +403,8 @@ private:
 
 	void
 	AnalyzeScript(
-		__in NWScriptReaderPtr & Script,
-		__in ULONG Flags
+		nwn2dev__in NWScriptReaderPtr & Script,
+		nwn2dev__in ULONG Flags
 		);
 
 	//
@@ -413,10 +413,10 @@ private:
 
 	void
 	PushEntrypointParameters(
-		__in const ScriptParamVec * Params,
-		__in NWScriptReaderPtr & Script,
+		nwn2dev__in const ScriptParamVec * Params,
+		nwn2dev__in NWScriptReaderPtr & Script,
 		__inout NWScriptStack & VMStack,
-		__in ULONG Flags
+		nwn2dev__in ULONG Flags
 		);
 
 	//
@@ -425,9 +425,9 @@ private:
 
 	void
 	VMDebuggerCheckForBreakpoint(
-		__in const char * ScriptName,
-		__in PROGRAM_COUNTER PC,
-		__in const NWScriptStack & VMStack,
+		nwn2dev__in const char * ScriptName,
+		nwn2dev__in PROGRAM_COUNTER PC,
+		nwn2dev__in const NWScriptStack & VMStack,
 		__in_opt const char * SymbolName
 		);
 
@@ -438,7 +438,7 @@ private:
 	static
 	const char *
 	GetInstructionName(
-		__in UCHAR Opcode
+		nwn2dev__in UCHAR Opcode
 		);
 
 	//
@@ -448,7 +448,7 @@ private:
 	static
 	const char *
 	GetTypeOpcodeName(
-		__in UCHAR TypeOpcode
+		nwn2dev__in UCHAR TypeOpcode
 		);
 
 	//
@@ -457,10 +457,10 @@ private:
 
 	int
 	DivideWithExceptionHandler(
-		__in int Dividend,
-		__in int Divisor,
-		__in PROGRAM_COUNTER PC,
-		__in const char * ScriptName
+		nwn2dev__in int Dividend,
+		nwn2dev__in int Divisor,
+		nwn2dev__in PROGRAM_COUNTER PC,
+		nwn2dev__in const char * ScriptName
 		)
 	{
 		int Quotient;
@@ -481,9 +481,9 @@ private:
 
 	bool
 	DivideWithExceptionHandlerSEH(
-		__in int Dividend,
-		__in int Divisor,
-		__out int * Quotient
+		nwn2dev__in int Dividend,
+		nwn2dev__in int Divisor,
+		nwn2dev__out int * Quotient
 		)
 	{
 		__try
@@ -499,10 +499,10 @@ private:
 
 	int
 	ModulusWithExceptionHandler(
-		__in int Dividend,
-		__in int Divisor,
-		__in PROGRAM_COUNTER PC,
-		__in const char * ScriptName
+		nwn2dev__in int Dividend,
+		nwn2dev__in int Divisor,
+		nwn2dev__in PROGRAM_COUNTER PC,
+		nwn2dev__in const char * ScriptName
 		)
 	{
 		int Remainder;
@@ -523,9 +523,9 @@ private:
 
 	bool
 	ModulusWithExceptionHandlerSEH(
-		__in int Dividend,
-		__in int Divisor,
-		__out int * Remainder
+		nwn2dev__in int Dividend,
+		nwn2dev__in int Divisor,
+		nwn2dev__out int * Remainder
 		)
 	{
 		__try

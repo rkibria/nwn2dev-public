@@ -102,7 +102,7 @@ public:
 	bool
 	NWNXAPI
 	Init(
-		__in const char * NWNXHome
+		nwn2dev__in const char * NWNXHome
 		);
 
 	inline
@@ -110,9 +110,9 @@ public:
 	int
 	NWNXAPI
 	GetInt(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2
 		);
 
 	//
@@ -137,8 +137,8 @@ public:
 	ExecuteScriptForServer(
 		__inout int * PC,
 		__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-		__in int CodeSize,
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__in int CodeSize,
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	//
@@ -147,7 +147,7 @@ public:
 
 	unsigned long
 	SaveStateToServerVMStack(
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	//
@@ -157,8 +157,8 @@ public:
 
 	void
 	RemoveSavedStateFromServerVMStack(
-		__in NWN2Server::CVirtualMachine * ServerVM,
-		__in unsigned long StackElements
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM,
+		nwn2dev__in unsigned long StackElements
 		);
 
 	//
@@ -169,7 +169,7 @@ public:
 	virtual
 	NWSCRIPT_ENGINE
 	SelectEngineForScript(
-		__in size_t ScriptCodeSize
+		nwn2dev__in size_t ScriptCodeSize
 		);
 
 	//
@@ -257,24 +257,24 @@ private:
 
 	bool
 	EstablishRuntime(
-		__in const char * NWNXHome
+		nwn2dev__in const char * NWNXHome
 		);
 
 	void
 	PatchCmdImplementer(
-		__in NWN2Server::CVirtualMachine * ServerVM
+		nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 		);
 
 	static
 	void
 	__stdcall
 	NullRunScriptCallback(
-		__in const NWN2Server::CExoString & ScriptName
+		nwn2dev__in const NWN2Server::CExoString & ScriptName
 		);
 
 	void
 	LoadSettings(
-		__in const char * NWNXHome
+		nwn2dev__in const char * NWNXHome
 		);
 
 	FILE                        * m_Log;

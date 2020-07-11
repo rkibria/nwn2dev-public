@@ -19,7 +19,7 @@ Abstract:
 
 std::string
 NWScriptUtilities::ConvertString(
-	__in String ^ Str
+	nwn2dev__in String ^ Str
 	)
 /*++
 
@@ -112,8 +112,8 @@ namespace NWScript
 		virtual
 		bool
 		Fallback(
-			__in System::Char CharUnknown,
-			__in int Index
+			nwn2dev__in System::Char CharUnknown,
+			nwn2dev__in int Index
 			) override
 		{
 			unsigned short Value;
@@ -146,9 +146,9 @@ namespace NWScript
 		virtual
 		bool
 		Fallback(
-			__in System::Char CharUnknownHigh,
-			__in System::Char CharUnknownLow,
-			__in int Index
+			nwn2dev__in System::Char CharUnknownHigh,
+			nwn2dev__in System::Char CharUnknownLow,
+			nwn2dev__in int Index
 			) override
 		{
 			unsigned short Value;
@@ -337,8 +337,8 @@ namespace NWScript
 		virtual
 		bool
 		Fallback(
-			__in array< Byte > ^ BytesUnknown,
-			__in int Index
+			nwn2dev__in array< Byte > ^ BytesUnknown,
+			nwn2dev__in int Index
 			) override
 		{
 			int SequenceLength;
@@ -591,8 +591,8 @@ namespace NWScript
 		virtual
 		bool
 		Fallback(
-			__in System::Char CharUnknown,
-			__in int Index
+			nwn2dev__in System::Char CharUnknown,
+			nwn2dev__in int Index
 			) override
 		{
 			UNREFERENCED_PARAMETER( Index );
@@ -613,9 +613,9 @@ namespace NWScript
 		virtual
 		bool
 		Fallback(
-			__in System::Char CharUnknownHigh,
-			__in System::Char CharUnknownLow,
-			__in int Index
+			nwn2dev__in System::Char CharUnknownHigh,
+			nwn2dev__in System::Char CharUnknownLow,
+			nwn2dev__in int Index
 			) override
 		{
 			UNREFERENCED_PARAMETER( CharUnknownHigh );
@@ -781,8 +781,8 @@ namespace NWScript
 		virtual
 		bool
 		Fallback(
-			__in array< Byte > ^ BytesUnknown,
-			__in int Index
+			nwn2dev__in array< Byte > ^ BytesUnknown,
+			nwn2dev__in int Index
 			) override
 		{
 			UNREFERENCED_PARAMETER( Index );
@@ -970,8 +970,8 @@ Environment:
 #pragma managed(push, off)
 void
 NWScript::VMStackPushEngineStructureInternal(
-	__in INWScriptStack * Stack,
-	__in EngineStructurePtr * EngStruct
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in EngineStructurePtr * EngStruct
 	)
 /*++
 

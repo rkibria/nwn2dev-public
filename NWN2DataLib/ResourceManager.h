@@ -247,8 +247,8 @@ public:
 	//
 
 	ResourceManager(
-		__in IDebugTextOut * TextWriter,
-		__in unsigned long CreateFlags = 0
+		nwn2dev__in IDebugTextOut * TextWriter,
+		nwn2dev__in unsigned long CreateFlags = 0
 		);
 
 	//
@@ -266,11 +266,11 @@ public:
 
 	void
 	LoadModuleResources(
-		__in const std::string & ModuleResName,
-		__in const std::string & AltTlkFileName,
-		__in const std::string & HomeDir,
-		__in const std::string & InstallDir,
-		__in const std::vector< NWN::ResRef32 > & HAKs,
+		nwn2dev__in const std::string & ModuleResName,
+		nwn2dev__in const std::string & AltTlkFileName,
+		nwn2dev__in const std::string & HomeDir,
+		nwn2dev__in const std::string & InstallDir,
+		nwn2dev__in const std::vector< NWN::ResRef32 > & HAKs,
 		__in_opt ModuleLoadParams * LoadParams = NULL
 		);
 
@@ -283,9 +283,9 @@ public:
 		
 	void
 	LoadModuleResourcesLite(
-		__in const std::string & ModuleResName,
-		__in const std::string & HomeDir,
-		__in const std::string & InstallDir
+		nwn2dev__in const std::string & ModuleResName,
+		nwn2dev__in const std::string & HomeDir,
+		nwn2dev__in const std::string & InstallDir
 		);
 
 	//
@@ -318,7 +318,7 @@ public:
 
 	void
 	ChangeTemporaryDirectory(
-		__in const std::string & TempDirectory
+		nwn2dev__in const std::string & TempDirectory
 		);
 
 	//
@@ -328,8 +328,8 @@ public:
 
 	bool
 	GetTalkString(
-		__in unsigned long StringId,
-		__out std::string & String
+		nwn2dev__in unsigned long StringId,
+		nwn2dev__out std::string & String
 		) const;
 
 	//
@@ -345,10 +345,10 @@ public:
 
 	bool
 	Get2DAString(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out std::string & Value
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out std::string & Value
 		);
 
 	//
@@ -358,11 +358,11 @@ public:
 	inline
 	bool
 	Get2DAInt(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out int & Value,
-		__in int Radix = 0
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out int & Value,
+		nwn2dev__in int Radix = 0
 		)
 	{
 		std::string V;
@@ -378,11 +378,11 @@ public:
 	inline
 	bool
 	Get2DAUlong(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out unsigned long & Value,
-		__in int Radix = 0
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out unsigned long & Value,
+		nwn2dev__in int Radix = 0
 		)
 	{
 		std::string V;
@@ -398,10 +398,10 @@ public:
 	inline
 	bool
 	Get2DABool(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out bool & Value
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out bool & Value
 		)
 	{
 		std::string V;
@@ -423,10 +423,10 @@ public:
 	inline
 	bool
 	Get2DAResRef(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out NWN::ResRef32 & Value
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out NWN::ResRef32 & Value
 		)
 	{
 		std::string V;
@@ -446,10 +446,10 @@ public:
 	inline
 	bool
 	Get2DAResRef(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out NWN::ResRef16 & Value
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out NWN::ResRef16 & Value
 		)
 	{
 		std::string V;
@@ -469,10 +469,10 @@ public:
 	inline
 	bool
 	Get2DAFloat(
-		__in const std::string & ResourceName,
-		__in const std::string & Column,
-		__in size_t Row,
-		__out float & Value
+		nwn2dev__in const std::string & ResourceName,
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out float & Value
 		)
 	{
 		std::string V;
@@ -492,7 +492,7 @@ public:
 	inline
 	size_t
 	Get2DARowCount(
-		__in const std::string & ResourceName
+		nwn2dev__in const std::string & ResourceName
 		)
 	{
 		const TwoDAFileReader * TwoDA;
@@ -512,7 +512,7 @@ public:
 	inline
 	size_t
 	Get2DAColumnCount(
-		__in const std::string & ResourceName
+		nwn2dev__in const std::string & ResourceName
 		)
 	{
 		const TwoDAFileReader * TwoDA;
@@ -548,7 +548,7 @@ public:
 	inline
 	Gr2FileReader *
 	OpenGr2File(
-		__in const std::string & FileName
+		nwn2dev__in const std::string & FileName
 		)
 	{
 		bool PreferOutOfProcess;
@@ -586,15 +586,15 @@ public:
 
 	std::string
 	Demand(
-		__in const std::string & ResRef,
-		__in ResType Type
+		nwn2dev__in const std::string & ResRef,
+		nwn2dev__in ResType Type
 		);
 
 	inline
 	std::string
 	Demand(
-		__in const NWN::ResRef16 & ResRef,
-		__in ResType Type
+		nwn2dev__in const NWN::ResRef16 & ResRef,
+		nwn2dev__in ResType Type
 		)
 	{
 		std::string   R;
@@ -621,8 +621,8 @@ public:
 	inline
 	std::string
 	Demand(
-		__in const NWN::ResRef32 & ResRef,
-		__in ResType Type
+		nwn2dev__in const NWN::ResRef32 & ResRef,
+		nwn2dev__in ResType Type
 		)
 	{
 		std::string   R;
@@ -652,8 +652,8 @@ public:
 
 	bool
 	ResourceExists(
-		__in const NWN::ResRef32 & ResType,
-		__in NWN::ResType Type
+		nwn2dev__in const NWN::ResRef32 & ResType,
+		nwn2dev__in NWN::ResType Type
 		);
 
 	//
@@ -662,7 +662,7 @@ public:
 
 	void
 	Release(
-		__in const std::string & ResourceName
+		nwn2dev__in const std::string & ResourceName
 		);
 
 	//
@@ -700,7 +700,7 @@ public:
 	inline
 	std::string
 	StrFromResRef(
-		__in const NWN::ResRef32 & ResRef
+		nwn2dev__in const NWN::ResRef32 & ResRef
 		) const
 	{
 		std::string   R;
@@ -727,7 +727,7 @@ public:
 	inline
 	std::string
 	StrFromResRef(
-		__in const NWN::ResRef16 & ResRef
+		nwn2dev__in const NWN::ResRef16 & ResRef
 		) const
 	{
 		std::string   R;
@@ -754,7 +754,7 @@ public:
 	static
 	NWN::ResRef32
 	ResRef32FromStr(
-		__in const std::string & Str
+		nwn2dev__in const std::string & Str
 		)
 	{
 		NWN::ResRef32 ResRef;
@@ -781,7 +781,7 @@ public:
 	static
 	NWN::ResRef16
 	ResRef16FromStr(
-		__in const std::string & Str
+		nwn2dev__in const std::string & Str
 		)
 	{
 		NWN::ResRef16 ResRef;
@@ -809,7 +809,7 @@ public:
 	inline
 	bool
 	IsRealCampaignID(
-		__in const GUID * CampaignID
+		nwn2dev__in const GUID * CampaignID
 		) const
 	{
 		GUID EmptyGuid;
@@ -865,8 +865,8 @@ public:
 	virtual
 	FileHandle
 	OpenFile(
-		__in const ResRefT & ResRef,
-		__in ResType Type
+		nwn2dev__in const ResRefT & ResRef,
+		nwn2dev__in ResType Type
 		);
 
 	//
@@ -876,7 +876,7 @@ public:
 	virtual
 	FileHandle
 	OpenFileByIndex(
-		__in FileId FileIndex
+		nwn2dev__in FileId FileIndex
 		);
 
 	//
@@ -886,7 +886,7 @@ public:
 	virtual
 	bool
 	CloseFile(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		);
 
 	//
@@ -897,10 +897,10 @@ public:
 	virtual
 	bool
 	ReadEncapsulatedFile(
-		__in FileHandle File,
-		__in size_t Offset,
-		__in size_t BytesToRead,
-		__out size_t * BytesRead,
+		nwn2dev__in FileHandle File,
+		nwn2dev__in size_t Offset,
+		nwn2dev__in size_t BytesToRead,
+		nwn2dev__out size_t * BytesRead,
 		__out_bcount( BytesToRead ) void * Buffer
 		);
 
@@ -911,7 +911,7 @@ public:
 	virtual
 	size_t
 	GetEncapsulatedFileSize(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		);
 
 	//
@@ -921,7 +921,7 @@ public:
 	virtual
 	ResType
 	GetEncapsulatedFileType(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		);
 
 	//
@@ -932,9 +932,9 @@ public:
 	virtual
 	bool
 	GetEncapsulatedFileEntry(
-		__in FileId FileIndex,
-		__out ResRefT & ResRef,
-		__out ResType & Type
+		nwn2dev__in FileId FileIndex,
+		nwn2dev__out ResRefT & ResRef,
+		nwn2dev__out ResType & Type
 		);
 
 	//
@@ -953,8 +953,8 @@ public:
 	virtual
 	AccessorType
 	GetResourceAccessorName(
-		__in FileHandle File,
-		__out std::string & AccessorName
+		nwn2dev__in FileHandle File,
+		nwn2dev__out std::string & AccessorName
 		);
 
 	//
@@ -964,7 +964,7 @@ public:
 
 	void
 	CheckResFileName(
-		__in const std::string & ResFileName
+		nwn2dev__in const std::string & ResFileName
 		) const
 	{
 		if ((ResFileName.find( '\\' ) != std::string::npos) ||
@@ -1011,9 +1011,9 @@ public:
 	static
 	void
 	LoadEncapsulatedFile(
-		__in IResourceAccessor< ResRefType > * Accessor,
-		__in typename IResourceAccessor< ResRefType >::FileId FileIndex,
-		__out std::vector< unsigned char > & FileContents
+		nwn2dev__in IResourceAccessor< ResRefType > * Accessor,
+		nwn2dev__in typename IResourceAccessor< ResRefType >::FileId FileIndex,
+		nwn2dev__out std::vector< unsigned char > & FileContents
 		);
 
 private:
@@ -1021,8 +1021,8 @@ private:
 	inline
 	std::string
 	GetModulePath(
-		__in bool Directory,
-		__in bool UseHome
+		nwn2dev__in bool Directory,
+		nwn2dev__in bool UseHome
 		) const
 	{
 		std::string Str( UseHome ? m_HomeDir : m_InstallDir );
@@ -1055,7 +1055,7 @@ private:
 	inline
 	std::string
 	GetCampaignPath(
-		__in bool UseHome
+		nwn2dev__in bool UseHome
 		) const
 	{
 		std::string Str( UseHome ? m_HomeDir : m_InstallDir );
@@ -1072,13 +1072,13 @@ private:
 
 	void
 	LoadModuleResourcesInternal(
-		__in const std::string & ModuleResName,
-		__in const std::string & AltTlkFileName,
-		__in const std::string & HomeDir,
-		__in const std::string & InstallDir,
-		__in const std::vector< NWN::ResRef32 > & HAKs,
+		nwn2dev__in const std::string & ModuleResName,
+		nwn2dev__in const std::string & AltTlkFileName,
+		nwn2dev__in const std::string & HomeDir,
+		nwn2dev__in const std::string & InstallDir,
+		nwn2dev__in const std::vector< NWN::ResRef32 > & HAKs,
 		__in_opt ModuleLoadParams * LoadParams,
-		__in bool PartialLoadOnly
+		nwn2dev__in bool PartialLoadOnly
 		);
 
 	//
@@ -1088,7 +1088,7 @@ private:
 	template< typename ResRefLoadType, const size_t LoadTier >
 	void
 	LoadHAKFiles(
-		__in const std::vector< NWN::ResRef32 > & HAKs
+		nwn2dev__in const std::vector< NWN::ResRef32 > & HAKs
 		);
 
 	//
@@ -1097,7 +1097,7 @@ private:
 
 	void
 	LoadModule(
-		__in ModuleSearchOrder SearchOrder,
+		nwn2dev__in ModuleSearchOrder SearchOrder,
 		__in_opt const char * CustomModuleSourcePath
 		);
 
@@ -1107,8 +1107,8 @@ private:
 
 	void
 	LoadCampaign(
-		__in const GUID & CampaignID,
-		__out GUID & CampaignIDUsed
+		nwn2dev__in const GUID & CampaignID,
+		nwn2dev__out GUID & CampaignIDUsed
 		);
 
 	//
@@ -1134,7 +1134,7 @@ private:
 
 	void
 	LoadFixedKeyFiles(
-		__in const StringVec & KeyFiles
+		nwn2dev__in const StringVec & KeyFiles
 		);
 
 	//
@@ -1144,8 +1144,8 @@ private:
 	void
 	LoadCustomResourceProviders(
 		__in_ecount( ProviderCount ) IResourceAccessor * const * Providers,
-		__in size_t ProviderCount,
-		__in bool FirstChance
+		nwn2dev__in size_t ProviderCount,
+		nwn2dev__in bool FirstChance
 		);
 
 	//
@@ -1155,7 +1155,7 @@ private:
 
 	void
 	LoadDirectoryZipFiles(
-		__in const std::string & DirName
+		nwn2dev__in const std::string & DirName
 		);
 
 	//
@@ -1164,7 +1164,7 @@ private:
 
 	void
 	LoadTalkTables(
-		__in const std::string & AltTlkFileName
+		nwn2dev__in const std::string & AltTlkFileName
 		);
 
 	//
@@ -1175,7 +1175,7 @@ private:
 
 	std::string
 	GetResourceFilePath(
-		__in const std::string & RelPathName
+		nwn2dev__in const std::string & RelPathName
 		);
 
 	//
@@ -1185,8 +1185,8 @@ private:
 
 	bool
 	CheckModuleIfo(
-		__in const std::string & ModulePath,
-		__in bool Erf
+		nwn2dev__in const std::string & ModulePath,
+		nwn2dev__in bool Erf
 		) const;
 
 	//
@@ -1196,9 +1196,9 @@ private:
 
 	bool
 	DoesFileExistInResourceAccessor(
-		__in IResourceAccessor & Accessor,
-		__in const NWN::ResRef32 & ResRef,
-		__in NWN::ResType ResType
+		nwn2dev__in IResourceAccessor & Accessor,
+		nwn2dev__in const NWN::ResRef32 & ResRef,
+		nwn2dev__in NWN::ResType ResType
 		) const;
 
 	//
@@ -1223,7 +1223,7 @@ private:
 
 	void
 	CleanOldTempFiles(
-		__in const char * TempPath
+		nwn2dev__in const char * TempPath
 		);
 
 	//
@@ -1232,7 +1232,7 @@ private:
 
 	void
 	DeleteDirectoryFiles(
-		__in const char * DirPath
+		nwn2dev__in const char * DirPath
 		);
 
 	//
@@ -1264,7 +1264,7 @@ private:
 
 	const TwoDAFileReader *
 	Get2DA(
-		__in const std::string & ResourceName
+		nwn2dev__in const std::string & ResourceName
 		);
 
 	//
@@ -1312,7 +1312,7 @@ private:
 
 	IResourceAccessor *
 	LoadEncapsulatedFile(
-		__in const std::string & Path
+		nwn2dev__in const std::string & Path
 		)
 	{
 		IResourceAccessor * Accessor;
@@ -1657,9 +1657,9 @@ public:
 
 	inline
 	DemandResource(
-		__in ResourceManager & RM,
-		__in const T & ResRef,
-		__in NWN::ResType Type
+		nwn2dev__in ResourceManager & RM,
+		nwn2dev__in const T & ResRef,
+		nwn2dev__in NWN::ResType Type
 		)
 	: m_RM( RM ),
 	  m_ResRef( ResRef ),
@@ -1708,7 +1708,7 @@ public:
 
 	inline
 	DemandResource(
-		__in const DemandResource & other
+		nwn2dev__in const DemandResource & other
 		)
 	: m_RM( other.m_RM ),
 	  m_ResRef( other.m_ResRef ),
@@ -1724,7 +1724,7 @@ public:
 	inline
 	DemandResource &
 	operator=(
-		__in const DemandResource & other
+		nwn2dev__in const DemandResource & other
 		)
 	{
 		m_RM.Release( m_DemandedFileName );

@@ -72,8 +72,8 @@ public:
 	public:
 		inline
 		script_error(
-			__in PROGRAM_COUNTER PC,
-			__in const char * What
+			nwn2dev__in PROGRAM_COUNTER PC,
+			nwn2dev__in const char * What
 			)
 			: runtime_error( What ),
 			m_PC( PC ),
@@ -83,9 +83,9 @@ public:
 
 		inline
 		script_error(
-			__in PROGRAM_COUNTER PC,
-			__in int StackIndex,
-			__in const char * What
+			nwn2dev__in PROGRAM_COUNTER PC,
+			nwn2dev__in int StackIndex,
+			nwn2dev__in const char * What
 			)
 			: runtime_error( What ),
 			m_PC( PC ),
@@ -94,10 +94,10 @@ public:
 		}
 
 		script_error(
-			__in PROGRAM_COUNTER PC,
-			__in int StackIndex,
-			__in const char * What,
-			__in __format_string const char * Fmt,
+			nwn2dev__in PROGRAM_COUNTER PC,
+			nwn2dev__in int StackIndex,
+			nwn2dev__in const char * What,
+			nwn2dev__in __format_string const char * Fmt,
 			...
 			)
 			: runtime_error( What ),
@@ -165,9 +165,9 @@ public:
 	//
 
 	NWScriptAnalyzer(
-		__in IDebugTextOut * TextOut,
+		nwn2dev__in IDebugTextOut * TextOut,
 		__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-		__in NWSCRIPT_ACTION ActionCount
+		nwn2dev__in NWSCRIPT_ACTION ActionCount
 		);
 
 	~NWScriptAnalyzer(
@@ -227,10 +227,10 @@ public:
 
 	bool
 	IsPlatformNativeScript(
-		__in NWScriptReader * Script,
-		__in const char * PlatformSignature,
-		__out PROGRAM_COUNTER & PlatformBinaryOffset,
-		__out size_t & PlatformBinarySize
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__in const char * PlatformSignature,
+		nwn2dev__out PROGRAM_COUNTER & PlatformBinaryOffset,
+		nwn2dev__out size_t & PlatformBinarySize
 		);
 
 	//
@@ -239,10 +239,10 @@ public:
 
 	void
 	ReadPlatformNativeScript(
-		__in NWScriptReader * Script,
-		__in PROGRAM_COUNTER PlatformBinaryOffset,
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__in PROGRAM_COUNTER PlatformBinaryOffset,
 		__in_bcount( PlatformBinarySize) void * PlatformBinary,
-		__in size_t PlatformBinarySize
+		nwn2dev__in size_t PlatformBinarySize
 		);
 
 	//
@@ -256,8 +256,8 @@ public:
 
 	void
 	Analyze(
-		__in NWScriptReader * Script,
-		__in unsigned long Flags = 0
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__in unsigned long Flags = 0
 		);
 
 	//
@@ -319,8 +319,8 @@ public:
 	inline
 	void
 	GetActionDefs(
-		__out PCNWACTION_DEFINITION & ActionDefs,
-		__out NWSCRIPT_ACTION & ActionCount
+		nwn2dev__out PCNWACTION_DEFINITION & ActionDefs,
+		nwn2dev__out NWSCRIPT_ACTION & ActionCount
 		) const
 	{
 		ActionDefs  = m_ActionDefs;
@@ -348,7 +348,7 @@ public:
 	inline
 	void
 	GetInstructionVariableLists(
-		__in const NWScriptInstruction & Instr,
+		nwn2dev__in const NWScriptInstruction & Instr,
 		__out_opt VariableWeakPtrVec * ReadVars,
 		__out_opt VariableWeakPtrVec * WriteVars
 		) const;
@@ -356,7 +356,7 @@ public:
 	inline
 	VARIABLE_VALUE &
 	GetConstantValue(
-		__in Variable * Var
+		nwn2dev__in Variable * Var
 		)
 	{
 		VariableValueMap::iterator ValueIt = m_ConstantValueMap.find( Var );
@@ -368,7 +368,7 @@ public:
 	inline
 	const VARIABLE_VALUE &
 	GetConstantValue(
-		__in Variable * Var
+		nwn2dev__in Variable * Var
 		) const
 	{
 		VariableValueMap::const_iterator ValueIt = m_ConstantValueMap.find( Var );
@@ -576,10 +576,10 @@ private:
 	static
 	ULONG
 	Disassemble(
-		__in NWScriptReader * Script,
-		__out UCHAR & Opcode,
-		__out UCHAR & TypeOpcode,
-		__out ULONG & PCOffset
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__out UCHAR & Opcode,
+		nwn2dev__out UCHAR & TypeOpcode,
+		nwn2dev__out ULONG & PCOffset
 		);
 
 	//
@@ -589,10 +589,10 @@ private:
 	static
 	void
 	GetInstructionNames(
-		__in UCHAR Opcode,
-		__in UCHAR TypeOpcode,
-		__deref __out const char * * OpcodeName,
-		__deref __out const char * * TypeOpcodeName
+		nwn2dev__in UCHAR Opcode,
+		nwn2dev__in UCHAR TypeOpcode,
+		__deref nwn2dev__out const char * * OpcodeName,
+		__deref nwn2dev__out const char * * TypeOpcodeName
 		);
 
 	//
@@ -601,7 +601,7 @@ private:
 
 	PROGRAM_COUNTER
 	AnalyzeLoader(
-		__in NWScriptReader * Script
+		nwn2dev__in NWScriptReader * Script
 		);
 
 	//
@@ -611,8 +611,8 @@ private:
 
 	void
 	AnalyzeSubroutineStructure(
-		__in AnalysisQueueEntry Entry,
-		__in NWScriptReader * Script
+		nwn2dev__in AnalysisQueueEntry Entry,
+		nwn2dev__in NWScriptReader * Script
 		);
 
 	//
@@ -621,13 +621,13 @@ private:
 
 	void
 	AnalyzeSubroutineCode(
-		__in NWScriptReader * Script
+		nwn2dev__in NWScriptReader * Script
 		);
 
 	void
 	AnalyzeSubroutineCode(
-		__in NWScriptReader * Script,
-		__in CodeAnalysisEntry & Entry
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__in CodeAnalysisEntry & Entry
 		);
 
 	//
@@ -638,28 +638,28 @@ private:
 	static
 	bool
 	IsMCVarInDoubleCreatePair(
-		__in VariableData & VarData
+		nwn2dev__in VariableData & VarData
 		);
 
 	void
 	PostProcessIR(
-		__in bool Optimize = true
+		nwn2dev__in bool Optimize = true
 		);
 
 	void
 	PostProcessIR(
-		__in NWScriptControlFlow & Flow,
-		__in IRAnalysisData & Data,
-		__in bool Optimize = true
+		nwn2dev__in NWScriptControlFlow & Flow,
+		nwn2dev__in IRAnalysisData & Data,
+		nwn2dev__in bool Optimize = true
 		);
 
 	void
 	AppendVarString(
-		__in char *String,
-		__in size_t & StringLen,
-		__in size_t BufferLen,
-		__in Variable * Var,
-		__in bool HasComma = false
+		nwn2dev__in char *String,
+		nwn2dev__in size_t & StringLen,
+		nwn2dev__in size_t BufferLen,
+		nwn2dev__in Variable * Var,
+		nwn2dev__in bool HasComma = false
 		)
 	{
 		Variable * HeadVar = Var->GetHeadVariable( );
@@ -749,9 +749,9 @@ private:
 
 	PROGRAM_COUNTER
 	FindInstructionInFlow(
-		__in PROGRAM_COUNTER PC,
-		__in NWScriptReader * Script,
-		__in UCHAR ScanOpcode
+		nwn2dev__in PROGRAM_COUNTER PC,
+		nwn2dev__in NWScriptReader * Script,
+		nwn2dev__in UCHAR ScanOpcode
 		);
 
 	//
@@ -764,10 +764,10 @@ private:
 
 	bool
 	PrepareNewControlFlow(
-		__in AnalysisQueueEntry & Entry,
-		__in PROGRAM_COUNTER FlowPC,
-		__out ControlFlowPtr & TargetFlow,
-		__out Label & TargetLabel
+		nwn2dev__in AnalysisQueueEntry & Entry,
+		nwn2dev__in PROGRAM_COUNTER FlowPC,
+		nwn2dev__out ControlFlowPtr & TargetFlow,
+		nwn2dev__out Label & TargetLabel
 		);
 
 	//
@@ -778,7 +778,7 @@ private:
 	bool
 	LoadNextAnalysisLabel(
 		__inout AnalysisQueueEntry & Entry,
-		__in NWScriptReader * Script
+		nwn2dev__in NWScriptReader * Script
 		);
 
 	//
@@ -789,7 +789,7 @@ private:
 
 	ControlFlowPtr
 	FindSubseqControlFlow(
-		__in AnalysisQueueEntry & Entry
+		nwn2dev__in AnalysisQueueEntry & Entry
 		);
 
 	//
@@ -799,7 +799,7 @@ private:
 	inline
 	Subroutine *
 	GetSubroutine(
-		__in PROGRAM_COUNTER SubroutineAddress
+		nwn2dev__in PROGRAM_COUNTER SubroutineAddress
 		)
 	{
 		for (SubroutinePtrVec::iterator it = m_Subroutines.begin( );
@@ -825,7 +825,7 @@ private:
 	inline
 	AnalysisQueueEntry *
 	GetSubroutineQueueEntry(
-		__in PROGRAM_COUNTER SubroutineAddress
+		nwn2dev__in PROGRAM_COUNTER SubroutineAddress
 		)
 	{
 		for (AnalysisQueueVec::iterator it = m_AnalysisQueue.begin( );
@@ -848,7 +848,7 @@ private:
 	inline
 	void
 	ThrowError(
-		__in __format_string const char * Fmt,
+		nwn2dev__in __format_string const char * Fmt,
 		...
 		)
 	{
@@ -878,7 +878,7 @@ private:
 	static
 	NWACTION_TYPE
 	GetOperandType(
-		__in UCHAR OperandType,
+		nwn2dev__in UCHAR OperandType,
 		__out_opt NWACTION_TYPE * SecondType = NULL
 		);
 
@@ -890,7 +890,7 @@ private:
 	static
 	STACK_POINTER
 	GetTypeSize(
-		__in NWACTION_TYPE Type
+		nwn2dev__in NWACTION_TYPE Type
 		)
 	{
 		switch (Type)
@@ -917,7 +917,7 @@ private:
 	static
 	const char *
 	GetTypeName(
-		__in NWACTION_TYPE Type
+		nwn2dev__in NWACTION_TYPE Type
 		)
 	{
 		static const char *TypeNames[] =
@@ -949,9 +949,9 @@ private:
 	inline
 	OpcodeTypeSet *
 	_AddOpcodeTypesToMap(
-		__in UCHAR Opcode,
-		__in const UCHAR Types[],
-		__in size_t NumTypes
+		nwn2dev__in UCHAR Opcode,
+		nwn2dev__in const UCHAR Types[],
+		nwn2dev__in size_t NumTypes
 		)
 	{
 		OpcodeTypeSet &Set = m_ValidOpcodeTypeMap[ Opcode ];
@@ -978,8 +978,8 @@ private:
 	inline
 	void
 	CopyOpcodeTypes(
-		__in UCHAR DestOpcode,
-		__in OpcodeTypeSet *TypeSet
+		nwn2dev__in UCHAR DestOpcode,
+		nwn2dev__in OpcodeTypeSet *TypeSet
 		)
 	{
 		m_ValidOpcodeTypeMap[ DestOpcode ] = *TypeSet;
@@ -988,9 +988,9 @@ private:
 	inline
 	void
 	CheckOpcodeType(
-		__in PROGRAM_COUNTER PC,
-		__in UCHAR Opcode,
-		__in UCHAR Type
+		nwn2dev__in PROGRAM_COUNTER PC,
+		nwn2dev__in UCHAR Opcode,
+		nwn2dev__in UCHAR Type
 		) const
 	{
 		ValidOpcodeTypeMap::const_iterator It = 
@@ -1024,7 +1024,7 @@ private:
 	static
 	NWScriptInstruction::INSTR
 	MapIROpcode(
-		__in unsigned NWScriptOpcode
+		nwn2dev__in unsigned NWScriptOpcode
 		);
 
 	//
@@ -1035,7 +1035,7 @@ private:
 	static
 	const char *
 	GetIROpcodeName(
-		__in NWScriptInstruction::INSTR Opcode
+		nwn2dev__in NWScriptInstruction::INSTR Opcode
 		)
 	{
 		static const char * OpcodeNames[] =
@@ -1092,9 +1092,9 @@ private:
 
 	void
 	CheckGlobalAccess(
-		__in CodeAnalysisEntry & Entry,
-		__in STACK_POINTER Offset,
-		__in STACK_POINTER Size = CELL_SIZE
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in STACK_POINTER Offset,
+		nwn2dev__in STACK_POINTER Size = CELL_SIZE
 		) const
 	{
 		if ((Offset & CELL_UNALIGNED) ||
@@ -1120,7 +1120,7 @@ private:
 	inline
 	Variable &
 	GetGlobalVariable(
-		__in STACK_POINTER SP
+		nwn2dev__in STACK_POINTER SP
 		)
 	{
 		STACK_POINTER Idx = (SP / CELL_SIZE);
@@ -1138,10 +1138,10 @@ private:
 	static
 	void
 	CheckStackAccess(
-		__in CodeAnalysisEntry & Entry,
-		__in STACK_POINTER MinSP,
-		__in STACK_POINTER Offset,
-		__in STACK_POINTER Size
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in STACK_POINTER MinSP,
+		nwn2dev__in STACK_POINTER Offset,
+		nwn2dev__in STACK_POINTER Size
 		)
 	{
 		if ((Offset & CELL_UNALIGNED) ||
@@ -1161,9 +1161,9 @@ private:
 	static
 	void
 	CheckStackAccess(
-		__in CodeAnalysisEntry & Entry,
-		__in STACK_POINTER MinSP,
-		__in STACK_POINTER Size = CELL_SIZE
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in STACK_POINTER MinSP,
+		nwn2dev__in STACK_POINTER Size = CELL_SIZE
 		)
 	{
 		CheckStackAccess( Entry, MinSP, -Size, Size );
@@ -1176,8 +1176,8 @@ private:
 	inline
 	Variable *
 	GetLocalVariable(
-		__in CodeAnalysisEntry & Entry,
-		__in STACK_POINTER SP
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in STACK_POINTER SP
 		)
 	{
 		size_t Idx = (SP / CELL_SIZE);
@@ -1195,8 +1195,8 @@ private:
 	inline
 	Variable *
 	CreateLocal(
-		__in CodeAnalysisEntry & Entry,
-		__in NWScriptVariable::CLASS Class,
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in NWScriptVariable::CLASS Class,
 		__in_opt NWACTION_TYPE Type = ACTIONTYPE_VOID
 		)
 	{
@@ -1212,8 +1212,8 @@ private:
 	inline
 	Variable *
 	CreateLocal(
-		__in CodeAnalysisEntry & Entry,
-		__in InstructionList * IR,
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in InstructionList * IR,
 		__in_opt InstructionList::iterator It,
 		__in_opt NWACTION_TYPE Type = ACTIONTYPE_VOID,
 		__in_opt NWScriptVariable::CLASS Class = NWScriptVariable::Local
@@ -1233,7 +1233,7 @@ private:
 	inline
 	Variable *
 	CreateLocal(
-		__in CodeAnalysisEntry & Entry,
+		nwn2dev__in CodeAnalysisEntry & Entry,
 		__in_opt NWACTION_TYPE Type = ACTIONTYPE_VOID,
 		__in_opt NWScriptVariable::CLASS Class = NWScriptVariable::Local
 		)
@@ -1244,8 +1244,8 @@ private:
 	inline
 	Variable *
 	CreateLocal(
-		__in CodeAnalysisEntry & Entry,
-		__in InstructionList * IR,
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in InstructionList * IR,
 		__in_opt NWACTION_TYPE Type = ACTIONTYPE_VOID,
 		__in_opt NWScriptVariable::CLASS Class = NWScriptVariable::Local
 		)
@@ -1256,7 +1256,7 @@ private:
 	inline
 	Variable *
 	DeleteTopLocal(
-		__in CodeAnalysisEntry & Entry,
+		nwn2dev__in CodeAnalysisEntry & Entry,
 		__in_opt InstructionList * IR
 		)
 	{
@@ -1281,8 +1281,8 @@ private:
 	inline
 	void
 	DeleteTopLocals(
-		__in CodeAnalysisEntry & Entry,
-		__in STACK_POINTER TopSize,
+		nwn2dev__in CodeAnalysisEntry & Entry,
+		nwn2dev__in STACK_POINTER TopSize,
 		__in_opt InstructionList * IR
 		)
 	{
@@ -1371,7 +1371,7 @@ private:
 inline
 void
 NWScriptAnalyzer::GetInstructionVariableLists(
-	__in const NWScriptInstruction & Instr,
+	nwn2dev__in const NWScriptInstruction & Instr,
 	__out_opt NWNScriptLib::VariableWeakPtrVec * ReadVars,
 	__out_opt NWNScriptLib::VariableWeakPtrVec * WriteVars
 	) const

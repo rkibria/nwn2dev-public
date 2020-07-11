@@ -56,7 +56,7 @@ namespace Math
 	inline
 	long
 	Round(
-		__in float F
+		nwn2dev__in float F
 		)
 	{
 		return (long) floor( F + 0.5f );
@@ -69,8 +69,8 @@ namespace Math
 	inline
 	float
 	DotProduct(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		)
 	{
 		return (v1.x * v2.x) + (v1.y * v2.y);
@@ -83,8 +83,8 @@ namespace Math
 	inline
 	float
 	DotProduct(
-		__in const NWN::Vector3 & v1,
-		__in const NWN::Vector3 & v2
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in const NWN::Vector3 & v2
 		)
 	{
 		return (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z);
@@ -93,7 +93,7 @@ namespace Math
 	inline
 	float
 	LengthVector(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		return sqrtf( DotProduct( v, v ) );
@@ -102,7 +102,7 @@ namespace Math
 	inline
 	float
 	Magnitude(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		return LengthVector( v );
@@ -115,8 +115,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	CrossProduct(
-		__in const NWN::Vector3 & v1,
-		__in const NWN::Vector3 & v2
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in const NWN::Vector3 & v2
 		)
 	{
 		NWN::Vector3 v3;
@@ -135,8 +135,8 @@ namespace Math
 	inline
 	NWN::Vector2
 	Add(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		)
 	{
 		NWN::Vector2 v3;
@@ -150,8 +150,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	Add(
-		__in const NWN::Vector3 & v1,
-		__in const NWN::Vector3 & v2
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in const NWN::Vector3 & v2
 		)
 	{
 		NWN::Vector3 v3;
@@ -170,8 +170,8 @@ namespace Math
 	inline
 	NWN::Vector2
 	Subtract(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		)
 	{
 		NWN::Vector2 v3;
@@ -185,8 +185,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	Subtract(
-		__in const NWN::Vector3 & v1,
-		__in const NWN::Vector3 & v2
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in const NWN::Vector3 & v2
 		)
 	{
 		NWN::Vector3 v3;
@@ -205,8 +205,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	Multiply(
-		__in const NWN::Vector3 & v1,
-		__in float f
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in float f
 		)
 	{
 		NWN::Vector3 v0;
@@ -225,8 +225,8 @@ namespace Math
 	inline
 	float
 	CrossProduct(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		)
 	{
 		return v1.x * v2.y - v2.x * v2.y;
@@ -239,7 +239,7 @@ namespace Math
 	inline
 	NWN::Vector2
 	NormalizeVector(
-		__in const NWN::Vector2 & v
+		nwn2dev__in const NWN::Vector2 & v
 		)
 	{
 		NWN::Vector2 vn;
@@ -263,7 +263,7 @@ namespace Math
 	inline
 	NWN::Vector3
 	NormalizeVector(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		NWN::Vector3 vn;
@@ -294,7 +294,7 @@ namespace Math
 	inline
 	NWN::Matrix33
 	CreateMatrix33FromMatrix44(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		)
 	{
 		NWN::Matrix33 M0;
@@ -319,7 +319,7 @@ namespace Math
 	inline
 	NWN::Matrix44
 	CreateMatrix44FromMatrix33(
-		__in const NWN::Matrix33 & M1
+		nwn2dev__in const NWN::Matrix33 & M1
 		)
 	{
 		NWN::Matrix44 M0;
@@ -351,8 +351,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Multiply(
-		__in const NWN::Matrix44 & M1,
-		__in const NWN::Matrix44 & M2
+		nwn2dev__in const NWN::Matrix44 & M1,
+		nwn2dev__in const NWN::Matrix44 & M2
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -387,8 +387,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Multiply_Double(
-		__in const NWN::Matrix44 & M1,
-		__in const NWN::Matrix44 & M2
+		nwn2dev__in const NWN::Matrix44 & M1,
+		nwn2dev__in const NWN::Matrix44 & M2
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -423,8 +423,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Multiply33_44(
-		__in const NWN::Matrix44 & M1,
-		__in const NWN::Matrix44 & M2
+		nwn2dev__in const NWN::Matrix44 & M1,
+		nwn2dev__in const NWN::Matrix44 & M2
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -462,9 +462,9 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Multiply33_33(
-		__in const NWN::Matrix44 & M1,
-		__in const NWN::Matrix44 & M2,
-		__in const NWN::Matrix44 & M3
+		nwn2dev__in const NWN::Matrix44 & M1,
+		nwn2dev__in const NWN::Matrix44 & M2,
+		nwn2dev__in const NWN::Matrix44 & M3
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -500,8 +500,8 @@ namespace Math
 	inline
 	void
 	Multiply(
-		__in NWN::Matrix44 & M1,
-		__in float F
+		nwn2dev__in NWN::Matrix44 & M1,
+		nwn2dev__in float F
 		)
 	{
 		M1._00 *= F;
@@ -531,8 +531,8 @@ namespace Math
 	inline
 	void
 	Multiply(
-		__in NWN::Matrix44 & M1,
-		__in double F
+		nwn2dev__in NWN::Matrix44 & M1,
+		nwn2dev__in double F
 		)
 	{
 		M1._00 = (float) ((double) M1._00 * F);
@@ -563,8 +563,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Add(
-		__in const NWN::Matrix44 & M1,
-		__in const NWN::Matrix44 & M2
+		nwn2dev__in const NWN::Matrix44 & M1,
+		nwn2dev__in const NWN::Matrix44 & M2
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -585,8 +585,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Subtract(
-		__in const NWN::Matrix44 & M1,
-		__in const NWN::Matrix44 & M2
+		nwn2dev__in const NWN::Matrix44 & M1,
+		nwn2dev__in const NWN::Matrix44 & M2
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -607,8 +607,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	Multiply(
-		__in const NWN::Matrix44 & M,
-		__in const NWN::Vector3 & V1
+		nwn2dev__in const NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & V1
 		)
 	{
 		NWN::Vector3 V0;
@@ -627,8 +627,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	MultiplyNormal(
-		__in const NWN::Matrix44 & M,
-		__in const NWN::Vector3 & V1
+		nwn2dev__in const NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & V1
 		)
 	{
 		NWN::Vector3 V0;
@@ -647,7 +647,7 @@ namespace Math
 	inline
 	float
 	Determinant(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		)
 	{
 		return (
@@ -668,7 +668,7 @@ namespace Math
 	inline
 	double
 	Determinant_Double(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		)
 	{
 		return (
@@ -688,7 +688,7 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Inverse(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -727,7 +727,7 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Inverse_Double(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -764,7 +764,7 @@ namespace Math
 	inline
 	NWN::Matrix33
 	Inverse(
-		__in const NWN::Matrix33 & M1
+		nwn2dev__in const NWN::Matrix33 & M1
 		)
 	{
 		return CreateMatrix33FromMatrix44(
@@ -783,7 +783,7 @@ namespace Math
 	inline
 	NWN::Matrix44
 	Transpose(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		)
 	{
 		NWN::Matrix44 M0 =
@@ -803,7 +803,7 @@ namespace Math
 
 	NWN::Matrix44
 	InverseAffine(
-		__in const NWN::Matrix44 & M1
+		nwn2dev__in const NWN::Matrix44 & M1
 		);
 
 	//
@@ -813,7 +813,7 @@ namespace Math
 	inline
 	void
 	CreateIdentityMatrix(
-		__out NWN::Matrix44 & M
+		nwn2dev__out NWN::Matrix44 & M
 		)
 	{
 		memcpy( &M, &NWN::Matrix44::IDENTITY, sizeof( M ) );
@@ -827,7 +827,7 @@ namespace Math
 	void
 	SetScale(
 		__inout NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Scale
+		nwn2dev__in const NWN::Vector3 & Scale
 		)
 	{
 		M._00 = Scale.x;
@@ -843,7 +843,7 @@ namespace Math
 	inline
 	NWN::Vector3
 	GetScale(
-		__in const NWN::Matrix44 & M
+		nwn2dev__in const NWN::Matrix44 & M
 		)
 	{
 		NWN::Vector3 Scale;
@@ -862,8 +862,8 @@ namespace Math
 	inline
 	void
 	CreateScaleMatrix(
-		__out NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Scale
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & Scale
 		)
 	{
 		CreateIdentityMatrix( M );
@@ -882,7 +882,7 @@ namespace Math
 	void
 	SetTranslation(
 		__inout NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Position
+		nwn2dev__in const NWN::Vector3 & Position
 		)
 	{
 		M._03 = Position.x;
@@ -899,7 +899,7 @@ namespace Math
 	void
 	SetPosition(
 		__inout NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Position
+		nwn2dev__in const NWN::Vector3 & Position
 		)
 	{
 		M._30 = Position.x;
@@ -915,7 +915,7 @@ namespace Math
 	inline
 	NWN::Vector3
 	GetPosition(
-		__in const NWN::Matrix44 & M
+		nwn2dev__in const NWN::Matrix44 & M
 		)
 	{
 		NWN::Vector3 v;
@@ -934,8 +934,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	InverseRotate(
-		__in const NWN::Vector3 & v,
-		__in const NWN::Matrix44 & M
+		nwn2dev__in const NWN::Vector3 & v,
+		nwn2dev__in const NWN::Matrix44 & M
 		)
 	{
 		NWN::Vector3 vt;
@@ -954,8 +954,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	InverseTransform(
-		__in const NWN::Vector3 & v,
-		__in const NWN::Matrix44 & M
+		nwn2dev__in const NWN::Vector3 & v,
+		nwn2dev__in const NWN::Matrix44 & M
 		)
 	{
 		NWN::Vector3 vt;
@@ -974,8 +974,8 @@ namespace Math
 	inline
 	void
 	CreateTranslationMatrix(
-		__out NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Position
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & Position
 		)
 	{
 		CreateIdentityMatrix( M );
@@ -989,10 +989,10 @@ namespace Math
 	inline
 	void
 	CreateLookAtMatrixRH(
-		__out NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Eye,
-		__in const NWN::Vector3 & At,
-		__in const NWN::Vector3 & Up
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & Eye,
+		nwn2dev__in const NWN::Vector3 & At,
+		nwn2dev__in const NWN::Vector3 & Up
 		)
 	{
 		NWN::Vector3 xaxis;
@@ -1031,10 +1031,10 @@ namespace Math
 	inline
 	void
 	CreateLookAtMatrixLH(
-		__out NWN::Matrix44 & M,
-		__in const NWN::Vector3 & Eye,
-		__in const NWN::Vector3 & At,
-		__in const NWN::Vector3 & Up
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & Eye,
+		nwn2dev__in const NWN::Vector3 & At,
+		nwn2dev__in const NWN::Vector3 & Up
 		)
 	{
 		NWN::Vector3 xaxis;
@@ -1073,8 +1073,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	CreateRotationXMatrixRH(
-		__out NWN::Matrix44 & M,
-		__in float A
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in float A
 		)
 	{
 		M._00 = 1.0f;
@@ -1103,8 +1103,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	CreateRotationYMatrixRH(
-		__out NWN::Matrix44 & M,
-		__in float A
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in float A
 		)
 	{
 		M._00 = +cosf( A );
@@ -1133,8 +1133,8 @@ namespace Math
 	inline
 	NWN::Matrix44
 	CreateRotationZMatrixRH(
-		__out NWN::Matrix44 & M,
-		__in float A
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in float A
 		)
 	{
 		M._00 = +cosf( A );
@@ -1167,9 +1167,9 @@ namespace Math
 	inline
 	NWN::Matrix44
 	CreateRotationAxisMatrix(
-		__out NWN::Matrix44 & M,
-		__in const NWN::Vector3 & V,
-		__in float A
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Vector3 & V,
+		nwn2dev__in float A
 		)
 	{
 		NWN::Vector3 VN;
@@ -1203,11 +1203,11 @@ namespace Math
 	inline
 	void
 	CreatePerspectiveFovMatrixRH(
-		__out NWN::Matrix44 & M,
-		__in float fovy,
-		__in float Aspect,
-		__in float zn,
-		__in float zf
+		nwn2dev__out NWN::Matrix44 & M,
+		nwn2dev__in float fovy,
+		nwn2dev__in float Aspect,
+		nwn2dev__in float zn,
+		nwn2dev__in float zf
 		)
 	{
 		NWN::Vector2 Scale;
@@ -1240,10 +1240,10 @@ namespace Math
 	void
 	CreatePerspectiveFovMatrixLH(
 		__inout NWN::Matrix44 & M,
-		__in float fovy,
-		__in float Aspect,
-		__in float zn,
-		__in float zf
+		nwn2dev__in float fovy,
+		nwn2dev__in float Aspect,
+		nwn2dev__in float zn,
+		nwn2dev__in float zf
 		)
 	{
 		NWN::Vector2 Scale;
@@ -1281,7 +1281,7 @@ namespace Math
 	inline
 	NWN::Quaternion
 	Conjugate(
-		__in const NWN::Quaternion & Q1
+		nwn2dev__in const NWN::Quaternion & Q1
 		)
 	{
 		NWN::Quaternion Q0;
@@ -1301,7 +1301,7 @@ namespace Math
 	inline
 	float
 	Magnitude(
-		__in const NWN::Quaternion & Q
+		nwn2dev__in const NWN::Quaternion & Q
 		)
 	{
 		return sqrtf(
@@ -1318,7 +1318,7 @@ namespace Math
 	inline
 	NWN::Quaternion
 	Normalize(
-		__in const NWN::Quaternion & Q1
+		nwn2dev__in const NWN::Quaternion & Q1
 		)
 	{
 		NWN::Quaternion Q0;
@@ -1345,7 +1345,7 @@ namespace Math
 	inline
 	NWN::Quaternion
 	Inverse(
-		__in const NWN::Quaternion & Q1
+		nwn2dev__in const NWN::Quaternion & Q1
 		)
 	{
 		return Math::Normalize( Math::Conjugate( Q1 ) );
@@ -1358,8 +1358,8 @@ namespace Math
 	inline
 	NWN::Vector3
 	Multiply(
-		__in const NWN::Vector3 & V,
-		__in const NWN::Quaternion & Q
+		nwn2dev__in const NWN::Vector3 & V,
+		nwn2dev__in const NWN::Quaternion & Q
 		)
 	{
 		NWN::Vector3 uv;
@@ -1388,7 +1388,7 @@ namespace Math
 	void
 	SetRotationMatrix(
 		__inout NWN::Matrix44 & M,
-		__in const NWN::Quaternion & Q
+		nwn2dev__in const NWN::Quaternion & Q
 		)
 	{
 		float sqw = Q.w * Q.w;
@@ -1439,7 +1439,7 @@ namespace Math
 	inline
 	NWN::Quaternion
 	CreateRotationQuaternion(
-		__in const NWN::Matrix44 & M
+		nwn2dev__in const NWN::Matrix44 & M
 		)
 	{
 		NWN::Quaternion Q;
@@ -1505,10 +1505,10 @@ namespace Math
 
 	void
 	Matrix44SRTDecompose(
-		__in const NWN::Matrix44 & WorldTrans,
-		__out NWN::Vector3 & Scale,
-		__out NWN::Vector3 & Translation,
-		__out NWN::Matrix44 & Rotation
+		nwn2dev__in const NWN::Matrix44 & WorldTrans,
+		nwn2dev__out NWN::Vector3 & Scale,
+		nwn2dev__out NWN::Vector3 & Translation,
+		nwn2dev__out NWN::Matrix44 & Rotation
 		);
 
 	//
@@ -1517,10 +1517,10 @@ namespace Math
 
 	void
 	Matrix44SRTDecompose(
-		__in const NWN::Matrix44 & WorldTrans,
-		__out NWN::Vector3 & Scale,
-		__out NWN::Vector3 & Translation,
-		__out NWN::Quaternion & Rotation
+		nwn2dev__in const NWN::Matrix44 & WorldTrans,
+		nwn2dev__out NWN::Vector3 & Scale,
+		nwn2dev__out NWN::Vector3 & Translation,
+		nwn2dev__out NWN::Quaternion & Rotation
 		);
 
 	//
@@ -1530,7 +1530,7 @@ namespace Math
 	inline
 	NWN::Vector3
 	DirectionVectorFromQuaternion(
-		__in const NWN::Quaternion & Q
+		nwn2dev__in const NWN::Quaternion & Q
 		)
 	{
 		NWN::Matrix44 RotationMatrix;
@@ -1552,8 +1552,8 @@ namespace Math
 	inline
 	bool
 	PointInRect(
-		__in const NWN::Rect & Rect,
-		__in const NWN::Vector2 & pt
+		nwn2dev__in const NWN::Rect & Rect,
+		nwn2dev__in const NWN::Vector2 & pt
 		)
 	{
 		if ((pt.x - Rect.left < Epsilon)  ||
@@ -1574,8 +1574,8 @@ namespace Math
 	inline
 	bool
 	PointInRect(
-		__in const RectFP & Rect,
-		__in const Vector2FP & pt
+		nwn2dev__in const RectFP & Rect,
+		nwn2dev__in const Vector2FP & pt
 		)
 	{
 		if ((pt.x < Rect.left)    ||
@@ -1597,9 +1597,9 @@ namespace Math
 	inline
 	bool
 	PointInLeftHalfspace(
-		__in const NWN::Vector2 & Start,
-		__in const NWN::Vector2 & End,
-		__in const NWN::Vector2 & pt
+		nwn2dev__in const NWN::Vector2 & Start,
+		nwn2dev__in const NWN::Vector2 & End,
+		nwn2dev__in const NWN::Vector2 & pt
 		)
 	{
 		NWN::Vector2 Line;
@@ -1643,8 +1643,8 @@ namespace Math
 	bool
 	PointInTriangle(
 		__in_ecount(3) const NWN::Vector2 * Tri,
-		__in const NWN::Vector2 & pt,
-		__in bool Clockwise
+		nwn2dev__in const NWN::Vector2 & pt,
+		nwn2dev__in bool Clockwise
 		)
 	{
 		if (Clockwise)
@@ -1693,9 +1693,9 @@ namespace Math
 	inline
 	NWN::Vector3
 	PointFromRayDistance(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
-		__in float Distance
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
+		nwn2dev__in float Distance
 		)
 	{
 		NWN::Vector3 v;
@@ -1715,9 +1715,9 @@ namespace Math
 	inline
 	NWN::Vector2
 	PointFromRayDistance(
-		__in const NWN::Vector2 & Origin,
-		__in const NWN::Vector2 & NormDir,
-		__in float Distance
+		nwn2dev__in const NWN::Vector2 & Origin,
+		nwn2dev__in const NWN::Vector2 & NormDir,
+		nwn2dev__in float Distance
 		)
 	{
 		NWN::Vector2 v;
@@ -1731,9 +1731,9 @@ namespace Math
 	inline
 	double
 	PlaneHeightAtPoint(
-		__in const NWN::Vector3 & Normal,
-		__in float D,
-		__in const NWN::Vector2 & Pt
+		nwn2dev__in const NWN::Vector3 & Normal,
+		nwn2dev__in float D,
+		nwn2dev__in const NWN::Vector2 & Pt
 		)
 	{
 		NWN::Vector2 Normal2;
@@ -1756,10 +1756,10 @@ namespace Math
 	inline
 	float
 	RayPlaneDistance(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
-		__in const NWN::Vector3 & PlaneNormal,
-		__in float PlaneD
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
+		nwn2dev__in const NWN::Vector3 & PlaneNormal,
+		nwn2dev__in float PlaneD
 		)
 	{
 		float cA;
@@ -1783,8 +1783,8 @@ namespace Math
 	inline
 	T
 	GCD(
-		__in T a,
-		__in T b
+		nwn2dev__in T a,
+		nwn2dev__in T b
 		)
 	{
 		T t;
@@ -1806,8 +1806,8 @@ namespace Math
 	inline
 	float
 	Distance(
-		__in const NWN::Vector3 & v1,
-		__in const NWN::Vector3 & v2
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in const NWN::Vector3 & v2
 		)
 	{
 		double d;
@@ -1822,8 +1822,8 @@ namespace Math
 	inline
 	float
 	Distance(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		)
 	{
 		double d;
@@ -1838,8 +1838,8 @@ namespace Math
 	inline
 	float
 	DistanceSq(
-		__in const NWN::Vector3 & v1,
-		__in const NWN::Vector3 & v2
+		nwn2dev__in const NWN::Vector3 & v1,
+		nwn2dev__in const NWN::Vector3 & v2
 		)
 	{
 		double d;
@@ -1854,8 +1854,8 @@ namespace Math
 	inline
 	float
 	DistanceSq(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		)
 	{
 		double d;
@@ -1872,7 +1872,7 @@ namespace Math
 
 	NWN::Vector2
 	PolygonCentroid2(
-		__in const Vector2Vec & Polygon
+		nwn2dev__in const Vector2Vec & Polygon
 		);
 
 	//
@@ -1881,9 +1881,9 @@ namespace Math
 
 	bool
 	PointInPolygonRegion(
-		__in const NWN::Vector2 & v,
-		__in const Vector2Vec & Polygon,
-		__in const unsigned int FixedPointShift = Math::FixedPointShift
+		nwn2dev__in const NWN::Vector2 & v,
+		nwn2dev__in const Vector2Vec & Polygon,
+		nwn2dev__in const unsigned int FixedPointShift = Math::FixedPointShift
 		);
 
 	//
@@ -1892,9 +1892,9 @@ namespace Math
 
 	bool
 	PointInPolygonRegion(
-		__in const NWN::Vector3 & v,
-		__in const Vector3Vec & Polygon,
-		__in const unsigned int FixedPointShift = Math::FixedPointShift
+		nwn2dev__in const NWN::Vector3 & v,
+		nwn2dev__in const Vector3Vec & Polygon,
+		nwn2dev__in const unsigned int FixedPointShift = Math::FixedPointShift
 		);
 
 	//
@@ -1903,8 +1903,8 @@ namespace Math
 
 	bool
 	PointInPolygonRegion(
-		__in const Vector2FP & v,
-		__in const Vector2FPVec & Polygon
+		nwn2dev__in const Vector2FP & v,
+		nwn2dev__in const Vector2FPVec & Polygon
 		);
 
 	//
@@ -1914,10 +1914,10 @@ namespace Math
 
 	bool
 	IntersectRayTri(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
 		__in_ecount(3) const NWN::Vector3 * Tri,
-		__out float & T
+		nwn2dev__out float & T
 		);
 
 	//
@@ -1929,10 +1929,10 @@ namespace Math
 
 	bool
 	IntersectRayTriRejectBackface(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
 		__in_ecount(3) const NWN::Vector3 * Tri,
-		__out float & T
+		nwn2dev__out float & T
 		);
 
 	//
@@ -1941,11 +1941,11 @@ namespace Math
 
 	bool
 	IntersectRaySphere(
-		__in const NWN::Vector3 & RayOrigin,
-		__in const NWN::Vector3 & RayNormDir,
-		__in const NWN::Vector3 & SphereOrigin,
-		__in const float SphereRadiusSq,
-		__out float & T
+		nwn2dev__in const NWN::Vector3 & RayOrigin,
+		nwn2dev__in const NWN::Vector3 & RayNormDir,
+		nwn2dev__in const NWN::Vector3 & SphereOrigin,
+		nwn2dev__in const float SphereRadiusSq,
+		nwn2dev__out float & T
 		);
 
 	//
@@ -1956,12 +1956,12 @@ namespace Math
 
 	bool
 	IntersectSegments2(
-		__in const NWN::Vector2 & s1_p1,
-		__in const NWN::Vector2 & s1_p2,
-		__in const NWN::Vector2 & s2_p1,
-		__in const NWN::Vector2 & s2_p2,
-		__out NWN::Vector2 & IntersectionPoint,
-		__out bool & Parallel
+		nwn2dev__in const NWN::Vector2 & s1_p1,
+		nwn2dev__in const NWN::Vector2 & s1_p2,
+		nwn2dev__in const NWN::Vector2 & s2_p1,
+		nwn2dev__in const NWN::Vector2 & s2_p2,
+		nwn2dev__out NWN::Vector2 & IntersectionPoint,
+		nwn2dev__out bool & Parallel
 		);
 
 	//
@@ -1971,12 +1971,12 @@ namespace Math
 
 	bool
 	IntersectSegmentPolygon(
-		__in const NWN::Vector2 & s_p1,
-		__in const NWN::Vector2 & s_p2,
+		nwn2dev__in const NWN::Vector2 & s_p1,
+		nwn2dev__in const NWN::Vector2 & s_p2,
 		__in_ecount( NumPoints ) const NWN::Vector2 * PolygonPoints,
-		__in size_t NumPoints,
-		__out NWN::Vector2 & I_p1,
-		__out NWN::Vector2 & I_p2
+		nwn2dev__in size_t NumPoints,
+		nwn2dev__out NWN::Vector2 & I_p1,
+		nwn2dev__out NWN::Vector2 & I_p2
 		);
 
 	//
@@ -1985,9 +1985,9 @@ namespace Math
 
 	bool
 	PointInSegment(
-		__in const NWN::Vector2 & s_p1,
-		__in const NWN::Vector2 & s_p2,
-		__in const NWN::Vector2 & pt
+		nwn2dev__in const NWN::Vector2 & s_p1,
+		nwn2dev__in const NWN::Vector2 & s_p2,
+		nwn2dev__in const NWN::Vector2 & pt
 		);
 	
 	//
@@ -1997,9 +1997,9 @@ namespace Math
 	inline
 	NWN::Vector3
 	LineProject3(
-		__in const NWN::Vector3 & P0,
-		__in const NWN::Vector3 & P1,
-		__in const NWN::Vector3 & A
+		nwn2dev__in const NWN::Vector3 & P0,
+		nwn2dev__in const NWN::Vector3 & P1,
+		nwn2dev__in const NWN::Vector3 & A
 		)
 	{
 		NWN::Vector3 W;
@@ -2029,8 +2029,8 @@ namespace Math
 
 		inline
 		QuickRay(
-			__in const NWN::Vector3 & o,
-			__in const NWN::Vector3 & d
+			nwn2dev__in const NWN::Vector3 & o,
+			nwn2dev__in const NWN::Vector3 & d
 			)
 			: m_origin( o ),
 			  m_direction( d )
@@ -2059,8 +2059,8 @@ namespace Math
 
 		inline
 		QuickBox(
-			__in const NWN::Vector3 & min,
-			__in const NWN::Vector3 & max
+			nwn2dev__in const NWN::Vector3 & min,
+			nwn2dev__in const NWN::Vector3 & max
 			)
 		{
 			m_bounds[ 0 ] = min;
@@ -2070,9 +2070,9 @@ namespace Math
 		inline
 		bool
 		IntersectRay(
-			__in const QuickRay & r,
-			__in float t0 = 0.0f,
-			__in float t1 = FLT_MAX
+			nwn2dev__in const QuickRay & r,
+			nwn2dev__in float t0 = 0.0f,
+			nwn2dev__in float t1 = FLT_MAX
 			) const
 		{
 			float tmin;
@@ -2111,8 +2111,8 @@ namespace Math
 		inline
 		void
 		SetBounds(
-			__in const NWN::Vector3 & MinBound,
-			__in const NWN::Vector3 & MaxBound
+			nwn2dev__in const NWN::Vector3 & MinBound,
+			nwn2dev__in const NWN::Vector3 & MaxBound
 			)
 		{
 			m_bounds[ 0 ] = MinBound;
@@ -2122,7 +2122,7 @@ namespace Math
 		inline
 		bool
 		IntersectPoint(
-			__in const NWN::Vector3 & Point
+			nwn2dev__in const NWN::Vector3 & Point
 			) const
 		{
 			return Point.x >= m_bounds[ 0 ].x &&
@@ -2150,8 +2150,8 @@ namespace Math
 
 		inline
 		BoundBox2(
-			__in const NWN::Vector2 & BoundMin,
-			__in const NWN::Vector2 & BoundMax
+			nwn2dev__in const NWN::Vector2 & BoundMin,
+			nwn2dev__in const NWN::Vector2 & BoundMax
 			)
 		: m_MinBound( BoundMin ),
 		  m_MaxBound( BoundMax )
@@ -2171,7 +2171,7 @@ namespace Math
 		inline
 		bool
 		PointIntersect(
-			__in const NWN::Vector2 & v
+			nwn2dev__in const NWN::Vector2 & v
 			) const
 		{
 			if ((v.x >= m_MinBound.x) &&
@@ -2188,8 +2188,8 @@ namespace Math
 		inline
 		void
 		SetBounds(
-			__in const NWN::Vector2 & MinBound,
-			__in const NWN::Vector2 & MaxBound
+			nwn2dev__in const NWN::Vector2 & MinBound,
+			nwn2dev__in const NWN::Vector2 & MaxBound
 			)
 		{
 			m_MinBound = MinBound;
@@ -2213,8 +2213,8 @@ namespace Math
 	public:
 
 		QuickSphere(
-			__in const NWN::Vector3 & Origin,
-			__in float Radius
+			nwn2dev__in const NWN::Vector3 & Origin,
+			nwn2dev__in float Radius
 			)
 		: m_Origin( Origin ),
 		  m_RadiusSq( Radius * Radius )
@@ -2224,7 +2224,7 @@ namespace Math
 		inline
 		bool
 		IntersectPoint(
-			__in const NWN::Vector3 & Point
+			nwn2dev__in const NWN::Vector3 & Point
 			) const
 		{
 			return (Math::DistanceSq( m_Origin, Point ) <= m_RadiusSq);
@@ -2250,10 +2250,10 @@ namespace Math
 	public:
 
 		QuickCylinder(
-			__in const NWN::Vector3 & Origin,
-			__in const NWN::Vector3 & Terminator,
-			__in float Length,
-			__in float Radius
+			nwn2dev__in const NWN::Vector3 & Origin,
+			nwn2dev__in const NWN::Vector3 & Terminator,
+			nwn2dev__in float Length,
+			nwn2dev__in float Radius
 			)
 		: m_Origin( Origin ),
 		  m_OriginToTerm( Math::Subtract( Terminator, Origin ) ),
@@ -2271,7 +2271,7 @@ namespace Math
 		inline
 		float
 		IntersectPoint(
-			__in const NWN::Vector3 & Point
+			nwn2dev__in const NWN::Vector3 & Point
 			) const
 		{
 			NWN::Vector3 pd;
@@ -2340,10 +2340,10 @@ namespace Math
 	public:
 
 		QuickCone(
-			__in const NWN::Vector3 & Origin,
-			__in const NWN::Vector3 & Terminator,
-			__in float Length,
-			__in float Radius
+			nwn2dev__in const NWN::Vector3 & Origin,
+			nwn2dev__in const NWN::Vector3 & Terminator,
+			nwn2dev__in float Length,
+			nwn2dev__in float Radius
 			)
 		: m_Origin( Origin ),
 		  m_OriginToTerm( Math::Subtract( Terminator, Origin ) ),
@@ -2361,7 +2361,7 @@ namespace Math
 		inline
 		float
 		IntersectPoint(
-			__in const NWN::Vector3 & Point
+			nwn2dev__in const NWN::Vector3 & Point
 			) const
 		{
 			NWN::Vector3 pd;

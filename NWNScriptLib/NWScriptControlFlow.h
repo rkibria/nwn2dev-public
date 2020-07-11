@@ -66,8 +66,8 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptControlFlow(
-			__in PROGRAM_COUNTER StartPC,
-			__in STACK_POINTER   StartSP
+			nwn2dev__in PROGRAM_COUNTER StartPC,
+			nwn2dev__in STACK_POINTER   StartSP
 			)
 		: m_StartPC( StartPC ),
 		  m_StartSP( StartSP ),
@@ -103,7 +103,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetStartPC(
-			__in PROGRAM_COUNTER StartPC
+			nwn2dev__in PROGRAM_COUNTER StartPC
 			)
 		{
 			m_StartPC = StartPC;
@@ -120,7 +120,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetStartSP(
-			__in STACK_POINTER StartSP
+			nwn2dev__in STACK_POINTER StartSP
 			)
 		{
 			m_StartSP = StartSP;
@@ -137,7 +137,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetEndPC(
-			__in PROGRAM_COUNTER EndPC
+			nwn2dev__in PROGRAM_COUNTER EndPC
 			)
 		{
 			m_EndPC = EndPC;
@@ -154,7 +154,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetEndSP(
-			__in STACK_POINTER EndSP
+			nwn2dev__in STACK_POINTER EndSP
 			)
 		{
 			m_EndSP = EndSP;
@@ -170,7 +170,7 @@ namespace NWNScriptLib
 		inline
 		ControlFlowPtr
 		GetChild(
-			__in size_t i
+			nwn2dev__in size_t i
 			) const
 		{
 			return m_Children[ i ];
@@ -179,8 +179,8 @@ namespace NWNScriptLib
 		inline
 		void
 		SetChild(
-			__in size_t i,
-			__in ControlFlowPtr Child
+			nwn2dev__in size_t i,
+			nwn2dev__in ControlFlowPtr Child
 			)
 		{
 			m_Children[ i ] = Child;
@@ -205,7 +205,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetTerminationType(
-			__in TERMINATION_TYPE TerminationType
+			nwn2dev__in TERMINATION_TYPE TerminationType
 			)
 		{
 			m_TerminationType = TerminationType;
@@ -230,7 +230,7 @@ namespace NWNScriptLib
 		inline
 		bool
 		operator < (
-			__in NWScriptControlFlow & Other
+			nwn2dev__in NWScriptControlFlow & Other
 			) const
 		{
 			return ( m_StartPC < Other.m_StartPC );

@@ -23,12 +23,12 @@ Abstract:
 #define CAMERA_ENABLE_MIRRORING 0
 
 Camera::Camera(
-	__in float FOV /* = PI / 4 */,
-	__in float Near /* = 0.1000000015f */,
-	__in float Far /* = 140.0f */,
-	__in float Aspect /* = 1.0f */,
-	__in float Width /* = 500.0f */,
-	__in float Height /* = 500.0f */
+	nwn2dev__in float FOV /* = PI / 4 */,
+	nwn2dev__in float Near /* = 0.1000000015f */,
+	nwn2dev__in float Far /* = 140.0f */,
+	nwn2dev__in float Aspect /* = 1.0f */,
+	nwn2dev__in float Width /* = 500.0f */,
+	nwn2dev__in float Height /* = 500.0f */
 	)
 /*++
 
@@ -130,7 +130,7 @@ Environment:
 
 NWN::Vector3
 Camera::WorldToScreen(
-	__in const NWN::Vector3 & World
+	nwn2dev__in const NWN::Vector3 & World
 	) const
 /*++
 
@@ -174,7 +174,7 @@ Environment:
 
 NWN::Vector2
 Camera::WorldToScreenViewport(
-	__in const NWN::Vector3 & World
+	nwn2dev__in const NWN::Vector3 & World
 	) const
 /*++
 
@@ -248,7 +248,7 @@ Environment:
 
 NWN::Vector3
 Camera::Unproject(
-	__in const NWN::Vector3 & Screen
+	nwn2dev__in const NWN::Vector3 & Screen
 	) const
 /*++
 
@@ -287,7 +287,7 @@ Environment:
 
 void
 Camera::MoveCameraForward(
-	__in float D
+	nwn2dev__in float D
 	)
 /*++
 
@@ -316,7 +316,7 @@ Environment:
 
 void
 Camera::MoveCameraLeft(
-	__in float D
+	nwn2dev__in float D
 	)
 /*++
 
@@ -345,7 +345,7 @@ Environment:
 
 void
 Camera::MoveCameraUp(
-	__in float D
+	nwn2dev__in float D
 	)
 /*++
 
@@ -374,7 +374,7 @@ Environment:
 
 void
 Camera::RollCamera(
-	__in float R
+	nwn2dev__in float R
 	)
 /*++
 
@@ -407,7 +407,7 @@ Environment:
 
 void
 Camera::TurnCameraUp(
-	__in float R
+	nwn2dev__in float R
 	)
 /*++
 
@@ -439,7 +439,7 @@ Environment:
 
 void
 Camera::TurnCameraLeft(
-	__in float R
+	nwn2dev__in float R
 	)
 /*++
 
@@ -472,9 +472,9 @@ Environment:
 
 void
 Camera::GetPickRay(
-	__in const NWN::Vector3 & ScreenPt,
-	__out NWN::Vector3 & Origin,
-	__out NWN::Vector3 & NormDir
+	nwn2dev__in const NWN::Vector3 & ScreenPt,
+	nwn2dev__out NWN::Vector3 & Origin,
+	nwn2dev__out NWN::Vector3 & NormDir
 	)
 /*++
 
@@ -522,7 +522,7 @@ Environment:
 
 void
 Camera::UpdateTransform(
-	__in UpdateTransformReason Reason /* = UpdateTrans */
+	nwn2dev__in UpdateTransformReason Reason /* = UpdateTrans */
 	)
 /*++
 
@@ -609,7 +609,7 @@ Environment:
 
 float
 Camera::Transform(
-	__in const NWN::Matrix44 & M,
+	nwn2dev__in const NWN::Matrix44 & M,
 	__inout NWN::Vector3 & Pt
 	) const
 /*++
@@ -661,10 +661,10 @@ Environment:
 
 /*
 void GetPickRay(
-	__in int x,
-	__in int y,
-	__in int w,
-	__in int h
+	nwn2dev__in int x,
+	nwn2dev__in int y,
+	nwn2dev__in int w,
+	nwn2dev__in int h
 	)
 {
 	NWN::Matrix44 M;

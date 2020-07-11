@@ -25,6 +25,14 @@ extern "C"
 {
 #endif
 
+
+#define nwn2dev__in
+#define nwn2dev__out
+#define nwn2dev__deref_out_bcount_full_opt( FieldLength )
+#define nwn2dev__out_bcount_full_opt( FieldLength )
+#define nwn2dev__deref_opt_out
+#define nwn2dev__in_bcount_opt( FieldLength )
+
 //
 // Test if an argument is present (i.e. non-NULL) or not.
 //
@@ -62,7 +70,7 @@ __rdtsc(
 
 unsigned __int64
 __getReg(
-	__in int Number
+	nwn2dev__in int Number
 	);
 #pragma intrinsic(__getReg)
 

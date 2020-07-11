@@ -36,10 +36,10 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptLabel(
-			__in PROGRAM_COUNTER Address,
-			__in STACK_POINTER SP,
-			__in ControlFlowPtr Flow,
-			__in unsigned long Flags = 0
+			nwn2dev__in PROGRAM_COUNTER Address,
+			nwn2dev__in STACK_POINTER SP,
+			nwn2dev__in ControlFlowPtr Flow,
+			nwn2dev__in unsigned long Flags = 0
 			)
 		: m_Address( Address ),
 		  m_SP( SP ),

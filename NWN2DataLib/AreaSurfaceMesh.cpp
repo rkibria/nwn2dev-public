@@ -57,8 +57,8 @@ const MeshLinkageTraits MLT_AreaSurfaceMesh =
 
 const AreaSurfaceMesh::TileSurfaceMesh::SurfaceMeshFace *
 AreaSurfaceMesh::TileSurfaceMesh::FindFace(
-	__in const NWN::Vector2 & pt,
-	__in const PointVec & Points
+	nwn2dev__in const NWN::Vector2 & pt,
+	nwn2dev__in const PointVec & Points
 	) const
 /*++
 
@@ -96,11 +96,11 @@ Environment:
 
 bool
 AreaSurfaceMesh::TileSurfaceMesh::StraightPathExists(
-	__in const NWN::Vector2 & Start,
-	__in const NWN::Vector2 & End,
-	__in const SurfaceMeshFace * Face1,
-	__in const SurfaceMeshFace * Face2,
-	__in const AreaSurfaceMesh * SurfaceMesh,
+	nwn2dev__in const NWN::Vector2 & Start,
+	nwn2dev__in const NWN::Vector2 & End,
+	nwn2dev__in const SurfaceMeshFace * Face1,
+	nwn2dev__in const SurfaceMeshFace * Face2,
+	nwn2dev__in const AreaSurfaceMesh * SurfaceMesh,
 	__out_opt const SurfaceMeshFace * * LastFace /* = NULL */
 	) const
 /*++
@@ -379,12 +379,12 @@ Environment:
 
 bool
 AreaSurfaceMesh::TileSurfaceMesh::CalcContact(
-	__in const NWN::Vector3 & Origin,
-	__in const NWN::Vector3 & NormDir,
-	__in const SurfaceMeshFace * Face1,
-	__in const SurfaceMeshFace * Face2,
-	__in const AreaSurfaceMesh * SurfaceMesh,
-	__out float & IntersectDistance,
+	nwn2dev__in const NWN::Vector3 & Origin,
+	nwn2dev__in const NWN::Vector3 & NormDir,
+	nwn2dev__in const SurfaceMeshFace * Face1,
+	nwn2dev__in const SurfaceMeshFace * Face2,
+	nwn2dev__in const AreaSurfaceMesh * SurfaceMesh,
+	nwn2dev__out float & IntersectDistance,
 	__out_opt const SurfaceMeshFace * * IntersectFace
 	) const
 /*++
@@ -475,13 +475,13 @@ Environment:
 
 bool
 AreaSurfaceMesh::GetLineSegmentFacesAndMesh(
-	__in const NWN::Vector2 & Start,
-	__in const NWN::Vector2 & End,
+	nwn2dev__in const NWN::Vector2 & Start,
+	nwn2dev__in const NWN::Vector2 & End,
 	__in_opt const TileSurfaceMesh * ExcludeSurfaceMesh,
-	__in bool Walkable,
-	__out const SurfaceMeshFace * * Face1,
-	__out const SurfaceMeshFace * * Face2,
-	__out const TileSurfaceMesh * * SurfaceMesh
+	nwn2dev__in bool Walkable,
+	nwn2dev__out const SurfaceMeshFace * * Face1,
+	nwn2dev__out const SurfaceMeshFace * * Face2,
+	nwn2dev__out const TileSurfaceMesh * * SurfaceMesh
 	) const
 /*++
 
@@ -744,8 +744,8 @@ Environment:
 
 bool
 AreaSurfaceMesh::StraightPathExists(
-	__in const NWN::Vector2 & v1,
-	__in const NWN::Vector2 & v2,
+	nwn2dev__in const NWN::Vector2 & v1,
+	nwn2dev__in const NWN::Vector2 & v2,
 	__out_opt NWN::Vector2 * LastFaceCentroid /* = NULL */
 	) const
 /*++
@@ -910,9 +910,9 @@ Environment:
 
 bool
 AreaSurfaceMesh::CalcContact(
-	__in const NWN::Vector3 & Origin,
-	__in const NWN::Vector3 & NormDir,
-	__out float & IntersectDistance,
+	nwn2dev__in const NWN::Vector3 & Origin,
+	nwn2dev__in const NWN::Vector3 & NormDir,
+	nwn2dev__out float & IntersectDistance,
 	__out_opt const SurfaceMeshFace * * IntersectFace
 	) const
 /*++
@@ -1025,7 +1025,7 @@ Environment:
 
 float
 AreaSurfaceMesh::GetPointHeight(
-	__in const NWN::Vector2 & pt
+	nwn2dev__in const NWN::Vector2 & pt
 	) const
 /*++
 
@@ -1059,9 +1059,9 @@ Environment:
 
 void
 AreaSurfaceMesh::IntersectTileSurfaceMeshGrid(
-	__out Vector2Vec & IntersectionPoints,
-	__in const NWN::Vector2 & Start,
-	__in const NWN::Vector2 & End
+	nwn2dev__out Vector2Vec & IntersectionPoints,
+	nwn2dev__in const NWN::Vector2 & Start,
+	nwn2dev__in const NWN::Vector2 & End
 	) const
 /*++
 

@@ -5,12 +5,12 @@
 
 int
 _mkdirthunk(
-	__in const char * dirname
+	nwn2dev__in const char * dirname
 	);
 
 int
 _chdirthunk(
-	__in const char * dirname
+	nwn2dev__in const char * dirname
 	);
 
 #include "../zlib/contrib/minizip/miniunz.c"

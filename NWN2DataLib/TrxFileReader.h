@@ -94,12 +94,12 @@ public:
 	//
 
 	TrxFileReader(
-		__in MeshManager & MeshMgr,
-		__in const std::string & FileName,
-		__in bool LoadOnlyDimensions,
-		__in MODE Mode = ModeTRX,
+		nwn2dev__in MeshManager & MeshMgr,
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in bool LoadOnlyDimensions,
+		nwn2dev__in MODE Mode = ModeTRX,
 		__in_opt IDebugTextOut * TextWriter = NULL,
-		__in bool RefuseDisplayOnlyModels = false
+		nwn2dev__in bool RefuseDisplayOnlyModels = false
 		);
 
 	~TrxFileReader(
@@ -433,7 +433,7 @@ private:
 
 	void
 	ParseTrxFile(
-		__in MeshManager & MeshMgr
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -442,8 +442,8 @@ private:
 
 	void
 	DecodeAreaSurfaceWalkmesh(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -452,7 +452,7 @@ private:
 
 	void
 	DecodeAreaWidthHeight(
-		__in PCRESOURCE_HEADER ResHeader
+		nwn2dev__in PCRESOURCE_HEADER ResHeader
 		);
 
 	//
@@ -461,8 +461,8 @@ private:
 
 	void
 	DecodeWalkable(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -471,8 +471,8 @@ private:
 
 	void
 	DecodeWater(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -481,8 +481,8 @@ private:
 
 	void
 	DecodeTerrain(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -491,8 +491,8 @@ private:
 
 	void
 	DecodeCollisionMesh(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -501,8 +501,8 @@ private:
 
 	void
 	DecodeRigidMesh(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -511,8 +511,8 @@ private:
 
 	void
 	DecodeSkinMesh(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -522,8 +522,8 @@ private:
 	template< typename T >
 	void
 	DecodeSimpleMesh(
-		__in PCRESOURCE_HEADER ResHeader,
-		__in MeshManager & MeshMgr,
+		nwn2dev__in PCRESOURCE_HEADER ResHeader,
+		nwn2dev__in MeshManager & MeshMgr,
 		__inout T & Mesh
 		);
 
@@ -533,7 +533,7 @@ private:
 
 	void
 	DecodeCollisionSpheres(
-		__in PCRESOURCE_HEADER ResHeader
+		nwn2dev__in PCRESOURCE_HEADER ResHeader
 		);
 
 	//
@@ -542,7 +542,7 @@ private:
 
 	void
 	DecodeHookPoint(
-		__in PCRESOURCE_HEADER ResHeader
+		nwn2dev__in PCRESOURCE_HEADER ResHeader
 		);
 
 	//
@@ -551,7 +551,7 @@ private:
 
 	void
 	DecodeHairPoint(
-		__in PCRESOURCE_HEADER ResHeader
+		nwn2dev__in PCRESOURCE_HEADER ResHeader
 		);
 
 	//
@@ -560,7 +560,7 @@ private:
 
 	void
 	DecodeHelmPoint(
-		__in PCRESOURCE_HEADER ResHeader
+		nwn2dev__in PCRESOURCE_HEADER ResHeader
 		);
 
 	//
@@ -571,8 +571,8 @@ private:
 	void
 	ReadFile(
 		__out_bcount( Length ) void * Buffer,
-		__in size_t Length,
-		__in const char * Description
+		nwn2dev__in size_t Length,
+		nwn2dev__in const char * Description
 		)
 	{
 		return m_FileWrapper.ReadFile( Buffer, Length, Description );
@@ -585,7 +585,7 @@ private:
 	inline
 	void
 	ReadDdsImage(
-		__out DdsImage & Image
+		nwn2dev__out DdsImage & Image
 		)
 	{
 		Trx::DDS_FILE                Header;
@@ -626,8 +626,8 @@ private:
 	inline
 	void
 	SeekOffset(
-		__in ULONGLONG Offset,
-		__in const char * Description
+		nwn2dev__in ULONGLONG Offset,
+		nwn2dev__in const char * Description
 		)
 	{
 		return m_FileWrapper.SeekOffset( Offset, Description );
@@ -641,9 +641,9 @@ private:
 	void
 	ReadReaderContext(
 		__inout PREADER_CONTEXT ReaderContext,
-		__out void * Buffer,
-		__in size_t Length,
-		__in const char * Description
+		nwn2dev__out void * Buffer,
+		nwn2dev__in size_t Length,
+		nwn2dev__in const char * Description
 		)
 	{
 		char ExMsg[ 64 ];

@@ -89,7 +89,7 @@ public:
 	inline
 	void
 	SetDdsHeader(
-		__in const Trx::DDS_FILE & Header
+		nwn2dev__in const Trx::DDS_FILE & Header
 		)
 	{
 		m_Header = Header;
@@ -106,8 +106,8 @@ public:
 	inline
 	void
 	SetImage(
-		__in const void * ImageData,
-		__in size_t Length
+		nwn2dev__in const void * ImageData,
+		nwn2dev__in size_t Length
 		)
 	{
 		m_Image.resize( Length );
@@ -144,9 +144,9 @@ public:
 	inline
 	unsigned long
 	GetColorChannel(
-		__in int x,
-		__in int y,
-		__in unsigned long Channel
+		nwn2dev__in int x,
+		nwn2dev__in int y,
+		nwn2dev__in unsigned long Channel
 		) const
 	{
 		unsigned long * Row;

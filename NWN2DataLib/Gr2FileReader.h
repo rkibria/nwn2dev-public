@@ -53,9 +53,9 @@ public:
 	//
 
 	Gr2FileReader(
-		__in Gr2Accessor * Accessor,
-		__in const std::string & FileName,
-		__in bool PreferOutOfProcess
+		nwn2dev__in Gr2Accessor * Accessor,
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in bool PreferOutOfProcess
 		);
 
 	//
@@ -107,8 +107,8 @@ public:
 	//
 
 	Gr2Accessor(
-		__in const std::string & Granny2Dll,
-		__in const std::string & TempPath
+		nwn2dev__in const std::string & Granny2Dll,
+		nwn2dev__in const std::string & TempPath
 		);
 
 	virtual
@@ -121,8 +121,8 @@ public:
 
 	GR2InfoPtr
 	LoadGranny2File(
-		__in const std::string & FileName,
-		__in bool PreferOutOfProcess
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in bool PreferOutOfProcess
 		);
 
 private:

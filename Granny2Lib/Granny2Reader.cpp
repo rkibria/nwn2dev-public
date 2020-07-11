@@ -22,7 +22,7 @@ using namespace granny2;
 extern "C" IMAGE_DOS_HEADER __ImageBase;
 
 Granny2Reader::Granny2Reader(
-	__in const std::string & Granny2Dll
+	nwn2dev__in const std::string & Granny2Dll
 	)
 /*++
 
@@ -172,9 +172,9 @@ Environment:
 
 granny2::granny2_impl::GR2Info *
 Granny2Reader::LoadGranny2File(
-	__in const std::string & FileName,
-	__in const std::string & TempFileName,
-	__in bool PreferOutOfProcess /* = false */
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__in const std::string & TempFileName,
+	nwn2dev__in bool PreferOutOfProcess /* = false */
 	)
 /*++
 
@@ -284,8 +284,8 @@ Environment:
 
 bool
 Granny2Reader::Gr2Conv_GrannyConvertFileToRaw(
-	__in const char * FileName,
-	__in const char * TempFileName
+	nwn2dev__in const char * FileName,
+	nwn2dev__in const char * TempFileName
 	)
 /*++
 

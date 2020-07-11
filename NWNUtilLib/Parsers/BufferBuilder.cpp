@@ -25,8 +25,8 @@ Abstract:
 using swutil::BufferBuilder;
 
 BufferBuilder::BufferBuilder(
-	__in size_t SizeHint, /* = 0 */
-	__in BitOrderMode BitOrder /* = BitOrderLowToHigh */
+	nwn2dev__in size_t SizeHint, /* = 0 */
+	nwn2dev__in BitOrderMode BitOrder /* = BitOrderLowToHigh */
 	) throw( std::exception )
 	: m_BitPos( 8 ),
 	  m_BitOrderMode( BitOrder )
@@ -37,7 +37,7 @@ BufferBuilder::BufferBuilder(
 
 void
 BufferBuilder::AddData(
-	__in size_t FieldLength,
+	nwn2dev__in size_t FieldLength,
 	__in_bcount( FieldLength ) const void *Field
 	) throw( std::exception )
 {
@@ -53,8 +53,8 @@ BufferBuilder::AddData(
 
 void
 BufferBuilder::AddFieldBits(
-	__in size_t NumBits,
-	__in unsigned __int64 FieldBits
+	nwn2dev__in size_t NumBits,
+	nwn2dev__in unsigned __int64 FieldBits
 	) throw( std::exception )
 {
 	if (NumBits > 64)

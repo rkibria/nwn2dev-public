@@ -64,7 +64,7 @@ public:
 	inline
 	void
 	ComputeHeights(
-		__in const AreaTerrainMesh & Terrain
+		nwn2dev__in const AreaTerrainMesh & Terrain
 		)
 	{
 		const AreaTerrainMesh::TerrainVertexVec & Verticies = Terrain.GetTerrainVerticies( );
@@ -90,7 +90,7 @@ public:
 	inline
 	void
 	ComputeWaterHeights(
-		__in const AreaWaterMesh & Water
+		nwn2dev__in const AreaWaterMesh & Water
 		)
 	{
 		const AreaWaterMesh::WaterVertexVec & Verticies = Water.GetWaterVerticies( );
@@ -118,8 +118,8 @@ public:
 	inline
 	float
 	GetHeight(
-		__in float x,
-		__in float y
+		nwn2dev__in float x,
+		nwn2dev__in float y
 		) const
 	{
 		int                          xx;
@@ -146,9 +146,9 @@ public:
 	inline
 	bool
 	IsPointSubmerged(
-		__in float x,
-		__in float y,
-		__in float z
+		nwn2dev__in float x,
+		nwn2dev__in float y,
+		nwn2dev__in float z
 		) const
 	{
 		int                          xx;

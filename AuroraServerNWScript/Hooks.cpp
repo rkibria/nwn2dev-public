@@ -45,8 +45,8 @@ __thiscall
 CVirtualMachine::ExecuteCode(
 	__inout int * PC,
 	__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-	__in int CodeSize,
-	__in struct CVirtualMachineDebuggingContext * DebugContext
+	nwn2dev__in int CodeSize,
+	nwn2dev__in struct CVirtualMachineDebuggingContext * DebugContext
 	)
 /*++
 
@@ -108,7 +108,7 @@ __declspec( naked )
 VOID
 __cdecl
 NWN2Server::FreeNwn2(
-	__in PVOID P
+	nwn2dev__in PVOID P
 	)
 /*++
 
@@ -147,7 +147,7 @@ Environment:
 unsigned long
 __fastcall
 SaveStateToServerVMStack(
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -185,8 +185,8 @@ Environment:
 void
 __fastcall
 RemoveSavedStateFromServerVMStack(
-	__in NWN2Server::CVirtualMachine * ServerVM,
-	__in unsigned long StackElements
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM,
+	nwn2dev__in unsigned long StackElements
 	)
 /*++
 
@@ -317,7 +317,7 @@ RunStackPopCommand_Internal:
 __declspec( naked )
 BOOL
 CVirtualMachineDebugLoader::DemandDebugInfo(
-	__in CExoString * FileName
+	nwn2dev__in CExoString * FileName
 	)
 /*++
 

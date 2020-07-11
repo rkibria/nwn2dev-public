@@ -44,7 +44,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -59,8 +59,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -77,8 +77,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -88,9 +88,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 

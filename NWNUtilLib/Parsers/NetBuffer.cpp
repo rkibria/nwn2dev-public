@@ -28,9 +28,9 @@ using NWN::Parsers::ExoBuildBuffer;
 
 ExoParseBuffer::ExoParseBuffer(
 	__in_bcount( ByteDataLength ) const void *ByteData,
-	__in size_t ByteDataLength,
-	__in_bcount_opt( BitDataLength ) const void *BitData,
-	__in size_t BitDataLength
+	nwn2dev__in size_t ByteDataLength,
+	nwn2dev__in_bcount_opt( BitDataLength ) const void *BitData,
+	nwn2dev__in size_t BitDataLength
 	)
 	: m_ByteStream( NULL ),
 	  m_BitStream( NULL )
@@ -62,8 +62,8 @@ ExoParseBuffer::!ExoParseBuffer( )
 
 bool
 ExoParseBuffer::ReadCExoString(
-	__out [Out] String ^% Str,
-	__in size_t NumBits /* = 32 */
+	nwn2dev__out [Out] String ^% Str,
+	nwn2dev__in size_t NumBits /* = 32 */
 	)
 {
 	const void *Data;
@@ -155,8 +155,8 @@ ExoParseBuffer::ReadCExoLocString(
 
 bool
 ExoParseBuffer::ReadSmallString(
-	__out [Out] String ^% Str,
-	__in size_t NumBits /* = 8 */
+	nwn2dev__out [Out] String ^% Str,
+	nwn2dev__in size_t NumBits /* = 8 */
 	)
 {
 	unsigned __int64   Length;
@@ -189,8 +189,8 @@ ExoParseBuffer::ReadSmallString(
 
 bool
 ExoParseBuffer::ReadSigned(
-	__out [Out] unsigned __int64 &FieldBits,
-	__in size_t NumBits
+	nwn2dev__out [Out] unsigned __int64 &FieldBits,
+	nwn2dev__in size_t NumBits
 	)
 {
 	bool SignBit;
@@ -220,8 +220,8 @@ ExoParseBuffer::ReadSigned(
 
 bool
 ExoParseBuffer::ReadUnsigned(
-	__out [Out] unsigned __int64 &FieldBits,
-	__in size_t NumBits
+	nwn2dev__out [Out] unsigned __int64 &FieldBits,
+	nwn2dev__in size_t NumBits
 	)
 {
 	size_t Offset = 0;
@@ -316,8 +316,8 @@ ExoBuildBuffer::!ExoBuildBuffer( )
 
 void
 ExoBuildBuffer::WriteCExoString(
-	__in String ^ Str,
-	__in size_t NumBits /* = 32 */
+	nwn2dev__in String ^ Str,
+	nwn2dev__in size_t NumBits /* = 32 */
 	)
 {
 	array< Byte > ^ Data = System::Text::Encoding::UTF8->GetBytes( Str );
@@ -344,7 +344,7 @@ ExoBuildBuffer::WriteCExoString(
 
 void
 ExoBuildBuffer::WriteCExoLocString(
-	__in String ^ Str
+	nwn2dev__in String ^ Str
 	)
 {
 	//
@@ -357,7 +357,7 @@ ExoBuildBuffer::WriteCExoLocString(
 
 void
 ExoBuildBuffer::WriteCExoLocString(
-	__in NWN::ExoLocString ^ Str
+	nwn2dev__in NWN::ExoLocString ^ Str
 	)
 {
 	WriteBOOL( Str->IsStrRef );
@@ -376,8 +376,8 @@ ExoBuildBuffer::WriteCExoLocString(
 
 void
 ExoBuildBuffer::WriteSmallString(
-	__in String ^ Str,
-	__in size_t NumBits /* = 8 */
+	nwn2dev__in String ^ Str,
+	nwn2dev__in size_t NumBits /* = 8 */
 	)
 {
 	array< Byte > ^ Data = System::Text::Encoding::UTF8->GetBytes( Str );
@@ -397,8 +397,8 @@ ExoBuildBuffer::WriteSmallString(
 
 void
 ExoBuildBuffer::WriteSigned(
-	__in signed __int64 FieldBits,
-	__in size_t NumBits
+	nwn2dev__in signed __int64 FieldBits,
+	nwn2dev__in size_t NumBits
 	)
 {
 	m_BitStream->AddFieldBit( (FieldBits < 0) );
@@ -407,8 +407,8 @@ ExoBuildBuffer::WriteSigned(
 
 void
 ExoBuildBuffer::WriteUnsigned(
-	__in unsigned __int64 FieldBits,
-	__in size_t NumBits
+	nwn2dev__in unsigned __int64 FieldBits,
+	nwn2dev__in size_t NumBits
 	)
 {
 	size_t Offset;

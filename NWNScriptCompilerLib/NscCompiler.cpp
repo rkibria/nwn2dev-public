@@ -553,9 +553,9 @@ int yylex (YYSTYPE* yylval) {
 //----------------------------------------------------------------------------
 
 NscCompiler::NscCompiler (
-	__in ResourceManager & ResMan,
-	__in bool EnableExtensions,
-	__in bool SaveSymbolTable /* = false */
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in bool EnableExtensions,
+	nwn2dev__in bool SaveSymbolTable /* = false */
 	)
 : m_ResourceManager (ResMan),
   m_EnableExtensions (EnableExtensions),
@@ -618,14 +618,14 @@ NscCompiler::~NscCompiler ()
 
 NscResult
 NscCompiler::NscCompileScript (
-	__in const NWN::ResRef32 & ScriptName,
-	__in int CompilerVersion,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in IDebugTextOut * ErrorOutput,
-	__in UINT32 CompilerFlags,
-	__out std::vector< UINT8 > & Code,
-	__out std::vector< UINT8 > & DebugSymbols
+	nwn2dev__in const NWN::ResRef32 & ScriptName,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in IDebugTextOut * ErrorOutput,
+	nwn2dev__in UINT32 CompilerFlags,
+	nwn2dev__out std::vector< UINT8 > & Code,
+	nwn2dev__out std::vector< UINT8 > & DebugSymbols
 	)
 {
 	std::vector< UINT8 >        FileContents;
@@ -766,16 +766,16 @@ NscCompiler::NscCompileScript (
 
 NscResult
 NscCompiler::NscCompileScript (
-	__in const NWN::ResRef32 & ScriptName,
+	nwn2dev__in const NWN::ResRef32 & ScriptName,
 	__in_bcount( ScriptTextLength ) const void * ScriptText,
-	__in size_t ScriptTextLength,
-	__in int CompilerVersion,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in IDebugTextOut * ErrorOutput,
-	__in UINT32 CompilerFlags,
-	__out std::vector< UINT8 > & Code,
-	__out std::vector< UINT8 > & DebugSymbols
+	nwn2dev__in size_t ScriptTextLength,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in IDebugTextOut * ErrorOutput,
+	nwn2dev__in UINT32 CompilerFlags,
+	nwn2dev__out std::vector< UINT8 > & Code,
+	nwn2dev__out std::vector< UINT8 > & DebugSymbols
 	)
 {
 	Code.clear ();
@@ -901,8 +901,8 @@ NscCompiler::NscCompileScript (
 void
 NscCompiler::NscDisassembleScript (
 	__in_bcount( CodeLength ) const void * Code,
-	__in size_t CodeLength,
-	__out std::string & Disassembly
+	nwn2dev__in size_t CodeLength,
+	nwn2dev__out std::string & Disassembly
 	)
 {
 	CNwnMemoryStream MemStream;
@@ -956,7 +956,7 @@ NscCompiler::NscDisassembleScript (
 
 const char *
 NscCompiler::NscGetActionName (
-	__in int Action
+	nwn2dev__in int Action
 	)
 {
 	if (!m_NWScriptParsed)
@@ -978,8 +978,8 @@ NscCompiler::NscGetActionName (
 
 bool
 NscCompiler::NscGetActionPrototype (
-	__in int Action,
-	__out NscPrototypeDefinition & Prototype
+	nwn2dev__in int Action,
+	nwn2dev__out NscPrototypeDefinition & Prototype
 	)
 {
 	NscCompilerState *pCompilerState;
@@ -1021,8 +1021,8 @@ NscCompiler::NscGetActionPrototype (
 
 bool
 NscCompiler::NscGetFunctionPrototype (
-	__in const char * FunctionName,
-	__out NscPrototypeDefinition & Prototype
+	nwn2dev__in const char * FunctionName,
+	nwn2dev__out NscPrototypeDefinition & Prototype
 	)
 {
 	NscCompilerState *pCompilerState;
@@ -1102,7 +1102,7 @@ NscCompiler::NscGetEntrypointSymbolName (
 
 void
 NscCompiler::NscSetCompilerErrorPrefix (
-	__in const char * ErrorPrefix
+	nwn2dev__in const char * ErrorPrefix
 	)
 {
 	NscGetCompilerState () ->m_pszErrorPrefix = ErrorPrefix;
@@ -1124,9 +1124,9 @@ NscCompiler::NscSetCompilerErrorPrefix (
 
 void
 NscCompiler::NscSetExternalResourceLoader (
-	__in void * Context,
-	__in ResLoadFileProc ResLoadFile,
-	__in ResUnloadFileProc ResUnloadFile
+	nwn2dev__in void * Context,
+	nwn2dev__in ResLoadFileProc ResLoadFile,
+	nwn2dev__in ResUnloadFileProc ResUnloadFile
 	)
 {
 	m_ResLoadContext = Context;
@@ -1146,7 +1146,7 @@ NscCompiler::NscSetExternalResourceLoader (
 
 void
 NscCompiler::NscSetResourceCacheEnabled (
-	__in bool EnableCache
+	nwn2dev__in bool EnableCache
 	)
 {
 	m_CacheResources = EnableCache;
@@ -1175,10 +1175,10 @@ NscCompiler::NscSetResourceCacheEnabled (
 
 unsigned char *
 NscCompiler::LoadResource (
-	__in const char * pszName,
-	__in NwnResType nResType,
-	__out UINT32 * pulSize,
-	__out bool * pfAllocated
+	nwn2dev__in const char * pszName,
+	nwn2dev__in NwnResType nResType,
+	nwn2dev__out UINT32 * pulSize,
+	nwn2dev__out bool * pfAllocated
 	)
 {
 	unsigned char               * FileContents;
@@ -1458,9 +1458,9 @@ NscCompiler::LoadResource (
 
 bool
 NscCompiler::NscCompilerInitialize (
-	__in int CompilerVersion,
-	__in bool EnableExtensions,
-	__in IDebugTextOut * TextOut
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool EnableExtensions,
+	nwn2dev__in IDebugTextOut * TextOut
 	)
 {
 	if (m_Initialized)
@@ -1552,7 +1552,7 @@ unsigned char *NscCompiler::LoadFileFromDisk (const char *pszKeyFile, UINT32 *pu
 
 bool
 NscCompiler::NscGatherPrototypeFromSymbol (
-	__in NscSymbol * Symbol,
+	nwn2dev__in NscSymbol * Symbol,
 	__inout NscPrototypeDefinition & Prototype
 	)
 {
@@ -1659,10 +1659,10 @@ NscCompiler::NscGatherPrototypeFromSymbol (
 bool
 NscCompiler::NscCacheResource (
 	__in_bcount( ResFileLength ) unsigned char * ResFileContents,
-	__in UINT32 ResFileLength,
-	__in bool Allocated,
-	__in const NWN::ResRef32 & ResRef,
-	__in NWN::ResType ResType
+	nwn2dev__in UINT32 ResFileLength,
+	nwn2dev__in bool Allocated,
+	nwn2dev__in const NWN::ResRef32 & ResRef,
+	nwn2dev__in NWN::ResType ResType
 	)
 {
 	if (!m_CacheResources)

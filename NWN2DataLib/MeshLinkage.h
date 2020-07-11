@@ -90,7 +90,7 @@ struct MeshLinkageTraits
 	}                                                           \
 	                                                            \
 	inline AssociatedMeshBase::Ptr SetAssociatedMesh(           \
-	       __in AssociatedMeshBase::Ptr Mesh                    \
+	       nwn2dev__in AssociatedMeshBase::Ptr Mesh                    \
 		   ) const                                              \
 	{                                                           \
 		return m_MeshLinkage.SetAssociatedMesh( Mesh );         \
@@ -131,7 +131,7 @@ public:
 
 	inline
 	MeshLinkage(
-		__in const MeshLinkageTraits * Traits
+		nwn2dev__in const MeshLinkageTraits * Traits
 		)
 	: m_AttachedMeshManager( NULL ),
 	  m_Traits( Traits ),
@@ -141,7 +141,7 @@ public:
 
 	inline
 	MeshLinkage(
-		__in const MeshLinkage & other
+		nwn2dev__in const MeshLinkage & other
 		)
 	: m_AttachedMeshManager( NULL ),
 	  m_Traits( other.m_Traits ),
@@ -169,7 +169,7 @@ public:
 	inline
 	MeshLinkage &
 	operator=(
-		__in const MeshLinkage & other
+		nwn2dev__in const MeshLinkage & other
 		)
 	{
 		m_Traits = other.m_Traits;
@@ -185,7 +185,7 @@ public:
 
 	void
 	RegisterMesh(
-		__in MeshManager & MeshMgr
+		nwn2dev__in MeshManager & MeshMgr
 		);
 
 	//
@@ -208,7 +208,7 @@ public:
 	inline
 	AssociatedMeshBase::Ptr
 	SetAssociatedMesh(
-		__in AssociatedMeshBase::Ptr AssociatedMesh
+		nwn2dev__in AssociatedMeshBase::Ptr AssociatedMesh
 		) const
 	{
 		AssociatedMeshBase::Ptr PrevMesh;

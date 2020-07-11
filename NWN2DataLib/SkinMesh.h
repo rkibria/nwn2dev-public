@@ -152,8 +152,8 @@ public:
 	inline
 	float
 	GetVertexWeight(
-		__in PointIndex PointId,
-		__in unsigned long WeightId
+		nwn2dev__in PointIndex PointId,
+		nwn2dev__in unsigned long WeightId
 		) const
 	{
 		return GetPoint( PointId ).BoneWeights[ WeightId ];
@@ -162,8 +162,8 @@ public:
 	inline
 	unsigned long
 	GetVertexBone(
-		__in PointIndex PointId,
-		__in unsigned long WeightId
+		nwn2dev__in PointIndex PointId,
+		nwn2dev__in unsigned long WeightId
 		) const
 	{
 		return GetPoint( PointId ).BoneIndicies[ WeightId ];
@@ -172,7 +172,7 @@ public:
 	inline
 	unsigned long
 	GetVertexWeightCount(
-		__in PointIndex PointId
+		nwn2dev__in PointIndex PointId
 		) const
 	{
 		return GetPoint( PointId ).BoneCount;
@@ -182,8 +182,8 @@ public:
 	inline
 	void
 	CopyFileVertex(
-		__in const VertexFile & FVert,
-		__out Vertex & Vert
+		nwn2dev__in const VertexFile & FVert,
+		nwn2dev__out Vertex & Vert
 		)
 	{
 		Vert.LocalPos  = FVert.Position;
@@ -209,8 +209,8 @@ public:
 	inline
 	void
 	CopyFileFace(
-		__in const FaceFile & FFace,
-		__out Face & Face
+		nwn2dev__in const FaceFile & FFace,
+		nwn2dev__out Face & Face
 		)
 	{
 		for (size_t i = 0; i < 3; i += 1)

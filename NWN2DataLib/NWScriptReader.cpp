@@ -23,7 +23,7 @@ Abstract:
 
 
 NWScriptReader::NWScriptReader(
-	__in const char * NcsFileName
+	nwn2dev__in const char * NcsFileName
 	)
 /*++
 
@@ -151,11 +151,11 @@ Environment:
 }
 
 NWScriptReader::NWScriptReader(
-	__in const char * ScriptName,
+	nwn2dev__in const char * ScriptName,
 	__in_bcount( ScriptInstructionLen ) const unsigned char * ScriptInstructions,
-	__in size_t ScriptInstructionLen,
+	nwn2dev__in size_t ScriptInstructionLen,
 	__in_ecount( SymbolTableSize ) const SymbolTableRawEntry * SymTab,
-	__in size_t SymbolTableSize
+	nwn2dev__in size_t SymbolTableSize
 	)
 /*++
 
@@ -218,7 +218,7 @@ Environment:
 }
 
 NWScriptReader::NWScriptReader(
-	__in NWScriptReader & other
+	nwn2dev__in NWScriptReader & other
 	)
 /*++
 
@@ -299,9 +299,9 @@ Environment:
 
 void
 NWScriptReader::StoreInternalState(
-	__out const unsigned char * & ScriptInstructions,
-	__out size_t & ScriptInstructionLen,
-	__out SymbolTableRawEntryVec & SymTab
+	nwn2dev__out const unsigned char * & ScriptInstructions,
+	nwn2dev__out size_t & ScriptInstructionLen,
+	nwn2dev__out SymbolTableRawEntryVec & SymTab
 	)
 /*++
 
@@ -367,8 +367,8 @@ Environment:
 
 void
 NWScriptReader::ResetInstructionBuffer(
-	__in const unsigned char * ScriptInstructions,
-	__in size_t ScriptInstructionLen
+	nwn2dev__in const unsigned char * ScriptInstructions,
+	nwn2dev__in size_t ScriptInstructionLen
 	)
 /*++
 
@@ -406,8 +406,8 @@ Environment:
 
 void
 NWScriptReader::ReadInstruction(
-	__out UCHAR & Opcode,
-	__out UCHAR & TypeOpcode
+	nwn2dev__out UCHAR & Opcode,
+	nwn2dev__out UCHAR & TypeOpcode
 	)
 /*++
 
@@ -584,7 +584,7 @@ Environment:
 
 std::string
 NWScriptReader::ReadString(
-	__in ULONG Length
+	nwn2dev__in ULONG Length
 	)
 /*++
 
@@ -622,8 +622,8 @@ Environment:
 
 void
 NWScriptReader::PatchBYTE(
-	__in ULONG Offset,
-	__in UCHAR Byte
+	nwn2dev__in ULONG Offset,
+	nwn2dev__in UCHAR Byte
 	)
 /*++
 
@@ -657,7 +657,7 @@ Environment:
 
 void
 NWScriptReader::SetInstructionPointer(
-	__in ULONG InstructionPointer
+	nwn2dev__in ULONG InstructionPointer
 	)
 /*++
 
@@ -691,7 +691,7 @@ Environment:
 
 void
 NWScriptReader::AdvanceInstructionPointer(
-	__in ULONG Increment
+	nwn2dev__in ULONG Increment
 	)
 /*++
 
@@ -719,9 +719,9 @@ Environment:
 
 bool
 NWScriptReader::GetSymbolName(
-	__in ULONG PC,
-	__out std::string & SymbolName,
-	__in bool FindNearest /* = false */
+	nwn2dev__in ULONG PC,
+	nwn2dev__out std::string & SymbolName,
+	nwn2dev__in bool FindNearest /* = false */
 	)
 /*++
 
@@ -779,7 +779,7 @@ Environment:
 
 bool
 NWScriptReader::LoadSymbols(
-	__in const std::string & NDBFileName
+	nwn2dev__in const std::string & NDBFileName
 	)
 /*++
 

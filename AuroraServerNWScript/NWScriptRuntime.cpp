@@ -33,7 +33,7 @@ using namespace NWN2Server;
 
 void
 NWScriptRuntime::StoreSavedStateToStack(
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -151,10 +151,10 @@ Environment:
 
 void
 NWScriptRuntime::ExecuteScriptForServer(
-	__in NWSCRIPT_PROGRAM_COUNTER PC,
+	nwn2dev__in NWSCRIPT_PROGRAM_COUNTER PC,
 	__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-	__in int CodeSize,
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in int CodeSize,
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -554,7 +554,7 @@ Environment:
 
 void
 NWScriptRuntime::SetDebugLevel(
-	__in NWScriptVM::ExecDebugLevel DebugLevel
+	nwn2dev__in NWScriptVM::ExecDebugLevel DebugLevel
 	)
 /*++
 
@@ -583,7 +583,7 @@ Environment:
 
 void
 NWScriptRuntime::LoadJITEngine(
-	__in const char * DllDir
+	nwn2dev__in const char * DllDir
 	)
 /*++
 
@@ -696,13 +696,13 @@ Environment:
 
 void
 NWScriptRuntime::RestoreSavedStateFromStack(
-	__in NWN2Server::CVirtualMachine * ServerVM,
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM,
 	__in_ecount( CodeSize ) const unsigned char * InstructionStream,
-	__in size_t CodeSize,
+	nwn2dev__in size_t CodeSize,
 	__deref_out ScriptCacheData * * ScriptData,
-	__out ScriptResumeData * ResumeData,
-	__out NWSCRIPT_PROGRAM_COUNTER & PC,
-	__out std::string & ScriptName
+	nwn2dev__out ScriptResumeData * ResumeData,
+	nwn2dev__out NWSCRIPT_PROGRAM_COUNTER & PC,
+	nwn2dev__out std::string & ScriptName
 	)
 /*++
 
@@ -849,9 +849,9 @@ Environment:
 
 bool
 NWScriptRuntime::LoadScript(
-	__in const NWN::ResRef32 & ScriptName,
+	nwn2dev__in const NWN::ResRef32 & ScriptName,
 	__in_ecount( CodeSize ) const unsigned char * InstructionStream,
-	__in size_t CodeSize,
+	nwn2dev__in size_t CodeSize,
 	__deref_out ScriptCacheData * * ScriptData
 	)
 /*++
@@ -1093,8 +1093,8 @@ Environment:
 
 void
 NWScriptRuntime::ConvertScriptParameters(
-	__out NWScriptParamVec & Params,
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__out NWScriptParamVec & Params,
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -1232,9 +1232,9 @@ Environment:
 
 void
 NWScriptRuntime::PushStackToBridge(
-	__in NWScriptStack & VMStack,
-	__in ULONG SaveVarCount,
-	__in NWScriptStack::STACK_POINTER Offset
+	nwn2dev__in NWScriptStack & VMStack,
+	nwn2dev__in ULONG SaveVarCount,
+	nwn2dev__in NWScriptStack::STACK_POINTER Offset
 	)
 /*++
 
@@ -1271,8 +1271,8 @@ Environment:
 
 void
 NWScriptRuntime::PopStackFromBridge(
-	__in NWScriptStack & VMStack,
-	__in ULONG SaveVarCount
+	nwn2dev__in NWScriptStack & VMStack,
+	nwn2dev__in ULONG SaveVarCount
 	)
 /*++
 
@@ -1305,7 +1305,7 @@ Environment:
 
 bool
 NWScriptRuntime::ShouldJITScript(
-	__in size_t CodeSize
+	nwn2dev__in size_t CodeSize
 	)
 /*++
 
@@ -1353,7 +1353,7 @@ Environment:
 void
 NWScriptRuntime::LoadSymbols(
 	__inout NWScriptReader & Reader,
-	__in const std::string & ScriptName
+	nwn2dev__in const std::string & ScriptName
 	)
 /*++
 

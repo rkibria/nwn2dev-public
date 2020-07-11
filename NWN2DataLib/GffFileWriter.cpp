@@ -78,9 +78,9 @@ Environment:
 
 bool
 GffFileWriter::Commit(
-	__in const std::string & FileName,
-	__in unsigned long FileType, /* = 0 */
-	__in unsigned long Flags /* = 0 */
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__in unsigned long FileType, /* = 0 */
+	nwn2dev__in unsigned long Flags /* = 0 */
 	)
 /*++
 
@@ -154,9 +154,9 @@ Environment:
 
 bool
 GffFileWriter::Commit(
-	__out std::vector< unsigned char > & Memory,
-	__in unsigned long FileType, /* = 0 */
-	__in unsigned long Flags /* = 0 */
+	nwn2dev__out std::vector< unsigned char > & Memory,
+	nwn2dev__in unsigned long FileType, /* = 0 */
+	nwn2dev__in unsigned long Flags /* = 0 */
 	)
 /*++
 
@@ -212,9 +212,9 @@ Environment:
 
 void
 GffFileWriter::CommitInternal(
-	__in GffWriteContext * Context,
-	__in unsigned long FileType,
-	__in unsigned long Flags
+	nwn2dev__in GffWriteContext * Context,
+	nwn2dev__in unsigned long FileType,
+	nwn2dev__in unsigned long Flags
 	)
 /*++
 
@@ -405,8 +405,8 @@ Environment:
 
 void
 GffFileWriter::BuildHeader(
-	__out GFF_HEADER & Header,
-	__in unsigned long FileType
+	nwn2dev__out GFF_HEADER & Header,
+	nwn2dev__in unsigned long FileType
 	)
 /*++
 
@@ -455,7 +455,7 @@ Environment:
 void
 GffFileWriter::WriteLabelEntries(
 	__inout GFF_HEADER & Header,
-	__in GffWriteContext * Context
+	nwn2dev__in GffWriteContext * Context
 	)
 /*++
 
@@ -551,7 +551,7 @@ Environment:
 void
 GffFileWriter::WriteFieldData(
 	__inout GFF_HEADER & Header,
-	__in GffWriteContext * Context
+	nwn2dev__in GffWriteContext * Context
 	)
 /*++
 
@@ -625,7 +625,7 @@ Environment:
 void
 GffFileWriter::WriteFieldIndicies(
 	__inout GFF_HEADER & Header,
-	__in GffWriteContext * Context
+	nwn2dev__in GffWriteContext * Context
 	)
 /*++
 
@@ -707,7 +707,7 @@ Environment:
 void
 GffFileWriter::WriteStructEntries(
 	__inout GFF_HEADER & Header,
-	__in GffWriteContext * Context
+	nwn2dev__in GffWriteContext * Context
 	)
 /*++
 
@@ -756,7 +756,7 @@ Environment:
 void
 GffFileWriter::WriteListIndicies(
 	__inout GFF_HEADER & Header,
-	__in GffWriteContext * Context
+	nwn2dev__in GffWriteContext * Context
 	)
 /*++
 
@@ -829,7 +829,7 @@ Environment:
 void
 GffFileWriter::WriteFieldEntries(
 	__inout GFF_HEADER & Header,
-	__in GffWriteContext * Context
+	nwn2dev__in GffWriteContext * Context
 	)
 /*++
 
@@ -926,7 +926,7 @@ Environment:
 
 bool
 GffFileWriter::IsComplexType(
-	__in GFF_FIELD_TYPE FieldType
+	nwn2dev__in GFF_FIELD_TYPE FieldType
 	)
 /*++
 
@@ -996,8 +996,8 @@ Environment:
 
 void
 GffFileWriter::GffStruct::InitializeFromStruct(
-	__in const GffFileReader::GffStruct * Struct,
-	__in size_t MaxDepth /* = 32 */
+	nwn2dev__in const GffFileReader::GffStruct * Struct,
+	nwn2dev__in size_t MaxDepth /* = 32 */
 	)
 /*++
 
@@ -1177,9 +1177,9 @@ Environment:
 
 void
 GffFileWriter::GffStruct::CopyField(
-	__in const GffFileReader::GffStruct * Struct,
-	__in const char * FieldName,
-	__in size_t MaxDepth /* = 32 */
+	nwn2dev__in const GffFileReader::GffStruct * Struct,
+	nwn2dev__in const char * FieldName,
+	nwn2dev__in size_t MaxDepth /* = 32 */
 	)
 /*++
 
@@ -1230,9 +1230,9 @@ Environment:
 
 void
 GffFileWriter::GffStruct::CopyField(
-	__in const GffFileReader::GffStruct * Struct,
-	__in GffFileReader::FIELD_INDEX FieldIndex,
-	__in size_t MaxDepth /* = 32 */
+	nwn2dev__in const GffFileReader::GffStruct * Struct,
+	nwn2dev__in GffFileReader::FIELD_INDEX FieldIndex,
+	nwn2dev__in size_t MaxDepth /* = 32 */
 	)
 /*++
 
@@ -1415,8 +1415,8 @@ Environment:
 
 void
 GffFileWriter::GffStruct::InitializeFromStruct(
-	__in GffFileWriter::GffStruct & Struct,
-	__in size_t MaxDepth /* = 32 */
+	nwn2dev__in GffFileWriter::GffStruct & Struct,
+	nwn2dev__in size_t MaxDepth /* = 32 */
 	)
 /*++
 

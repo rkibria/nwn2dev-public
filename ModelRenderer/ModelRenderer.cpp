@@ -48,7 +48,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -63,8 +63,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -81,8 +81,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -92,9 +92,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 
@@ -136,7 +136,7 @@ public:
 
 void
 InitObjects(
-	__in WorldView & View
+	nwn2dev__in WorldView & View
 	)
 /*++
 
@@ -194,10 +194,10 @@ Environment:
 int
 CALLBACK
 WinMain(
-	__in HINSTANCE hInstance,
-	__in HINSTANCE hPrevInstance,
-	__in LPSTR lpCmdLine,
-	__in int nShowCmd
+	nwn2dev__in HINSTANCE hInstance,
+	nwn2dev__in HINSTANCE hPrevInstance,
+	nwn2dev__in LPSTR lpCmdLine,
+	nwn2dev__in int nShowCmd
 	)
 /*++
 

@@ -119,7 +119,7 @@ public:
 	//
 
 	ModelSkeleton(
-		__in const std::string & SkeletonName
+		nwn2dev__in const std::string & SkeletonName
 		);
 
 	virtual
@@ -152,7 +152,7 @@ public:
 
 	void
 	AddBone(
-		__in const Bone & NewBone
+		nwn2dev__in const Bone & NewBone
 		);
 
 	inline
@@ -186,7 +186,7 @@ public:
 	inline
 	const Bone *
 	GetBone(
-		__in BoneIndex Index
+		nwn2dev__in BoneIndex Index
 		) const
 	{
 		if (Index >= m_Bones.size( ))
@@ -198,7 +198,7 @@ public:
 	inline
 	Bone *
 	GetBone(
-		__in BoneIndex Index
+		nwn2dev__in BoneIndex Index
 		)
 	{
 		if (Index >= m_Bones.size( ))
@@ -210,7 +210,7 @@ public:
 	inline
 	const Bone *
 	GetBone(
-		__in const char * BoneName
+		nwn2dev__in const char * BoneName
 		) const
 	{
 		for (BoneVec::const_iterator it = m_Bones.begin( );
@@ -227,7 +227,7 @@ public:
 	inline
 	Bone *
 	GetBone(
-		__in const char * BoneName
+		nwn2dev__in const char * BoneName
 		)
 	{
 		for (BoneVec::iterator it = m_Bones.begin( );
@@ -248,7 +248,7 @@ public:
 	inline
 	const Bone *
 	GetAttachmentBone(
-		__in AttachmentPoint Attach
+		nwn2dev__in AttachmentPoint Attach
 		) const
 	{
 		return GetBone( m_AttachBoneIndicies[ Attach ] );
@@ -257,7 +257,7 @@ public:
 	inline
 	Bone *
 	GetAttachmentBone(
-		__in AttachmentPoint Attach
+		nwn2dev__in AttachmentPoint Attach
 		)
 	{
 		return GetBone( m_AttachBoneIndicies[ Attach ] );
@@ -270,7 +270,7 @@ public:
 	inline
 	const Bone *
 	GetSpecialBone(
-		__in SpecialBone Special
+		nwn2dev__in SpecialBone Special
 		) const
 	{
 		return GetBone( m_SpecialBoneIndicies[ Special ] );
@@ -279,7 +279,7 @@ public:
 	inline
 	Bone *
 	GetSpecialBone(
-		__in SpecialBone Special
+		nwn2dev__in SpecialBone Special
 		)
 	{
 		return GetBone( m_SpecialBoneIndicies[ Special ] );
@@ -292,7 +292,7 @@ public:
 	inline
 	BoneIndex
 	GetBoneIndex(
-		__in const Bone * B
+		nwn2dev__in const Bone * B
 		) const
 	{
 		return (BoneIndex) (B - &m_Bones[ 0 ]);
@@ -316,17 +316,17 @@ public:
 
 	NWN::Matrix44
 	GetBoneLocalTransform(
-		__in BoneIndex Index
+		nwn2dev__in BoneIndex Index
 		) const;
 
 	const NWN::Matrix44 &
 	GetBoneWorldTransform(
-		__in BoneIndex Index
+		nwn2dev__in BoneIndex Index
 		) const;
 
 	const NWN::Matrix44 &
 	GetBoneInvWorldTransform(
-		__in BoneIndex Index
+		nwn2dev__in BoneIndex Index
 		) const;
 
 	//
@@ -357,37 +357,37 @@ public:
 	static
 	const char *
 	GetAccessoryName(
-		__in NWN::NWN2_Accessory Accessory
+		nwn2dev__in NWN::NWN2_Accessory Accessory
 		);
 
 	static
 	NWN::NWN2_BodyPieceSlot
 	GetAccessoryBodyPieceSlot(
-		__in NWN::NWN2_Accessory Accessory
+		nwn2dev__in NWN::NWN2_Accessory Accessory
 		);
 
 	static
 	const char *
 	GetAccessoryAttachBoneName(
-		__in NWN::NWN2_Accessory Accessory
+		nwn2dev__in NWN::NWN2_Accessory Accessory
 		);
 
 	static
 	const char *
 	GetAnimationStanceName(
-		__in NWN::NWN2_AnimationStance Stance
+		nwn2dev__in NWN::NWN2_AnimationStance Stance
 		);
 
 	static
 	const char *
 	GetArmorPieceSlotName(
-		__in NWN::NWN2_ArmorPieceSlot Slot
+		nwn2dev__in NWN::NWN2_ArmorPieceSlot Slot
 		);
 
 	static
 	NWN::NWN2_BodyPieceSlot
 	GetArmorPieceBodyPieceSlot(
-		__in NWN::NWN2_ArmorPieceSlot Slot
+		nwn2dev__in NWN::NWN2_ArmorPieceSlot Slot
 		);
 
 private:
@@ -401,16 +401,16 @@ private:
 
 	void
 	RegisterAttachmentBone(
-		__in const Bone & B,
-		__in BoneIndex Index,
-		__in AttachmentPoint Attach
+		nwn2dev__in const Bone & B,
+		nwn2dev__in BoneIndex Index,
+		nwn2dev__in AttachmentPoint Attach
 		);
 
 	void
 	RegisterSpecialBone(
-		__in const Bone & B,
-		__in BoneIndex Index,
-		__in SpecialBone Special
+		nwn2dev__in const Bone & B,
+		nwn2dev__in BoneIndex Index,
+		nwn2dev__in SpecialBone Special
 		);
 
 	//
@@ -420,7 +420,7 @@ private:
 
 	NWN::Matrix44
 	CalcBoneWorldTransform(
-		__in BoneIndex Index
+		nwn2dev__in BoneIndex Index
 		) const;
 
 	std::string   m_SkeletonName;

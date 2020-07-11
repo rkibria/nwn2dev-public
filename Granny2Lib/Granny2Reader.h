@@ -43,7 +43,7 @@ class Granny2Reader
 public:
 
 	Granny2Reader(
-		__in const std::string & Granny2Dll
+		nwn2dev__in const std::string & Granny2Dll
 		);
 
 	virtual
@@ -57,24 +57,24 @@ public:
 
 	granny2::granny2_impl::GR2Info *
 	LoadGranny2File(
-		__in const std::string & FileName,
-		__in const std::string & TempFileName,
-		__in bool PreferOutOfProcess = false
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in const std::string & TempFileName,
+		nwn2dev__in bool PreferOutOfProcess = false
 		);
 
 private:
 
 	bool
 	Gr2Conv_GrannyConvertFileToRaw(
-		__in const char * SourceFile,
-		__in const char * DestinationFile
+		nwn2dev__in const char * SourceFile,
+		nwn2dev__in const char * DestinationFile
 		);
 
 	typedef
 	bool
 	(__stdcall * GrannyConvertFileToRawProc)(
-		__in const char * SourceFile,
-		__in const char * DestinationFile
+		nwn2dev__in const char * SourceFile,
+		nwn2dev__in const char * DestinationFile
 		);
 
 	wchar_t                    m_Gr2ConvExe[ MAX_PATH + 1 ];

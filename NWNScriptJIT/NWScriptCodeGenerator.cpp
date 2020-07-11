@@ -109,9 +109,9 @@ Abstract:
 
 NWScriptCodeGenerator::NWScriptCodeGenerator(
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel,
-	__in Type ^ HostInterfaceType,
-	__in Type ^ ScriptInterfaceType
+	nwn2dev__in ULONG DebugLevel,
+	nwn2dev__in Type ^ HostInterfaceType,
+	nwn2dev__in Type ^ ScriptInterfaceType
 	)
 /*++
 
@@ -185,13 +185,13 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateProgramCode(
-	__in const NWScriptAnalyzer * Analyzer,
-	__in INWScriptActions * ActionHandler,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-	__in String ^ Name,
-	__in Encoding ^ StringEncoding,
-	__out ProgramInfo % Program
+	nwn2dev__in String ^ Name,
+	nwn2dev__in Encoding ^ StringEncoding,
+	nwn2dev__out ProgramInfo % Program
 	)
 /*++
 
@@ -302,13 +302,13 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateInterfaceLayerCode(
-	__in const NWScriptAnalyzer * Analyzer,
-	__in INWScriptActions * ActionHandler,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-	__in String ^ Name,
-	__in Encoding ^ StringEncoding,
-	__out ProgramInfo % Program
+	nwn2dev__in String ^ Name,
+	nwn2dev__in Encoding ^ StringEncoding,
+	nwn2dev__out ProgramInfo % Program
 	)
 /*++
 
@@ -422,15 +422,15 @@ Environment:
 
 void
 NWScriptCodeGenerator::SetupCodeGeneration(
-	__in const NWScriptAnalyzer * Analyzer,
-	__in INWScriptActions * ActionHandler,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in INWScriptActions * ActionHandler,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-	__in String ^ Name,
-	__in Encoding ^ StringEncoding,
-	__in bool InterfaceLayer,
-	__out AssemblyBuilder ^ % Assembly,
-	__out ModuleBuilder ^ % Module,
-	__out bool % SaveAsm
+	nwn2dev__in String ^ Name,
+	nwn2dev__in Encoding ^ StringEncoding,
+	nwn2dev__in bool InterfaceLayer,
+	nwn2dev__out AssemblyBuilder ^ % Assembly,
+	nwn2dev__out ModuleBuilder ^ % Module,
+	nwn2dev__out bool % SaveAsm
 	)
 /*++
 
@@ -541,7 +541,7 @@ Environment:
 
 NWScriptCodeGenerator::ILGenContext ^
 NWScriptCodeGenerator::CreateILGenContext(
-	__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 	)
 /*++
@@ -642,11 +642,11 @@ Environment:
 
 AssemblyBuilder ^
 NWScriptCodeGenerator::GenerateProgramAssembly(
-	__in AppDomain ^ Domain,
-	__in String ^ Name,
+	nwn2dev__in AppDomain ^ Domain,
+	nwn2dev__in String ^ Name,
 	__in_opt String ^ OutputDir,
-	__in bool SaveAsm,
-	__in bool InterfaceLayer
+	nwn2dev__in bool SaveAsm,
+	nwn2dev__in bool InterfaceLayer
 	)
 /*++
 
@@ -715,7 +715,7 @@ Environment:
 
 ModuleBuilder ^
 NWScriptCodeGenerator::GenerateProgramModule(
-	__in AssemblyBuilder ^ Assembly
+	nwn2dev__in AssemblyBuilder ^ Assembly
 	)
 /*++
 
@@ -769,9 +769,9 @@ Environment:
 
 TypeBuilder ^
 NWScriptCodeGenerator::GenerateProgramType(
-	__in ModuleBuilder ^ Module,
-	__in String ^ Name,
-	__in NWN::OBJECTID ObjectInvalid
+	nwn2dev__in ModuleBuilder ^ Module,
+	nwn2dev__in String ^ Name,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid
 	)
 /*++
 
@@ -980,9 +980,9 @@ Environment:
 
 TypeBuilder ^
 NWScriptCodeGenerator::GenerateInterfaceLayerType(
-	__in ModuleBuilder ^ Module,
-	__in String ^ Name,
-	__in NWN::OBJECTID ObjectInvalid
+	nwn2dev__in ModuleBuilder ^ Module,
+	nwn2dev__in String ^ Name,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid
 	)
 /*++
 
@@ -1131,7 +1131,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::RetrieveJITIntrinsicsTypeInfo(
-	__in Type ^ NWScriptJITIntrinsicsType
+	nwn2dev__in Type ^ NWScriptJITIntrinsicsType
 	)
 /*++
 
@@ -1241,8 +1241,8 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateCloneScriptProgram(
-	__in TypeBuilder ^ ProgramType,
-	__in ConstructorBuilder ^ ProgCtor
+	nwn2dev__in TypeBuilder ^ ProgramType,
+	nwn2dev__in ConstructorBuilder ^ ProgCtor
 	)
 /*++
 
@@ -1345,7 +1345,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateLoadScriptGlobals(
-	__in TypeBuilder ^ ProgramType
+	nwn2dev__in TypeBuilder ^ ProgramType
 	)
 /*++
 
@@ -1471,7 +1471,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateExecuteScript(
-	__in TypeBuilder ^ ProgramType
+	nwn2dev__in TypeBuilder ^ ProgramType
 	)
 /*++
 
@@ -1632,7 +1632,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateExecuteScriptSituation(
-	__in TypeBuilder ^ ProgramType
+	nwn2dev__in TypeBuilder ^ ProgramType
 	)
 /*++
 
@@ -1776,9 +1776,9 @@ Environment:
 
 PropertyBuilder ^
 NWScriptCodeGenerator::GenerateReadOnlyProperty(
-	__in TypeBuilder ^ ParentType,
-	__in FieldBuilder ^ BackingField,
-	__in String ^ PropertyName
+	nwn2dev__in TypeBuilder ^ ParentType,
+	nwn2dev__in FieldBuilder ^ BackingField,
+	nwn2dev__in String ^ PropertyName
 	)
 /*++
 
@@ -1840,9 +1840,9 @@ Environment:
 
 FieldBuilder ^
 NWScriptCodeGenerator::GenerateLiteralField(
-	__in TypeBuilder ^ ParentType,
-	__in String ^ FieldName,
-	__in Object ^ FieldLiteralValue
+	nwn2dev__in TypeBuilder ^ ParentType,
+	nwn2dev__in String ^ FieldName,
+	nwn2dev__in Object ^ FieldLiteralValue
 	)
 /*++
 
@@ -1885,7 +1885,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateGlobals(
-	__in TypeBuilder ^ ProgramType
+	nwn2dev__in TypeBuilder ^ ProgramType
 	)
 /*++
 
@@ -2423,7 +2423,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateSubroutineCode(
-	__in SubroutineGenContext ^ Sub
+	nwn2dev__in SubroutineGenContext ^ Sub
 	)
 /*++
 
@@ -2591,7 +2591,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::AnnotateSpecialVariables(
-	__in SubroutineGenContext ^ Sub
+	nwn2dev__in SubroutineGenContext ^ Sub
 	)
 /*++
 
@@ -2728,9 +2728,9 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateMSILForIRInstruction(
-	__in SubroutineGenContext ^ Sub,
-	__in SubroutineControlFlow ^ Flow,
-	__in NWScriptInstruction & IRInstr
+	nwn2dev__in SubroutineGenContext ^ Sub,
+	nwn2dev__in SubroutineControlFlow ^ Flow,
+	nwn2dev__in NWScriptInstruction & IRInstr
 	)
 /*++
 
@@ -3550,8 +3550,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in Int32 i
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in Int32 i
 	)
 /*++
 
@@ -3595,8 +3595,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in UInt32 o
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in UInt32 o
 	)
 /*++
 
@@ -3685,8 +3685,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in Single f
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in Single f
 	)
 /*++
 
@@ -3730,8 +3730,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in String ^ s
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in String ^ s
 	)
 /*++
 
@@ -3775,8 +3775,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in LocalBuilder ^ Local
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in LocalBuilder ^ Local
 	)
 /*++
 
@@ -3867,8 +3867,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in NWScriptVariable * Var
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -3961,9 +3961,9 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPush(
-	__in ILGenerator ^ ILGen,
-	__in Type ^ ArgType,
-	__in short ArgSlot
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in Type ^ ArgType,
+	nwn2dev__in short ArgSlot
 	)
 /*++
 
@@ -4058,8 +4058,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPop(
-	__in ILGenerator ^ ILGen,
-	__in LocalBuilder ^ Local
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in LocalBuilder ^ Local
 	)
 /*++
 
@@ -4151,8 +4151,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateVMStackPop(
-	__in ILGenerator ^ ILGen,
-	__in NWScriptVariable * Var
+	nwn2dev__in ILGenerator ^ ILGen,
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -4248,7 +4248,7 @@ Environment:
 
 LocalBuilder ^
 NWScriptCodeGenerator::AcquireLocal(
-	__in Type ^ LocalType
+	nwn2dev__in Type ^ LocalType
 	)
 /*++
 
@@ -4311,7 +4311,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::ReleaseLocal(
-	__in LocalBuilder ^ Local
+	nwn2dev__in LocalBuilder ^ Local
 	)
 /*++
 
@@ -4413,7 +4413,7 @@ Environment:
 
 LocalBuilder ^
 NWScriptCodeGenerator::CreateLocal(
-	__in NWScriptVariable * Var
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -4502,7 +4502,7 @@ Environment:
 
 Type ^
 NWScriptCodeGenerator::GenerateSubroutineRetType(
-	__in const NWScriptSubroutine * IRSub
+	nwn2dev__in const NWScriptSubroutine * IRSub
 	)
 /*++
 
@@ -4558,7 +4558,7 @@ Environment:
 
 Type ^
 NWScriptCodeGenerator::BuildCompositeReturnType(
-	__in const NWScriptSubroutine * IRSub
+	nwn2dev__in const NWScriptSubroutine * IRSub
 	)
 /*++
 
@@ -4643,9 +4643,9 @@ Environment:
 
 LocalBuilder ^
 NWScriptCodeGenerator::GeneratePackReturnValue(
-	__in const NWScriptSubroutine * IRSub,
+	nwn2dev__in const NWScriptSubroutine * IRSub,
 	__in_ecount( ReturnValueCount ) NWScriptVariable * * ReturnValues,
-	__in size_t ReturnValueCount
+	nwn2dev__in size_t ReturnValueCount
 	)
 /*++
 
@@ -4766,10 +4766,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateUnpackReturnValue(
-	__in const NWScriptSubroutine * IRSub,
-	__in MethodBuilder ^ MSILSub,
+	nwn2dev__in const NWScriptSubroutine * IRSub,
+	nwn2dev__in MethodBuilder ^ MSILSub,
 	__in_ecount( ReturnValueCount ) NWScriptVariable * * ReturnValues,
-	__in size_t ReturnValueCount
+	nwn2dev__in size_t ReturnValueCount
 	)
 /*++
 
@@ -4885,9 +4885,9 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateExecuteActionService(
-	__in NWSCRIPT_ACTION CalledActionId,
-	__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-	__in size_t ParamCount
+	nwn2dev__in NWSCRIPT_ACTION CalledActionId,
+	nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+	nwn2dev__in size_t ParamCount
 	)
 /*++
 
@@ -5088,10 +5088,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateExecuteActionServiceSlow(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-	__in size_t ParamCount,
-	__in size_t ReturnCount,
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t ReturnCount,
 	__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 	)
 /*++
@@ -5183,10 +5183,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateExecuteActionServiceFast(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-	__in size_t ParamCount,
-	__in size_t ReturnCount,
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t ReturnCount,
 	__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 	)
 /*++
@@ -5371,10 +5371,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateExecuteActionServiceFastDirect(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-	__in size_t ParamCount,
-	__in size_t ReturnCount,
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t ReturnCount,
 	__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 	)
 /*++
@@ -5526,9 +5526,9 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::AcquireFastDirectActionServiceStub(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in size_t ParamCount,
-	__in size_t SrcParams
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t SrcParams
 	)
 /*++
 
@@ -5620,9 +5620,9 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateFastDirectActionServiceStub(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in size_t ParamCount,
-	__in size_t SrcParams
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t SrcParams
 	)
 /*++
 
@@ -6582,10 +6582,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateExecuteActionServiceSlowViaStub(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in NWNScriptLib::VariableWeakPtrVec * ParamList,
-	__in size_t ParamCount,
-	__in size_t ReturnCount,
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in NWNScriptLib::VariableWeakPtrVec * ParamList,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t ReturnCount,
 	__in_ecount( ReturnCount ) PCNWACTION_TYPE ReturnTypes
 	)
 /*++
@@ -6741,9 +6741,9 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::AcquireSlowActionServiceStub(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in size_t ParamCount,
-	__in size_t SrcParams
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t SrcParams
 	)
 /*++
 
@@ -6832,9 +6832,9 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateSlowActionServiceStub(
-	__in PCNWACTION_DEFINITION CalledAction,
-	__in size_t ParamCount,
-	__in size_t SrcParams
+	nwn2dev__in PCNWACTION_DEFINITION CalledAction,
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in size_t SrcParams
 	)
 /*++
 
@@ -7252,8 +7252,8 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateOptimizedNWNCompatibleActionServiceStub(
-	__in String ^ ActionName,
-	__in String ^ StubName
+	nwn2dev__in String ^ ActionName,
+	nwn2dev__in String ^ StubName
 	)
 /*++
 
@@ -7298,7 +7298,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateOptAction_GetStringLength(
-	__in String ^ StubName
+	nwn2dev__in String ^ StubName
 	)
 /*++
 
@@ -7347,7 +7347,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateOptAction_GetStringLeft(
-	__in String ^ StubName
+	nwn2dev__in String ^ StubName
 	)
 /*++
 
@@ -7436,7 +7436,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateOptAction_GetStringRight(
-	__in String ^ StubName
+	nwn2dev__in String ^ StubName
 	)
 /*++
 
@@ -7526,7 +7526,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateOptAction_IntToString(
-	__in String ^ StubName
+	nwn2dev__in String ^ StubName
 	)
 /*++
 
@@ -7576,7 +7576,7 @@ Environment:
 
 MethodInfo ^
 NWScriptCodeGenerator::GenerateOptAction_GetSubString(
-	__in String ^ StubName
+	nwn2dev__in String ^ StubName
 	)
 /*++
 
@@ -7683,9 +7683,9 @@ Environment:
 
 MethodBuilder ^
 NWScriptCodeGenerator::BeginNewSubroutine(
-	__in String ^ Name,
-	__in MethodAttributes Attributes,
-	__in Type ^ ReturnType,
+	nwn2dev__in String ^ Name,
+	nwn2dev__in MethodAttributes Attributes,
+	nwn2dev__in Type ^ ReturnType,
 	__in_opt array< Type ^ > ^ ParameterTypes
 	)
 /*++
@@ -7738,7 +7738,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateLoadVariable(
-	__in NWScriptVariable * Var
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -7766,8 +7766,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateLoadVariable(
-	__in NWScriptVariable * Var,
-	__in bool Box
+	nwn2dev__in NWScriptVariable * Var,
+	nwn2dev__in bool Box
 	)
 /*++
 
@@ -7929,7 +7929,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateStoreVariable(
-	__in NWScriptVariable * Var
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -7958,8 +7958,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateStoreVariable(
-	__in NWScriptVariable * Var,
-	__in bool Unbox
+	nwn2dev__in NWScriptVariable * Var,
+	nwn2dev__in bool Unbox
 	)
 /*++
 
@@ -8063,7 +8063,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GeneratePushDefaultValue(
-	__in Type ^ LocalType
+	nwn2dev__in Type ^ LocalType
 	)
 /*++
 
@@ -8138,7 +8138,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateSetDefaultValue(
-	__in LocalBuilder ^ Local
+	nwn2dev__in LocalBuilder ^ Local
 	)
 /*++
 
@@ -8174,7 +8174,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateSetDefaultValue(
-	__in NWScriptVariable * Var
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -8210,11 +8210,11 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateCompare(
-	__in NWScriptVariable * Var1,
-	__in NWScriptVariable * Var2,
-	__in NWScriptVariable * Result,
-	__in OpCode Op,
-	__in bool Negate
+	nwn2dev__in NWScriptVariable * Var1,
+	nwn2dev__in NWScriptVariable * Var2,
+	nwn2dev__in NWScriptVariable * Result,
+	nwn2dev__in OpCode Op,
+	nwn2dev__in bool Negate
 	)
 /*++
 
@@ -8328,11 +8328,11 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateBinaryOp(
-	__in NWScriptVariable * Var1,
-	__in NWScriptVariable * Var2,
-	__in NWScriptVariable * Result,
-	__in OpCode Op,
-	__in NWACTION_TYPE ReqType
+	nwn2dev__in NWScriptVariable * Var1,
+	nwn2dev__in NWScriptVariable * Var2,
+	nwn2dev__in NWScriptVariable * Result,
+	nwn2dev__in OpCode Op,
+	nwn2dev__in NWACTION_TYPE ReqType
 	)
 /*++
 
@@ -8384,12 +8384,12 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateBinaryOp(
-	__in NWScriptVariable * Var1,
-	__in NWScriptVariable * Var2,
-	__in NWScriptVariable * Result,
-	__in OpCode Op,
-	__in NWACTION_TYPE ReqType,
-	__in NWACTION_TYPE ReqRetType
+	nwn2dev__in NWScriptVariable * Var1,
+	nwn2dev__in NWScriptVariable * Var2,
+	nwn2dev__in NWScriptVariable * Result,
+	nwn2dev__in OpCode Op,
+	nwn2dev__in NWACTION_TYPE ReqType,
+	nwn2dev__in NWACTION_TYPE ReqRetType
 	)
 /*++
 
@@ -8444,10 +8444,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateUnaryOp(
-	__in NWScriptVariable * Var,
-	__in NWScriptVariable * Result,
-	__in OpCode Op,
-	__in NWACTION_TYPE ReqType
+	nwn2dev__in NWScriptVariable * Var,
+	nwn2dev__in NWScriptVariable * Result,
+	nwn2dev__in OpCode Op,
+	nwn2dev__in NWACTION_TYPE ReqType
 	)
 /*++
 
@@ -8494,11 +8494,11 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateUnaryOp(
-	__in NWScriptVariable * Var,
-	__in NWScriptVariable * Result,
-	__in OpCode Op,
-	__in NWACTION_TYPE ReqType,
-	__in NWACTION_TYPE ReqRetType
+	nwn2dev__in NWScriptVariable * Var,
+	nwn2dev__in NWScriptVariable * Result,
+	nwn2dev__in OpCode Op,
+	nwn2dev__in NWACTION_TYPE ReqType,
+	nwn2dev__in NWACTION_TYPE ReqRetType
 	)
 /*++
 
@@ -8548,10 +8548,10 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateUpcastBinaryOp(
-	__in NWScriptVariable * Var1,
-	__in NWScriptVariable * Var2,
-	__in NWScriptVariable * Result,
-	__in OpCode Op
+	nwn2dev__in NWScriptVariable * Var1,
+	nwn2dev__in NWScriptVariable * Var2,
+	nwn2dev__in NWScriptVariable * Result,
+	nwn2dev__in OpCode Op
 	)
 /*++
 
@@ -8657,13 +8657,13 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateSaveState(
-	__in MethodInfo ^ ResumeSub,
-	__in UInt32 ResumeSubId,
-	__in PROGRAM_COUNTER ResumeSubPC,
+	nwn2dev__in MethodInfo ^ ResumeSub,
+	nwn2dev__in UInt32 ResumeSubId,
+	nwn2dev__in PROGRAM_COUNTER ResumeSubPC,
 	__in_ecount( SaveLocalCount ) NWScriptVariable * * SaveLocals,
-	__in size_t SaveLocalCount,
+	nwn2dev__in size_t SaveLocalCount,
 	__in_ecount( SaveGlobalCount ) NWScriptVariable * * SaveGlobals,
-	__in size_t SaveGlobalCount
+	nwn2dev__in size_t SaveGlobalCount
 	)
 /*++
 
@@ -8898,7 +8898,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateThrowException(
-	__in String ^ Description
+	nwn2dev__in String ^ Description
 	)
 /*++
 
@@ -9119,7 +9119,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateBox(
-	__in NWACTION_TYPE Type
+	nwn2dev__in NWACTION_TYPE Type
 	)
 /*++
 
@@ -9164,7 +9164,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::GenerateUnbox(
-	__in NWACTION_TYPE Type
+	nwn2dev__in NWACTION_TYPE Type
 	)
 /*++
 
@@ -9232,7 +9232,7 @@ Environment:
 
 void
 NWScriptCodeGenerator::BuildControlFlowMap(
-	__in SubroutineGenContext ^ Sub
+	nwn2dev__in SubroutineGenContext ^ Sub
 	)
 /*++
 
@@ -9349,9 +9349,9 @@ Environment:
 
 void
 NWScriptCodeGenerator::EnqueueChildFlows(
-	__in SubroutineGenContext ^ Sub,
-	__in SubroutineControlFlow ^ Flow,
-	__in NWScriptControlFlow * IRFlow
+	nwn2dev__in SubroutineGenContext ^ Sub,
+	nwn2dev__in SubroutineControlFlow ^ Flow,
+	nwn2dev__in NWScriptControlFlow * IRFlow
 	)
 /*++
 
@@ -9432,7 +9432,7 @@ Environment:
 
 Type ^
 NWScriptCodeGenerator::GetVariableType(
-	__in NWScriptVariable * Var
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -9460,7 +9460,7 @@ Environment:
 
 Type ^
 NWScriptCodeGenerator::GetVariableType(
-	__in NWACTION_TYPE VarType
+	nwn2dev__in NWACTION_TYPE VarType
 	)
 /*++
 
@@ -9535,7 +9535,7 @@ Environment:
 
 NWACTION_TYPE
 NWScriptCodeGenerator::GetNWScriptType(
-	__in Type ^ MSILType
+	nwn2dev__in Type ^ MSILType
 	)
 /*++
 
@@ -9586,7 +9586,7 @@ Environment:
 
 NWScriptSubroutine *
 NWScriptCodeGenerator::GetIRSubroutine(
-	__in PROGRAM_COUNTER PC
+	nwn2dev__in PROGRAM_COUNTER PC
 	)
 /*++
 
@@ -9629,7 +9629,7 @@ Environment:
 
 MethodBuilder ^
 NWScriptCodeGenerator::GetMSILSubroutine(
-	__in PROGRAM_COUNTER PC
+	nwn2dev__in PROGRAM_COUNTER PC
 	)
 /*++
 
@@ -9660,7 +9660,7 @@ Environment:
 
 NWScriptCodeGenerator::SubroutineAttributes ^
 NWScriptCodeGenerator::GetMSILSubroutineAttributes(
-	__in PROGRAM_COUNTER PC
+	nwn2dev__in PROGRAM_COUNTER PC
 	)
 /*++
 
@@ -9691,8 +9691,8 @@ Environment:
 
 LocalBuilder ^
 NWScriptCodeGenerator::GetLocalVariable(
-	__in SubroutineGenContext ^ Sub,
-	__in NWScriptVariable * Var
+	nwn2dev__in SubroutineGenContext ^ Sub,
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -9730,7 +9730,7 @@ Environment:
 
 FieldInfo ^
 NWScriptCodeGenerator::GetGlobalVariable(
-	__in NWScriptVariable * Var
+	nwn2dev__in NWScriptVariable * Var
 	)
 /*++
 
@@ -9762,8 +9762,8 @@ Environment:
 
 NWScriptCodeGenerator::SubroutineControlFlow ^
 NWScriptCodeGenerator::GetControlFlow(
-	__in SubroutineGenContext ^ Sub,
-	__in PROGRAM_COUNTER PC
+	nwn2dev__in SubroutineGenContext ^ Sub,
+	nwn2dev__in PROGRAM_COUNTER PC
 	)
 /*++
 
@@ -9794,7 +9794,7 @@ Environment:
 
 Label
 NWScriptCodeGenerator::GetLabel(
-	__in NWScriptLabel * Label
+	nwn2dev__in NWScriptLabel * Label
 	)
 /*++
 
@@ -9824,7 +9824,7 @@ Environment:
 
 Label
 NWScriptCodeGenerator::GetLabel(
-	__in NWScriptControlFlow * Flow
+	nwn2dev__in NWScriptControlFlow * Flow
 	)
 /*++
 
@@ -9854,7 +9854,7 @@ Environment:
 
 const char *
 NWScriptCodeGenerator::GetIRInstructionName(
-	__in NWScriptInstruction::INSTR Instr
+	nwn2dev__in NWScriptInstruction::INSTR Instr
 	)
 /*++
 
@@ -9959,8 +9959,8 @@ Environment:
 
 bool
 NWScriptCodeGenerator::IsIgnoredCallInstr(
-	__in SubroutineGenContext ^ Sub,
-	__in NWScriptSubroutine * CalledSub
+	nwn2dev__in SubroutineGenContext ^ Sub,
+	nwn2dev__in NWScriptSubroutine * CalledSub
 	)
 /*++
 
@@ -10011,8 +10011,8 @@ Environment:
 
 String ^
 NWScriptCodeGenerator::GenerateAsmName(
-	__in String ^ Name,
-	__in bool InterfaceLayer
+	nwn2dev__in String ^ Name,
+	nwn2dev__in bool InterfaceLayer
 	)
 /*++
 
@@ -10076,7 +10076,7 @@ Environment:
 
 String ^
 NWScriptCodeGenerator::GenerateProgramNamespace(
-	__in String ^ Name
+	nwn2dev__in String ^ Name
 	)
 /*++
 
@@ -10136,8 +10136,8 @@ Environment:
 
 void
 NWScriptCodeGenerator::AssertTypeEqual(
-	__in Type ^ Type1,
-	__in Type ^ Type2
+	nwn2dev__in Type ^ Type1,
+	nwn2dev__in Type ^ Type2
 	)
 /*++
 

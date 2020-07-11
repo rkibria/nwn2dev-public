@@ -265,16 +265,16 @@ public:
 
 	bool
 	IntersectRay(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
-		__out NWN::Vector3 & IntersectNormal,
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
+		nwn2dev__out NWN::Vector3 & IntersectNormal,
 		__out_opt float * IntersectDistance
 		) const;
 
 	bool
 	IntersectRay(
-		__in const Math::QuickRay & Ray,
-		__out NWN::Vector3 & IntersectNormal,
+		nwn2dev__in const Math::QuickRay & Ray,
+		nwn2dev__out NWN::Vector3 & IntersectNormal,
 		__out_opt float * IntersectDistance
 		) const;
 
@@ -284,7 +284,7 @@ public:
 
 	void
 	Update(
-		__in const NWN::Matrix44 & M
+		nwn2dev__in const NWN::Matrix44 & M
 		)
 	{
 		m_C3Mesh.Update( M );
@@ -323,7 +323,7 @@ public:
 	inline
 	bool
 	CalculateModelSpace(
-		__out float & SphereRadius
+		nwn2dev__out float & SphereRadius
 		) const
 	{
 		float Rx;

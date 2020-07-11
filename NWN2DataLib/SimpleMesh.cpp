@@ -30,7 +30,7 @@ template<
 	typename FaceIndexT >
 void
 SimpleMesh< VertexT, FaceT, TMode, NumWeights, PointIndexT, FaceIndexT >::Update(
-	__in const NWN::Matrix44 & M
+	nwn2dev__in const NWN::Matrix44 & M
 	)
 /*++
 

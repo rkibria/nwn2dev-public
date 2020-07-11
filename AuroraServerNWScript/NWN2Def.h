@@ -26,7 +26,7 @@ namespace NWN2Server
 VOID
 __cdecl
 FreeNwn2(
-	__in PVOID P
+	nwn2dev__in PVOID P
 	);
 
 class CExoString
@@ -99,7 +99,7 @@ public:
 	virtual void __thiscall dummy_destructor( ) = 0;
 	virtual void __thiscall dummy_InitializeCommands( ) = 0;
 	virtual SCRIPT_STATUS __thiscall ExecuteCommand( int CommandID, int ArgumentCount ) = 0;
-	virtual void __thiscall RunScriptCallback( __in const CExoString & ScriptName ) = 0;
+	virtual void __thiscall RunScriptCallback( nwn2dev__in const CExoString & ScriptName ) = 0;
 	virtual void __thiscall dummy_ReportError( ) = 0;
 	virtual void * __thiscall CreateGameDefinedStructure( ENGINE_STRUCTURE_TYPE EngineStructureType ) = 0;
 	virtual void __thiscall DestroyGameDefinedStructure( ENGINE_STRUCTURE_TYPE EngineStructureType, void * EngineStructure ) = 0;
@@ -271,7 +271,7 @@ public:
 	inline
 	void
 	SetCurrentBP(
-		__in int BP
+		nwn2dev__in int BP
 		)
 	{
 		m_nBasePointer = BP;
@@ -280,10 +280,10 @@ public:
 	inline
 	void
 	SaveStack(
-		__in INWScriptStack * Stack,
-		__in int BPSaveBytes,
-		__in int SPSaveBytes,
-		__in int SPSaveOffset = 0
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in int BPSaveBytes,
+		nwn2dev__in int SPSaveBytes,
+		nwn2dev__in int SPSaveOffset = 0
 		)
 	{
 		int CellsToCopy;
@@ -330,9 +330,9 @@ public:
 	inline
 	void
 	AppendStackContentsToStack(
-		__in INWScriptStack * DestStack,
-		__in int SrcOffset,
-		__in int CellsToCopy
+		nwn2dev__in INWScriptStack * DestStack,
+		nwn2dev__in int SrcOffset,
+		nwn2dev__in int CellsToCopy
 		)
 	{
 		//
@@ -386,9 +386,9 @@ public:
 
 	void
 	WrapAndPushEngineStructure(
-		__in INWScriptStack * Stack,
-		__in void * Representation,
-		__in ENGINE_STRUCTURE_TYPE EngineType
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in void * Representation,
+		nwn2dev__in ENGINE_STRUCTURE_TYPE EngineType
 		);
 
 	int                      m_nStackPointer;
@@ -496,8 +496,8 @@ public:
 	ExecuteCode(
 		__inout int * PC,
 		__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-		__in int CodeSize,
-		__in struct CVirtualMachineDebuggingContext * DebugContext
+		nwn2dev__in int CodeSize,
+		nwn2dev__in struct CVirtualMachineDebuggingContext * DebugContext
 		);
 
 	inline
@@ -512,8 +512,8 @@ public:
 			(__thiscall CVirtualMachine::*ExecuteCode)(
 				__inout int * PC,
 				__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-				__in int CodeSize,
-				__in struct CVirtualMachineDebuggingContext * DebugContext
+				nwn2dev__in int CodeSize,
+				nwn2dev__in struct CVirtualMachineDebuggingContext * DebugContext
 				);
 			void * RawPtr;
 		} Ptr;
@@ -531,14 +531,14 @@ public:
 	inline
 	bool
 	StackPopInteger(
-		__out int * Value
+		nwn2dev__out int * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPopInteger)(
-				__out int * Value
+				nwn2dev__out int * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -556,14 +556,14 @@ public:
 	inline
 	bool
 	StackPopFloat(
-		__out float * Value
+		nwn2dev__out float * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPopFloat)(
-				__out float * Value
+				nwn2dev__out float * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -581,7 +581,7 @@ public:
 	inline
 	bool
 	StackPopString(
-		__out std::string * Value
+		nwn2dev__out std::string * Value
 		)
 	{
 		union
@@ -631,7 +631,7 @@ public:
 	inline
 	bool
 	StackPopString(
-		__out INWScriptStack::NeutralString * Value
+		nwn2dev__out INWScriptStack::NeutralString * Value
 		)
 	{
 		union
@@ -691,14 +691,14 @@ public:
 	inline
 	bool
 	StackPopVector(
-		__out NWN::Vector3 * Value
+		nwn2dev__out NWN::Vector3 * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPopVector)(
-				__out NWN::Vector3 * Value
+				nwn2dev__out NWN::Vector3 * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -716,14 +716,14 @@ public:
 	inline
 	bool
 	StackPopObject(
-		__out NWN::OBJECTID * Value
+		nwn2dev__out NWN::OBJECTID * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPopObject)(
-				__out NWN::OBJECTID * Value
+				nwn2dev__out NWN::OBJECTID * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -741,16 +741,16 @@ public:
 	inline
 	bool
 	StackPopEngineStructure(
-		__in ENGINE_STRUCTURE_TYPE EType,
-		__out void * * Value
+		nwn2dev__in ENGINE_STRUCTURE_TYPE EType,
+		nwn2dev__out void * * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPopEngineStructure)(
-				__in ENGINE_STRUCTURE_TYPE EType,
-				__out void * * Value
+				nwn2dev__in ENGINE_STRUCTURE_TYPE EType,
+				nwn2dev__out void * * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -769,14 +769,14 @@ public:
 	inline
 	bool
 	StackPushInteger(
-		__in int Value
+		nwn2dev__in int Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPushInteger)(
-				__in int Value
+				nwn2dev__in int Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -791,14 +791,14 @@ public:
 	inline
 	bool
 	StackPushFloat(
-		__in float Value
+		nwn2dev__in float Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPushFloat)(
-				__in float Value
+				nwn2dev__in float Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -813,7 +813,7 @@ public:
 	inline
 	bool
 	StackPushString(
-		__in const std::string & Value
+		nwn2dev__in const std::string & Value
 		)
 	{
 		union
@@ -856,14 +856,14 @@ public:
 	inline
 	bool
 	StackPushVector(
-		__in const NWN::Vector3 * Value
+		nwn2dev__in const NWN::Vector3 * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPushVector)(
-				__in const NWN::Vector3 * Value
+				nwn2dev__in const NWN::Vector3 * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -878,14 +878,14 @@ public:
 	inline
 	bool
 	StackPushObject(
-		__in NWN::OBJECTID Value
+		nwn2dev__in NWN::OBJECTID Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPushObject)(
-				__in NWN::OBJECTID Value
+				nwn2dev__in NWN::OBJECTID Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -900,16 +900,16 @@ public:
 	inline
 	bool
 	StackPushEngineStructure(
-		__in ENGINE_STRUCTURE_TYPE EType,
-		__in const void * Value
+		nwn2dev__in ENGINE_STRUCTURE_TYPE EType,
+		nwn2dev__in const void * Value
 		)
 	{
 		union
 		{
 			bool
 			(__thiscall CVirtualMachine::*StackPushEngineStructure)(
-				__in ENGINE_STRUCTURE_TYPE EType,
-				__in const void * Value
+				nwn2dev__in ENGINE_STRUCTURE_TYPE EType,
+				nwn2dev__in const void * Value
 				);
 			void * RawPtr;
 		} Ptr;
@@ -948,7 +948,7 @@ public:
 	inline
 	void
 	SetCurrentBP(
-		__in int BP
+		nwn2dev__in int BP
 		)
 	{
 		m_cRunTimeStack.SetCurrentBP( BP );
@@ -957,10 +957,10 @@ public:
 	inline
 	void
 	SaveStack(
-		__in INWScriptStack * Stack,
-		__in int BPSaveBytes,
-		__in int SPSaveBytes,
-		__in int SPSaveOffset = 0
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in int BPSaveBytes,
+		nwn2dev__in int SPSaveBytes,
+		nwn2dev__in int SPSaveOffset = 0
 		)
 	{
 		return m_cRunTimeStack.SaveStack(
@@ -1000,9 +1000,9 @@ public:
 	inline
 	void
 	SetScriptSituationState(
-		__in int ScriptSituationPC,
-		__in int ScriptSituationSPSave,
-		__in int ScriptSituationBPSave
+		nwn2dev__in int ScriptSituationPC,
+		nwn2dev__in int ScriptSituationSPSave,
+		nwn2dev__in int ScriptSituationBPSave
 		)
 	{
 		m_nSecondaryInstructionPointer = ScriptSituationPC;
@@ -1013,7 +1013,7 @@ public:
 	inline
 	void
 	SetScriptReturnCode(
-		__in int ReturnCode
+		nwn2dev__in int ReturnCode
 		)
 	{
 		m_nReturnValueParameterType = CVirtualMachineStack::ST_INTEGER;

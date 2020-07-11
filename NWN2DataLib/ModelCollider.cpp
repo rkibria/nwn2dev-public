@@ -21,9 +21,9 @@ Abstract:
 
 bool
 ModelCollider::IntersectRay(
-	__in const NWN::Vector3 & Origin,
-	__in const NWN::Vector3 & NormDir,
-	__out NWN::Vector3 & IntersectNormal,
+	nwn2dev__in const NWN::Vector3 & Origin,
+	nwn2dev__in const NWN::Vector3 & NormDir,
+	nwn2dev__out NWN::Vector3 & IntersectNormal,
 	__out_opt float * IntersectDistance
 	) const
 /*++
@@ -201,8 +201,8 @@ Environment:
 
 bool
 ModelCollider::IntersectRay(
-	__in const Math::QuickRay & Ray,
-	__out NWN::Vector3 & IntersectNormal,
+	nwn2dev__in const Math::QuickRay & Ray,
+	nwn2dev__out NWN::Vector3 & IntersectNormal,
 	__out_opt float * IntersectDistance
 	) const
 /*++

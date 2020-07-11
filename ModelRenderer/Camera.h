@@ -40,12 +40,12 @@ public:
 	//
 
 	Camera(
-		__in float FOV = PI / 4,
-		__in float Near = 0.1000000015f,
-		__in float Far = 140.0f,
-		__in float Aspect = 1.0f,
-		__in float Width = 500.0f,
-		__in float Height = 500.0f
+		nwn2dev__in float FOV = PI / 4,
+		nwn2dev__in float Near = 0.1000000015f,
+		nwn2dev__in float Far = 140.0f,
+		nwn2dev__in float Aspect = 1.0f,
+		nwn2dev__in float Width = 500.0f,
+		nwn2dev__in float Height = 500.0f
 		);
 
 	//
@@ -63,8 +63,8 @@ public:
 	inline
 	void
 	SetCameraSize(
-		__in float Width,
-		__in float Height
+		nwn2dev__in float Width,
+		nwn2dev__in float Height
 		)
 	{
 		if (Width < 1e-7)
@@ -84,7 +84,7 @@ public:
 	inline
 	void
 	SetFOV(
-		__in float FOV
+		nwn2dev__in float FOV
 		)
 	{
 		m_FOV = FOV;
@@ -103,8 +103,8 @@ public:
 	inline
 	void
 	SetNearFar(
-		__in float Near,
-		__in float Far
+		nwn2dev__in float Near,
+		nwn2dev__in float Far
 		)
 	{
 		m_Near = Near;
@@ -116,8 +116,8 @@ public:
 	inline
 	void
 	SetMinMaxZ(
-		__in float MinZ,
-		__in float MaxZ
+		nwn2dev__in float MinZ,
+		nwn2dev__in float MaxZ
 		)
 	{
 		m_MinZ = MinZ;
@@ -131,7 +131,7 @@ public:
 	inline
 	void
 	SetCameraPosition(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		m_Position = v;
@@ -150,7 +150,7 @@ public:
 	inline
 	void
 	SetCameraRight(
-		__in const NWN::Vector3 & Right
+		nwn2dev__in const NWN::Vector3 & Right
 		)
 	{
 		m_Right = Right;
@@ -169,7 +169,7 @@ public:
 	inline
 	void
 	SetCameraUp(
-		__in const NWN::Vector3 & Up
+		nwn2dev__in const NWN::Vector3 & Up
 		)
 	{
 		m_Up = Up;
@@ -188,7 +188,7 @@ public:
 	inline
 	void
 	SetCameraLookAt(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		m_LookAt = v;
@@ -243,7 +243,7 @@ public:
 	inline
 	void
 	SetViewport(
-		__in const NWN::Vector2 Viewport
+		nwn2dev__in const NWN::Vector2 Viewport
 		)
 	{
 		m_Viewport = Viewport;
@@ -263,32 +263,32 @@ public:
 
 	void
 	MoveCameraForward(
-		__in float D
+		nwn2dev__in float D
 		);
 
 	void
 	MoveCameraLeft(
-		__in float D
+		nwn2dev__in float D
 		);
 
 	void
 	MoveCameraUp(
-		__in float D
+		nwn2dev__in float D
 		);
 
 	void
 	RollCamera(
-		__in float R
+		nwn2dev__in float R
 		);
 
 	void
 	TurnCameraUp(
-		__in float R
+		nwn2dev__in float R
 		);
 
 	void
 	TurnCameraLeft(
-		__in float R
+		nwn2dev__in float R
 		);
 
 	//
@@ -301,7 +301,7 @@ public:
 
 	NWN::Vector3
 	WorldToScreen(
-		__in const NWN::Vector3 & World
+		nwn2dev__in const NWN::Vector3 & World
 		) const;
 
 	//
@@ -311,7 +311,7 @@ public:
 
 	NWN::Vector2
 	WorldToScreenViewport(
-		__in const NWN::Vector3 & World
+		nwn2dev__in const NWN::Vector3 & World
 		) const;
 
 	//
@@ -320,7 +320,7 @@ public:
 
 	NWN::Vector3
 	Unproject(
-		__in const NWN::Vector3 & Screen
+		nwn2dev__in const NWN::Vector3 & Screen
 		) const;
 
 	//
@@ -330,9 +330,9 @@ public:
 
 	void
 	GetPickRay(
-		__in const NWN::Vector3 & ScreenPt,
-		__out NWN::Vector3 & Origin,
-		__out NWN::Vector3 & NormDir
+		nwn2dev__in const NWN::Vector3 & ScreenPt,
+		nwn2dev__out NWN::Vector3 & Origin,
+		nwn2dev__out NWN::Vector3 & NormDir
 		);
 
 private:
@@ -343,7 +343,7 @@ private:
 
 	void
 	UpdateTransform(
-		__in UpdateTransformReason Reason = UpdateTrans
+		nwn2dev__in UpdateTransformReason Reason = UpdateTrans
 		);
 
 	//
@@ -352,7 +352,7 @@ private:
 
 	float
 	Transform(
-		__in const NWN::Matrix44 & M,
+		nwn2dev__in const NWN::Matrix44 & M,
 		__inout NWN::Vector3 & Pt
 		) const;
 

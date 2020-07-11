@@ -39,7 +39,7 @@ Abstract:
 #define RECURSIVE_BONES 0
 
 ModelSkeleton::ModelSkeleton(
-	__in const std::string & SkeletonName
+	nwn2dev__in const std::string & SkeletonName
 	)
 /*++
 
@@ -97,7 +97,7 @@ Environment:
 
 void
 ModelSkeleton::AddBone(
-	__in const Bone & NewBone
+	nwn2dev__in const Bone & NewBone
 	)
 /*++
 
@@ -296,7 +296,7 @@ Environment:
 
 NWN::Matrix44
 ModelSkeleton::GetBoneLocalTransform(
-	__in BoneIndex Index
+	nwn2dev__in BoneIndex Index
 	) const
 /*++
 
@@ -341,7 +341,7 @@ Environment:
 
 const NWN::Matrix44 &
 ModelSkeleton::GetBoneWorldTransform(
-	__in BoneIndex Index
+	nwn2dev__in BoneIndex Index
 	) const
 /*++
 
@@ -369,7 +369,7 @@ Environment:
 
 const NWN::Matrix44 &
 ModelSkeleton::GetBoneInvWorldTransform(
-	__in BoneIndex Index
+	nwn2dev__in BoneIndex Index
 	) const
 /*++
 
@@ -397,9 +397,9 @@ Environment:
 
 void
 ModelSkeleton::RegisterAttachmentBone(
-	__in const Bone & B,
-	__in BoneIndex Index,
-	__in AttachmentPoint Attach
+	nwn2dev__in const Bone & B,
+	nwn2dev__in BoneIndex Index,
+	nwn2dev__in AttachmentPoint Attach
 	)
 /*++
 
@@ -458,9 +458,9 @@ Environment:
 
 void
 ModelSkeleton::RegisterSpecialBone(
-	__in const Bone & B,
-	__in BoneIndex Index,
-	__in SpecialBone Special
+	nwn2dev__in const Bone & B,
+	nwn2dev__in BoneIndex Index,
+	nwn2dev__in SpecialBone Special
 	)
 /*++
 
@@ -521,7 +521,7 @@ Environment:
 
 NWN::Matrix44
 ModelSkeleton::CalcBoneWorldTransform(
-	__in BoneIndex Index
+	nwn2dev__in BoneIndex Index
 	) const
 /*++
 
@@ -596,7 +596,7 @@ Environment:
 
 const char *
 ModelSkeleton::GetAccessoryName(
-	__in NWN::NWN2_Accessory Accessory
+	nwn2dev__in NWN::NWN2_Accessory Accessory
 	)
 /*++
 
@@ -652,7 +652,7 @@ Environment:
 
 NWN::NWN2_BodyPieceSlot
 ModelSkeleton::GetAccessoryBodyPieceSlot(
-	__in NWN::NWN2_Accessory Accessory
+	nwn2dev__in NWN::NWN2_Accessory Accessory
 	)
 /*++
 
@@ -708,7 +708,7 @@ Environment:
 
 const char *
 ModelSkeleton::GetAccessoryAttachBoneName(
-	__in NWN::NWN2_Accessory Accessory
+	nwn2dev__in NWN::NWN2_Accessory Accessory
 	)
 /*++
 
@@ -764,7 +764,7 @@ Environment:
 
 const char *
 ModelSkeleton::GetAnimationStanceName(
-	__in NWN::NWN2_AnimationStance Stance
+	nwn2dev__in NWN::NWN2_AnimationStance Stance
 	)
 /*++
 
@@ -812,7 +812,7 @@ Environment:
 
 const char *
 ModelSkeleton::GetArmorPieceSlotName(
-	__in NWN::NWN2_ArmorPieceSlot Slot
+	nwn2dev__in NWN::NWN2_ArmorPieceSlot Slot
 	)
 /*++
 
@@ -855,7 +855,7 @@ Environment:
 
 NWN::NWN2_BodyPieceSlot
 ModelSkeleton::GetArmorPieceBodyPieceSlot(
-	__in NWN::NWN2_ArmorPieceSlot Slot
+	nwn2dev__in NWN::NWN2_ArmorPieceSlot Slot
 	)
 /*++
 

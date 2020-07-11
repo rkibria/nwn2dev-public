@@ -32,31 +32,31 @@ struct IDebugTextOut
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		) = 0;
 
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		) = 0;
 
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		) = 0;
 
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		) = 0;
 };
 

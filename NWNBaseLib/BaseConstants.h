@@ -65,8 +65,8 @@ namespace NWN
 	inline
 	bool
 	EqualObjectId(
-		__in const NWN::OBJECTID Oid1,
-		__in const NWN::OBJECTID Oid2
+		nwn2dev__in const NWN::OBJECTID Oid1,
+		nwn2dev__in const NWN::OBJECTID Oid2
 		)
 	{
 		return ((Oid1 & ~(NWN::LISTTYPE_MASK)) == (Oid2 & ~(NWN::LISTTYPE_MASK)));
@@ -75,8 +75,8 @@ namespace NWN
 	inline
 	bool
 	LessThanObjectId(
-		__in const NWN::OBJECTID Oid1,
-		__in const NWN::OBJECTID Oid2
+		nwn2dev__in const NWN::OBJECTID Oid1,
+		nwn2dev__in const NWN::OBJECTID Oid2
 		)
 	{
 		return ((Oid1 & ~(NWN::LISTTYPE_MASK)) < (Oid2 & ~(NWN::LISTTYPE_MASK)));

@@ -56,8 +56,8 @@ Abstract:
 #define USE_INDEX 1
 
 ResourceManager::ResourceManager(
-	__in IDebugTextOut * TextWriter,
-	__in unsigned long CreateFlags /* = 0 */
+	nwn2dev__in IDebugTextOut * TextWriter,
+	nwn2dev__in unsigned long CreateFlags /* = 0 */
 	)
 /*++
 
@@ -153,11 +153,11 @@ Environment:
 
 void
 ResourceManager::LoadModuleResources(
-	__in const std::string & ModuleResName,
-	__in const std::string & AltTlkFileName,
-	__in const std::string & HomeDir,
-	__in const std::string & InstallDir,
-	__in const std::vector< NWN::ResRef32 > & HAKs,
+	nwn2dev__in const std::string & ModuleResName,
+	nwn2dev__in const std::string & AltTlkFileName,
+	nwn2dev__in const std::string & HomeDir,
+	nwn2dev__in const std::string & InstallDir,
+	nwn2dev__in const std::vector< NWN::ResRef32 > & HAKs,
 	__in_opt ModuleLoadParams * LoadParams /* = NULL */
 	)
 /*++
@@ -206,9 +206,9 @@ Environment:
 
 void
 ResourceManager::LoadModuleResourcesLite(
-	__in const std::string & ModuleResName,
-	__in const std::string & HomeDir,
-	__in const std::string & InstallDir
+	nwn2dev__in const std::string & ModuleResName,
+	nwn2dev__in const std::string & HomeDir,
+	nwn2dev__in const std::string & InstallDir
 	)
 /*++
 
@@ -307,7 +307,7 @@ Environment:
 
 void
 ResourceManager::ChangeTemporaryDirectory(
-	__in const std::string & TempDirectory
+	nwn2dev__in const std::string & TempDirectory
 	)
 /*++
 
@@ -363,8 +363,8 @@ Environment:
 
 std::string
 ResourceManager::Demand(
-	__in const std::string & ResRef,
-	__in ResType Type
+	nwn2dev__in const std::string & ResRef,
+	nwn2dev__in ResType Type
 	)
 /*++
 
@@ -992,8 +992,8 @@ Environment:
 
 bool
 ResourceManager::ResourceExists(
-	__in const NWN::ResRef32 & ResRef,
-	__in NWN::ResType Type
+	nwn2dev__in const NWN::ResRef32 & ResRef,
+	nwn2dev__in NWN::ResType Type
 	)
 /*++
 
@@ -1054,7 +1054,7 @@ Environment:
 
 void
 ResourceManager::Release(
-	__in const std::string & ResourceFileName
+	nwn2dev__in const std::string & ResourceFileName
 	)
 /*++
 
@@ -1165,8 +1165,8 @@ Environment:
 
 ResourceManager::FileHandle
 ResourceManager::OpenFile(
-	__in const ResRefT & FileName,
-	__in ResType Type
+	nwn2dev__in const ResRefT & FileName,
+	nwn2dev__in ResType Type
 	)
 /*++
 
@@ -1366,7 +1366,7 @@ Environment:
 
 ResourceManager::FileHandle
 ResourceManager::OpenFileByIndex(
-	__in FileId FileIndex
+	nwn2dev__in FileId FileIndex
 	)
 /*++
 
@@ -1472,7 +1472,7 @@ Environment:
 
 bool
 ResourceManager::CloseFile(
-	__in FileHandle File
+	nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -1519,10 +1519,10 @@ Environment:
 
 bool
 ResourceManager::ReadEncapsulatedFile(
-	__in FileHandle File,
-	__in size_t Offset,
-	__in size_t BytesToRead,
-	__out size_t * BytesRead,
+	nwn2dev__in FileHandle File,
+	nwn2dev__in size_t Offset,
+	nwn2dev__in size_t BytesToRead,
+	nwn2dev__out size_t * BytesRead,
 	__out_bcount( BytesToRead ) void * Buffer
 	)
 /*++
@@ -1577,7 +1577,7 @@ Environment:
 
 size_t
 ResourceManager::GetEncapsulatedFileSize(
-	__in FileHandle File
+	nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -1619,7 +1619,7 @@ Environment:
 
 ResourceManager::ResType
 ResourceManager::GetEncapsulatedFileType(
-	__in FileHandle File
+	nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -1657,9 +1657,9 @@ Environment:
 
 bool
 ResourceManager::GetEncapsulatedFileEntry(
-	__in FileId FileIndex,
-	__out ResRefT & ResRef,
-	__out ResType & Type
+	nwn2dev__in FileId FileIndex,
+	nwn2dev__out ResRefT & ResRef,
+	nwn2dev__out ResType & Type
 	)
 /*++
 
@@ -1730,8 +1730,8 @@ Environment:
 
 ResourceManager::AccessorType
 ResourceManager::GetResourceAccessorName(
-	__in FileHandle File,
-	__out std::string & AccessorName
+	nwn2dev__in FileHandle File,
+	nwn2dev__out std::string & AccessorName
 	)
 /*++
 
@@ -1781,9 +1781,9 @@ Environment:
 template< typename ResRefType >
 void
 ResourceManager::LoadEncapsulatedFile(
-	__in IResourceAccessor< ResRefType > * Accessor,
-	__in typename IResourceAccessor< ResRefType >::FileId FileIndex,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in IResourceAccessor< ResRefType > * Accessor,
+	nwn2dev__in typename IResourceAccessor< ResRefType >::FileId FileIndex,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	)
 /*++
 
@@ -1881,8 +1881,8 @@ Environment:
 
 bool
 ResourceManager::GetTalkString(
-	__in unsigned long StringId,
-	__out std::string & String
+	nwn2dev__in unsigned long StringId,
+	nwn2dev__out std::string & String
 	) const
 /*++
 
@@ -1947,10 +1947,10 @@ Environment:
 
 bool
 ResourceManager::Get2DAString(
-	__in const std::string & ResourceName,
-	__in const std::string & Column,
-	__in size_t Row,
-	__out std::string & Value
+	nwn2dev__in const std::string & ResourceName,
+	nwn2dev__in const std::string & Column,
+	nwn2dev__in size_t Row,
+	nwn2dev__out std::string & Value
 	)
 /*++
 
@@ -2061,13 +2061,13 @@ Environment:
 
 void
 ResourceManager::LoadModuleResourcesInternal(
-	__in const std::string & ModuleResName,
-	__in const std::string & AltTlkFileName,
-	__in const std::string & HomeDir,
-	__in const std::string & InstallDir,
-	__in const std::vector< NWN::ResRef32 > & HAKs,
+	nwn2dev__in const std::string & ModuleResName,
+	nwn2dev__in const std::string & AltTlkFileName,
+	nwn2dev__in const std::string & HomeDir,
+	nwn2dev__in const std::string & InstallDir,
+	nwn2dev__in const std::vector< NWN::ResRef32 > & HAKs,
 	__in_opt ModuleLoadParams * LoadParams,
-	__in bool PartialLoadOnly
+	nwn2dev__in bool PartialLoadOnly
 	)
 /*++
 
@@ -2262,7 +2262,7 @@ Environment:
 template< typename ResRefLoadType, const size_t LoadTier >
 void
 ResourceManager::LoadHAKFiles(
-	__in const std::vector< NWN::ResRef32 > & HAKs
+	nwn2dev__in const std::vector< NWN::ResRef32 > & HAKs
 	)
 /*++
 
@@ -2358,7 +2358,7 @@ Environment:
 
 void
 ResourceManager::LoadModule(
-	__in ModuleSearchOrder SearchOrder,
+	nwn2dev__in ModuleSearchOrder SearchOrder,
 	__in_opt const char * CustomModuleSourcePath
 	)
 /*++
@@ -2584,8 +2584,8 @@ Environment:
 
 void
 ResourceManager::LoadCampaign(
-	__in const GUID & CampaignID,
-	__out GUID & CampaignIDUsed
+	nwn2dev__in const GUID & CampaignID,
+	nwn2dev__out GUID & CampaignIDUsed
 	)
 /*++
 
@@ -2966,7 +2966,7 @@ Environment:
 
 void
 ResourceManager::LoadFixedKeyFiles(
-	__in const StringVec & KeyFiles
+	nwn2dev__in const StringVec & KeyFiles
 	)
 /*++
 
@@ -3047,8 +3047,8 @@ Environment:
 void
 ResourceManager::LoadCustomResourceProviders(
 	__in_ecount( ProviderCount ) IResourceAccessor * const * Providers,
-	__in size_t ProviderCount,
-	__in bool FirstChance
+	nwn2dev__in size_t ProviderCount,
+	nwn2dev__in bool FirstChance
 	)
 /*++
 
@@ -3107,7 +3107,7 @@ Environment:
 
 void
 ResourceManager::LoadDirectoryZipFiles(
-	__in const std::string & DirName
+	nwn2dev__in const std::string & DirName
 	)
 /*++
 
@@ -3206,7 +3206,7 @@ Environment:
 
 void
 ResourceManager::LoadTalkTables(
-	__in const std::string & AltTlkFileName
+	nwn2dev__in const std::string & AltTlkFileName
 	)
 /*++
 
@@ -3291,7 +3291,7 @@ Environment:
 
 std::string
 ResourceManager::GetResourceFilePath(
-	__in const std::string & RelPathName
+	nwn2dev__in const std::string & RelPathName
 	)
 /*++
 
@@ -3336,8 +3336,8 @@ Environment:
 
 bool
 ResourceManager::CheckModuleIfo(
-	__in const std::string & ModulePath,
-	__in bool Erf
+	nwn2dev__in const std::string & ModulePath,
+	nwn2dev__in bool Erf
 	) const
 /*++
 
@@ -3403,9 +3403,9 @@ Environment:
 
 bool
 ResourceManager::DoesFileExistInResourceAccessor(
-	__in IResourceAccessor & Accessor,
-	__in const NWN::ResRef32 & ResRef,
-	__in NWN::ResType ResType
+	nwn2dev__in IResourceAccessor & Accessor,
+	nwn2dev__in const NWN::ResRef32 & ResRef,
+	nwn2dev__in NWN::ResType ResType
 	) const
 /*++
 
@@ -3600,7 +3600,7 @@ Environment:
 
 void
 ResourceManager::CleanOldTempFiles(
-	__in const char * TempPath
+	nwn2dev__in const char * TempPath
 	)
 /*++
 
@@ -3691,7 +3691,7 @@ Environment:
 
 void
 ResourceManager::DeleteDirectoryFiles(
-	__in const char * DirPath
+	nwn2dev__in const char * DirPath
 	)
 /*++
 
@@ -3979,7 +3979,7 @@ Environment:
 
 const TwoDAFileReader *
 ResourceManager::Get2DA(
-	__in const std::string & ResourceName
+	nwn2dev__in const std::string & ResourceName
 	)
 /*++
 
@@ -4067,15 +4067,15 @@ template DemandResource< NWN::ResRef32 >;
 template
 void
 ResourceManager::LoadEncapsulatedFile< NWN::ResRef16 >(
-	__in IResourceAccessor< NWN::ResRef16 > * Accessor,
-	__in IResourceAccessor< NWN::ResRef16 >::FileId FileIndex,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in IResourceAccessor< NWN::ResRef16 > * Accessor,
+	nwn2dev__in IResourceAccessor< NWN::ResRef16 >::FileId FileIndex,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	);
 
 template
 void
 ResourceManager::LoadEncapsulatedFile< NWN::ResRef32 >(
-	__in IResourceAccessor< NWN::ResRef32 > * Accessor,
-	__in IResourceAccessor< NWN::ResRef32 >::FileId FileIndex,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in IResourceAccessor< NWN::ResRef32 > * Accessor,
+	nwn2dev__in IResourceAccessor< NWN::ResRef32 >::FileId FileIndex,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	);

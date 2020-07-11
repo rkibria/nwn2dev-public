@@ -18,7 +18,7 @@ Abstract:
 #include "2DAFileReader.h"
 
 TwoDAFileReader::TwoDAFileReader(
-	__in const std::string & FileName
+	nwn2dev__in const std::string & FileName
 	)
 /*++
 
@@ -75,9 +75,9 @@ Environment:
 
 bool
 TwoDAFileReader::Get2DAString(
-	__in const std::string & Column,
-	__in size_t Row,
-	__out std::string & Value
+	nwn2dev__in const std::string & Column,
+	nwn2dev__in size_t Row,
+	nwn2dev__out std::string & Value
 	) const
 /*++
 
@@ -119,7 +119,7 @@ Environment:
 
 void
 TwoDAFileReader::Parse2DAFile(
-	__in const std::string & FileName
+	nwn2dev__in const std::string & FileName
 	)
 /*++
 

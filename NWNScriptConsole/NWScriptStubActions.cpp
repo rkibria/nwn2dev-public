@@ -30,10 +30,10 @@ Abstract:
 #define DECLARE_NSS_HANDLER( Name, Ordinal )                   \
 	void                                                       \
 	NWScriptHost::OnAction_##Name(                             \
-	    __in NWScriptVM & ScriptVM,                            \
-	    __in NWScriptStack & VMStack,                          \
-	    __in NWSCRIPT_ACTION ActionId,                         \
-	    __in size_t NumArguments                               \
+	    nwn2dev__in NWScriptVM & ScriptVM,                            \
+	    nwn2dev__in NWScriptStack & VMStack,                          \
+	    nwn2dev__in NWSCRIPT_ACTION ActionId,                         \
+	    nwn2dev__in size_t NumArguments                               \
 	    )                                                      \
 	                                                           \
 	{                                                          \

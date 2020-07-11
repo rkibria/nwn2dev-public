@@ -47,7 +47,7 @@ Abstract:
 
 
 NWScriptStack::NWScriptStack(
-	__in NWN::OBJECTID InvalidObjId /* = NWN::INVALIDOBJID */
+	nwn2dev__in NWN::OBJECTID InvalidObjId /* = NWN::INVALIDOBJID */
 	)
 /*++
 
@@ -101,7 +101,7 @@ Environment:
 
 void
 NWScriptStack::StackPushDynamicParameter(
-	__in const char * String
+	nwn2dev__in const char * String
 	)
 /*++
 
@@ -151,7 +151,7 @@ Environment:
 
 void
 NWScriptStack::StackPushInt(
-	__in int Int
+	nwn2dev__in int Int
 	)
 /*++
 
@@ -209,7 +209,7 @@ Environment:
 
 void
 NWScriptStack::StackPushFloat(
-	__in float Float
+	nwn2dev__in float Float
 	)
 /*++
 
@@ -267,7 +267,7 @@ Environment:
 
 void
 NWScriptStack::StackPushString(
-	__in const char * String
+	nwn2dev__in const char * String
 	)
 /*++
 
@@ -311,7 +311,7 @@ Environment:
 
 void
 NWScriptStack::StackPushString(
-	__in const std::string & String
+	nwn2dev__in const std::string & String
 	)
 /*++
 
@@ -355,7 +355,7 @@ Environment:
 
 void
 NWScriptStack::StackPushStringAsNeutral(
-	__in const NeutralString & String
+	nwn2dev__in const NeutralString & String
 	)
 /*++
 
@@ -489,7 +489,7 @@ Environment:
 
 void
 NWScriptStack::StackPushObjectId(
-	__in NWN::OBJECTID ObjectId
+	nwn2dev__in NWN::OBJECTID ObjectId
 	)
 /*++
 
@@ -548,7 +548,7 @@ Environment:
 
 void
 NWScriptStack::StackPushVector(
-	__in const NWN::Vector3 & Vector
+	nwn2dev__in const NWN::Vector3 & Vector
 	)
 /*++
 
@@ -620,7 +620,7 @@ Environment:
 
 void
 NWScriptStack::StackPushEngineStructure(
-	__in EngineStructurePtr Struct
+	nwn2dev__in EngineStructurePtr Struct
 	)
 /*++
 
@@ -664,7 +664,7 @@ Environment:
 
 EngineStructurePtr
 NWScriptStack::StackPopEngineStructure(
-	__in ENGINE_STRUCTURE_NUMBER EngineType
+	nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 	)
 /*++
 
@@ -780,7 +780,7 @@ Environment:
 
 NWScriptStack::PROGRAM_COUNTER
 NWScriptStack::GetReturnStackEntry(
-	__in size_t Offset
+	nwn2dev__in size_t Offset
 	) const
 /*++
 
@@ -813,7 +813,7 @@ Environment:
 
 void
 NWScriptStack::AddSP(
-	__in STACK_POINTER Displacement
+	nwn2dev__in STACK_POINTER Displacement
 	)
 /*++
 
@@ -949,7 +949,7 @@ Environment:
 
 void
 NWScriptStack::SetCurrentBP(
-	__in STACK_POINTER AbsoluteBP
+	nwn2dev__in STACK_POINTER AbsoluteBP
 	)
 /*++
 
@@ -982,7 +982,7 @@ Environment:
 
 void
 NWScriptStack::SaveProgramCounter(
-	__in PROGRAM_COUNTER ProgramCounter
+	nwn2dev__in PROGRAM_COUNTER ProgramCounter
 	)
 /*++
 
@@ -1051,8 +1051,8 @@ Environment:
 
 void
 NWScriptStack::SetStackInt(
-	__in STACK_POINTER Displacement,
-	__in int Int
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in int Int
 	)
 /*++
 
@@ -1108,7 +1108,7 @@ Environment:
 
 int
 NWScriptStack::GetStackInt(
-	__in STACK_POINTER Displacement
+	nwn2dev__in STACK_POINTER Displacement
 	) const
 /*++
 
@@ -1158,8 +1158,8 @@ Environment:
 
 void
 NWScriptStack::SetStackFloat(
-	__in STACK_POINTER Displacement,
-	__in float Float
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in float Float
 	)
 /*++
 
@@ -1207,7 +1207,7 @@ Environment:
 
 float
 NWScriptStack::GetStackFloat(
-	__in STACK_POINTER Displacement
+	nwn2dev__in STACK_POINTER Displacement
 	) const
 /*++
 
@@ -1250,8 +1250,8 @@ Environment:
 
 void
 NWScriptStack::SetStackString(
-	__in STACK_POINTER Displacement,
-	__in const char * String
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in const char * String
 	)
 /*++
 
@@ -1314,7 +1314,7 @@ Environment:
 
 const std::string &
 NWScriptStack::GetStackString(
-	__in STACK_POINTER Displacement
+	nwn2dev__in STACK_POINTER Displacement
 	) const
 /*++
 
@@ -1364,8 +1364,8 @@ Environment:
 
 void
 NWScriptStack::SetStackObjectId(
-	__in STACK_POINTER Displacement,
-	__in NWN::OBJECTID ObjectId
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in NWN::OBJECTID ObjectId
 	)
 /*++
 
@@ -1413,7 +1413,7 @@ Environment:
 
 NWN::OBJECTID
 NWScriptStack::GetStackObjectId(
-	__in STACK_POINTER Displacement
+	nwn2dev__in STACK_POINTER Displacement
 	) const
 /*++
 
@@ -1456,8 +1456,8 @@ Environment:
 
 void
 NWScriptStack::SetStackVector(
-	__in STACK_POINTER Displacement,
-	__in const NWN::Vector3 & Vector
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in const NWN::Vector3 & Vector
 	)
 /*++
 
@@ -1506,7 +1506,7 @@ Environment:
 
 NWN::Vector3
 NWScriptStack::GetStackVector(
-	__in STACK_POINTER Displacement
+	nwn2dev__in STACK_POINTER Displacement
 	) const
 /*++
 
@@ -1555,8 +1555,8 @@ Environment:
 
 void
 NWScriptStack::SetStackEngineStructure(
-	__in STACK_POINTER Displacement,
-	__in EngineStructurePtr Struct
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in EngineStructurePtr Struct
 	)
 /*++
 
@@ -1621,8 +1621,8 @@ Environment:
 
 EngineStructurePtr
 NWScriptStack::GetStackEngineStructure(
-	__in STACK_POINTER Displacement,
-	__in ENGINE_STRUCTURE_NUMBER EngineType
+	nwn2dev__in STACK_POINTER Displacement,
+	nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 	) const
 /*++
 
@@ -1672,9 +1672,9 @@ Environment:
 
 void
 NWScriptStack::CopyDownSP(
-	__in STACK_POINTER Destination,
-	__in STACK_POINTER BytesToCopy,
-	__in bool UseBP /* = false */
+	nwn2dev__in STACK_POINTER Destination,
+	nwn2dev__in STACK_POINTER BytesToCopy,
+	nwn2dev__in bool UseBP /* = false */
 	)
 /*++
 
@@ -1937,9 +1937,9 @@ Environment:
 
 void
 NWScriptStack::CopyTopSP(
-	__in STACK_POINTER Source,
-	__in STACK_POINTER BytesToCopy,
-	__in bool UseBP /* = false */
+	nwn2dev__in STACK_POINTER Source,
+	nwn2dev__in STACK_POINTER BytesToCopy,
+	nwn2dev__in bool UseBP /* = false */
 	)
 /*++
 
@@ -2097,9 +2097,9 @@ Environment:
 
 NWScriptStack
 NWScriptStack::SaveStack(
-	__in STACK_POINTER BPSaveBytes,
-	__in STACK_POINTER SPSaveBytes,
-	__in STACK_POINTER SPSaveOffset /* = 0 */
+	nwn2dev__in STACK_POINTER BPSaveBytes,
+	nwn2dev__in STACK_POINTER SPSaveBytes,
+	nwn2dev__in STACK_POINTER SPSaveOffset /* = 0 */
 	)
 /*++
 
@@ -2201,10 +2201,10 @@ Environment:
 
 void
 NWScriptStack::SaveStack(
-	__in INWScriptStack * Stack,
-	__in STACK_POINTER BPSaveBytes,
-	__in STACK_POINTER SPSaveBytes,
-	__in STACK_POINTER SPSaveOffset /* = 0 */
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in STACK_POINTER BPSaveBytes,
+	nwn2dev__in STACK_POINTER SPSaveBytes,
+	nwn2dev__in STACK_POINTER SPSaveOffset /* = 0 */
 	)
 /*++
 
@@ -2311,9 +2311,9 @@ Environment:
 
 void
 NWScriptStack::DestructElements(
-	__in STACK_POINTER BytesToRemove,
-	__in STACK_POINTER ExcludePointer,
-	__in STACK_POINTER BytesToExclude
+	nwn2dev__in STACK_POINTER BytesToRemove,
+	nwn2dev__in STACK_POINTER ExcludePointer,
+	nwn2dev__in STACK_POINTER BytesToExclude
 	)
 /*++
 
@@ -2408,7 +2408,7 @@ Environment:
 
 int
 NWScriptStack::IncrementStackInt(
-	__in STACK_POINTER AbsoluteAddress
+	nwn2dev__in STACK_POINTER AbsoluteAddress
 	)
 /*++
 
@@ -2460,7 +2460,7 @@ Environment:
 
 int
 NWScriptStack::DecrementStackInt(
-	__in STACK_POINTER AbsoluteAddress
+	nwn2dev__in STACK_POINTER AbsoluteAddress
 	)
 /*++
 
@@ -2539,9 +2539,9 @@ Environment:
 
 bool
 NWScriptStack::PeekStack(
-	__in STACK_POINTER AbsoluteAddress,
-	__out ULONG & RawStack,
-	__out UCHAR & RawType
+	nwn2dev__in STACK_POINTER AbsoluteAddress,
+	nwn2dev__out ULONG & RawStack,
+	nwn2dev__out UCHAR & RawType
 	) const
 /*++
 
@@ -2587,7 +2587,7 @@ Environment:
 
 bool
 NWScriptStack::DebugIsEngineStructureType(
-	__in UCHAR RawType
+	nwn2dev__in UCHAR RawType
 	) const
 /*++
 
@@ -2667,7 +2667,7 @@ Environment:
 
 NWScriptStack::BASE_STACK_TYPE
 NWScriptStack::GetStackType(
-	__in STACK_POINTER AbsoluteAddress
+	nwn2dev__in STACK_POINTER AbsoluteAddress
 	) const
 /*++
 
@@ -2849,7 +2849,7 @@ Environment:
 
 void
 NWScriptStack::CheckGuardZone(
-	__in STACK_POINTER AbsoluteAddress
+	nwn2dev__in STACK_POINTER AbsoluteAddress
 	)
 /*++
 
@@ -2887,7 +2887,7 @@ Environment:
 
 void
 NWScriptStack::SetInvalidObjId(
-	__in NWN::OBJECTID InvalidObjId
+	nwn2dev__in NWN::OBJECTID InvalidObjId
 	)
 /*++
 
@@ -2943,8 +2943,8 @@ Environment:
 
 void
 NWScriptStack::StackPushRaw(
-	__in STACK_ENTRY StackEntry,
-	__in STACK_TYPE_CODE StackEntryType
+	nwn2dev__in STACK_ENTRY StackEntry,
+	nwn2dev__in STACK_TYPE_CODE StackEntryType
 	)
 /*++
 
@@ -2986,7 +2986,7 @@ Environment:
 
 NWScriptStack::STACK_ENTRY
 NWScriptStack::StackPopRaw(
-	__in STACK_TYPE_CODE StackEntryType
+	nwn2dev__in STACK_TYPE_CODE StackEntryType
 	)
 /*++
 
@@ -3122,8 +3122,8 @@ Environment:
 
 void
 NWScriptStack::StackPopRaw(
-	__out STACK_ENTRY & StackEntry,
-	__out STACK_TYPE_CODE & StackEntryType
+	nwn2dev__out STACK_ENTRY & StackEntry,
+	nwn2dev__out STACK_TYPE_CODE & StackEntryType
 	)
 /*++
 
@@ -3164,8 +3164,8 @@ Environment:
 
 void
 NWScriptStack::SetDynamicStackEntry(
-	__in size_t Offset,
-	__in int Int
+	nwn2dev__in size_t Offset,
+	nwn2dev__in int Int
 	)
 /*++
 
@@ -3208,8 +3208,8 @@ Environment:
 
 void
 NWScriptStack::SetDynamicStackEntry(
-	__in size_t Offset,
-	__in float Float
+	nwn2dev__in size_t Offset,
+	nwn2dev__in float Float
 	)
 /*++
 
@@ -3252,8 +3252,8 @@ Environment:
 
 void
 NWScriptStack::SetDynamicStackEntry(
-	__in size_t Offset,
-	__in const char * String
+	nwn2dev__in size_t Offset,
+	nwn2dev__in const char * String
 	)
 /*++
 
@@ -3289,8 +3289,8 @@ Environment:
 
 void
 NWScriptStack::SetDynamicStackEntry(
-	__in size_t Offset,
-	__in NWN::OBJECTID ObjectId
+	nwn2dev__in size_t Offset,
+	nwn2dev__in NWN::OBJECTID ObjectId
 	)
 /*++
 
@@ -3334,7 +3334,7 @@ Environment:
 
 int
 NWScriptStack::GetDynamicStackEntryInteger(
-	__in size_t Offset
+	nwn2dev__in size_t Offset
 	) const
 /*++
 
@@ -3369,7 +3369,7 @@ Environment:
 
 float
 NWScriptStack::GetDynamicStackEntryFloat(
-	__in size_t Offset
+	nwn2dev__in size_t Offset
 	) const
 /*++
 
@@ -3404,7 +3404,7 @@ Environment:
 
 const std::string &
 NWScriptStack::GetDynamicStackEntryString(
-	__in size_t Offset
+	nwn2dev__in size_t Offset
 	) const
 /*++
 
@@ -3439,7 +3439,7 @@ Environment:
 
 NWN::OBJECTID
 NWScriptStack::GetDynamicStackEntryObjectId(
-	__in size_t Offset
+	nwn2dev__in size_t Offset
 	) const
 /*++
 
@@ -3492,7 +3492,7 @@ Environment:
 
 void
 NWScriptStack::GrowStack(
-	__in size_t NumSlots
+	nwn2dev__in size_t NumSlots
 	)
 /*++
 
@@ -3526,9 +3526,9 @@ Environment:
 
 void
 NWScriptStack::AppendStackContentsToStack(
-	__in NWScriptStack & DestStack,
-	__in size_t SrcOffset,
-	__in size_t CellsToCopy
+	nwn2dev__in NWScriptStack & DestStack,
+	nwn2dev__in size_t SrcOffset,
+	nwn2dev__in size_t CellsToCopy
 	)
 /*++
 
@@ -3648,9 +3648,9 @@ Environment:
 
 void
 NWScriptStack::AppendStackContentsToStack(
-	__in INWScriptStack * DestStack,
-	__in size_t SrcOffset,
-	__in size_t CellsToCopy
+	nwn2dev__in INWScriptStack * DestStack,
+	nwn2dev__in size_t SrcOffset,
+	nwn2dev__in size_t CellsToCopy
 	)
 /*++
 

@@ -31,7 +31,7 @@ const SimpleMeshTypeDescriptor SMTD_CollisionMesh =
 
 void
 CollisionMesh::Update(
-	__in const NWN::Matrix44 & M
+	nwn2dev__in const NWN::Matrix44 & M
 	)
 /*++
 

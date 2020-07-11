@@ -67,10 +67,10 @@ public:
 	typedef std::vector< std::string > ScriptParamVec;
 
 	NWScriptHost(
-		__in ResourceManager & ResMan,
-		__in swutil::TimerManager & TimerManager,
-		__in const AppParameters * Params,
-		__in IDebugTextOut * TextOut
+		nwn2dev__in ResourceManager & ResMan,
+		nwn2dev__in swutil::TimerManager & TimerManager,
+		nwn2dev__in const AppParameters * Params,
+		nwn2dev__in IDebugTextOut * TextOut
 		);
 
 	~NWScriptHost(
@@ -84,10 +84,10 @@ public:
 	inline
 	int
 	RunScript(
-		__in const char * ScriptName,
-		__in NWN::OBJECTID ObjectId = NWN::INVALIDOBJID,
-		__in int DefaultReturnCode = 0,
-		__in ULONG Flags = 0
+		nwn2dev__in const char * ScriptName,
+		nwn2dev__in NWN::OBJECTID ObjectId = NWN::INVALIDOBJID,
+		nwn2dev__in int DefaultReturnCode = 0,
+		nwn2dev__in ULONG Flags = 0
 		)
 	{
 		return RunScript(
@@ -100,20 +100,20 @@ public:
 
 	int
 	RunScript(
-		__in const char * ScriptName,
-		__in NWN::OBJECTID ObjectId,
-		__in const ScriptParamVec & ScriptParameters,
-		__in int DefaultReturnCode = 0,
-		__in ULONG Flags = 0
+		nwn2dev__in const char * ScriptName,
+		nwn2dev__in NWN::OBJECTID ObjectId,
+		nwn2dev__in const ScriptParamVec & ScriptParameters,
+		nwn2dev__in int DefaultReturnCode = 0,
+		nwn2dev__in ULONG Flags = 0
 		);
 
 	inline
 	int
 	RunScript(
-		__in const NWN::ResRef32 & ScriptName,
-		__in NWN::OBJECTID ObjectId = NWN::INVALIDOBJID,
-		__in int DefaultReturnCode = 0,
-		__in ULONG Flags = 0
+		nwn2dev__in const NWN::ResRef32 & ScriptName,
+		nwn2dev__in NWN::OBJECTID ObjectId = NWN::INVALIDOBJID,
+		nwn2dev__in int DefaultReturnCode = 0,
+		nwn2dev__in ULONG Flags = 0
 		)
 	{
 		if (ScriptName.RefStr[ 0 ] == '\0')
@@ -129,11 +129,11 @@ public:
 
 	int
 	RunScript(
-		__in const NWN::ResRef32 & ScriptName,
-		__in NWN::OBJECTID ObjectId,
-		__in const ScriptParamVec & ScriptParameters,
-		__in int DefaultReturnCode,
-		__in ULONG Flags = 0
+		nwn2dev__in const NWN::ResRef32 & ScriptName,
+		nwn2dev__in NWN::OBJECTID ObjectId,
+		nwn2dev__in const ScriptParamVec & ScriptParameters,
+		nwn2dev__in int DefaultReturnCode,
+		nwn2dev__in ULONG Flags = 0
 		);
 
 	//
@@ -142,9 +142,9 @@ public:
 
 	void
 	RunScriptSituation(
-		__in NWScriptVM::VMState * ScriptState,
-		__in NWScriptJITLib::SavedState::Ptr & ScriptStateJIT,
-		__in NWScriptJITLib::Program::Ptr & ProgramJIT
+		nwn2dev__in NWScriptVM::VMState * ScriptState,
+		nwn2dev__in NWScriptJITLib::SavedState::Ptr & ScriptStateJIT,
+		nwn2dev__in NWScriptJITLib::Program::Ptr & ProgramJIT
 		);
 
 	//
@@ -174,10 +174,10 @@ public:
 	void
 	NWSCRIPTACTAPI
 	OnExecuteAction(
-		__in NWScriptVM & ScriptVM,
-		__in NWScriptStack & VMStack,
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWScriptVM & ScriptVM,
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -189,7 +189,7 @@ public:
 	EngineStructurePtr
 	NWSCRIPTACTAPI
 	CreateEngineStructure(
-		__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
 		);
 
 	//
@@ -202,8 +202,8 @@ public:
 	bool
 	NWSCRIPTACTAPI
 	OnExecuteActionFromJIT(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	//
@@ -230,11 +230,11 @@ public:
 	bool
 	NWSCRIPTACTAPI
 	OnExecuteActionFromJITFast(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments,
 		__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-		__in size_t NumCmds,
-		__in uintptr_t * CmdParams
+		nwn2dev__in size_t NumCmds,
+		nwn2dev__in uintptr_t * CmdParams
 		);
 
 private:
@@ -261,8 +261,8 @@ private:
 		inline
 		bool
 		operator()(
-			__in const NWN::ResRef32 & left,
-			__in const NWN::ResRef32 & right
+			nwn2dev__in const NWN::ResRef32 & left,
+			nwn2dev__in const NWN::ResRef32 & right
 			) const
 		{
 			return memcmp( &left, &right, sizeof( left ) ) < 0;
@@ -298,10 +298,10 @@ private:
 	typedef 
 	void
 	(NWScriptHost:: * OnScriptActionProc)(
-		__in NWScriptVM & ScriptVM,
-		__in NWScriptStack & VMStack,
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWScriptVM & ScriptVM,
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		);
 
 	struct NWScriptActionEntry
@@ -321,10 +321,10 @@ private:
 #define DECLARE_NSS_HANDLER( Name, Ordinal ) \
 	void                                     \
 	OnAction_##Name(                          \
-	    __in NWScriptVM & ScriptVM,          \
-	    __in NWScriptStack & VMStack,        \
-	    __in NWSCRIPT_ACTION ActionId,       \
-	    __in size_t NumArguments             \
+	    nwn2dev__in NWScriptVM & ScriptVM,          \
+	    nwn2dev__in NWScriptStack & VMStack,        \
+	    nwn2dev__in NWSCRIPT_ACTION ActionId,       \
+	    nwn2dev__in size_t NumArguments             \
 	    );                                   \
 	                                         \
 	C_ASSERT( Ordinal < MAX_ACTION_ID );     
@@ -347,8 +347,8 @@ private:
 
 	NWScriptReaderPtr
 	LoadScript(
-		__in const char * ScriptName,
-		__out NWScriptJITLib::Program::Ptr & JITProgram
+		nwn2dev__in const char * ScriptName,
+		nwn2dev__out NWScriptJITLib::Program::Ptr & JITProgram
 		);
 
 	//
@@ -358,8 +358,8 @@ private:
 	inline
 	void
 	StackPushObjectId(
-		__in NWScriptStack & VMStack,
-		__in NWN::OBJECTID ObjectId
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWN::OBJECTID ObjectId
 		)
 	{
 		VMStack.StackPushObjectId( ObjectId & ~NWN::LISTTYPE_MASK );
@@ -372,7 +372,7 @@ private:
 	inline
 	NWN::OBJECTID
 	StackPopObjectId(
-		__in NWScriptStack & VMStack
+		nwn2dev__in NWScriptStack & VMStack
 		)
 	{
 		NWN::OBJECTID ObjectId;
@@ -399,9 +399,9 @@ private:
 
 	void
 	CreateDeferredScriptSituation(
-		__in NWScriptVM & ScriptVM,
-		__in NWN::OBJECTID ObjectId,
-		__in ULONG DuePeriod
+		nwn2dev__in NWScriptVM & ScriptVM,
+		nwn2dev__in NWN::OBJECTID ObjectId,
+		nwn2dev__in ULONG DuePeriod
 		);
 
 	//
@@ -410,16 +410,16 @@ private:
 
 	bool
 	OnDeferredScriptSituationTimer(
-		__in DeferredScriptSituation * Situation
+		nwn2dev__in DeferredScriptSituation * Situation
 		);
 
 	static
 	bool
 	__stdcall
 	OnDeferredScriptSituationTimerThunk(
-		__in void * Context1,
-		__in void * Context2,
-		__in swutil::TimerRegistration * Timer
+		nwn2dev__in void * Context1,
+		nwn2dev__in void * Context2,
+		nwn2dev__in swutil::TimerRegistration * Timer
 		);
 
 	//
@@ -564,7 +564,7 @@ public:
 	inline
 	bool
 	CompareEngineStructure(
-		__in const EngineStructure * Other
+		nwn2dev__in const EngineStructure * Other
 		) const
 	{
 		const EngEffect * Eff = (const EngEffect *) Other;
@@ -599,10 +599,10 @@ typedef swutil::SharedPtr< EngEffect > EngEffectPtr;
 #define SCRIPT_ACTION( Name )                                  \
 	void                                                       \
 	NWScriptHost::OnAction_##Name(                             \
-	    __in NWScriptVM & ScriptVM,                            \
-	    __in NWScriptStack & VMStack,                          \
-	    __in NWSCRIPT_ACTION ActionId,                         \
-	    __in size_t NumArguments                               \
+	    nwn2dev__in NWScriptVM & ScriptVM,                            \
+	    nwn2dev__in NWScriptStack & VMStack,                          \
+	    nwn2dev__in NWSCRIPT_ACTION ActionId,                         \
+	    nwn2dev__in size_t NumArguments                               \
 	    )                                                      
 #endif
 

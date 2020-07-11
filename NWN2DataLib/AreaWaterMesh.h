@@ -121,7 +121,7 @@ public:
 	inline
 	void
 	AddWaterVertex(
-		__in const WaterVertex & Vertex
+		nwn2dev__in const WaterVertex & Vertex
 		)
 	{
 		m_WaterVerticies.push_back( Vertex );
@@ -130,7 +130,7 @@ public:
 	inline
 	void
 	AddWaterFace(
-		__in const WaterFace & Face
+		nwn2dev__in const WaterFace & Face
 		)
 	{
 		m_WaterFaces.push_back( Face );
@@ -147,7 +147,7 @@ public:
 	inline
 	void
 	SetWaterColor(
-		__in const NWN::NWNRGB & WaterColor
+		nwn2dev__in const NWN::NWNRGB & WaterColor
 		)
 	{
 		m_WaterColor = WaterColor;
@@ -164,7 +164,7 @@ public:
 	inline
 	void
 	SetWaterBitmap(
-		__in const WaterBitmap & Bitmap
+		nwn2dev__in const WaterBitmap & Bitmap
 		)
 	{
 		m_WaterBitmap = Bitmap;
@@ -181,7 +181,7 @@ public:
 	inline
 	void
 	SetWaterX(
-		__in unsigned long WaterX
+		nwn2dev__in unsigned long WaterX
 		)
 	{
 		m_WaterX = WaterX;
@@ -198,7 +198,7 @@ public:
 	inline
 	void
 	SetWaterY(	
-		__in unsigned long WaterY
+		nwn2dev__in unsigned long WaterY
 		)
 	{
 		m_WaterY = WaterY;

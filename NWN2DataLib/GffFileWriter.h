@@ -293,9 +293,9 @@ public:
 
 	bool
 	Commit(
-		__in const std::string & FileName,
-		__in unsigned long FileType = 0,
-		__in unsigned long Flags = 0
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in unsigned long FileType = 0,
+		nwn2dev__in unsigned long Flags = 0
 		);
 
 	//
@@ -304,9 +304,9 @@ public:
 
 	bool
 	Commit(
-		__out std::vector< unsigned char > & Memory,
-		__in unsigned long FileType = 0,
-		__in unsigned long Flags = 0
+		nwn2dev__out std::vector< unsigned char > & Memory,
+		nwn2dev__in unsigned long FileType = 0,
+		nwn2dev__in unsigned long Flags = 0
 		);
 
 	typedef GffFileReader::GFF_LANGUAGE GFF_LANGUAGE;
@@ -318,7 +318,7 @@ public:
 	inline
 	void
 	SetDefaultLanguage(
-		__in GFF_LANGUAGE Language
+		nwn2dev__in GFF_LANGUAGE Language
 		)
 	{
 		m_Language = Language;
@@ -340,7 +340,7 @@ public:
 	inline
 	void
 	SetDefaultFileType(
-		__in unsigned long FileType
+		nwn2dev__in unsigned long FileType
 		)
 	{
 		m_FileType = FileType;
@@ -380,8 +380,8 @@ public:
 
 		inline
 		GffStruct(
-			__in GffFileWriter * Writer,
-			__in FieldStructPtr StructEntry
+			nwn2dev__in GffFileWriter * Writer,
+			nwn2dev__in FieldStructPtr StructEntry
 			)
 		: m_Writer( Writer ),
 		  m_StructEntry( StructEntry )
@@ -413,7 +413,7 @@ public:
 		inline
 		void
 		SetType(
-			__in unsigned long Type
+			nwn2dev__in unsigned long Type
 			)
 		{
 			m_StructEntry->StructType = Type;
@@ -442,8 +442,8 @@ public:
 
 		void
 		InitializeFromStruct(
-			__in const GffFileReader::GffStruct * Struct,
-			__in size_t MaxDepth = 32
+			nwn2dev__in const GffFileReader::GffStruct * Struct,
+			nwn2dev__in size_t MaxDepth = 32
 			);
 
 		//
@@ -457,8 +457,8 @@ public:
 
 		void
 		InitializeFromStruct(
-			__in GffFileWriter::GffStruct & Struct,
-			__in size_t MaxDepth = 32
+			nwn2dev__in GffFileWriter::GffStruct & Struct,
+			nwn2dev__in size_t MaxDepth = 32
 			);
 
 		//
@@ -470,7 +470,7 @@ public:
 		inline
 		void
 		DeleteField(
-			__in const char * Name
+			nwn2dev__in const char * Name
 			)
 		{
 			FieldEntryVec::iterator it = GetFieldByNameIt( Name );
@@ -507,8 +507,8 @@ public:
 		inline
 		bool
 		GetFieldType(
-			__in const char * Name,
-			__out GffFileReader::GFF_FIELD_TYPE & FieldType
+			nwn2dev__in const char * Name,
+			nwn2dev__out GffFileReader::GFF_FIELD_TYPE & FieldType
 			)
 		{
 			FieldEntryVec::iterator it = GetFieldByNameIt( Name );
@@ -531,8 +531,8 @@ public:
 		inline
 		void
 		SetBYTE(
-			__in const char * FieldName,
-			__in unsigned __int8 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in unsigned __int8 Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_BYTE, FieldName, Data );
@@ -541,8 +541,8 @@ public:
 		inline
 		void
 		SetBoolAsBYTE(
-			__in const char * FieldName,
-			__in bool Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in bool Data
 			)
 		{
 			unsigned __int8 b;
@@ -555,8 +555,8 @@ public:
 		inline
 		void
 		SetCHAR(
-			__in const char * FieldName,
-			__in signed __int8 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in signed __int8 Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_CHAR, FieldName, Data );
@@ -565,8 +565,8 @@ public:
 		inline
 		void
 		SetWORD(
-			__in const char * FieldName,
-			__in unsigned __int16 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in unsigned __int16 Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_WORD, FieldName, Data );
@@ -575,8 +575,8 @@ public:
 		inline
 		void
 		SetSHORT(
-			__in const char * FieldName,
-			__in signed __int16 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in signed __int16 Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_SHORT, FieldName, Data );
@@ -585,8 +585,8 @@ public:
 		inline
 		void
 		SetDWORD(
-			__in const char * FieldName,
-			__in unsigned __int32 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in unsigned __int32 Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_DWORD, FieldName, Data );
@@ -595,8 +595,8 @@ public:
 		inline
 		void
 		SetINT(
-			__in const char * FieldName,
-			__in signed __int32 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in signed __int32 Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_INT, FieldName, Data );
@@ -605,8 +605,8 @@ public:
 		inline
 		void
 		SetBoolAsINT(
-			__in const char * FieldName,
-			__in bool Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in bool Data
 			)
 		{
 			signed __int32 i;
@@ -619,8 +619,8 @@ public:
 		inline
 		void
 		SetDWORD64(
-			__in const char * FieldName,
-			__in unsigned __int64 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in unsigned __int64 Data
 			)
 		{
 			SetLargeFieldByName( GffFileReader::GFF_DWORD64, FieldName, Data );
@@ -629,8 +629,8 @@ public:
 		inline
 		void
 		SetINT64(
-			__in const char * FieldName,
-			__in signed __int64 Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in signed __int64 Data
 			)
 		{
 			SetLargeFieldByName( GffFileReader::GFF_INT64, FieldName, Data );
@@ -639,8 +639,8 @@ public:
 		inline
 		void
 		SetFLOAT(
-			__in const char * FieldName,
-			__in float Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in float Data
 			)
 		{
 			SetSmallFieldByName( GffFileReader::GFF_FLOAT, FieldName, Data );
@@ -649,8 +649,8 @@ public:
 		inline
 		void
 		SetDOUBLE(
-			__in const char * FieldName,
-			__in double Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in double Data
 			)
 		{
 			SetLargeFieldByName( GffFileReader::GFF_DOUBLE, FieldName, Data );
@@ -659,8 +659,8 @@ public:
 		inline
 		void
 		SetCExoString(
-			__in const char * FieldName,
-			__in const std::string & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const std::string & Data
 			)
 		{
 			std::vector< unsigned char > RawData;
@@ -684,8 +684,8 @@ public:
 		inline
 		void
 		SetResRef(
-			__in const char * FieldName,
-			__in const NWN::ResRef32 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const NWN::ResRef32 & Data
 			)
 		{
 			std::vector< unsigned char > RawData;
@@ -713,8 +713,8 @@ public:
 		inline
 		void
 		SetResRef(
-			__in const char * FieldName,
-			__in const std::string & ResRef
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const std::string & ResRef
 			)
 		{
 			NWN::ResRef32 RealResRef;
@@ -751,8 +751,8 @@ public:
 		inline
 		void
 		SetCExoLocString(
-			__in const char * FieldName,
-			__in const std::string & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const std::string & Data
 			)
 		{
 			std::vector< unsigned char > RawData;
@@ -789,8 +789,8 @@ public:
 		inline
 		void
 		SetVOID(
-			__in const char * FieldName,
-			__in const std::vector< unsigned char > & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const std::vector< unsigned char > & Data
 			)
 		{
 			std::vector< unsigned char > RawData;
@@ -815,7 +815,7 @@ public:
 		GffStruct
 		CreateStruct(
 			__in_opt const char * FieldName,
-			__in unsigned long StructType = 0
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			//
@@ -873,7 +873,7 @@ public:
 		inline
 		void
 		CreateList(
-			__in const char * FieldName
+			nwn2dev__in const char * FieldName
 			)
 		{
 			bool NewField;
@@ -889,8 +889,8 @@ public:
 		inline
 		GffStruct
 		AppendListElement(
-			__in const char * FieldName,
-			__in unsigned long StructType = 0
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			bool                    NewField;
@@ -934,9 +934,9 @@ public:
 		inline
 		GffStruct
 		AddListElement(
-			__in const char * FieldName,
-			__in size_t Index,
-			__in unsigned long StructType = 0
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in size_t Index,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			bool                    NewField;
@@ -985,9 +985,9 @@ public:
 		inline
 		bool
 		GetListElement(
-			__in const char * FieldName,
-			__in size_t Index,
-			__out GffStruct & Struct
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in size_t Index,
+			nwn2dev__out GffStruct & Struct
 			)
 		{
 			FieldEntry * ListField;
@@ -1021,8 +1021,8 @@ public:
 		inline
 		void
 		DeleteListElement(
-			__in const char * Name,
-			__in size_t Index
+			nwn2dev__in const char * Name,
+			nwn2dev__in size_t Index
 			)
 		{
 			FieldEntryVec::iterator it = GetFieldByNameIt( Name );
@@ -1055,16 +1055,16 @@ public:
 
 		void
 		CopyField(
-			__in const GffFileReader::GffStruct * Struct,
-			__in const char * FieldName,
-			__in size_t MaxDepth = 32
+			nwn2dev__in const GffFileReader::GffStruct * Struct,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in size_t MaxDepth = 32
 			);
 
 		void
 		CopyField(
-			__in const GffFileReader::GffStruct * Struct,
-			__in GffFileReader::FIELD_INDEX FieldIndex,
-			__in size_t MaxDepth = 32
+			nwn2dev__in const GffFileReader::GffStruct * Struct,
+			nwn2dev__in GffFileReader::FIELD_INDEX FieldIndex,
+			nwn2dev__in size_t MaxDepth = 32
 			);
 
 		//
@@ -1074,8 +1074,8 @@ public:
 		inline
 		void
 		SetVector3_DEPRECATED(
-			__in const char * FieldName,
-			__in const NWN::Vector3 & v
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const NWN::Vector3 & v
 			)
 		{
 			SetLargeFieldByName( GffFileReader::GFF_VECTOR, FieldName, v );
@@ -1089,8 +1089,8 @@ public:
 		void
 		SetVector(
 			__in_opt const char * FieldName,
-			__in const NWN::Vector3 & v,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::Vector3 & v,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1104,8 +1104,8 @@ public:
 		void
 		SetQuaternion(
 			__in_opt const char * FieldName,
-			__in const NWN::Quaternion & q,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::Quaternion & q,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1120,8 +1120,8 @@ public:
 		void
 		SetColor(
 			__in_opt const char * FieldName,
-			__in const NWN::NWNCOLOR & c,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWNCOLOR & c,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct     s = CreateStruct( FieldName, StructType );
@@ -1148,8 +1148,8 @@ public:
 		void
 		SetUVScroll(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_UVScrollSet & UVScroll,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_UVScrollSet & UVScroll,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s      = CreateStruct( FieldName, StructType );
@@ -1164,8 +1164,8 @@ public:
 		void
 		SetRawTintSet(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_TintSet & TintSet,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_TintSet & TintSet,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct   Tint        = CreateStruct( FieldName, StructType );
@@ -1186,8 +1186,8 @@ public:
 		void
 		SetTintSet(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_TintSet & TintSet,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_TintSet & TintSet,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1199,8 +1199,8 @@ public:
 		void
 		SetTintable(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_TintSet & TintSet,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_TintSet & TintSet,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1212,8 +1212,8 @@ public:
 		void
 		SetArmorAccessory(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_ArmorAccessory & Accessory,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_ArmorAccessory & Accessory,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1227,8 +1227,8 @@ public:
 		void
 		SetArmorPiece(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_ArmorPiece & ArmorPiece,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_ArmorPiece & ArmorPiece,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1242,8 +1242,8 @@ public:
 		void
 		SetArmorPieceWithAccessories(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_ArmorPieceWithAccessories & ArmorPiece,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_ArmorPieceWithAccessories & ArmorPiece,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct           s = CreateStruct( FieldName, StructType );
@@ -1286,8 +1286,8 @@ public:
 		void
 		SetArmorAccessorySet(
 			__in_opt const char * FieldName,
-			__in const NWN::NWN2_ArmorAccessorySet & ArmorAccessorySet,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::NWN2_ArmorAccessorySet & ArmorAccessorySet,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1324,8 +1324,8 @@ public:
 		void
 		SetObjectLocation(
 			__in_opt const char * FieldName,
-			__in const NWN::ObjectLocation & Location,
-			__in unsigned long StructType = 0
+			nwn2dev__in const NWN::ObjectLocation & Location,
+			nwn2dev__in unsigned long StructType = 0
 			)
 		{
 			GffStruct s = CreateStruct( FieldName, StructType );
@@ -1348,7 +1348,7 @@ public:
 		inline
 		FieldEntryVec::iterator
 		GetFieldByNameIt(
-			__in const char * Name
+			nwn2dev__in const char * Name
 			)
 		{
 			size_t NameLen = strlen( Name );
@@ -1410,7 +1410,7 @@ public:
 		inline
 		FieldEntry *
 		GetFieldByName(
-			__in const char * Name
+			nwn2dev__in const char * Name
 			)
 		{
 			FieldEntryVec::iterator it = GetFieldByNameIt( Name );
@@ -1429,9 +1429,9 @@ public:
 		inline
 		FieldEntryVec::iterator
 		CreateField(
-			__in GFF_FIELD_TYPE FieldType,
-			__in const char * FieldName,
-			__out bool & NewField
+			nwn2dev__in GFF_FIELD_TYPE FieldType,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out bool & NewField
 			)
 		{
 			//
@@ -1489,9 +1489,9 @@ public:
 		inline
 		void
 		SetSmallFieldByName(
-			__in GFF_FIELD_TYPE FieldType,
-			__in const char * FieldName,
-			__in T Data
+			nwn2dev__in GFF_FIELD_TYPE FieldType,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in T Data
 			)
 		{
 			//
@@ -1538,9 +1538,9 @@ public:
 		inline
 		void
 		SetLargeFieldByName(
-			__in GFF_FIELD_TYPE FieldType,
-			__in const char * FieldName,
-			__in T Data
+			nwn2dev__in GFF_FIELD_TYPE FieldType,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in T Data
 			)
 		{
 			//
@@ -1586,9 +1586,9 @@ public:
 		inline
 		void
 		SetComplexFieldByName(
-			__in GFF_FIELD_TYPE FieldType,
-			__in const char * FieldName,
-			__in const std::vector< unsigned char > & Data
+			nwn2dev__in GFF_FIELD_TYPE FieldType,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in const std::vector< unsigned char > & Data
 			)
 		{
 			//
@@ -1659,7 +1659,7 @@ public:
 	inline
 	void
 	InitializeFromReader(
-		__in const GffFileReader * Reader
+		nwn2dev__in const GffFileReader * Reader
 		)
 	{
 		GetRootStruct( ).InitializeFromStruct( Reader->GetRootStruct( ) );
@@ -1710,7 +1710,7 @@ private:
 		void
 		Write(
 			__in_bcount( Length ) const void * Data,
-			__in size_t Length
+			nwn2dev__in size_t Length
 			)
 		{
 			if (Length == 0)
@@ -1768,7 +1768,7 @@ private:
 		void
 		Read(
 			__out_bcount( Length ) void * Data,
-			__in size_t Length
+			nwn2dev__in size_t Length
 			)
 		{
 			if (Length == 0)
@@ -1823,8 +1823,8 @@ private:
 		inline
 		void
 		SeekOffset(
-			__in ULONGLONG Offset,
-			__in const char * Description
+			nwn2dev__in ULONGLONG Offset,
+			nwn2dev__in const char * Description
 			)
 		{
 			LONG  Low;
@@ -1867,9 +1867,9 @@ private:
 
 	void
 	CommitInternal(
-		__in GffWriteContext * Context,
-		__in unsigned long FileType,
-		__in unsigned long Flags
+		nwn2dev__in GffWriteContext * Context,
+		nwn2dev__in unsigned long FileType,
+		nwn2dev__in unsigned long Flags
 		);
 
 	typedef GffFileReader::GFF_HEADER GFF_HEADER;
@@ -1883,8 +1883,8 @@ private:
 
 	void
 	BuildHeader(
-		__out GFF_HEADER & Header,
-		__in unsigned long FileType
+		nwn2dev__out GFF_HEADER & Header,
+		nwn2dev__in unsigned long FileType
 		);
 
 	//
@@ -1894,7 +1894,7 @@ private:
 	void
 	WriteLabelEntries(
 		__inout GFF_HEADER & Header,
-		__in GffWriteContext * Context
+		nwn2dev__in GffWriteContext * Context
 		);
 
 	//
@@ -1904,7 +1904,7 @@ private:
 	void
 	WriteFieldData(
 		__inout GFF_HEADER & Header,
-		__in GffWriteContext * Context
+		nwn2dev__in GffWriteContext * Context
 		);
 
 	//
@@ -1914,7 +1914,7 @@ private:
 	void
 	WriteFieldIndicies(
 		__inout GFF_HEADER & Header,
-		__in GffWriteContext * Context
+		nwn2dev__in GffWriteContext * Context
 		);
 
 	//
@@ -1924,7 +1924,7 @@ private:
 	void
 	WriteStructEntries(
 		__inout GFF_HEADER & Header,
-		__in GffWriteContext * Context
+		nwn2dev__in GffWriteContext * Context
 		);
 
 	//
@@ -1934,7 +1934,7 @@ private:
 	void
 	WriteListIndicies(
 		__inout GFF_HEADER & Header,
-		__in GffWriteContext * Context
+		nwn2dev__in GffWriteContext * Context
 		);
 
 	//
@@ -1944,7 +1944,7 @@ private:
 	void
 	WriteFieldEntries(
 		__inout GFF_HEADER & Header,
-		__in GffWriteContext * Context
+		nwn2dev__in GffWriteContext * Context
 		);
 
 	//
@@ -1956,7 +1956,7 @@ private:
 	static
 	bool
 	IsComplexType(
-		__in GFF_FIELD_TYPE FieldType
+		nwn2dev__in GFF_FIELD_TYPE FieldType
 		);
 
 	//
@@ -1966,7 +1966,7 @@ private:
 	inline
 	void
 	AddStruct(
-		__in FieldStructPtr Struct
+		nwn2dev__in FieldStructPtr Struct
 		)
 	{
 #if GFFFILEWRITER_PRETRACK_STRUCTS
@@ -1988,7 +1988,7 @@ private:
 	inline
 	void
 	DeleteStruct(
-		__in FieldStructPtr Struct
+		nwn2dev__in FieldStructPtr Struct
 		)
 	{
 #if GFFFILEWRITER_PRETRACK_STRUCTS
@@ -2048,7 +2048,7 @@ private:
 	inline
 	void
 	AddStructRecursive(
-		__in FieldStruct * Struct
+		nwn2dev__in FieldStruct * Struct
 		)
 	{
 		//
@@ -2090,8 +2090,8 @@ private:
 		inline
 		bool
 		operator()(
-			__in const GFF_LABEL_ENTRY & left,
-			__in const GFF_LABEL_ENTRY & right
+			nwn2dev__in const GFF_LABEL_ENTRY & left,
+			nwn2dev__in const GFF_LABEL_ENTRY & right
 			) const
 		{
 			return memcmp( &left, &right, sizeof( left ) ) < 0;

@@ -53,7 +53,7 @@ public:
 	virtual
 	void
 	StackPushInt(
-		__in int Int
+		nwn2dev__in int Int
 		) = 0;
 
 	virtual
@@ -65,7 +65,7 @@ public:
 	virtual
 	void
 	StackPushFloat(
-		__in float Float
+		nwn2dev__in float Float
 		) = 0;
 
 	virtual
@@ -77,19 +77,19 @@ public:
 	virtual
 	void
 	StackPushString(
-		__in const char * String
+		nwn2dev__in const char * String
 		) = 0;
 
 	virtual
 	void
 	StackPushString(
-		__in const std::string & String
+		nwn2dev__in const std::string & String
 		) = 0;
 
 	virtual
 	void
 	StackPushStringAsNeutral(
-		__in const NeutralString & String
+		nwn2dev__in const NeutralString & String
 		) = 0;
 
 	virtual
@@ -101,7 +101,7 @@ public:
 	virtual
 	void
 	StackPushObjectId(
-		__in NWN::OBJECTID ObjectId
+		nwn2dev__in NWN::OBJECTID ObjectId
 		) = 0;
 
 	virtual
@@ -113,7 +113,7 @@ public:
 	virtual
 	void
 	StackPushVector(
-		__in const NWN::Vector3 & Vector
+		nwn2dev__in const NWN::Vector3 & Vector
 		) = 0;
 
 	virtual
@@ -125,13 +125,13 @@ public:
 	virtual
 	void
 	StackPushEngineStructure(
-		__in EngineStructurePtr Struct
+		nwn2dev__in EngineStructurePtr Struct
 		) = 0;
 
 	virtual
 	EngineStructurePtr
 	StackPopEngineStructure(
-		__in ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 		) = 0;
 
 
@@ -192,12 +192,12 @@ public:
 	// standard std::bad_alloc (or the like).
 	//
 
-	class type_mismatch_exception   : public std::runtime_error { public: type_mismatch_exception( __in const char * s ) : std::runtime_error( s ) {} };
-	class stack_underflow_exception : public std::runtime_error { public: stack_underflow_exception( __in const char * s ) : std::runtime_error( s ) {} };
-	class stack_overflow_exception  : public std::runtime_error { public: stack_overflow_exception( __in const char * s ) : std::runtime_error( s ) {} };
-	class invalid_handle_exception  : public std::runtime_error { public: invalid_handle_exception( __in const char * s ) : std::runtime_error( s ) {} };
-	class invalid_stack_exception   : public std::runtime_error { public: invalid_stack_exception( __in const char * s ) : std::runtime_error( s ) {} };
-	class guard_zone_exception      : public std::runtime_error { public: guard_zone_exception( __in const char * s ) : std::runtime_error( s ) {} };
+	class type_mismatch_exception   : public std::runtime_error { public: type_mismatch_exception( nwn2dev__in const char * s ) : std::runtime_error( s ) {} };
+	class stack_underflow_exception : public std::runtime_error { public: stack_underflow_exception( nwn2dev__in const char * s ) : std::runtime_error( s ) {} };
+	class stack_overflow_exception  : public std::runtime_error { public: stack_overflow_exception( nwn2dev__in const char * s ) : std::runtime_error( s ) {} };
+	class invalid_handle_exception  : public std::runtime_error { public: invalid_handle_exception( nwn2dev__in const char * s ) : std::runtime_error( s ) {} };
+	class invalid_stack_exception   : public std::runtime_error { public: invalid_stack_exception( nwn2dev__in const char * s ) : std::runtime_error( s ) {} };
+	class guard_zone_exception      : public std::runtime_error { public: guard_zone_exception( nwn2dev__in const char * s ) : std::runtime_error( s ) {} };
 
 	//
 	// Define the type of an engine structure type number.
@@ -234,7 +234,7 @@ public:
 	//
 
 	NWScriptStack(
-		__in NWN::OBJECTID InvalidObjId = NWN::INVALIDOBJID
+		nwn2dev__in NWN::OBJECTID InvalidObjId = NWN::INVALIDOBJID
 		);
 
 	~NWScriptStack(
@@ -247,13 +247,13 @@ public:
 
 	void
 	StackPushDynamicParameter(
-		__in const char * String
+		nwn2dev__in const char * String
 		);
 
 
 	void
 	StackPushInt(
-		__in int Int
+		nwn2dev__in int Int
 		);
 
 	int
@@ -263,7 +263,7 @@ public:
 
 	void
 	StackPushFloat(
-		__in float Float
+		nwn2dev__in float Float
 		);
 
 	float
@@ -273,17 +273,17 @@ public:
 
 	void
 	StackPushString(
-		__in const char * String
+		nwn2dev__in const char * String
 		);
 
 	void
 	StackPushString(
-		__in const std::string & String
+		nwn2dev__in const std::string & String
 		);
 
 	void
 	StackPushStringAsNeutral(
-		__in const NeutralString & String
+		nwn2dev__in const NeutralString & String
 		);
 
 	std::string
@@ -297,7 +297,7 @@ public:
 
 	void
 	StackPushObjectId(
-		__in NWN::OBJECTID ObjectId
+		nwn2dev__in NWN::OBJECTID ObjectId
 		);
 
 	NWN::OBJECTID
@@ -307,7 +307,7 @@ public:
 
 	void
 	StackPushVector(
-		__in const NWN::Vector3 & Vector
+		nwn2dev__in const NWN::Vector3 & Vector
 		);
 
 	NWN::Vector3
@@ -317,12 +317,12 @@ public:
 
 	void
 	StackPushEngineStructure(
-		__in EngineStructurePtr Struct
+		nwn2dev__in EngineStructurePtr Struct
 		);
 
 	EngineStructurePtr
 	StackPopEngineStructure(
-		__in ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 		);
 
 
@@ -360,7 +360,7 @@ public:
 
 	PROGRAM_COUNTER
 	GetReturnStackEntry(
-		__in size_t Offset
+		nwn2dev__in size_t Offset
 		) const;
 
 	//
@@ -369,7 +369,7 @@ public:
 
 	void
 	AddSP(
-		__in STACK_POINTER Displacement
+		nwn2dev__in STACK_POINTER Displacement
 		);
 
 	//
@@ -394,7 +394,7 @@ public:
 
 	void
 	SetCurrentBP(
-		__in STACK_POINTER AbsoluteBP
+		nwn2dev__in STACK_POINTER AbsoluteBP
 		);
 
 	//
@@ -403,7 +403,7 @@ public:
 
 	void
 	SaveProgramCounter(
-		__in PROGRAM_COUNTER ProgramCounter
+		nwn2dev__in PROGRAM_COUNTER ProgramCounter
 		);
 
 	//
@@ -421,74 +421,74 @@ public:
 
 	void
 	SetStackInt(
-		__in STACK_POINTER Displacement,
-		__in int Int
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in int Int
 		);
 
 	int
 	GetStackInt(
-		__in STACK_POINTER Displacement
+		nwn2dev__in STACK_POINTER Displacement
 		) const;
 
 
 	void
 	SetStackFloat(
-		__in STACK_POINTER Displacement,
-		__in float Float
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in float Float
 		);
 
 	float
 	GetStackFloat(
-		__in STACK_POINTER Displacement
+		nwn2dev__in STACK_POINTER Displacement
 		) const;
 
 
 	void
 	SetStackString(
-		__in STACK_POINTER Displacement,
-		__in const char * String
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in const char * String
 		);
 
 	const std::string &
 	GetStackString(
-		__in STACK_POINTER Displacement
+		nwn2dev__in STACK_POINTER Displacement
 		) const;
 
 
 	void
 	SetStackObjectId(
-		__in STACK_POINTER Displacement,
-		__in NWN::OBJECTID ObjectId
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in NWN::OBJECTID ObjectId
 		);
 
 	NWN::OBJECTID
 	GetStackObjectId(
-		__in STACK_POINTER Displacement
+		nwn2dev__in STACK_POINTER Displacement
 		) const;
 
 
 	void
 	SetStackVector(
-		__in STACK_POINTER Displacement,
-		__in const NWN::Vector3 & Vector
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in const NWN::Vector3 & Vector
 		);
 
 	NWN::Vector3
 	GetStackVector(
-		__in STACK_POINTER Displacement
+		nwn2dev__in STACK_POINTER Displacement
 		) const;
 
 
 	void
 	SetStackEngineStructure(
-		__in STACK_POINTER Displacement,
-		__in EngineStructurePtr Struct
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in EngineStructurePtr Struct
 		);
 
 	EngineStructurePtr
 	GetStackEngineStructure(
-		__in STACK_POINTER Displacement,
-		__in ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in STACK_POINTER Displacement,
+		nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 		) const;
 
 
@@ -506,9 +506,9 @@ public:
 
 	void
 	CopyDownSP(
-		__in STACK_POINTER Destination,
-		__in STACK_POINTER BytesToCopy,
-		__in bool UseBP = false
+		nwn2dev__in STACK_POINTER Destination,
+		nwn2dev__in STACK_POINTER BytesToCopy,
+		nwn2dev__in bool UseBP = false
 		);
 
 
@@ -521,9 +521,9 @@ public:
 
 	void
 	CopyTopSP(
-		__in STACK_POINTER Source,
-		__in STACK_POINTER BytesToCopy,
-		__in bool UseBP = false
+		nwn2dev__in STACK_POINTER Source,
+		nwn2dev__in STACK_POINTER BytesToCopy,
+		nwn2dev__in bool UseBP = false
 		);
 
 
@@ -537,9 +537,9 @@ public:
 
 	NWScriptStack
 	SaveStack(
-		__in STACK_POINTER BPSaveBytes,
-		__in STACK_POINTER SPSaveBytes,
-		__in STACK_POINTER SPSaveOffset = 0
+		nwn2dev__in STACK_POINTER BPSaveBytes,
+		nwn2dev__in STACK_POINTER SPSaveBytes,
+		nwn2dev__in STACK_POINTER SPSaveOffset = 0
 		);
 
 	//
@@ -556,10 +556,10 @@ public:
 
 	void
 	SaveStack(
-		__in INWScriptStack * Stack,
-		__in STACK_POINTER BPSaveBytes,
-		__in STACK_POINTER SPSaveBytes,
-		__in STACK_POINTER SPSaveOffset = 0
+		nwn2dev__in INWScriptStack * Stack,
+		nwn2dev__in STACK_POINTER BPSaveBytes,
+		nwn2dev__in STACK_POINTER SPSaveBytes,
+		nwn2dev__in STACK_POINTER SPSaveOffset = 0
 		);
 
 	//
@@ -570,9 +570,9 @@ public:
 
 	void
 	DestructElements(
-		__in STACK_POINTER BytesToRemove,
-		__in STACK_POINTER ExcludePointer,
-		__in STACK_POINTER BytesToExclude
+		nwn2dev__in STACK_POINTER BytesToRemove,
+		nwn2dev__in STACK_POINTER ExcludePointer,
+		nwn2dev__in STACK_POINTER BytesToExclude
 		);
 
 
@@ -582,7 +582,7 @@ public:
 
 	int
 	IncrementStackInt(
-		__in STACK_POINTER AbsoluteAddress
+		nwn2dev__in STACK_POINTER AbsoluteAddress
 		);
 
 	//
@@ -591,7 +591,7 @@ public:
 
 	int
 	DecrementStackInt(
-		__in STACK_POINTER AbsoluteAddress
+		nwn2dev__in STACK_POINTER AbsoluteAddress
 		);
 
 
@@ -623,9 +623,9 @@ public:
 
 	bool
 	PeekStack(
-		__in STACK_POINTER AbsoluteAddress,
-		__out ULONG & RawValue,
-		__out UCHAR & RawType
+		nwn2dev__in STACK_POINTER AbsoluteAddress,
+		nwn2dev__out ULONG & RawValue,
+		nwn2dev__out UCHAR & RawType
 		) const;
 
 	//
@@ -634,7 +634,7 @@ public:
 
 	bool
 	DebugIsEngineStructureType(
-		__in UCHAR RawType
+		nwn2dev__in UCHAR RawType
 		) const;
 
 	//
@@ -653,7 +653,7 @@ public:
 
 	BASE_STACK_TYPE
 	GetStackType(
-		__in STACK_POINTER AbsoluteAddress
+		nwn2dev__in STACK_POINTER AbsoluteAddress
 		) const;
 
 	//
@@ -698,7 +698,7 @@ public:
 
 	void
 	CheckGuardZone(
-		__in STACK_POINTER AbsoluteAddress
+		nwn2dev__in STACK_POINTER AbsoluteAddress
 		);
 
 	//
@@ -707,7 +707,7 @@ public:
 
 	void
 	SetInvalidObjId(
-		__in NWN::OBJECTID InvalidObjId
+		nwn2dev__in NWN::OBJECTID InvalidObjId
 		);
 
 	//
@@ -726,7 +726,7 @@ public:
 	static
 	void *
 	AllocNeutral(
-		__in size_t s
+		nwn2dev__in size_t s
 		)
 	{
 #ifndef _WIN32
@@ -750,7 +750,7 @@ public:
 	static
 	void
 	FreeNeutral(
-		__in void * p
+		nwn2dev__in void * p
 		)
 	{
 #ifndef _WIN32
@@ -890,8 +890,8 @@ private:
 
 	void
 	StackPushRaw(
-		__in STACK_ENTRY StackEntry,
-		__in STACK_TYPE_CODE StackEntryType
+		nwn2dev__in STACK_ENTRY StackEntry,
+		nwn2dev__in STACK_TYPE_CODE StackEntryType
 		);
 
 	//
@@ -900,13 +900,13 @@ private:
 
 	STACK_ENTRY
 	StackPopRaw(
-		__in STACK_TYPE_CODE StackEntryType
+		nwn2dev__in STACK_TYPE_CODE StackEntryType
 		);
 
 	void
 	StackPopRaw(
-		__out STACK_ENTRY & Entry,
-		__out STACK_TYPE_CODE & Type
+		nwn2dev__out STACK_ENTRY & Entry,
+		nwn2dev__out STACK_TYPE_CODE & Type
 		);
 
 	//
@@ -915,26 +915,26 @@ private:
 
 	void
 	SetDynamicStackEntry(
-		__in size_t Offset,
-		__in int Int
+		nwn2dev__in size_t Offset,
+		nwn2dev__in int Int
 		);
 
 	void
 	SetDynamicStackEntry(
-		__in size_t Offset,
-		__in float Float
+		nwn2dev__in size_t Offset,
+		nwn2dev__in float Float
 		);
 
 	void
 	SetDynamicStackEntry(
-		__in size_t Offset,
-		__in const char * String
+		nwn2dev__in size_t Offset,
+		nwn2dev__in const char * String
 		);
 
 	void
 	SetDynamicStackEntry(
-		__in size_t Offset,
-		__in NWN::OBJECTID ObjectId
+		nwn2dev__in size_t Offset,
+		nwn2dev__in NWN::OBJECTID ObjectId
 		);
 
 	//
@@ -943,22 +943,22 @@ private:
 
 	int
 	GetDynamicStackEntryInteger(
-		__in size_t Offset
+		nwn2dev__in size_t Offset
 		) const;
 
 	float
 	GetDynamicStackEntryFloat(
-		__in size_t Offset
+		nwn2dev__in size_t Offset
 		) const;
 
 	const std::string &
 	GetDynamicStackEntryString(
-		__in size_t Offset
+		nwn2dev__in size_t Offset
 		) const;
 
 	NWN::OBJECTID
 	GetDynamicStackEntryObjectId(
-		__in size_t StackOffset
+		nwn2dev__in size_t StackOffset
 		) const;
 
 
@@ -969,7 +969,7 @@ private:
 
 	void
 	GrowStack(
-		__in size_t NumSlots
+		nwn2dev__in size_t NumSlots
 		);
 
 	//
@@ -978,9 +978,9 @@ private:
 
 	void
 	AppendStackContentsToStack(
-		__in NWScriptStack & DestStack,
-		__in size_t SrcOffset,
-		__in size_t CellsToCopy
+		nwn2dev__in NWScriptStack & DestStack,
+		nwn2dev__in size_t SrcOffset,
+		nwn2dev__in size_t CellsToCopy
 		);
 
 	//
@@ -989,9 +989,9 @@ private:
 
 	void
 	AppendStackContentsToStack(
-		__in INWScriptStack * DestStack,
-		__in size_t SrcOffset,
-		__in size_t CellsToCopy
+		nwn2dev__in INWScriptStack * DestStack,
+		nwn2dev__in size_t SrcOffset,
+		nwn2dev__in size_t CellsToCopy
 		);
 
 
@@ -1071,7 +1071,7 @@ public:
 
 	inline
 	EngineStructure(
-		__in ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 		)
 	: m_EngineType( EngineType )
 	{
@@ -1104,7 +1104,7 @@ public:
 	virtual
 	bool
 	CompareEngineStructure(
-		__in const EngineStructure * Other
+		nwn2dev__in const EngineStructure * Other
 		) const = 0;
 
 	//

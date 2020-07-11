@@ -72,9 +72,9 @@ Environment:
 template< typename ResRefT >
 bool
 ErfFileWriter< ResRefT >::Commit(
-	__in const std::string & FileName,
-	__in unsigned long FileType, /* = 0 */
-	__in unsigned long Flags /* = 0 */
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__in unsigned long FileType, /* = 0 */
+	nwn2dev__in unsigned long Flags /* = 0 */
 	)
 /*++
 
@@ -149,9 +149,9 @@ Environment:
 template< typename ResRefT >
 bool
 ErfFileWriter< ResRefT >::Commit(
-	__out std::vector< unsigned char > & Memory,
-	__in unsigned long FileType, /* = 0 */
-	__in unsigned long Flags /* = 0 */
+	nwn2dev__out std::vector< unsigned char > & Memory,
+	nwn2dev__in unsigned long FileType, /* = 0 */
+	nwn2dev__in unsigned long Flags /* = 0 */
 	)
 /*++
 
@@ -208,8 +208,8 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::InitializeFromResourceAccessor(
-	__in IResourceAccessor< ResRefIf > * Accessor,
-	__in bool CheckForDuplicates /* = false */
+	nwn2dev__in IResourceAccessor< ResRefIf > * Accessor,
+	nwn2dev__in bool CheckForDuplicates /* = false */
 	)
 /*++
 
@@ -279,8 +279,8 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::InitializeFromResourceAccessor(
-	__in DirectoryFileReader< ResRefIf > * Accessor,
-	__in bool CheckForDuplicates /* = false */
+	nwn2dev__in DirectoryFileReader< ResRefIf > * Accessor,
+	nwn2dev__in bool CheckForDuplicates /* = false */
 	)
 /*++
 
@@ -347,8 +347,8 @@ Environment:
 template< typename ResRefT >
 bool
 ErfFileWriter< ResRefT >::RemoveFile(
-	__in const ResRefIf & ResRef,
-	__in ResType Type
+	nwn2dev__in const ResRefIf & ResRef,
+	nwn2dev__in ResType Type
 	)
 /*++
 
@@ -425,9 +425,9 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::AddFile(
-	__in const ResRefIf & ResRef,
-	__in ResType Type,
-	__in const std::string & SourceFileName
+	nwn2dev__in const ResRefIf & ResRef,
+	nwn2dev__in ResType Type,
+	nwn2dev__in const std::string & SourceFileName
 	)
 /*++
 
@@ -467,9 +467,9 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::AddFile(
-	__in const ResRefIf & ResRef,
-	__in ResType Type,
-	__in const swutil::SharedByteVec & Buffer
+	nwn2dev__in const ResRefIf & ResRef,
+	nwn2dev__in ResType Type,
+	nwn2dev__in const swutil::SharedByteVec & Buffer
 	)
 /*++
 
@@ -509,10 +509,10 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::AddFile(
-	__in const ResRefIf & ResRef,
-	__in ResType Type,
+	nwn2dev__in const ResRefIf & ResRef,
+	nwn2dev__in ResType Type,
 	__in_ecount( FileSize ) const void * FileContents,
-	__in size_t FileSize
+	nwn2dev__in size_t FileSize
 	)
 /*++
 
@@ -554,9 +554,9 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::CommitInternal(
-	__in ErfWriteContext * Context,
-	__in unsigned long FileType,
-	__in unsigned long Flags
+	nwn2dev__in ErfWriteContext * Context,
+	nwn2dev__in unsigned long FileType,
+	nwn2dev__in unsigned long Flags
 	)
 /*++
 
@@ -648,9 +648,9 @@ Environment:
 template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::BuildHeader(
-	__out ERF_HEADER & Header,
-	__in unsigned long FileType,
-	__in unsigned long FileVersion
+	nwn2dev__out ERF_HEADER & Header,
+	nwn2dev__in unsigned long FileType,
+	nwn2dev__in unsigned long FileVersion
 	)
 /*++
 
@@ -712,7 +712,7 @@ template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::WriteKeyList(
 	__inout ERF_HEADER & Header,
-	__in ErfWriteContext * Context
+	nwn2dev__in ErfWriteContext * Context
 	)
 /*++
 
@@ -773,7 +773,7 @@ template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::WriteResourceList(
 	__inout ERF_HEADER & Header,
-	__in ErfWriteContext * Context
+	nwn2dev__in ErfWriteContext * Context
 	)
 /*++
 
@@ -842,7 +842,7 @@ template< typename ResRefT >
 void
 ErfFileWriter< ResRefT >::WriteResourceContentList(
 	__inout ERF_HEADER & Header,
-	__in ErfWriteContext * Context
+	nwn2dev__in ErfWriteContext * Context
 	)
 /*++
 

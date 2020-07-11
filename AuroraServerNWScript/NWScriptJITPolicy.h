@@ -42,7 +42,7 @@ public:
 	virtual
 	NWSCRIPT_ENGINE
 	SelectEngineForScript(
-		__in size_t ScriptCodeSize
+		nwn2dev__in size_t ScriptCodeSize
 		) = 0;
 
 	//

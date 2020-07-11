@@ -26,7 +26,7 @@ namespace swutil
 	FORCEINLINE
 	VOID
 	InitializeListHead(
-		__out PLIST_ENTRY ListHead
+		nwn2dev__out PLIST_ENTRY ListHead
 		)
 	{
 		ListHead->Flink = ListHead->Blink = ListHead;
@@ -36,7 +36,7 @@ namespace swutil
 	BOOLEAN
 	FORCEINLINE
 	IsListEmpty(
-		__in const LIST_ENTRY * ListHead
+		nwn2dev__in const LIST_ENTRY * ListHead
 		)
 	{
 		return (BOOLEAN)(ListHead->Flink == ListHead);
@@ -45,7 +45,7 @@ namespace swutil
 	FORCEINLINE
 	BOOLEAN
 	RemoveEntryList(
-		__in PLIST_ENTRY Entry
+		nwn2dev__in PLIST_ENTRY Entry
 		)
 	{
 		PLIST_ENTRY Blink;

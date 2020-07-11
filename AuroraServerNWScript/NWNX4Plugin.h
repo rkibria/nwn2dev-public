@@ -28,10 +28,10 @@ public:
 
 	inline
 	NWNX4PluginBase(
-		__in const char * ClassName,
-		__in const char * Subclass,
-		__in const char * Version,
-		__in const char * Description
+		nwn2dev__in const char * ClassName,
+		nwn2dev__in const char * Subclass,
+		nwn2dev__in const char * Version,
+		nwn2dev__in const char * Description
 		)
 	: m_ClassName( ClassName ),
 	  m_Subclass( Subclass ),
@@ -53,7 +53,7 @@ public:
 	bool
 	NWNXAPI
 	Init(
-		__in const char * NWNXHome
+		nwn2dev__in const char * NWNXHome
 		)
 	{
 		UNREFERENCED_PARAMETER( NWNXHome );
@@ -66,9 +66,9 @@ public:
 	int
 	NWNXAPI
 	GetInt(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2
 		)
 	{
 		UNREFERENCED_PARAMETER( Function );
@@ -83,10 +83,10 @@ public:
 	void
 	NWNXAPI
 	SetInt(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2,
-		__in int Value
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2,
+		nwn2dev__in int Value
 		)
 	{
 		UNREFERENCED_PARAMETER( Function );
@@ -100,9 +100,9 @@ public:
 	float
 	NWNXAPI
 	GetFloat(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2
 		)
 	{
 		UNREFERENCED_PARAMETER( Function );
@@ -117,10 +117,10 @@ public:
 	void
 	NWNXAPI
 	SetFloat(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2,
-		__in float Value
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2,
+		nwn2dev__in float Value
 		)
 	{
 		UNREFERENCED_PARAMETER( Function );
@@ -134,9 +134,9 @@ public:
 	const char *
 	NWNXAPI
 	GetString(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2
 		)
 	{
 		UNREFERENCED_PARAMETER( Param1 );
@@ -150,10 +150,10 @@ public:
 	void
 	NWNXAPI
 	SetString(
-		__in const char * Function,
-		__in const char * Param1,
-		__in int Param2,
-		__in const char * Value
+		nwn2dev__in const char * Function,
+		nwn2dev__in const char * Param1,
+		nwn2dev__in int Param2,
+		nwn2dev__in const char * Value
 		)
 	{
 		UNREFERENCED_PARAMETER( Function );
@@ -178,7 +178,7 @@ protected:
 	inline
 	const char *
 	ProcessQueryFunction(
-		__in const char * QueryFunction
+		nwn2dev__in const char * QueryFunction
 		)
 	{
 		if (!strcmp( QueryFunction, "GET SUBCLASS" ))

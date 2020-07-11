@@ -63,9 +63,9 @@ public:
 	typedef
 	bool
 	(__stdcall * OnTimerCompletionProc)(
-		__in void * Context1,
-		__in void * Context2,
-		__in TimerRegistration * Timer
+		nwn2dev__in void * Context1,
+		nwn2dev__in void * Context2,
+		nwn2dev__in TimerRegistration * Timer
 		);
 
 	//
@@ -78,9 +78,9 @@ public:
 
 	swutil::SharedPtr< TimerRegistration >
 	CreateTimer(
-		__in OnTimerCompletionProc TimerCompletionRoutine,
-		__in void * TimerContext1,
-		__in void * TimerContext2
+		nwn2dev__in OnTimerCompletionProc TimerCompletionRoutine,
+		nwn2dev__in void * TimerContext1,
+		nwn2dev__in void * TimerContext2
 		);
 
 	//
@@ -92,7 +92,7 @@ public:
 
 	void
 	CancelTimer(
-		__in TimerRegistration * Registration
+		nwn2dev__in TimerRegistration * Registration
 		);
 
 	//
@@ -112,9 +112,9 @@ public:
 
 	void
 	InvalidateTimerExpiration(
-		__in TimerRegistration * Timer,
-		__in ULONG Period,
-		__in ULONG Epoch
+		nwn2dev__in TimerRegistration * Timer,
+		nwn2dev__in ULONG Period,
+		nwn2dev__in ULONG Epoch
 		);
 
 	//
@@ -124,7 +124,7 @@ public:
 
 	void
 	OnTimerRegistrationActivate(
-		__in TimerRegistration * Timer
+		nwn2dev__in TimerRegistration * Timer
 		);
 
 	//
@@ -134,7 +134,7 @@ public:
 
 	void
 	OnTimerRegistrationInactivate(
-		__in TimerRegistration * Timer
+		nwn2dev__in TimerRegistration * Timer
 		);
 
 private:
@@ -240,7 +240,7 @@ public:
 	inline
 	void
 	SetPeriod(
-		__in ULONG Period
+		nwn2dev__in ULONG Period
 		)
 	{
 		bool WasActive;
@@ -319,10 +319,10 @@ private:
 	//
 
 	TimerRegistration(
-		__in TimerManager & TimerMgr,
-		__in TimerManager::OnTimerCompletionProc TimerCompletionRoutine,
-		__in void * TimerContext1,
-		__in void * TimerContext2
+		nwn2dev__in TimerManager & TimerMgr,
+		nwn2dev__in TimerManager::OnTimerCompletionProc TimerCompletionRoutine,
+		nwn2dev__in void * TimerContext1,
+		nwn2dev__in void * TimerContext2
 		);
 
 public:
@@ -340,7 +340,7 @@ private:
 
 	ULONG
 	Dispatch(
-		__in ULONG Now
+		nwn2dev__in ULONG Now
 		);
 
 	//
@@ -376,7 +376,7 @@ private:
 	inline
 	void
 	LinkTimer(
-		__in PLIST_ENTRY List
+		nwn2dev__in PLIST_ENTRY List
 		)
 	{
 		InsertTailList( List, &m_TimerLinks );

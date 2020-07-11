@@ -16,9 +16,11 @@ Abstract:
 #include "Precomp.h"
 #include "TlkFileReader.h"
 
+#include <stdexcept>
+
 template< typename ResRefT >
 TlkFileReader< ResRefT >::TlkFileReader(
-	__in const std::string & FileName
+	nwn2dev__in const std::string & FileName
 	)
 /*++
 
@@ -57,7 +59,7 @@ Environment:
 		NULL);
 
 	if (File == INVALID_HANDLE_VALUE)
-		throw std::exception( "Failed to open TLK file." );
+		throw std::runtime_error( "Failed to open TLK file." );
 
 	m_File = File;
 
@@ -68,7 +70,7 @@ Environment:
 		m_FileSize = GetFileSize( File, NULL );
 
 		if ((m_FileSize == 0xFFFFFFFF) && (GetLastError( ) != NO_ERROR))
-			throw std::exception( "Failed to read file size." );
+			throw std::runtime_error( "Failed to read file size." );
 
 		ParseTlkFile( );
 	}
@@ -121,8 +123,8 @@ Environment:
 template< typename ResRefT >
 bool
 TlkFileReader< ResRefT >::GetTalkString(
-	__in typename TlkFileReader< ResRefT >::StrRef StringId,
-	__out std::string & String
+	nwn2dev__in typename TlkFileReader< ResRefT >::StrRef StringId,
+	nwn2dev__out std::string & String
 	) const
 /*++
 
@@ -256,4 +258,4 @@ Environment:
 	UnmapViewOfFile( View );
 }
 
-template TlkFileReader< NWN::ResRef16 >;
+template class TlkFileReader< NWN::ResRef16 >;

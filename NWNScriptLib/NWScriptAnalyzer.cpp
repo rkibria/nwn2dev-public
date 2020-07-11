@@ -34,7 +34,7 @@ Abstract:
 
 void
 DebugPrintOutStdErr(
-	__in __format_string const char * Fmt,
+	nwn2dev__in __format_string const char * Fmt,
 	...
 	)
 /*++
@@ -77,9 +77,9 @@ Environment:
 
 
 NWScriptAnalyzer::NWScriptAnalyzer(
-	__in IDebugTextOut * TextOut,
+	nwn2dev__in IDebugTextOut * TextOut,
 	__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-	__in NWSCRIPT_ACTION ActionCount
+	nwn2dev__in NWSCRIPT_ACTION ActionCount
 	)
 /*++
 
@@ -149,10 +149,10 @@ Environment:
 
 bool
 NWScriptAnalyzer::IsPlatformNativeScript(
-	__in NWScriptReader * Script,
-	__in const char * PlatformSignature,
-	__out NWNScriptLib::PROGRAM_COUNTER & PlatformBinaryOffset,
-	__out size_t & PlatformBinarySize
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__in const char * PlatformSignature,
+	nwn2dev__out NWNScriptLib::PROGRAM_COUNTER & PlatformBinaryOffset,
+	nwn2dev__out size_t & PlatformBinarySize
 	)
 /*++
 
@@ -279,10 +279,10 @@ Environment:
 
 void
 NWScriptAnalyzer::ReadPlatformNativeScript(
-	__in NWScriptReader * Script,
-	__in NWNScriptLib::PROGRAM_COUNTER PlatformBinaryOffset,
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__in NWNScriptLib::PROGRAM_COUNTER PlatformBinaryOffset,
 	__in_bcount( PlatformBinarySize ) void * PlatformBinary,
-	__in size_t PlatformBinarySize
+	nwn2dev__in size_t PlatformBinarySize
 	)
 /*++
 
@@ -352,8 +352,8 @@ Environment:
 
 void
 NWScriptAnalyzer::Analyze(
-	__in NWScriptReader * Script,
-	__in unsigned long Flags /* = 0 */
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__in unsigned long Flags /* = 0 */
 	)
 /*++
 
@@ -704,10 +704,10 @@ Environment:
 
 ULONG
 NWScriptAnalyzer::Disassemble(
-	__in NWScriptReader * Script,
-	__out UCHAR & Opcode,
-	__out UCHAR & TypeOpcode,
-	__out ULONG & PCOffset
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__out UCHAR & Opcode,
+	nwn2dev__out UCHAR & TypeOpcode,
+	nwn2dev__out ULONG & PCOffset
 	)
 /*++
 
@@ -745,10 +745,10 @@ Environment:
 
 void
 NWScriptAnalyzer::GetInstructionNames(
-	__in UCHAR Opcode,
-	__in UCHAR TypeOpcode,
-	__deref __out const char * * OpcodeName,
-	__deref __out const char * * TypeOpcodeName
+	nwn2dev__in UCHAR Opcode,
+	nwn2dev__in UCHAR TypeOpcode,
+	__deref nwn2dev__out const char * * OpcodeName,
+	__deref nwn2dev__out const char * * TypeOpcodeName
 	)
 /*++
 
@@ -787,7 +787,7 @@ Environment:
 
 NWNScriptLib::PROGRAM_COUNTER
 NWScriptAnalyzer::AnalyzeLoader(
-	__in NWScriptReader * Script
+	nwn2dev__in NWScriptReader * Script
 	)
 /*++
 
@@ -956,8 +956,8 @@ Environment:
 
 void
 NWScriptAnalyzer::AnalyzeSubroutineStructure(
-	__in AnalysisQueueEntry Entry,
-	__in NWScriptReader * Script
+	nwn2dev__in AnalysisQueueEntry Entry,
+	nwn2dev__in NWScriptReader * Script
 	)
 /*++
 
@@ -2039,8 +2039,8 @@ Environment:
 
 void
 NWScriptAnalyzer::AnalyzeSubroutineCode(
-	__in NWScriptReader * Script,
-	__in CodeAnalysisEntry & Entry
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__in CodeAnalysisEntry & Entry
 	)
 /*++
 
@@ -3406,7 +3406,7 @@ Environment:
 
 void
 NWScriptAnalyzer::AnalyzeSubroutineCode(
-	__in NWScriptReader * Script
+	nwn2dev__in NWScriptReader * Script
 	)
 /*++
 
@@ -3597,7 +3597,7 @@ Environment:
 }
 
 bool NWScriptAnalyzer::IsMCVarInDoubleCreatePair( 
-	__in VariableData & VarData
+	nwn2dev__in VariableData & VarData
 	)
 {
 	// By this point the DELETE address will be set
@@ -3617,9 +3617,9 @@ bool NWScriptAnalyzer::IsMCVarInDoubleCreatePair(
 
 void
 NWScriptAnalyzer::PostProcessIR(
-	__in NWScriptControlFlow & Flow,
-	__in IRAnalysisData & Data,
-	__in bool Optimize
+	nwn2dev__in NWScriptControlFlow & Flow,
+	nwn2dev__in IRAnalysisData & Data,
+	nwn2dev__in bool Optimize
 	)
 {
 	Data.VarDataMap.clear( );
@@ -3985,7 +3985,7 @@ NWScriptAnalyzer::PostProcessIR(
 
 void
 NWScriptAnalyzer::PostProcessIR(
-	__in bool Optimize
+	nwn2dev__in bool Optimize
 	)
 /*++
 
@@ -4306,9 +4306,9 @@ Environment:
 
 NWNScriptLib::PROGRAM_COUNTER
 NWScriptAnalyzer::FindInstructionInFlow(
-	__in NWNScriptLib::PROGRAM_COUNTER PC,
-	__in NWScriptReader * Script,
-	__in UCHAR ScanOpcode
+	nwn2dev__in NWNScriptLib::PROGRAM_COUNTER PC,
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__in UCHAR ScanOpcode
 	)
 /*++
 
@@ -4531,9 +4531,9 @@ Environment:
 bool
 NWScriptAnalyzer::PrepareNewControlFlow(
 	__inout AnalysisQueueEntry & Entry,
-	__in NWNScriptLib::PROGRAM_COUNTER FlowPC,
-	__out NWNScriptLib::ControlFlowPtr & TargetFlow,
-	__out NWNScriptLib::NWScriptLabel & TargetLabel
+	nwn2dev__in NWNScriptLib::PROGRAM_COUNTER FlowPC,
+	nwn2dev__out NWNScriptLib::ControlFlowPtr & TargetFlow,
+	nwn2dev__out NWNScriptLib::NWScriptLabel & TargetLabel
 	)
 /*++
 
@@ -4710,7 +4710,7 @@ Environment:
 bool
 NWScriptAnalyzer::LoadNextAnalysisLabel(
 	__inout AnalysisQueueEntry & Entry,
-	__in NWScriptReader * Script
+	nwn2dev__in NWScriptReader * Script
 	)
 /*++
 
@@ -4773,7 +4773,7 @@ Environment:
 
 NWNScriptLib::ControlFlowPtr
 NWScriptAnalyzer::FindSubseqControlFlow(
-	__in AnalysisQueueEntry & Entry
+	nwn2dev__in AnalysisQueueEntry & Entry
 	)
 {
 	if (Entry.Function == NULL)
@@ -4791,7 +4791,7 @@ NWScriptAnalyzer::FindSubseqControlFlow(
 
 NWACTION_TYPE
 NWScriptAnalyzer::GetOperandType(
-	__in UCHAR OperandType,
+	nwn2dev__in UCHAR OperandType,
 	__out_opt NWACTION_TYPE * SecondType
 	)
 /*++
@@ -5001,7 +5001,7 @@ NWScriptAnalyzer::CreateValidOpcodeTypeMap(
 
 NWScriptInstruction::INSTR
 NWScriptAnalyzer::MapIROpcode(
-	__in unsigned NWScriptOpcode
+	nwn2dev__in unsigned NWScriptOpcode
 	)
 /*++
 

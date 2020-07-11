@@ -14,7 +14,7 @@ _CRTIMP __checkReturn int __cdecl _chdir(__in_z const char * _Path);
 
 int
 _mkdirthunk(
-	__in const char * dirname
+	nwn2dev__in const char * dirname
 	)
 {
 	return _mkdir( dirname );
@@ -22,7 +22,7 @@ _mkdirthunk(
 
 int
 _chdirthunk(
-	__in const char * dirname
+	nwn2dev__in const char * dirname
 	)
 {
 	return _chdir( dirname );

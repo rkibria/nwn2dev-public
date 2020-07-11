@@ -76,7 +76,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -91,8 +91,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -109,8 +109,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -120,9 +120,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 
@@ -208,7 +208,7 @@ public:
 
 	inline
 	WriteFileTextOut(
-		__in FILE * OutFile
+		nwn2dev__in FILE * OutFile
 		)
 	: m_OutFile( OutFile )
 	{
@@ -226,7 +226,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -241,8 +241,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -259,8 +259,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -270,9 +270,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 
@@ -327,13 +327,13 @@ ResourceManager           * g_ResMan;
 
 NWACTION_TYPE
 ConvertNscType(
-	__in NscType Type
+	nwn2dev__in NscType Type
 	);
 
 BOOL
 WINAPI
 AppConsoleCtrlHandler(
-	__in DWORD dwCtrlType
+	nwn2dev__in DWORD dwCtrlType
 	)
 /*++
 
@@ -642,11 +642,11 @@ Environment:
 void
 LoadModule(
 	__inout ResourceManager & ResMan,
-	__in const std::string & ModuleName,
-	__in const std::string & NWN2Home,
-	__in const std::string & InstallDir,
-	__in bool Erf16,
-	__in const std::string & CustomModPath
+	nwn2dev__in const std::string & ModuleName,
+	nwn2dev__in const std::string & NWN2Home,
+	nwn2dev__in const std::string & InstallDir,
+	nwn2dev__in bool Erf16,
+	nwn2dev__in const std::string & CustomModPath
 	)
 /*++
 
@@ -820,8 +820,8 @@ Environment:
 
 bool
 LoadFileFromDisk(
-	__in const std::string & FileName,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	)
 /*++
 
@@ -904,12 +904,12 @@ Environment:
 
 bool
 LoadInputFile(
-	__in ResourceManager & ResMan,
-	__in IDebugTextOut * TextOut,
-	__in const std::string & InFile,
-	__out NWN::ResRef32 & FileResRef,
-	__out NWN::ResType & FileResType,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in const std::string & InFile,
+	nwn2dev__out NWN::ResRef32 & FileResRef,
+	nwn2dev__out NWN::ResType & FileResType,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	)
 /*++
 
@@ -998,18 +998,18 @@ Environment:
 
 bool
 CompileSourceFile(
-	__in NscCompiler & Compiler,
-	__in int CompilerVersion,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in bool SuppressDebugSymbols,
-	__in bool Quiet,
-	__in bool VerifyCode,
-	__in IDebugTextOut * TextOut,
-	__in UINT32 CompilerFlags,
-	__in const NWN::ResRef32 & InFile,
-	__in const std::vector< unsigned char > & InFileContents,
-	__in const std::string & OutBaseFile
+	nwn2dev__in NscCompiler & Compiler,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in bool SuppressDebugSymbols,
+	nwn2dev__in bool Quiet,
+	nwn2dev__in bool VerifyCode,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in UINT32 CompilerFlags,
+	nwn2dev__in const NWN::ResRef32 & InFile,
+	nwn2dev__in const std::vector< unsigned char > & InFileContents,
+	nwn2dev__in const std::string & OutBaseFile
 	)
 /*++
 
@@ -1310,7 +1310,7 @@ Environment:
 
 NWACTION_TYPE
 ConvertNscType(
-	__in NscType Type
+	nwn2dev__in NscType Type
 	)
 /*++
 
@@ -1361,14 +1361,14 @@ Environment:
 
 bool
 DisassembleScriptFile(
-	__in ResourceManager & ResMan,
-	__in NscCompiler & Compiler,
-	__in bool Quiet,
-	__in IDebugTextOut * TextOut,
-	__in const NWN::ResRef32 & InFile,
-	__in const std::vector< unsigned char > & InFileContents,
-	__in const std::vector< unsigned char > & DbgFileContents,
-	__in const std::string & OutBaseFile
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in NscCompiler & Compiler,
+	nwn2dev__in bool Quiet,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in const NWN::ResRef32 & InFile,
+	nwn2dev__in const std::vector< unsigned char > & InFileContents,
+	nwn2dev__in const std::vector< unsigned char > & DbgFileContents,
+	nwn2dev__in const std::string & OutBaseFile
 	)
 /*++
 
@@ -1771,19 +1771,19 @@ Environment:
 
 bool
 ProcessInputFile(
-	__in ResourceManager & ResMan,
-	__in NscCompiler & Compiler,
-	__in bool Compile,
-	__in int CompilerVersion,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in bool SuppressDebugSymbols,
-	__in bool Quiet,
-	__in bool VerifyCode,
-	__in IDebugTextOut * TextOut,
-	__in UINT32 CompilerFlags,
-	__in const std::string & InFile,
-	__in const std::string & OutBaseFile
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in NscCompiler & Compiler,
+	nwn2dev__in bool Compile,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in bool SuppressDebugSymbols,
+	nwn2dev__in bool Quiet,
+	nwn2dev__in bool VerifyCode,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in UINT32 CompilerFlags,
+	nwn2dev__in const std::string & InFile,
+	nwn2dev__in const std::string & OutBaseFile
 	)
 /*++
 
@@ -1934,20 +1934,20 @@ Environment:
 
 bool
 ProcessWildcardInputFile(
-	__in ResourceManager & ResMan,
-	__in NscCompiler & Compiler,
-	__in bool Compile,
-	__in int CompilerVersion,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in bool SuppressDebugSymbols,
-	__in bool Quiet,
-	__in bool VerifyCode,
-	__in unsigned long Flags,
-	__in IDebugTextOut * TextOut,
-	__in UINT32 CompilerFlags,
-	__in const std::string & InFile,
-	__in const std::string & BatchOutDir
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in NscCompiler & Compiler,
+	nwn2dev__in bool Compile,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in bool SuppressDebugSymbols,
+	nwn2dev__in bool Quiet,
+	nwn2dev__in bool VerifyCode,
+	nwn2dev__in unsigned long Flags,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in UINT32 CompilerFlags,
+	nwn2dev__in const std::string & InFile,
+	nwn2dev__in const std::string & BatchOutDir
 	)
 /*++
 
@@ -2129,11 +2129,11 @@ Environment:
 
 bool
 LoadResponseFile(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) wchar_t * * argv,
-	__in const wchar_t * ResponseFileName,
-	__out WStringVec & Args,
-	__out WStringArgVec & ArgVector
+	nwn2dev__in const wchar_t * ResponseFileName,
+	nwn2dev__out WStringVec & Args,
+	nwn2dev__out WStringArgVec & ArgVector
 	)
 /*++
 
@@ -2235,7 +2235,7 @@ Environment:
 
 int
 ExecuteScriptCompilerInternal(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) wchar_t * * argv
 	)
 /*++
@@ -2978,7 +2978,7 @@ Environment:
 
 int
 ExecuteScriptCompiler(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) wchar_t * * argv
 	)
 /*++
@@ -3026,7 +3026,7 @@ Environment:
 int
 __cdecl
 wmain(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) wchar_t * * argv
 	)
 /*++

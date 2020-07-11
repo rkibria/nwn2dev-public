@@ -23,8 +23,8 @@ Abstract:
 #define READ_FILE( P, Length ) m_FileWrapper.ReadFile( P, Length, #P )
 
 GffFileReader::GffFileReader(
-	__in const std::string & FileName,
-	__in ResourceManager & ResMan
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__in ResourceManager & ResMan
 	)
 /*++
 
@@ -108,8 +108,8 @@ Environment:
 
 GffFileReader::GffFileReader(
 	__in_bcount( DataSize ) const void * GffRawData,
-	__in size_t DataSize,
-	__in ResourceManager & ResMan
+	nwn2dev__in size_t DataSize,
+	nwn2dev__in ResourceManager & ResMan
 	)
 /*++
 
@@ -261,8 +261,8 @@ Environment:
 
 void
 GffFileReader::GetFieldByIndex(
-	__in FIELD_INDEX FieldIndex,
-	__out GFF_FIELD_ENTRY & FieldEntry
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 	) const
 /*++
 
@@ -295,8 +295,8 @@ Environment:
 
 void
 GffFileReader::GetLabelByIndex(
-	__in LABEL_INDEX LabelIndex,
-	__out std::string & Label
+	nwn2dev__in LABEL_INDEX LabelIndex,
+	nwn2dev__out std::string & Label
 	) const
 /*++
 
@@ -346,8 +346,8 @@ Environment:
 
 void
 GffFileReader::GetStructByIndex(
-	__in STRUCT_INDEX StructIndex,
-	__out GFF_STRUCT_ENTRY & StructEntry
+	nwn2dev__in STRUCT_INDEX StructIndex,
+	nwn2dev__out GFF_STRUCT_ENTRY & StructEntry
 	) const
 /*++
 
@@ -380,8 +380,8 @@ Environment:
 
 bool
 GffFileReader::CompareFieldName(
-	__in const GFF_FIELD_ENTRY & FieldEntry,
-	__in const char * Name
+	nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
+	nwn2dev__in const char * Name
 	) const
 /*++
 
@@ -428,9 +428,9 @@ Environment:
 
 bool
 GffFileReader::GetFieldByName(
-	__in PCGFF_STRUCT_ENTRY Struct,
-	__in const char * FieldName,
-	__out GFF_FIELD_ENTRY & FieldEntry
+	nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 	) const
 /*++
 
@@ -498,9 +498,9 @@ Environment:
 
 bool
 GffFileReader::GetFieldByIndex(
-	__in PCGFF_STRUCT_ENTRY Struct,
-	__in FIELD_INDEX FieldIndex,
-	__out GFF_FIELD_ENTRY & FieldEntry
+	nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 	) const
 /*++
 
@@ -572,9 +572,9 @@ Environment:
 
 bool
 GffFileReader::GetFieldIndexByName(
-	__in PCGFF_STRUCT_ENTRY Struct,
-	__in const char * FieldName,
-	__out FIELD_INDEX & FieldIndex
+	nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out FIELD_INDEX & FieldIndex
 	) const
 /*++
 
@@ -647,9 +647,9 @@ Environment:
 
 bool
 GffFileReader::GetFieldType(
-	__in PCGFF_STRUCT_ENTRY Struct,
-	__in FIELD_INDEX FieldIndex,
-	__out GFF_FIELD_TYPE & FieldType
+	nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out GFF_FIELD_TYPE & FieldType
 	) const
 /*++
 
@@ -688,9 +688,9 @@ Environment:
 
 bool
 GffFileReader::GetFieldName(
-	__in PCGFF_STRUCT_ENTRY Struct,
-	__in FIELD_INDEX FieldIndex,
-	__out std::string & FieldName
+	nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out std::string & FieldName
 	) const
 /*++
 
@@ -736,12 +736,12 @@ Environment:
 
 bool
 GffFileReader::GetFieldRawData(
-	__in PCGFF_STRUCT_ENTRY Struct,
-	__in FIELD_INDEX FieldIndex,
-	__out std::vector< unsigned char > & FieldData,
-	__out std::string & FieldName,
-	__out GFF_FIELD_TYPE & FieldType,
-	__out bool & ComplexField
+	nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out std::vector< unsigned char > & FieldData,
+	nwn2dev__out std::string & FieldName,
+	nwn2dev__out GFF_FIELD_TYPE & FieldType,
+	nwn2dev__out bool & ComplexField
 	) const
 /*++
 
@@ -949,9 +949,9 @@ Environment:
 
 bool
 GffFileReader::ReadFieldData(
-	__in FIELD_DATA_INDEX FieldDataIndex,
+	nwn2dev__in FIELD_DATA_INDEX FieldDataIndex,
 	__out_bcount( Length ) void * Buffer,
-	__in size_t Length
+	nwn2dev__in size_t Length
 	) const
 /*++
 
@@ -1001,9 +1001,9 @@ Environment:
 
 bool
 GffFileReader::ReadListIndicies(
-	__in LIST_INDICIES_INDEX ListIndiciesIndex,
+	nwn2dev__in LIST_INDICIES_INDEX ListIndiciesIndex,
 	__out_bcount( Length ) void * Buffer,
-	__in size_t Length
+	nwn2dev__in size_t Length
 	) const
 /*++
 
@@ -1053,8 +1053,8 @@ Environment:
 
 bool
 GffFileReader::ValidateFieldDataRange(
-	__in FIELD_DATA_INDEX FieldDataIndex,
-	__in size_t Length
+	nwn2dev__in FIELD_DATA_INDEX FieldDataIndex,
+	nwn2dev__in size_t Length
 	) const
 /*++
 
@@ -1092,9 +1092,9 @@ Environment:
 
 bool
 GffFileReader::GetFieldSizeAndData(
-	__in const GFF_FIELD_ENTRY & FieldEntry,
-	__deref __out const void * * FieldData,
-	__out size_t * FieldDataLength
+	nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
+	__deref nwn2dev__out const void * * FieldData,
+	nwn2dev__out size_t * FieldDataLength
 	) const
 /*++
 
@@ -1185,8 +1185,8 @@ Environment:
 
 bool
 GffFileReader::GetTalkString(
-	__in unsigned long StrRef,
-	__out std::string & Str
+	nwn2dev__in unsigned long StrRef,
+	nwn2dev__out std::string & Str
 	) const
 /*++
 
@@ -1218,7 +1218,7 @@ Environment:
 
 NWN::ResRef32
 GffFileReader::ResRef32FromStr(
-	__in const std::string & Str
+	nwn2dev__in const std::string & Str
 	) const
 /*++
 
@@ -1250,8 +1250,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetFieldName(
-	__in FIELD_INDEX FieldIndex,
-	__out std::string & FieldName
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out std::string & FieldName
 	) const
 /*++
 
@@ -1284,11 +1284,11 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetFieldRawData(
-	__in FIELD_INDEX FieldIndex,
-	__out std::vector< unsigned char > & FieldData,
-	__out std::string & FieldName,
-	__out GFF_FIELD_TYPE & FieldType,
-	__out bool & ComplexField
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out std::vector< unsigned char > & FieldData,
+	nwn2dev__out std::string & FieldName,
+	nwn2dev__out GFF_FIELD_TYPE & FieldType,
+	nwn2dev__out bool & ComplexField
 	) const
 /*++
 
@@ -1334,10 +1334,10 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetLargeFieldData(
-	__in const GFF_FIELD_ENTRY & FieldEntry,
+	nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
 	__out_bcount( Size ) void * Data,
-	__in size_t Size,
-	__in size_t Offset /* = 0 */
+	nwn2dev__in size_t Size,
+	nwn2dev__in size_t Offset /* = 0 */
 	) const
 /*++
 
@@ -1378,10 +1378,10 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetListIndiciesData(
-	__in const GFF_FIELD_ENTRY & FieldEntry,
+	nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
 	__out_bcount( Size ) void * Data,
-	__in size_t Size,
-	__in size_t Offset /* = 0 */
+	nwn2dev__in size_t Size,
+	nwn2dev__in size_t Offset /* = 0 */
 	) const
 /*++
 
@@ -1422,8 +1422,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetCExoString(
-	__in const char * FieldName,
-	__out std::string & Data
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out std::string & Data
 	) const
 /*++
 
@@ -1481,8 +1481,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetCExoStringAsResRef(
-	__in const char * FieldName,
-	__out NWN::ResRef32 & Data
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out NWN::ResRef32 & Data
 	) const
 /*++
 
@@ -1528,8 +1528,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetResRef(
-	__in const char * FieldName,
-	__out NWN::ResRef32 & Data
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out NWN::ResRef32 & Data
 	) const
 /*++
 
@@ -1576,8 +1576,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetCExoLocString(
-	__in const char * FieldName,
-	__out std::string & Data
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out std::string & Data
 	) const
 /*++
 
@@ -1717,8 +1717,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetVOID(
-	__in const char * FieldName,
-	__out std::vector< unsigned char > & Data
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out std::vector< unsigned char > & Data
 	) const
 /*++
 
@@ -1777,7 +1777,7 @@ Environment:
 bool
 GffFileReader::GffStruct::GetStruct(
 	__in_opt const char * FieldName,
-	__out GffStruct & Struct
+	nwn2dev__out GffStruct & Struct
 	) const
 /*++
 
@@ -1839,8 +1839,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetStructByIndex(
-	__in FIELD_INDEX FieldIndex,
-	__out GffStruct & Struct
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out GffStruct & Struct
 	) const
 /*++
 
@@ -1891,9 +1891,9 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetListElement(
-	__in const char * FieldName,
-	__in size_t Index,
-	__out GffStruct & Struct
+	nwn2dev__in const char * FieldName,
+	nwn2dev__in size_t Index,
+	nwn2dev__out GffStruct & Struct
 	) const
 /*++
 
@@ -1973,9 +1973,9 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetListElementByIndex(
-	__in FIELD_INDEX FieldIndex,
-	__in size_t Index,
-	__out GffStruct & Struct
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__in size_t Index,
+	nwn2dev__out GffStruct & Struct
 	) const
 /*++
 
@@ -2057,8 +2057,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetFieldType(
-	__in FIELD_INDEX FieldIndex,
-	__out GFF_FIELD_TYPE & FieldType
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out GFF_FIELD_TYPE & FieldType
 	) const
 /*++
 
@@ -2088,8 +2088,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetFieldByName(
-	__in const char * FieldName,
-	__out GFF_FIELD_ENTRY & FieldEntry
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 	) const
 /*++
 
@@ -2121,8 +2121,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetFieldByIndex(
-	__in FIELD_INDEX FieldIndex,
-	__out GFF_FIELD_ENTRY & FieldEntry
+	nwn2dev__in FIELD_INDEX FieldIndex,
+	nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 	) const
 /*++
 
@@ -2152,8 +2152,8 @@ Environment:
 
 bool
 GffFileReader::GffStruct::GetFieldIndexByName(
-	__in const char * FieldName,
-	__out FIELD_INDEX & Index
+	nwn2dev__in const char * FieldName,
+	nwn2dev__out FIELD_INDEX & Index
 	) const
 /*++
 
@@ -2185,9 +2185,9 @@ Environment:
 
 bool
 GffFileReader::GffStruct::ValidateFieldDataRange(
-	__in const GFF_FIELD_ENTRY & FieldEntry,
-	__in FIELD_DATA_INDEX DataOffset,
-	__in size_t Length
+	nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
+	nwn2dev__in FIELD_DATA_INDEX DataOffset,
+	nwn2dev__in size_t Length
 	) const
 /*++
 

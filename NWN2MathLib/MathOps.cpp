@@ -32,12 +32,12 @@ unsigned int yt);                  /*   y (vertical) of target point       */
 static
 int
 IsPointLeftOnLine(
-	__in unsigned int lx1,
-	__in unsigned int ly1,
-	__in unsigned int lx2,
-	__in unsigned int ly2,
-	__in unsigned int x,
-	__in unsigned int y
+	nwn2dev__in unsigned int lx1,
+	nwn2dev__in unsigned int ly1,
+	nwn2dev__in unsigned int lx2,
+	nwn2dev__in unsigned int ly2,
+	nwn2dev__in unsigned int x,
+	nwn2dev__in unsigned int y
 	)
 /*++
 
@@ -107,10 +107,10 @@ Environment:
 static
 int
 CountWindingNumber2(
-	__in const unsigned int * Polygon,
-	__in unsigned int Points,
-	__in unsigned int x,
-	__in unsigned int y
+	nwn2dev__in const unsigned int * Polygon,
+	nwn2dev__in unsigned int Points,
+	nwn2dev__in unsigned int x,
+	nwn2dev__in unsigned int y
 	)
 /*++
 
@@ -219,10 +219,10 @@ Environment:
 static
 int
 CountWindingNumber(
-	__in const unsigned int * Polygon,
-	__in unsigned int Points,
-	__in unsigned int x,
-	__in unsigned int y
+	nwn2dev__in const unsigned int * Polygon,
+	nwn2dev__in unsigned int Points,
+	nwn2dev__in unsigned int x,
+	nwn2dev__in unsigned int y
 	)
 /*++
 
@@ -328,7 +328,7 @@ Environment:
 
 NWN::Matrix44
 AffineInverse(
-	__in const NWN::Matrix44 & M1
+	nwn2dev__in const NWN::Matrix44 & M1
 	)
 /*++
 
@@ -445,10 +445,10 @@ Environment:
 
 void
 Math::Matrix44SRTDecompose(
-	__in const NWN::Matrix44 & WorldTrans,
-	__out NWN::Vector3 & Scale,
-	__out NWN::Vector3 & Translation,
-	__out NWN::Matrix44 & Rotation
+	nwn2dev__in const NWN::Matrix44 & WorldTrans,
+	nwn2dev__out NWN::Vector3 & Scale,
+	nwn2dev__out NWN::Vector3 & Translation,
+	nwn2dev__out NWN::Matrix44 & Rotation
 	)
 /*++
 
@@ -515,10 +515,10 @@ Environment:
 
 void
 Math::Matrix44SRTDecompose(
-	__in const NWN::Matrix44 & WorldTrans,
-	__out NWN::Vector3 & Scale,
-	__out NWN::Vector3 & Translation,
-	__out NWN::Quaternion & Rotation
+	nwn2dev__in const NWN::Matrix44 & WorldTrans,
+	nwn2dev__out NWN::Vector3 & Scale,
+	nwn2dev__out NWN::Vector3 & Translation,
+	nwn2dev__out NWN::Quaternion & Rotation
 	)
 /*++
 
@@ -570,7 +570,7 @@ Environment:
 
 NWN::Vector2
 Math::PolygonCentroid2(
-	__in const Vector2Vec & Polygon
+	nwn2dev__in const Vector2Vec & Polygon
 	)
 /*++
 
@@ -658,9 +658,9 @@ Environment:
 
 bool
 Math::PointInPolygonRegion(
-	__in const NWN::Vector2 & v,
-	__in const Vector2Vec & Polygon,
-	__in const unsigned int FixedPointShift /* = 1 << 6 */
+	nwn2dev__in const NWN::Vector2 & v,
+	nwn2dev__in const Vector2Vec & Polygon,
+	nwn2dev__in const unsigned int FixedPointShift /* = 1 << 6 */
 	)
 /*++
 
@@ -736,9 +736,9 @@ Environment:
 
 bool
 Math::PointInPolygonRegion(
-	__in const NWN::Vector3 & v,
-	__in const Vector3Vec & Polygon,
-	__in const unsigned int FixedPointShift /* = 1 << 6 */
+	nwn2dev__in const NWN::Vector3 & v,
+	nwn2dev__in const Vector3Vec & Polygon,
+	nwn2dev__in const unsigned int FixedPointShift /* = 1 << 6 */
 	)
 /*++
 
@@ -823,8 +823,8 @@ Environment:
 
 bool
 Math::PointInPolygonRegion(
-	__in const Math::Vector2FP & v,
-	__in const Math::Vector2FPVec & Polygon
+	nwn2dev__in const Math::Vector2FP & v,
+	nwn2dev__in const Math::Vector2FPVec & Polygon
 	)
 /*++
 
@@ -988,10 +988,10 @@ intersect_triangle(const float orig[3], const float dir[3],
 
 bool
 Math::IntersectRayTri(
-	__in const NWN::Vector3 & Origin,
-	__in const NWN::Vector3 & NormDir,
+	nwn2dev__in const NWN::Vector3 & Origin,
+	nwn2dev__in const NWN::Vector3 & NormDir,
 	__in_ecount(3) const NWN::Vector3 * Tri,
-	__out float & T
+	nwn2dev__out float & T
 	)
 /*++
 
@@ -1044,10 +1044,10 @@ Environment:
 
 bool
 Math::IntersectRayTriRejectBackface(
-	__in const NWN::Vector3 & Origin,
-	__in const NWN::Vector3 & NormDir,
+	nwn2dev__in const NWN::Vector3 & Origin,
+	nwn2dev__in const NWN::Vector3 & NormDir,
 	__in_ecount(3) const NWN::Vector3 * Tri,
-	__out float & T
+	nwn2dev__out float & T
 	)
 /*++
 
@@ -1103,11 +1103,11 @@ Environment:
 
 bool
 Math::IntersectRaySphere(
-		__in const NWN::Vector3 & RayOrigin,
-		__in const NWN::Vector3 & RayNormDir,
-		__in const NWN::Vector3 & SphereOrigin,
-		__in const float SphereRadiusSq,
-		__out float & T
+		nwn2dev__in const NWN::Vector3 & RayOrigin,
+		nwn2dev__in const NWN::Vector3 & RayNormDir,
+		nwn2dev__in const NWN::Vector3 & SphereOrigin,
+		nwn2dev__in const float SphereRadiusSq,
+		nwn2dev__out float & T
 	)
 /*++
 
@@ -1180,7 +1180,7 @@ struct Vector
 	{
 	}
 
-	inline Vector( __in const NWN::Vector2 & v )
+	inline Vector( nwn2dev__in const NWN::Vector2 & v )
 	: x( v.x ),
 	  y( v.y )
 	{
@@ -1246,37 +1246,37 @@ struct Segment
 static
 int
 inSegment(
-	__in const Point & P,
-	__in const Segment & S
+	nwn2dev__in const Point & P,
+	nwn2dev__in const Segment & S
 	);
 
 static
 int
 intersect2D_Segments(
-	__in const Segment & S1,
-	__in const Segment & S2,
-	__out bool* Parallel,
-	__out Point* I0,
-	__out Point* I1
+	nwn2dev__in const Segment & S1,
+	nwn2dev__in const Segment & S2,
+	nwn2dev__out bool* Parallel,
+	nwn2dev__out Point* I0,
+	nwn2dev__out Point* I1
 	);
 
 static
 int
 intersect2D_SegPoly(
-	__in const Segment & S,
+	nwn2dev__in const Segment & S,
 	__in_ecount( n ) const NWN::Vector2 * PolygonPoints,
-	__in size_t n,
-	__out Segment * IS
+	nwn2dev__in size_t n,
+	nwn2dev__out Segment * IS
 	);
 
 bool
 Math::IntersectSegments2(
-	__in const NWN::Vector2 & s1_p1,
-	__in const NWN::Vector2 & s1_p2,
-	__in const NWN::Vector2 & s2_p1,
-	__in const NWN::Vector2 & s2_p2,
-	__out NWN::Vector2 & IntersectionPoint,
-	__out bool & Parallel
+	nwn2dev__in const NWN::Vector2 & s1_p1,
+	nwn2dev__in const NWN::Vector2 & s1_p2,
+	nwn2dev__in const NWN::Vector2 & s2_p1,
+	nwn2dev__in const NWN::Vector2 & s2_p2,
+	nwn2dev__out NWN::Vector2 & IntersectionPoint,
+	nwn2dev__out bool & Parallel
 	)
 /*++
 
@@ -1343,12 +1343,12 @@ Environment:
 
 bool
 Math::IntersectSegmentPolygon(
-	__in const NWN::Vector2 & s_p1,
-	__in const NWN::Vector2 & s_p2,
+	nwn2dev__in const NWN::Vector2 & s_p1,
+	nwn2dev__in const NWN::Vector2 & s_p2,
 	__in_ecount( NumPoints ) const NWN::Vector2 * PolygonPoints,
-	__in size_t NumPoints,
-	__out NWN::Vector2 & I_p1,
-	__out NWN::Vector2 & I_p2
+	nwn2dev__in size_t NumPoints,
+	nwn2dev__out NWN::Vector2 & I_p1,
+	nwn2dev__out NWN::Vector2 & I_p2
 	)
 /*++
 
@@ -1404,9 +1404,9 @@ Environment:
 
 bool
 Math::PointInSegment(
-	__in const NWN::Vector2 & s_p1,
-	__in const NWN::Vector2 & s_p2,
-	__in const NWN::Vector2 & pt
+	nwn2dev__in const NWN::Vector2 & s_p1,
+	nwn2dev__in const NWN::Vector2 & s_p2,
+	nwn2dev__in const NWN::Vector2 & pt
 	)
 /*++
 
@@ -1496,8 +1496,8 @@ Environment:
 static
 int
 inSegment(
-	__in const Point & P,
-	__in const Segment & S
+	nwn2dev__in const Point & P,
+	nwn2dev__in const Segment & S
 	)
 {
     if (S.P0.x != S.P1.x) {    // S is not vertical
@@ -1525,8 +1525,8 @@ inSegment(
 inline
 bool
 FloatLt(
-	__in float f1,
-	__in float f2
+	nwn2dev__in float f1,
+	nwn2dev__in float f2
 	)
 {
 	return fabsf( f1 - f2 ) < Math::Epsilon;
@@ -1535,8 +1535,8 @@ FloatLt(
 inline
 bool
 FloatGt(
-	__in float f1,
-	__in float f2
+	nwn2dev__in float f1,
+	nwn2dev__in float f2
 	)
 {
 	return fabsf( f1 - f2 ) > Math::Epsilon;
@@ -1553,11 +1553,11 @@ FloatGt(
 static
 int
 intersect2D_Segments(
-	__in const Segment & S1,
-	__in const Segment & S2,
-	__out bool* Parallel,
-	__out Point* I0,
-	__out Point* I1
+	nwn2dev__in const Segment & S1,
+	nwn2dev__in const Segment & S2,
+	nwn2dev__out bool* Parallel,
+	nwn2dev__out Point* I0,
+	nwn2dev__out Point* I1
 	)
 {
 	Vector     u = S1.P1 - S1.P0;
@@ -1654,10 +1654,10 @@ intersect2D_Segments(
 //            TRUE  = a valid intersection segment exists
 int
 intersect2D_SegPoly(
-	__in const Segment & S,
+	nwn2dev__in const Segment & S,
 	__in_ecount( n ) const NWN::Vector2 * PolygonPoints,
-	__in size_t n,
-	__out Segment* IS
+	nwn2dev__in size_t n,
+	nwn2dev__out Segment* IS
 	)
 {
 #if 0

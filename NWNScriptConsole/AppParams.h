@@ -36,8 +36,8 @@ public:
 
 	inline
 	AppParameters(
-		__in IDebugTextOut * TextOut,
-		__in int argc,
+		nwn2dev__in IDebugTextOut * TextOut,
+		nwn2dev__in int argc,
 		__in_ecount( argc ) wchar_t * * argv
 		)
 	: m_TextOut( TextOut ),
@@ -57,53 +57,53 @@ public:
 	}
 
 	inline IDebugTextOut * GetTextOut( ) { return m_TextOut; }
-	inline void SetTextOut( __in IDebugTextOut * TextOut ) { m_TextOut = TextOut; }
+	inline void SetTextOut( nwn2dev__in IDebugTextOut * TextOut ) { m_TextOut = TextOut; }
 
 	inline const std::string & GetInstallDir( ) const { return m_InstallDir; }
-	inline void SetInstallDir( __in const std::string & InstallDir ) { m_InstallDir = InstallDir; }
+	inline void SetInstallDir( nwn2dev__in const std::string & InstallDir ) { m_InstallDir = InstallDir; }
 
 	inline const std::string & GetHomeDir( ) const { return m_HomeDir; }
-	inline void SetHomeDir( __in const std::string & HomeDir ) { m_HomeDir = HomeDir; }
+	inline void SetHomeDir( nwn2dev__in const std::string & HomeDir ) { m_HomeDir = HomeDir; }
 
 	//
 	// Configuration parameter access.
 	//
 
 	inline const std::string & GetModuleName( ) const { return m_ModuleName; }
-	inline void SetModuleName( __in const std::string & ModuleName ) { m_ModuleName = ModuleName; }
+	inline void SetModuleName( nwn2dev__in const std::string & ModuleName ) { m_ModuleName = ModuleName; }
 
 	inline const std::string & GetScriptName( ) const { return m_ScriptName; }
-	inline void SetScriptName( __in const std::string & ScriptName ) { m_ScriptName = ScriptName; }
+	inline void SetScriptName( nwn2dev__in const std::string & ScriptName ) { m_ScriptName = ScriptName; }
 
 	inline const ScriptParamVec & GetScriptParams( ) const { return m_ScriptParams; }
-	inline void SetScriptParams( __in const ScriptParamVec & ScriptParams ) { m_ScriptParams = ScriptParams; }
+	inline void SetScriptParams( nwn2dev__in const ScriptParamVec & ScriptParams ) { m_ScriptParams = ScriptParams; }
 
 	inline const std::string & GetLogFile( ) const { return m_LogFile; }
-	inline void SetLogFile( __in const std::string & LogFile ) { m_LogFile = LogFile; }
+	inline void SetLogFile( nwn2dev__in const std::string & LogFile ) { m_LogFile = LogFile; }
 
 	inline bool GetIsNoLogo( ) const { return m_NoLogo; }
-	inline void SetIsNoLogo( __in bool NoLogo ) { m_NoLogo = NoLogo; }
+	inline void SetIsNoLogo( nwn2dev__in bool NoLogo ) { m_NoLogo = NoLogo; }
 	
 	inline bool GetAllowManagedScripts( ) const { return m_AllowManagedScripts; }
-	inline void SetAllowManagedScripts( __in bool AllowManagedScripts ) { m_AllowManagedScripts = AllowManagedScripts; }
+	inline void SetAllowManagedScripts( nwn2dev__in bool AllowManagedScripts ) { m_AllowManagedScripts = AllowManagedScripts; }
 
 	inline int GetScriptDebug( ) const { return m_ScriptDebug; }
-	inline void SetScriptDebug( __in int ScriptDebug ) { m_ScriptDebug = ScriptDebug; }
+	inline void SetScriptDebug( nwn2dev__in int ScriptDebug ) { m_ScriptDebug = ScriptDebug; }
 
 	inline int GetTestMode( ) const { return m_TestMode; }
-	inline void SetTestMode( __in int TestMode ) { m_TestMode = TestMode; }
+	inline void SetTestMode( nwn2dev__in int TestMode ) { m_TestMode = TestMode; }
 
 private:
 
 	void
 	ParseArguments(
-		__in int argc,
+		nwn2dev__in int argc,
 		__in_ecount( argc ) const wchar_t * * argv
 		);
 
 	void
 	ParseResponseFile(
-		__in const wchar_t * ResponseFileName
+		nwn2dev__in const wchar_t * ResponseFileName
 		);
 
 	void

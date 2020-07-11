@@ -197,10 +197,10 @@ public:
 	void
 	NWSCRIPTACTAPI
 	OnExecuteAction(
-		__in NWScriptVM & ScriptVM,
-		__in NWScriptStack & VMStack,
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWScriptVM & ScriptVM,
+		nwn2dev__in NWScriptStack & VMStack,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		) = 0;
 
 	//
@@ -212,7 +212,7 @@ public:
 	EngineStructurePtr
 	NWSCRIPTACTAPI
 	CreateEngineStructure(
-		__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
+		nwn2dev__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
 		) = 0;
 
 	//
@@ -236,8 +236,8 @@ public:
 	bool
 	NWSCRIPTACTAPI
 	OnExecuteActionFromJIT(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments
 		) = 0;
 
 	//
@@ -264,11 +264,11 @@ public:
 	bool
 	NWSCRIPTACTAPI
 	OnExecuteActionFromJITFast(
-		__in NWSCRIPT_ACTION ActionId,
-		__in size_t NumArguments,
+		nwn2dev__in NWSCRIPT_ACTION ActionId,
+		nwn2dev__in size_t NumArguments,
 		__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-		__in size_t NumCmds,
-		__in uintptr_t * CmdParams
+		nwn2dev__in size_t NumCmds,
+		nwn2dev__in uintptr_t * CmdParams
 		) = 0;
 
 

@@ -23,7 +23,7 @@ using namespace NWN2Server;
 
 bool
 NWScriptBridge::PrepareForRunScript(
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -61,10 +61,10 @@ Environment:
 void
 NWSCRIPTACTAPI
 NWScriptBridge::OnExecuteAction(
-	__in NWScriptVM & ScriptVM,
-	__in NWScriptStack & VMStack,
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWScriptVM & ScriptVM,
+	nwn2dev__in NWScriptStack & VMStack,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -147,8 +147,8 @@ Environment:
 bool
 NWSCRIPTACTAPI
 NWScriptBridge::OnExecuteActionFromJIT(
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -220,11 +220,11 @@ Environment:
 bool
 NWSCRIPTACTAPI
 NWScriptBridge::OnExecuteActionFromJITFast(
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments,
 	__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-	__in size_t NumCmds,
-	__in uintptr_t * CmdParams
+	nwn2dev__in size_t NumCmds,
+	nwn2dev__in uintptr_t * CmdParams
 	)
 /*++
 
@@ -415,7 +415,7 @@ Environment:
 EngineStructurePtr
 NWSCRIPTACTAPI
 NWScriptBridge::CreateEngineStructure(
-	__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
+	nwn2dev__in NWScriptStack::ENGINE_STRUCTURE_NUMBER EngineType
 	)
 /*++
 
@@ -479,7 +479,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushInt(
-	__in int Int
+	nwn2dev__in int Int
 	)
 /*++
 
@@ -539,7 +539,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushFloat(
-	__in float Float
+	nwn2dev__in float Float
 	)
 /*++
 
@@ -599,7 +599,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushString(
-	__in const char * String
+	nwn2dev__in const char * String
 	)
 /*++
 
@@ -627,7 +627,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushString(
-	__in const std::string & String
+	nwn2dev__in const std::string & String
 	)
 /*++
 
@@ -655,7 +655,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushStringAsNeutral(
-	__in const NeutralString & String
+	nwn2dev__in const NeutralString & String
 	)
 /*++
 
@@ -748,7 +748,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushObjectId(
-	__in NWN::OBJECTID ObjectId
+	nwn2dev__in NWN::OBJECTID ObjectId
 	)
 /*++
 
@@ -809,7 +809,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushVector(
-	__in const NWN::Vector3 & Vector
+	nwn2dev__in const NWN::Vector3 & Vector
 	)
 /*++
 
@@ -870,7 +870,7 @@ Environment:
 
 void
 NWScriptBridge::StackPushEngineStructure(
-	__in EngineStructurePtr Struct
+	nwn2dev__in EngineStructurePtr Struct
 	)
 /*++
 
@@ -912,7 +912,7 @@ Environment:
 
 EngineStructurePtr
 NWScriptBridge::StackPopEngineStructure(
-	__in ENGINE_STRUCTURE_NUMBER EngineType
+	nwn2dev__in ENGINE_STRUCTURE_NUMBER EngineType
 	)
 /*++
 
@@ -1101,8 +1101,8 @@ Environment:
 
 void
 NWScriptBridge::ExecuteActionServiceHandler(
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -1151,9 +1151,9 @@ Environment:
 
 void
 NWScriptBridge::PushParametersToServerVMStack(
-	__in NWScriptStack & VMStack,
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWScriptStack & VMStack,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -1271,9 +1271,9 @@ Environment:
 
 void
 NWScriptBridge::PopReturnValueFromServerVMStack(
-	__in NWScriptStack & VMStack,
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments
+	nwn2dev__in NWScriptStack & VMStack,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments
 	)
 /*++
 
@@ -1353,7 +1353,7 @@ Environment:
 
 unsigned long
 NWScriptBridge::GetTypeSize(
-	__in NWACTION_TYPE Type
+	nwn2dev__in NWACTION_TYPE Type
 	)
 /*++
 
@@ -1428,7 +1428,7 @@ Environment:
 
 bool
 EngineStructureBridge::CompareEngineStructure(
-	__in const EngineStructure * Other
+	nwn2dev__in const EngineStructure * Other
 	) const
 /*++
 
@@ -1515,9 +1515,9 @@ Environment:
 
 void
 NWN2Server::CVirtualMachineStack::WrapAndPushEngineStructure(
-	__in INWScriptStack * Stack,
-	__in void * Representation,
-	__in ENGINE_STRUCTURE_TYPE EngineType
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in void * Representation,
+	nwn2dev__in ENGINE_STRUCTURE_TYPE EngineType
 	)
 /*++
 

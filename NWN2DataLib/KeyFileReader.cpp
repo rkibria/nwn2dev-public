@@ -21,8 +21,8 @@ Abstract:
 
 template< typename ResRefT >
 KeyFileReader< ResRefT >::KeyFileReader(
-	__in const std::string & FileName,
-	__in const std::string & InstallDir
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__in const std::string & InstallDir
 	)
 /*++
 
@@ -130,8 +130,8 @@ Environment:
 template< typename ResRefT >
 typename KeyFileReader< ResRefT >::FileHandle
 KeyFileReader< ResRefT >::OpenFile(
-	__in const ResRefIf & FileName,
-	__in ResType Type
+	nwn2dev__in const ResRefIf & FileName,
+	nwn2dev__in ResType Type
 	)
 /*++
 
@@ -177,7 +177,7 @@ Environment:
 template< typename ResRefT >
 typename KeyFileReader< ResRefT >::FileHandle
 KeyFileReader< ResRefT >::OpenFileByIndex(
-	__in typename FileId FileIndex
+	nwn2dev__in typename FileId FileIndex
 	)
 /*++
 
@@ -219,7 +219,7 @@ Environment:
 template< typename ResRefT >
 bool
 KeyFileReader< ResRefT >::CloseFile(
-	__in typename KeyFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename KeyFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -255,10 +255,10 @@ Environment:
 template< typename ResRefT >
 bool
 KeyFileReader< ResRefT >::ReadEncapsulatedFile(
-	__in FileHandle File,
-	__in size_t Offset,
-	__in size_t BytesToRead,
-	__out size_t * BytesRead,
+	nwn2dev__in FileHandle File,
+	nwn2dev__in size_t Offset,
+	nwn2dev__in size_t BytesToRead,
+	nwn2dev__out size_t * BytesRead,
 	__out_bcount( BytesToRead ) void * Buffer
 	)
 /*++
@@ -342,7 +342,7 @@ Environment:
 template< typename ResRefT >
 size_t
 KeyFileReader< ResRefT >::GetEncapsulatedFileSize(
-	__in typename KeyFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename KeyFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -410,7 +410,7 @@ Environment:
 template< typename ResRefT >
 typename KeyFileReader< ResRefT >::ResType
 KeyFileReader< ResRefT >::GetEncapsulatedFileType(
-	__in typename KeyFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename KeyFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -451,9 +451,9 @@ Environment:
 template< typename ResRefT >
 bool
 KeyFileReader< ResRefT >::GetEncapsulatedFileEntry(
-	__in typename FileId FileIndex,
-	__out typename ResRefIf & ResRef,
-	__out ResType & Type
+	nwn2dev__in typename FileId FileIndex,
+	nwn2dev__out typename ResRefIf & ResRef,
+	nwn2dev__out ResType & Type
 	)
 /*++
 
@@ -529,8 +529,8 @@ Environment:
 template< typename ResRefT >
 typename KeyFileReader< ResRefT >::AccessorType
 KeyFileReader< ResRefT >::GetResourceAccessorName(
-	__in FileHandle File,
-	__out std::string & AccessorName
+	nwn2dev__in FileHandle File,
+	nwn2dev__out std::string & AccessorName
 	)
 /*++
 
@@ -612,8 +612,8 @@ Environment:
 template< typename ResRefT >
 void
 KeyFileReader< ResRefT >::ParseKeyFile(
-	__in HANDLE File,
-	__in const std::string & InstallDir
+	nwn2dev__in HANDLE File,
+	nwn2dev__in const std::string & InstallDir
 	)
 /*++
 

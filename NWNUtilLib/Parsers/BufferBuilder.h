@@ -35,7 +35,7 @@ namespace swutil
 		inline
 		void
 		AddField(
-			__in const T &Field
+			nwn2dev__in const T &Field
 			) throw( std::exception )
 		{
 			return AddData(
@@ -47,14 +47,14 @@ namespace swutil
 		virtual
 		void
 		AddData(
-			__in size_t FieldLength,
+			nwn2dev__in size_t FieldLength,
 			__in_bcount( FieldLength ) const void *Field
 			) throw( std::exception ) = 0;
 
 		inline
 		void
 		AddFieldBit(
-			__in bool FieldBit
+			nwn2dev__in bool FieldBit
 			) throw( std::exception )
 		{
 			return AddFieldBits(
@@ -66,8 +66,8 @@ namespace swutil
 		inline
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned char FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned char FieldBits
 			) throw( std::exception )
 		{
 			if (NumBits > 8)
@@ -82,8 +82,8 @@ namespace swutil
 		inline
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned short FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned short FieldBits
 			) throw( std::exception )
 		{
 			if (NumBits > 16)
@@ -98,8 +98,8 @@ namespace swutil
 		inline
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned long FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned long FieldBits
 			) throw( std::exception )
 		{
 			if (NumBits > 32)
@@ -114,8 +114,8 @@ namespace swutil
 		virtual
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned __int64 FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned __int64 FieldBits
 			) throw( std::exception ) = 0;
 
 		//
@@ -130,8 +130,8 @@ namespace swutil
 		virtual
 		void
 		GetBuffer(
-			__out unsigned char *&Buffer,
-			__out size_t &Length
+			nwn2dev__out unsigned char *&Buffer,
+			nwn2dev__out size_t &Length
 			) = 0;
 
 		virtual
@@ -151,22 +151,22 @@ namespace swutil
 		};
 
 		explicit BufferBuilder(
-			__in size_t SizeHint = 0,
-			__in BitOrderMode BitOrder = BitOrderLowToHigh
+			nwn2dev__in size_t SizeHint = 0,
+			nwn2dev__in BitOrderMode BitOrder = BitOrderLowToHigh
 			) throw( std::exception );
 
 		virtual
 		void
 		AddData(
-			__in size_t FieldLength,
+			nwn2dev__in size_t FieldLength,
 			__in_bcount( FieldLength ) const void *Field
 			) throw( std::exception );
 
 		inline
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned char FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned char FieldBits
 			) throw( std::exception )
 		{
 			if (NumBits > 8)
@@ -181,8 +181,8 @@ namespace swutil
 		inline
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned short FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned short FieldBits
 			) throw( std::exception )
 		{
 			if (NumBits > 16)
@@ -197,8 +197,8 @@ namespace swutil
 		inline
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned long FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned long FieldBits
 			) throw( std::exception )
 		{
 			if (NumBits > 32)
@@ -213,16 +213,16 @@ namespace swutil
 		virtual
 		void
 		AddFieldBits(
-			__in size_t NumBits,
-			__in unsigned __int64 FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__in unsigned __int64 FieldBits
 			) throw( std::exception );
 
 		inline
 		virtual
 		void
 		GetBuffer(
-			__out unsigned char *&Buffer,
-			__out size_t &Length
+			nwn2dev__out unsigned char *&Buffer,
+			nwn2dev__out size_t &Length
 			)
 		{
 			if (m_Data.empty( ))
@@ -245,7 +245,7 @@ namespace swutil
 		inline
 		void
 		ExpandBuffer(
-			__in size_t FieldLength
+			nwn2dev__in size_t FieldLength
 			) throw( std::exception )
 		{
 			size_t NewLength = m_Data.size() + FieldLength;

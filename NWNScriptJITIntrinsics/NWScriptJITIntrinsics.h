@@ -79,9 +79,9 @@ public interface class IGeneratedScriptProgram
 
 	Int32
 	ExecuteScript(
-		__in UInt32 ObjectSelf,
-		__in array< Object ^ > ^ ScriptParameters,
-		__in Int32 DefaultReturnCode
+		nwn2dev__in UInt32 ObjectSelf,
+		nwn2dev__in array< Object ^ > ^ ScriptParameters,
+		nwn2dev__in Int32 DefaultReturnCode
 		);
 
 	//
@@ -90,9 +90,9 @@ public interface class IGeneratedScriptProgram
 
 	void
 	ExecuteScriptSituation(
-		__in UInt32 ScriptSituationId,
-		__in array< Object ^ > ^ Locals,
-		__in UInt32 ObjectSelf
+		nwn2dev__in UInt32 ScriptSituationId,
+		nwn2dev__in array< Object ^ > ^ Locals,
+		nwn2dev__in UInt32 ObjectSelf
 		);
 
 	//
@@ -109,7 +109,7 @@ public interface class IGeneratedScriptProgram
 
 	void
 	LoadScriptGlobals(
-		__in array< Object ^ > ^ Globals
+		nwn2dev__in array< Object ^ > ^ Globals
 		);
 
 };
@@ -129,7 +129,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_VMStackPushInt(
-		__in Int32 i
+		nwn2dev__in Int32 i
 		);
 
 	//
@@ -146,7 +146,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_VMStackPushFloat(
-		__in Single i
+		nwn2dev__in Single i
 		);
 
 	//
@@ -163,7 +163,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_VMStackPushString(
-		__in String ^ s
+		nwn2dev__in String ^ s
 		);
 
 	//
@@ -180,7 +180,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_VMStackPushObjectId(
-		__in UInt32 o
+		nwn2dev__in UInt32 o
 		);
 
 	//
@@ -197,7 +197,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_VMStackPushEngineStructure(
-		__in INWScriptEngineStructure ^ EngineStructure
+		nwn2dev__in INWScriptEngineStructure ^ EngineStructure
 		);
 
 	//
@@ -206,7 +206,7 @@ public interface class INWScriptProgram
 
 	INWScriptEngineStructure ^
 	Intrinsic_VMStackPopEngineStructure(
-		__in int EngType
+		nwn2dev__in int EngType
 		);
 
 	//
@@ -215,8 +215,8 @@ public interface class INWScriptProgram
 
 	bool
 	Intrinsic_CompareEngineStructure(
-		__in INWScriptEngineStructure ^ EngineStructure1,
-		__in INWScriptEngineStructure ^ EngineStructure2
+		nwn2dev__in INWScriptEngineStructure ^ EngineStructure1,
+		nwn2dev__in INWScriptEngineStructure ^ EngineStructure2
 		);
 
 	//
@@ -226,7 +226,7 @@ public interface class INWScriptProgram
 	virtual
 	INWScriptEngineStructure ^
 	Intrinsic_CreateEngineStructure(
-		__in int EngType
+		nwn2dev__in int EngType
 		);
 
 	//
@@ -235,8 +235,8 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_ExecuteActionService(
-		__in UInt32 ActionId,
-		__in UInt32 NumArguments
+		nwn2dev__in UInt32 ActionId,
+		nwn2dev__in UInt32 NumArguments
 		);
 
 	//
@@ -247,10 +247,10 @@ public interface class INWScriptProgram
 	void
 	Intrinsic_StoreState(
 		__in_opt array< Object ^ > ^ Globals,
-		__in array< Object ^ > ^ Locals,
-		__in UInt32 ResumeMethodPC,
-		__in UInt32 ResumeMethodId,
-		__in IGeneratedScriptProgram ^ ProgramObject
+		nwn2dev__in array< Object ^ > ^ Locals,
+		nwn2dev__in UInt32 ResumeMethodPC,
+		nwn2dev__in UInt32 ResumeMethodId,
+		nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 		);
 
 	//
@@ -259,9 +259,9 @@ public interface class INWScriptProgram
 
 	Object ^
 	Intrinsic_ExecuteActionServiceFast(
-		__in UInt32 ActionId,
-		__in UInt32 NumArguments,
-		__in ... array< Object ^ > ^ Arguments
+		nwn2dev__in UInt32 ActionId,
+		nwn2dev__in UInt32 NumArguments,
+		nwn2dev__in ... array< Object ^ > ^ Arguments
 		);
 
 	//
@@ -270,7 +270,7 @@ public interface class INWScriptProgram
 
 	NWScript::NeutralStringStorage
 	Intrinsic_AllocateNeutralString(
-		__in String ^ Str
+		nwn2dev__in String ^ Str
 		);
 
 	//
@@ -279,7 +279,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_DeleteNeutralString(
-		__in NWScript::NeutralStringStorage % Str
+		nwn2dev__in NWScript::NeutralStringStorage % Str
 		);
 
 	//
@@ -288,7 +288,7 @@ public interface class INWScriptProgram
 
 	String ^
 	Intrinsic_NeutralStringToString(
-		__in NWScript::NeutralStringStorage % Str
+		nwn2dev__in NWScript::NeutralStringStorage % Str
 		);
 
 	//
@@ -297,7 +297,7 @@ public interface class INWScriptProgram
 
 	void
 	Intrinsic_CheckScriptAbort(
-		__in bool ActionSucceeded
+		nwn2dev__in bool ActionSucceeded
 		);
 
 };
@@ -316,7 +316,7 @@ public interface class INWScriptProgram
 	                                                             \
 	    inline                                                   \
 	    NWScriptEngineStructure##n(                              \
-	        __in INWScriptEngineStructure ^ EngineStructure      \
+	        nwn2dev__in INWScriptEngineStructure ^ EngineStructure      \
 	        )                                                    \
 	    : m_EngineStructure( EngineStructure )                   \
 	    {                                                        \
@@ -394,7 +394,7 @@ public:
 	//
 
 	NWScriptJITIntrinsics(
-		__in INWScriptProgram ^ Program
+		nwn2dev__in INWScriptProgram ^ Program
 		);
 
 	//
@@ -419,7 +419,7 @@ public:
 
 	void
 	Intrinsic_VMStackPushInt(
-		__in Int32 i
+		nwn2dev__in Int32 i
 		);
 
 	//
@@ -437,7 +437,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushFloat(
-		__in Single i
+		nwn2dev__in Single i
 		);
 
 	//
@@ -455,7 +455,7 @@ public:
 	virtual
 	void
 	Intrinsic_VMStackPushString(
-		__in String ^ s
+		nwn2dev__in String ^ s
 		);
 
 	//
@@ -472,7 +472,7 @@ public:
 
 	void
 	Intrinsic_VMStackPushObjectId(
-		__in UInt32 o
+		nwn2dev__in UInt32 o
 		);
 
 	//
@@ -492,7 +492,7 @@ public:
 	inline                                                          \
 	void                                                            \
 	Intrinsic_VMStackPushEngineStructure##n(                        \
-	    __in NWScriptEngineStructure##n ^ EngineStructure           \
+	    nwn2dev__in NWScriptEngineStructure##n ^ EngineStructure           \
 	    )                                                           \
 	{                                                               \
 	   m_Program->Intrinsic_VMStackPushEngineStructure(             \
@@ -517,8 +517,8 @@ public:
 	inline                                                          \
 	bool                                                            \
 	Intrinsic_CompareEngineStructure##n(                            \
-	    __in NWScriptEngineStructure##n ^ EngineStructure1,         \
-	    __in NWScriptEngineStructure##n ^ EngineStructure2          \
+	    nwn2dev__in NWScriptEngineStructure##n ^ EngineStructure1,         \
+	    nwn2dev__in NWScriptEngineStructure##n ^ EngineStructure2          \
 	    )                                                           \
 	{                                                               \
 		return m_Program->Intrinsic_CompareEngineStructure(         \
@@ -560,8 +560,8 @@ public:
 
 	void
 	Intrinsic_ExecuteActionService(
-		__in UInt32 ActionId,
-		__in UInt32 NumArguments
+		nwn2dev__in UInt32 ActionId,
+		nwn2dev__in UInt32 NumArguments
 		);
 
 	//
@@ -572,10 +572,10 @@ public:
 	void
 	Intrinsic_StoreState(
 		__in_opt array< Object ^ > ^ Globals,
-		__in array< Object ^ > ^ Locals,
-		__in UInt32 ResumeMethodPC,
-		__in UInt32 ResumeMethodId,
-		__in IGeneratedScriptProgram ^ ProgramObject
+		nwn2dev__in array< Object ^ > ^ Locals,
+		nwn2dev__in UInt32 ResumeMethodPC,
+		nwn2dev__in UInt32 ResumeMethodId,
+		nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 		);
 
 	//
@@ -584,9 +584,9 @@ public:
 
 	Object ^
 	Intrinsic_ExecuteActionServiceFast(
-		__in UInt32 ActionId,
-		__in UInt32 NumArguments,
-		__in ... array< Object ^ > ^ Arguments
+		nwn2dev__in UInt32 ActionId,
+		nwn2dev__in UInt32 NumArguments,
+		nwn2dev__in ... array< Object ^ > ^ Arguments
 		);
 
 	//
@@ -595,7 +595,7 @@ public:
 
 	NWScript::NeutralStringStorage
 	Intrinsic_AllocateNeutralString(
-		__in String ^ Str
+		nwn2dev__in String ^ Str
 		);
 
 	//
@@ -604,7 +604,7 @@ public:
 
 	void
 	Intrinsic_DeleteNeutralString(
-		__in NWScript::NeutralStringStorage % Str
+		nwn2dev__in NWScript::NeutralStringStorage % Str
 		);
 
 	//
@@ -613,7 +613,7 @@ public:
 
 	String ^
 	Intrinsic_NeutralStringToString(
-		__in NWScript::NeutralStringStorage % Str
+		nwn2dev__in NWScript::NeutralStringStorage % Str
 		);
 
 	//
@@ -622,7 +622,7 @@ public:
 
 	void
 	Intrinsic_CheckScriptAbort(
-		__in bool ActionSucceeded
+		nwn2dev__in bool ActionSucceeded
 		);
 
 private:

@@ -16,12 +16,12 @@
 #include <winsock2.h>
 #include <windows.h>
 #include <cguid.h>
-#include <atlbase.h>
+// #include <atlbase.h>
 #ifndef SKIP_ATLENC
 #include <atlenc.h>
 #endif
 #include <objbase.h>
-#include <msxml6.h>
+// #include <msxml6.h>
 //#include <winhttp.h>
 #include <MLang.h>
 

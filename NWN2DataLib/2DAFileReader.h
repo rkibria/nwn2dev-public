@@ -35,7 +35,7 @@ public:
 	//
 
 	TwoDAFileReader(
-		__in const std::string & FileName
+		nwn2dev__in const std::string & FileName
 		);
 
 	//
@@ -55,9 +55,9 @@ public:
 
 	bool
 	Get2DAString(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out std::string & Value
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out std::string & Value
 		) const;
 
 	//
@@ -67,10 +67,10 @@ public:
 	inline
 	bool
 	Get2DAInt(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out int & Value,
-		__in int Radix = 0
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out int & Value,
+		nwn2dev__in int Radix = 0
 		) const
 	{
 		std::string V;
@@ -86,10 +86,10 @@ public:
 	inline
 	bool
 	Get2DAUlong(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out unsigned long & Value,
-		__in int Radix = 0
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out unsigned long & Value,
+		nwn2dev__in int Radix = 0
 		) const
 	{
 		std::string V;
@@ -105,9 +105,9 @@ public:
 	inline
 	bool
 	Get2DABool(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out bool & Value
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out bool & Value
 		) const
 	{
 		std::string V;
@@ -129,9 +129,9 @@ public:
 	inline
 	bool
 	Get2DAResRef(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out NWN::ResRef32 & Value
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out NWN::ResRef32 & Value
 		) const
 	{
 		std::string V;
@@ -143,7 +143,7 @@ public:
 			return false;
 
 		ZeroMemory( &Value, sizeof( Value ) );
-		memcpy( &Value, V.data( ), min( V.size( ), sizeof( Value ) ) );
+		memcpy( &Value, V.data( ), std::min( V.size( ), sizeof( Value ) ) );
 
 		return true;
 	}
@@ -151,9 +151,9 @@ public:
 	inline
 	bool
 	Get2DAResRef(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out NWN::ResRef16 & Value
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out NWN::ResRef16 & Value
 		) const
 	{
 		std::string V;
@@ -165,7 +165,7 @@ public:
 			return false;
 
 		ZeroMemory( &Value, sizeof( Value ) );
-		memcpy( &Value, V.data( ), min( V.size( ), sizeof( Value ) ) );
+		memcpy( &Value, V.data( ), std::min( V.size( ), sizeof( Value ) ) );
 
 		return true;
 	}
@@ -173,9 +173,9 @@ public:
 	inline
 	bool
 	Get2DAFloat(
-		__in const std::string & Column,
-		__in size_t Row,
-		__out float & Value
+		nwn2dev__in const std::string & Column,
+		nwn2dev__in size_t Row,
+		nwn2dev__out float & Value
 		) const
 	{
 		std::string V;
@@ -218,7 +218,7 @@ public:
 	inline
 	bool
 	HasColumn(
-		__in const std::string & ColumnName
+		nwn2dev__in const std::string & ColumnName
 		) const
 	{
 		for (ColumnNameVec::const_iterator it = m_Columns.begin( );
@@ -244,7 +244,7 @@ private:
 
 	void
 	Parse2DAFile(
-		__in const std::string & FileName
+		nwn2dev__in const std::string & FileName
 		);
 
 	//
@@ -254,7 +254,7 @@ private:
 	inline
 	size_t
 	GetColumnIndex(
-		__in const std::string & Column
+		nwn2dev__in const std::string & Column
 		) const
 	{
 		for (size_t i = 0; i < m_Columns.size( ); i += 1)

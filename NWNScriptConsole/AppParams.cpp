@@ -18,7 +18,7 @@ Abstract:
 
 void
 AppParameters::ParseArguments(
-	__in int argc,
+	nwn2dev__in int argc,
 	__in_ecount( argc ) const wchar_t * * argv
 	)
 /*++
@@ -168,7 +168,7 @@ Environment:
 
 void
 AppParameters::ParseResponseFile(
-	__in const wchar_t * ResponseFileName
+	nwn2dev__in const wchar_t * ResponseFileName
 	)
 /*++
 

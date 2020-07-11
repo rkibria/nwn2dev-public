@@ -156,9 +156,9 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptVariable(
-			__in STACK_POINTER SP,
-			__in SCOPE_ID Scope,
-			__in NWACTION_TYPE Type
+			nwn2dev__in STACK_POINTER SP,
+			nwn2dev__in SCOPE_ID Scope,
+			nwn2dev__in NWACTION_TYPE Type
 			)
 		: m_SP( SP ),
 		  m_Scope( Scope ),
@@ -172,9 +172,9 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptVariable(
-			__in STACK_POINTER SP,
-			__in CLASS Class,
-			__in NWACTION_TYPE Type = ACTIONTYPE_VOID
+			nwn2dev__in STACK_POINTER SP,
+			nwn2dev__in CLASS Class,
+			nwn2dev__in NWACTION_TYPE Type = ACTIONTYPE_VOID
 			)
 		: m_SP( SP ),
 		  m_Scope( INVALID_SCOPE ),
@@ -202,7 +202,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetSP(
-			__in STACK_POINTER SP
+			nwn2dev__in STACK_POINTER SP
 			)
 		{
 			m_SP = SP;
@@ -232,7 +232,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetScope(
-			__in SCOPE_ID Scope
+			nwn2dev__in SCOPE_ID Scope
 			)
 		{
 			m_Scope = Scope;
@@ -254,7 +254,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetType(
-			__in NWACTION_TYPE Type
+			nwn2dev__in NWACTION_TYPE Type
 			)
 		{
 			if (Type == ACTIONTYPE_VOID)
@@ -301,7 +301,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetClass(
-			__in CLASS Class
+			nwn2dev__in CLASS Class
 			)
 		{
 			m_Class = Class;
@@ -318,7 +318,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetFlags(
-			__in unsigned Flags
+			nwn2dev__in unsigned Flags
 			)
 		{
 			m_Flags = Flags;
@@ -327,7 +327,7 @@ namespace NWNScriptLib
 		inline
 		bool
 		IsFlagSet(
-			__in FLAGS Flag
+			nwn2dev__in FLAGS Flag
 			) const
 		{
 			return (m_Flags & (unsigned)Flag) != 0;
@@ -336,7 +336,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetFlag(
-			__in FLAGS Flag,
+			nwn2dev__in FLAGS Flag,
 			__in_opt bool Set = true
 			)
 		{
@@ -376,7 +376,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetMergedWith(
-			__in NWScriptVariable * MergedWith
+			nwn2dev__in NWScriptVariable * MergedWith
 			)
 		{
 			m_MergedWith = MergedWith;
@@ -414,7 +414,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetUserContext(
-			__in void * UserContext
+			nwn2dev__in void * UserContext
 			)
 		{
 			m_UserContext = UserContext;
@@ -428,7 +428,7 @@ namespace NWNScriptLib
 		inline
 		void
 		LinkTypes(
-			__in NWScriptVariable * Var
+			nwn2dev__in NWScriptVariable * Var
 			)
 		{
 			//

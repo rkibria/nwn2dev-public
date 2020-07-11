@@ -293,15 +293,15 @@ typedef struct
 BOOLAPI
 WinHttpTimeFromSystemTime
 (
-    __in CONST SYSTEMTIME *pst,  // input GMT time
+    nwn2dev__in CONST SYSTEMTIME *pst,  // input GMT time
     __out_bcount(WINHTTP_TIME_FORMAT_BUFSIZE) LPWSTR pwszTime // output string buffer
 );
 
 BOOLAPI
 WinHttpTimeToSystemTime
 (
-    __in LPCWSTR pwszTime,        // NULL terminated string
-    __out SYSTEMTIME *pst         // output in GMT time
+    nwn2dev__in LPCWSTR pwszTime,        // NULL terminated string
+    nwn2dev__out SYSTEMTIME *pst         // output in GMT time
 );
 
 
@@ -323,16 +323,16 @@ BOOLAPI
 WinHttpCrackUrl
 (
     __in_ecount(dwUrlLength) LPCWSTR pwszUrl,
-    __in DWORD dwUrlLength,
-    __in DWORD dwFlags,
+    nwn2dev__in DWORD dwUrlLength,
+    nwn2dev__in DWORD dwFlags,
     __inout LPURL_COMPONENTS lpUrlComponents
 );
     
 BOOLAPI
 WinHttpCreateUrl
 (
-    __in LPURL_COMPONENTS lpUrlComponents,
-    __in DWORD dwFlags,
+    nwn2dev__in LPURL_COMPONENTS lpUrlComponents,
+    nwn2dev__in DWORD dwFlags,
     __out_ecount_full_opt(*lpdwUrlLength) LPWSTR pwszUrl,
     __inout LPDWORD lpdwUrlLength
 );
@@ -358,10 +358,10 @@ WINAPI
 WinHttpOpen
 (
     __in_opt LPCWSTR pszAgentW,
-    __in DWORD dwAccessType,
+    nwn2dev__in DWORD dwAccessType,
     __in_opt LPCWSTR pszProxyW,
     __in_opt LPCWSTR pszProxyBypassW,
-    __in DWORD dwFlags
+    nwn2dev__in DWORD dwFlags
 );
 
 // WinHttpOpen dwAccessType values (also for WINHTTP_PROXY_INFO::dwAccessType)
@@ -1079,8 +1079,8 @@ WinHttpQueryHeaders
 BOOLAPI
 WinHttpDetectAutoProxyConfigUrl
 (
-    __in  DWORD     dwAutoDetectFlags,
-    __out LPWSTR *  ppwszAutoConfigUrl
+    nwn2dev__in  DWORD     dwAutoDetectFlags,
+    nwn2dev__out LPWSTR *  ppwszAutoConfigUrl
 );
 
 BOOLAPI

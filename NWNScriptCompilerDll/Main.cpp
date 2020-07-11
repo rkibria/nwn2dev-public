@@ -48,7 +48,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -63,8 +63,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -81,8 +81,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -92,9 +92,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 
@@ -169,7 +169,7 @@ public:
 	virtual
 	void
 	WriteText(
-		__in __format_string const char* fmt,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -184,8 +184,8 @@ public:
 	virtual
 	void
 	WriteText(
-		__in WORD Attributes,
-		__in __format_string const char* fmt,
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in __format_string const char* fmt,
 		...
 		)
 	{
@@ -202,8 +202,8 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in __format_string const char* fmt,
-		__in va_list ap
+		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in va_list ap
 		)
 	{
 		WriteTextV( STD_COLOR, fmt, ap );
@@ -213,9 +213,9 @@ public:
 	virtual
 	void
 	WriteTextV(
-		__in WORD Attributes,
-		__in const char *fmt,
-		__in va_list argptr
+		nwn2dev__in WORD Attributes,
+		nwn2dev__in const char *fmt,
+		nwn2dev__in va_list argptr
 		)
 	/*++
 
@@ -300,7 +300,7 @@ public:
 	inline
 	void
 	SetIoDispatchTable(
-		__in PCNSC_COMPILER_DISPATCH_TABLE DispatchTable
+		nwn2dev__in PCNSC_COMPILER_DISPATCH_TABLE DispatchTable
 		)
 	{
 		m_DispatchTable = DispatchTable;
@@ -314,8 +314,8 @@ public:
 	virtual
 	FileHandle
 	OpenFile(
-		__in const NWN::ResRef32 & ResRef,
-		__in ResType Type
+		nwn2dev__in const NWN::ResRef32 & ResRef,
+		nwn2dev__in ResType Type
 		)
 	{
 		return m_DispatchTable->ResOpenFile(
@@ -332,7 +332,7 @@ public:
 	virtual
 	FileHandle
 	OpenFileByIndex(
-		__in FileId FileIndex
+		nwn2dev__in FileId FileIndex
 		)
 	{
 		return m_DispatchTable->ResOpenFileByIndex(
@@ -348,7 +348,7 @@ public:
 	virtual
 	bool
 	CloseFile(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		)
 	{
 		return m_DispatchTable->ResCloseFile( File, m_DispatchTable->Context );
@@ -363,10 +363,10 @@ public:
 	virtual
 	bool
 	ReadEncapsulatedFile(
-		__in FileHandle File,
-		__in size_t Offset,
-		__in size_t BytesToRead,
-		__out size_t * BytesRead,
+		nwn2dev__in FileHandle File,
+		nwn2dev__in size_t Offset,
+		nwn2dev__in size_t BytesToRead,
+		nwn2dev__out size_t * BytesRead,
 		__out_bcount( BytesToRead ) void * Buffer
 		)
 	{
@@ -387,7 +387,7 @@ public:
 	virtual
 	size_t
 	GetEncapsulatedFileSize(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		)
 	{
 		return m_DispatchTable->ResGetEncapsulatedFileSize(
@@ -403,7 +403,7 @@ public:
 	virtual
 	ResType
 	GetEncapsulatedFileType(
-		__in FileHandle File
+		nwn2dev__in FileHandle File
 		)
 	{
 		return m_DispatchTable->ResGetEncapsulatedFileType(
@@ -420,9 +420,9 @@ public:
 	virtual
 	bool
 	GetEncapsulatedFileEntry(
-		__in FileId FileIndex,
-		__out NWN::ResRef32 & ResRef,
-		__out ResType & Type
+		nwn2dev__in FileId FileIndex,
+		nwn2dev__out NWN::ResRef32 & ResRef,
+		nwn2dev__out ResType & Type
 		)
 	{
 		return m_DispatchTable->ResGetEncapsulatedFileEntry(
@@ -453,8 +453,8 @@ public:
 	virtual
 	AccessorType
 	GetResourceAccessorName(
-		__in FileHandle File,
-		__out std::string & AccessorName
+		nwn2dev__in FileHandle File,
+		nwn2dev__out std::string & AccessorName
 		)
 	{
 		UNREFERENCED_PARAMETER( File );
@@ -482,7 +482,7 @@ ExternalResourceAccessor    g_ResAccessor;
 
 NWACTION_TYPE
 ConvertNscType(
-	__in NscType Type
+	nwn2dev__in NscType Type
 	)
 /*++
 
@@ -533,8 +533,8 @@ Environment:
 
 bool
 LoadFileFromDisk(
-	__in const std::string & FileName,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in const std::string & FileName,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	)
 /*++
 
@@ -616,13 +616,13 @@ Environment:
 
 bool
 LoadInputFile(
-	__in ResourceManager & ResMan,
-	__in IDebugTextOut * TextOut,
-	__in PCNSC_COMPILER_DISPATCH_TABLE DispatchTable,
-	__in const std::string & InFile,
-	__out NWN::ResRef32 & FileResRef,
-	__out NWN::ResType & FileResType,
-	__out std::vector< unsigned char > & FileContents
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in PCNSC_COMPILER_DISPATCH_TABLE DispatchTable,
+	nwn2dev__in const std::string & InFile,
+	nwn2dev__out NWN::ResRef32 & FileResRef,
+	nwn2dev__out NWN::ResType & FileResType,
+	nwn2dev__out std::vector< unsigned char > & FileContents
 	)
 /*++
 
@@ -761,16 +761,16 @@ Environment:
 
 bool
 CompileSourceFile(
-	__in NscCompiler & Compiler,
-	__in int CompilerVersion,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in bool SuppressDebugSymbols,
-	__in bool Quiet,
-	__in IDebugTextOut * TextOut,
-	__in const NWN::ResRef32 & InFile,
-	__in const std::vector< unsigned char > & InFileContents,
-	__in const std::string & OutBaseFile
+	nwn2dev__in NscCompiler & Compiler,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in bool SuppressDebugSymbols,
+	nwn2dev__in bool Quiet,
+	nwn2dev__in IDebugTextOut * TextOut,
+	nwn2dev__in const NWN::ResRef32 & InFile,
+	nwn2dev__in const std::vector< unsigned char > & InFileContents,
+	nwn2dev__in const std::string & OutBaseFile
 	)
 /*++
 
@@ -953,7 +953,7 @@ Environment:
 NSC_COMPILER_HANDLE
 __stdcall
 NscCreateCompiler(
-	__in bool EnableExtensions
+	nwn2dev__in bool EnableExtensions
 	)
 /*++
 
@@ -1026,7 +1026,7 @@ Environment:
 bool
 __stdcall
 NscDeleteCompiler(
-	__in NSC_COMPILER_HANDLE Compiler
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler
 	)
 /*++
 
@@ -1075,15 +1075,15 @@ Environment:
 bool
 __stdcall
 NscCompileScriptExternal(
-	__in NSC_COMPILER_HANDLE Compiler,
-	__in const char * ScriptFileName,
-	__in const char * OutputDirectory,
-	__in bool FlushResources,
-	__in bool GenerateDebugInfo,
-	__in bool Optimize,
-	__in bool IgnoreIncludes,
-	__in int CompilerVersion,
-	__in PCNSC_COMPILER_DISPATCH_TABLE DispatchTable
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler,
+	nwn2dev__in const char * ScriptFileName,
+	nwn2dev__in const char * OutputDirectory,
+	nwn2dev__in bool FlushResources,
+	nwn2dev__in bool GenerateDebugInfo,
+	nwn2dev__in bool Optimize,
+	nwn2dev__in bool IgnoreIncludes,
+	nwn2dev__in int CompilerVersion,
+	nwn2dev__in PCNSC_COMPILER_DISPATCH_TABLE DispatchTable
 	)
 /*++
 
@@ -1277,7 +1277,7 @@ Environment:
 const char *
 __stdcall
 NscGetEntrypointSymbolName(
-	__in NSC_COMPILER_HANDLE Compiler
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler
 	)
 /*++
 
@@ -1306,8 +1306,8 @@ Environment:
 int
 __stdcall
 NscGetFunctionParameterCount(
-	__in NSC_COMPILER_HANDLE Compiler,
-	__in const char * FunctionName
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler,
+	nwn2dev__in const char * FunctionName
 	)
 /*++
 
@@ -1384,9 +1384,9 @@ Environment:
 NWACTION_TYPE
 __stdcall
 NscGetFunctionParameterType(
-	__in NSC_COMPILER_HANDLE Compiler,
-	__in const char * FunctionName,
-	__in int ParameterIndex
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler,
+	nwn2dev__in const char * FunctionName,
+	nwn2dev__in int ParameterIndex
 	)
 /*++
 
@@ -1440,8 +1440,8 @@ Environment:
 NWACTION_TYPE
 __stdcall
 NscGetFunctionReturnType(
-	__in NSC_COMPILER_HANDLE Compiler,
-	__in const char * FunctionName
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler,
+	nwn2dev__in const char * FunctionName
 	)
 /*++
 
@@ -1492,7 +1492,7 @@ Environment:
 const char *
 __stdcall
 I_NscGetEntrypointSymbolName(
-	__in NSC_COMPILER_HANDLE Compiler
+	nwn2dev__in NSC_COMPILER_HANDLE Compiler
 	)
 /*++
 
@@ -1526,9 +1526,9 @@ Environment:
 BOOL
 WINAPI
 DllMain(
-	__in HINSTANCE Module,
-	__in ULONG Reason,
-	__in PVOID Reserved
+	nwn2dev__in HINSTANCE Module,
+	nwn2dev__in ULONG Reason,
+	nwn2dev__in PVOID Reserved
 	)
 /*++
 

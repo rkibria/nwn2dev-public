@@ -20,13 +20,13 @@ Abstract:
 #include "NWScriptSavedState.h"
 
 NWScriptSavedState::NWScriptSavedState(
-	__in NWScriptProgram ^ Program,
-	__in IGeneratedScriptProgram ^ State,
-	__in array< Object ^ > ^ Locals,
-	__in UInt32 ResumeSubroutineId,
-	__in INWScriptStack * Stack,
-	__in NWN::OBJECTID CurrentActionObjectSelf,
-	__in NWNScriptLib::PROGRAM_COUNTER ResumeSubroutinePC,
+	nwn2dev__in NWScriptProgram ^ Program,
+	nwn2dev__in IGeneratedScriptProgram ^ State,
+	nwn2dev__in array< Object ^ > ^ Locals,
+	nwn2dev__in UInt32 ResumeSubroutineId,
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in NWN::OBJECTID CurrentActionObjectSelf,
+	nwn2dev__in NWNScriptLib::PROGRAM_COUNTER ResumeSubroutinePC,
 	__in_opt array< Object ^ > ^ Globals
 	)
 /*++

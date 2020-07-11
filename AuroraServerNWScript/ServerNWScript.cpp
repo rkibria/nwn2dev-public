@@ -36,9 +36,9 @@ using namespace NWN2Server;
 BOOL
 WINAPI
 DllMain(
-	__in HINSTANCE hinstDLL,
-	__in DWORD fdwReason,
-	__in LPVOID lpvReserved
+	nwn2dev__in HINSTANCE hinstDLL,
+	nwn2dev__in DWORD fdwReason,
+	nwn2dev__in LPVOID lpvReserved
 	)
 /*++
 
@@ -147,7 +147,7 @@ Environment:
 bool
 NWNXAPI
 ServerNWScriptPlugin::Init(
-	__in const char * NWNXHome
+	nwn2dev__in const char * NWNXHome
 	)
 /*++
 
@@ -266,9 +266,9 @@ Environment:
 int
 NWNXAPI
 ServerNWScriptPlugin::GetInt(
-	__in const char * Function,
-	__in const char * Param1,
-	__in int Param2
+	nwn2dev__in const char * Function,
+	nwn2dev__in const char * Param1,
+	nwn2dev__in int Param2
 	)
 /*++
 
@@ -399,7 +399,7 @@ Environment:
 
 bool
 ServerNWScriptPlugin::EstablishRuntime(
-	__in const char * NWNXHome
+	nwn2dev__in const char * NWNXHome
 	)
 /*++
 
@@ -439,7 +439,7 @@ Environment:
 
 void
 ServerNWScriptPlugin::PatchCmdImplementer(
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -496,7 +496,7 @@ Environment:
 void
 __stdcall
 ServerNWScriptPlugin::NullRunScriptCallback(
-	__in const NWN2Server::CExoString & ScriptName
+	nwn2dev__in const NWN2Server::CExoString & ScriptName
 	)
 /*++
 
@@ -524,7 +524,7 @@ Environment:
 
 void
 ServerNWScriptPlugin::LoadSettings(
-	__in const char * NWNXHome
+	nwn2dev__in const char * NWNXHome
 	)
 /*++
 
@@ -705,8 +705,8 @@ bool
 ServerNWScriptPlugin::ExecuteScriptForServer(
 	__inout int * PC,
 	__inout_ecount( CodeSize ) unsigned char * InstructionStream,
-	__in int CodeSize,
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in int CodeSize,
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -778,7 +778,7 @@ Environment:
 
 unsigned long
 ServerNWScriptPlugin::SaveStateToServerVMStack(
-	__in NWN2Server::CVirtualMachine * ServerVM
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM
 	)
 /*++
 
@@ -837,8 +837,8 @@ Environment:
 
 void
 ServerNWScriptPlugin::RemoveSavedStateFromServerVMStack(
-	__in NWN2Server::CVirtualMachine * ServerVM,
-	__in unsigned long StackElements
+	nwn2dev__in NWN2Server::CVirtualMachine * ServerVM,
+	nwn2dev__in unsigned long StackElements
 	)
 /*++
 
@@ -974,7 +974,7 @@ Environment:
 
 INWScriptJITPolicy::NWSCRIPT_ENGINE
 ServerNWScriptPlugin::SelectEngineForScript(
-	__in size_t CodeSize
+	nwn2dev__in size_t CodeSize
 	)
 /*++
 

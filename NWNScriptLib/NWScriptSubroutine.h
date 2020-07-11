@@ -46,8 +46,8 @@ namespace NWNScriptLib
 
 		inline
 		Scope(
-			__in PROGRAM_COUNTER Entry,
-			__in STACK_POINTER SP
+			nwn2dev__in PROGRAM_COUNTER Entry,
+			nwn2dev__in STACK_POINTER SP
 			)
 		: m_ScopeEntry( Entry ),
 		  m_SP( SP )
@@ -67,7 +67,7 @@ namespace NWNScriptLib
 		inline
 		void
 		CloseScope(
-			__in PROGRAM_COUNTER Exit
+			nwn2dev__in PROGRAM_COUNTER Exit
 			)
 		{
 			m_ScopeExit.push_back( Exit );
@@ -174,8 +174,8 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptSubroutine(
-			__in PROGRAM_COUNTER SubroutineAddress,
-			__in unsigned long Flags
+			nwn2dev__in PROGRAM_COUNTER SubroutineAddress,
+			nwn2dev__in unsigned long Flags
 			)
 		: m_Address( SubroutineAddress ),
 		  m_Flags( Flags ),
@@ -189,10 +189,10 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptSubroutine(
-			__in PROGRAM_COUNTER SubroutineAddress,
-			__in NWACTION_TYPE ReturnType,
-			__in const ParameterList & Parameters,
-			__in unsigned long Flags
+			nwn2dev__in PROGRAM_COUNTER SubroutineAddress,
+			nwn2dev__in NWACTION_TYPE ReturnType,
+			nwn2dev__in const ParameterList & Parameters,
+			nwn2dev__in unsigned long Flags
 			)
 		: m_Address( SubroutineAddress ),
 		  m_Parameters( Parameters ),
@@ -223,7 +223,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetAddress(
-			__in PROGRAM_COUNTER Address
+			nwn2dev__in PROGRAM_COUNTER Address
 			)
 		{
 			m_Address = Address;
@@ -247,7 +247,7 @@ namespace NWNScriptLib
 		inline
 		void
 		AddReturnType(
-			__in NWACTION_TYPE ReturnType
+			nwn2dev__in NWACTION_TYPE ReturnType
 			)
 		{
 			//
@@ -309,7 +309,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetReturnSize(
-			__in STACK_POINTER ReturnSize
+			nwn2dev__in STACK_POINTER ReturnSize
 			)
 		{
 			m_ReturnSize = ReturnSize;
@@ -325,7 +325,7 @@ namespace NWNScriptLib
 		inline
 		void
 		UpdateReturnSize(
-			__in STACK_POINTER Offset
+			nwn2dev__in STACK_POINTER Offset
 			)
 		{
 			if (Offset > 0)
@@ -375,7 +375,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetParameters(
-			__in const ParameterList & Parameters
+			nwn2dev__in const ParameterList & Parameters
 			)
 		{
 			m_Parameters = Parameters;
@@ -392,7 +392,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetParameterSize(
-			__in STACK_POINTER ParamSize
+			nwn2dev__in STACK_POINTER ParamSize
 			)
 		{
 			m_ParamSize = ParamSize;
@@ -416,7 +416,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetFlags(
-			__in unsigned long Flags
+			nwn2dev__in unsigned long Flags
 			)
 		{
 			m_Flags = Flags;
@@ -467,7 +467,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetIsAnalyzed(
-			__in bool Analyzed
+			nwn2dev__in bool Analyzed
 			)
 		{
 			m_Analyzed = Analyzed;
@@ -490,7 +490,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetIsTypeAnalyzed(
-			__in bool TypeAnalyzed
+			nwn2dev__in bool TypeAnalyzed
 			)
 		{
 			m_TypeAnalyzed = TypeAnalyzed;
@@ -503,7 +503,7 @@ namespace NWNScriptLib
 		inline
 		void
 		AddLocal(
-			__in VariablePtr Var
+			nwn2dev__in VariablePtr Var
 			)
 		{
 			m_Locals.push_back( Var );
@@ -532,7 +532,7 @@ namespace NWNScriptLib
 		inline
 		void
 		AddScope(
-			__in Scope & LocalScope
+			nwn2dev__in Scope & LocalScope
 			)
 		{
 			m_Scopes.push_back( LocalScope );
@@ -581,7 +581,7 @@ namespace NWNScriptLib
 		inline
 		ControlFlowPtr
 		GetControlFlow(
-			__in PROGRAM_COUNTER FlowPC
+			nwn2dev__in PROGRAM_COUNTER FlowPC
 			) const
 		{
 			ControlFlowSet::const_iterator it = m_ControlFlows.lower_bound( FlowPC );
@@ -612,7 +612,7 @@ namespace NWNScriptLib
 		inline
 		NWScriptVariable &
 		GetParameterVariable(
-			__in size_t ParamIndex
+			nwn2dev__in size_t ParamIndex
 			)
 		{
 			if (ParamIndex >= (size_t) m_ParamSize / CELL_SIZE ||
@@ -629,7 +629,7 @@ namespace NWNScriptLib
 		inline
 		NWScriptVariable &
 		GetReturnValueVariable(
-			__in size_t ReturnIndex
+			nwn2dev__in size_t ReturnIndex
 			)
 		{
 			if (ReturnIndex >= (size_t) m_ReturnSize / CELL_SIZE ||
@@ -696,7 +696,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetSymbolName(
-			__in const std::string & SymbolName
+			nwn2dev__in const std::string & SymbolName
 			)
 		{
 			m_SymbolName = SymbolName;

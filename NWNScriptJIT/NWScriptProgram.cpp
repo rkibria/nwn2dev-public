@@ -44,11 +44,11 @@ Abstract:
 swutil::CriticalSection g_AssemblyResolveEventLock;
 
 NWScriptProgram::NWScriptProgram(
-	__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel,
-	__in INWScriptActions * ActionHandler,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in ULONG DebugLevel,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 	)
 /*++
@@ -154,13 +154,13 @@ Environment:
 }
 
 NWScriptProgram::NWScriptProgram(
-	__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel,
-	__in INWScriptActions * ActionHandler,
-	__in array< Byte > ^ ManagedAssembly,
-	__in NWScriptManagedSupport ^ ManagedSupport,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in ULONG DebugLevel,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in array< Byte > ^ ManagedAssembly,
+	nwn2dev__in NWScriptManagedSupport ^ ManagedSupport,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 	)
 /*++
@@ -299,12 +299,12 @@ Environment:
 
 int
 NWScriptProgram::ExecuteScript(
-	__in INWScriptStack * VMStack,
-	__in NWN::OBJECTID ObjectSelf,
+	nwn2dev__in INWScriptStack * VMStack,
+	nwn2dev__in NWN::OBJECTID ObjectSelf,
 	__in_ecount_opt( ParamCount ) const NWScriptParamString * Params,
-	__in size_t ParamCount,
-	__in int DefaultReturnCode,
-	__in ULONG Flags
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in int DefaultReturnCode,
+	nwn2dev__in ULONG Flags
 	)
 /*++
 
@@ -476,7 +476,7 @@ Environment:
 void
 NWScriptProgram::ExecuteScriptSituation(
 	__inout NWScriptSavedState ^ ScriptState,
-	__in NWN::OBJECTID ObjectSelf
+	nwn2dev__in NWN::OBJECTID ObjectSelf
 	)
 /*++
 
@@ -689,7 +689,7 @@ Environment:
 
 NWScriptSavedState ^
 NWScriptProgram::DuplicateSavedState(
-	__in NWScriptSavedState ^ SourceState
+	nwn2dev__in NWScriptSavedState ^ SourceState
 	)
 /*++
 
@@ -745,13 +745,13 @@ Environment:
 
 void
 NWScriptProgram::PushSavedState(
-	__in NWScriptSavedState ^ SourceState,
-	__in INWScriptStack * Stack,
-	__out UInt32 * ResumeMethodId,
-	__out PROGRAM_COUNTER * ResumeMethodPC,
-	__out UInt32 * SaveGlobalCount,
-	__out UInt32 * SaveLocalCount,
-	__out NWN::OBJECTID * CurrentActionObjectSelf
+	nwn2dev__in NWScriptSavedState ^ SourceState,
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__out UInt32 * ResumeMethodId,
+	nwn2dev__out PROGRAM_COUNTER * ResumeMethodPC,
+	nwn2dev__out UInt32 * SaveGlobalCount,
+	nwn2dev__out UInt32 * SaveLocalCount,
+	nwn2dev__out NWN::OBJECTID * CurrentActionObjectSelf
 	)
 /*++
 
@@ -839,12 +839,12 @@ Environment:
 
 NWScriptSavedState ^
 NWScriptProgram::PopSavedState(
-	__in INWScriptStack * Stack,
-	__in UInt32 ResumeMethodId,
-	__in PROGRAM_COUNTER ResumeMethodPC,
-	__in UInt32 SaveGlobalCount,
-	__in UInt32 SaveLocalCount,
-	__in NWN::OBJECTID CurrentActionObjectSelf
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in UInt32 ResumeMethodId,
+	nwn2dev__in PROGRAM_COUNTER ResumeMethodPC,
+	nwn2dev__in UInt32 SaveGlobalCount,
+	nwn2dev__in UInt32 SaveLocalCount,
+	nwn2dev__in NWN::OBJECTID CurrentActionObjectSelf
 	)
 /*++
 
@@ -937,7 +937,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_VMStackPushInt(
-	__in Int32 i
+	nwn2dev__in Int32 i
 	)
 /*++
 
@@ -1016,7 +1016,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_VMStackPushFloat(
-	__in Single f
+	nwn2dev__in Single f
 	)
 /*++
 
@@ -1095,7 +1095,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_VMStackPushString(
-	__in String ^ s
+	nwn2dev__in String ^ s
 	)
 /*++
 
@@ -1214,7 +1214,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_VMStackPushObjectId(
-	__in UInt32 o
+	nwn2dev__in UInt32 o
 	)
 /*++
 
@@ -1293,7 +1293,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_VMStackPushEngineStructure(
-	__in INWScriptEngineStructure ^ EngineStructure
+	nwn2dev__in INWScriptEngineStructure ^ EngineStructure
 	)
 /*++
 
@@ -1337,7 +1337,7 @@ Environment:
 
 INWScriptEngineStructure ^
 NWScriptProgram::Intrinsic_VMStackPopEngineStructure(
-	__in int EngType
+	nwn2dev__in int EngType
 	)
 /*++
 
@@ -1383,8 +1383,8 @@ Environment:
 
 bool
 NWScriptProgram::Intrinsic_CompareEngineStructure(
-	__in INWScriptEngineStructure ^ EngineStructure1,
-	__in INWScriptEngineStructure ^ EngineStructure2
+	nwn2dev__in INWScriptEngineStructure ^ EngineStructure1,
+	nwn2dev__in INWScriptEngineStructure ^ EngineStructure2
 	)
 /*++
 
@@ -1439,7 +1439,7 @@ Environment:
 
 INWScriptEngineStructure ^
 NWScriptProgram::Intrinsic_CreateEngineStructure(
-	__in int EngType
+	nwn2dev__in int EngType
 	)
 /*++
 
@@ -1482,8 +1482,8 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_ExecuteActionService(
-	__in UInt32 ActionId,
-	__in UInt32 NumArguments
+	nwn2dev__in UInt32 ActionId,
+	nwn2dev__in UInt32 NumArguments
 	)
 /*++
 
@@ -1541,10 +1541,10 @@ Environment:
 void
 NWScriptProgram::Intrinsic_StoreState(
 	__in_opt array< Object ^ > ^ Globals,
-	__in array< Object ^ > ^ Locals,
-	__in UInt32 ResumeMethodPC,
-	__in UInt32 ResumeMethodId,
-	__in IGeneratedScriptProgram ^ ProgramObject
+	nwn2dev__in array< Object ^ > ^ Locals,
+	nwn2dev__in UInt32 ResumeMethodPC,
+	nwn2dev__in UInt32 ResumeMethodId,
+	nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 	)
 /*++
 
@@ -1624,9 +1624,9 @@ Environment:
 
 Object ^
 NWScriptProgram::Intrinsic_ExecuteActionServiceFast(
-	__in UInt32 ActionId,
-	__in UInt32 NumArguments,
-	__in ... array< Object ^ > ^ Arguments
+	nwn2dev__in UInt32 ActionId,
+	nwn2dev__in UInt32 NumArguments,
+	nwn2dev__in ... array< Object ^ > ^ Arguments
 	)
 /*++
 
@@ -1979,7 +1979,7 @@ Environment:
 
 NWScript::NeutralStringStorage
 NWScriptProgram::Intrinsic_AllocateNeutralString(
-	__in String ^ Str
+	nwn2dev__in String ^ Str
 	)
 /*++
 
@@ -2026,7 +2026,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_DeleteNeutralString(
-	__in NWScript::NeutralStringStorage % Str
+	nwn2dev__in NWScript::NeutralStringStorage % Str
 	)
 /*++
 
@@ -2070,7 +2070,7 @@ Environment:
 
 String ^
 NWScriptProgram::Intrinsic_NeutralStringToString(
-	__in NWScript::NeutralStringStorage % Str
+	nwn2dev__in NWScript::NeutralStringStorage % Str
 	)
 /*++
 
@@ -2117,7 +2117,7 @@ Environment:
 
 void
 NWScriptProgram::Intrinsic_CheckScriptAbort(
-	__in bool ActionSucceeded
+	nwn2dev__in bool ActionSucceeded
 	)
 /*++
 
@@ -2153,7 +2153,7 @@ Environment:
 array< Object ^ > ^
 NWScriptProgram::ConvertParameterList(
 	__in_ecount_opt( ParamCount ) const NWScriptParamString * Params,
-	__in size_t ParamCount
+	nwn2dev__in size_t ParamCount
 	)
 /*++
 
@@ -2272,10 +2272,10 @@ Environment:
 NWScriptSavedState ^
 NWScriptProgram::CreateSavedState(
 	__in_opt array< Object ^ > ^ Globals,
-	__in array< Object ^ > ^ Locals,
-	__in UInt32 ResumeSubroutinePC,
-	__in UInt32 ResumeSubroutineId,
-	__in IGeneratedScriptProgram ^ ProgramObject
+	nwn2dev__in array< Object ^ > ^ Locals,
+	nwn2dev__in UInt32 ResumeSubroutinePC,
+	nwn2dev__in UInt32 ResumeSubroutineId,
+	nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 	)
 /*++
 
@@ -2338,11 +2338,11 @@ Environment:
 
 void
 NWScriptProgram::FastInvokeActionServiceHandler(
-	__in NWSCRIPT_ACTION ActionId,
-	__in size_t NumArguments,
+	nwn2dev__in NWSCRIPT_ACTION ActionId,
+	nwn2dev__in size_t NumArguments,
 	__in_ecount( NumCmds ) PCNWFASTACTION_CMD Cmds,
-	__in size_t NumCmds,
-	__in uintptr_t * CmdParams
+	nwn2dev__in size_t NumCmds,
+	nwn2dev__in uintptr_t * CmdParams
 	)
 /*++
 
@@ -2408,8 +2408,8 @@ Environment:
 
 void
 NWScriptProgram::PushVariablesToStack(
-	__in INWScriptStack * Stack,
-	__in array< Object ^ > ^ Vars
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in array< Object ^ > ^ Vars
 	)
 /*++
 
@@ -2545,8 +2545,8 @@ Environment:
 
 array< Object ^ > ^
 NWScriptProgram::PopVariablesFromStack(
-	__in INWScriptStack * Stack,
-	__in UInt32 SaveVarCount
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in UInt32 SaveVarCount
 	)
 /*++
 
@@ -2705,10 +2705,10 @@ Environment:
 
 void
 NWScriptProgram::GenerateProgramCode(
-	__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-	__in NWN::OBJECTID ObjectInvalid,
-	__in String ^ Name
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in String ^ Name
 	)
 /*++
 
@@ -2788,7 +2788,7 @@ Environment:
 
 NWACTION_TYPE
 NWScriptProgram::GetNWScriptType(
-	__in Object ^ MSILVariable
+	nwn2dev__in Object ^ MSILVariable
 	)
 /*++
 
@@ -2824,7 +2824,7 @@ Environment:
 
 NWACTION_TYPE
 NWScriptProgram::GetNWScriptType(
-	__in Type ^ MSILType
+	nwn2dev__in Type ^ MSILType
 	)
 /*++
 
@@ -2877,7 +2877,7 @@ Environment:
 
 void
 NWScriptProgram::ErrorException(
-	__in Exception ^ Excpt
+	nwn2dev__in Exception ^ Excpt
 	)
 /*++
 
@@ -2946,7 +2946,7 @@ Environment:
 
 INWScriptStack::NeutralString
 NWScriptProgram::ConvertStringToNeutral(
-	__in String ^ Str
+	nwn2dev__in String ^ Str
 	)
 /*++
 
@@ -3073,8 +3073,8 @@ Environment:
 
 void
 NWScriptProgram::InstantiateManagedScript(
-	__in array< Byte > ^ ManagedAssembly,
-	__in NWScriptManagedSupport ^ ManagedSupport
+	nwn2dev__in array< Byte > ^ ManagedAssembly,
+	nwn2dev__in NWScriptManagedSupport ^ ManagedSupport
 	)
 /*++
 
@@ -3203,8 +3203,8 @@ Environment:
 
 void
 NWScriptProgram::SaveManagedInterfaceDll(
-	__in const NWScriptAnalyzer * Analyzer,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 	)
 /*++
@@ -3267,8 +3267,8 @@ Environment:
 
 Assembly ^
 NWScriptProgram::InstantiateManagedScriptResolveAssembly(
-	__in Object ^ Sender,
-	__in ResolveEventArgs ^ Args
+	nwn2dev__in Object ^ Sender,
+	nwn2dev__in ResolveEventArgs ^ Args
 	)
 /*++
 
@@ -3315,7 +3315,7 @@ Environment:
 
 void
 NWScriptProgram::DiscoverEntryPointParameters(
-	__in const NWScriptAnalyzer * Analyzer
+	nwn2dev__in const NWScriptAnalyzer * Analyzer
 	)
 /*++
 

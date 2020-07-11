@@ -65,7 +65,7 @@ namespace NWNScriptLib
 		inline
 		void
 		CheckOperandIndex(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			) const
 		{
 			if (Index >= sizeof( m_Operands.Values ) / 
@@ -128,8 +128,8 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptInstruction(
-			__in PROGRAM_COUNTER Address = INVALID_PC,
-			__in INSTR Type = LASTINSTR
+			nwn2dev__in PROGRAM_COUNTER Address = INVALID_PC,
+			nwn2dev__in INSTR Type = LASTINSTR
 			)
 		: m_Address( Address ),
 		  m_SeqIndex( 0 ),
@@ -141,8 +141,8 @@ namespace NWNScriptLib
 
 		inline
 		NWScriptInstruction(
-			__in PROGRAM_COUNTER Address,
-			__in INSTR Type,
+			nwn2dev__in PROGRAM_COUNTER Address,
+			nwn2dev__in INSTR Type,
 			__in_opt Variable * Result,
 			__in_opt Variable * First = NULL,
 			__in_opt Variable * Second = NULL
@@ -205,7 +205,7 @@ namespace NWNScriptLib
 		inline
 		Variable *
 		GetVar(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			) const
 		{
 			CheckOperandIndex( Index );
@@ -215,7 +215,7 @@ namespace NWNScriptLib
 		inline
 		Variable *&
 		GetVar(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			)
 		{
 			CheckOperandIndex( Index );
@@ -225,7 +225,7 @@ namespace NWNScriptLib
 		inline
 		Label *
 		GetLabel(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			) const
 		{
 			CheckOperandIndex( Index );
@@ -235,7 +235,7 @@ namespace NWNScriptLib
 		inline
 		Label *&
 		GetLabel(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			)
 		{
 			CheckOperandIndex( Index );
@@ -245,7 +245,7 @@ namespace NWNScriptLib
 		inline
 		NWScriptSubroutine *
 		GetSub(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			) const
 		{
 			CheckOperandIndex( Index );
@@ -255,7 +255,7 @@ namespace NWNScriptLib
 		inline
 		NWScriptSubroutine *&
 		GetSub(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			)
 		{
 			CheckOperandIndex( Index );
@@ -265,7 +265,7 @@ namespace NWNScriptLib
 		inline
 		uintptr_t
 		GetValue(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			) const
 		{
 			CheckOperandIndex( Index );
@@ -275,7 +275,7 @@ namespace NWNScriptLib
 		inline
 		uintptr_t &
 		GetValue(
-			__in size_t Index
+			nwn2dev__in size_t Index
 			)
 		{
 			CheckOperandIndex( Index );
@@ -293,7 +293,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetResultVar(
-			__in Variable * Var
+			nwn2dev__in Variable * Var
 			)
 		{
 			m_ResultVar = Var;
@@ -334,7 +334,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetJumpTarget(
-			__in Label * Target
+			nwn2dev__in Label * Target
 			)
 		{
 			m_Operands.Labels[ 0 ] = Target;
@@ -351,7 +351,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetConditionVariable(
-			__in NWScriptVariable * Var
+			nwn2dev__in NWScriptVariable * Var
 			)
 		{
 			m_Operands.Vars[ 0 ] = Var;
@@ -368,7 +368,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetSubroutine(
-			__in NWScriptSubroutine * Sub
+			nwn2dev__in NWScriptSubroutine * Sub
 			)
 		{
 			m_Operands.Subs[ 0 ] = Sub;
@@ -385,7 +385,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetNumReturnValues(
-			__in uintptr_t NumValues
+			nwn2dev__in uintptr_t NumValues
 			)
 		{
 			m_Operands.Values[ 1 ] = NumValues;
@@ -402,7 +402,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetActionIndex(
-			__in uintptr_t Index
+			nwn2dev__in uintptr_t Index
 			)
 		{
 			m_Operands.Values[ 0 ] = Index;
@@ -419,7 +419,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetActionParameterCount(
-			__in uintptr_t Count
+			nwn2dev__in uintptr_t Count
 			)
 		{
 			m_Operands.Values[ 1 ] = Count;
@@ -442,7 +442,7 @@ namespace NWNScriptLib
 		inline
 		void
 		SetStateNumGlobals(
-			__in uintptr_t Num
+			nwn2dev__in uintptr_t Num
 			)
 		{
 			m_Operands.Values[ 1 ] = Num;

@@ -23,9 +23,9 @@ Abstract:
 
 bool
 SurfaceMeshBase::IsPointInTriangle(
-	__in const SurfaceMeshFace * Face,
-	__in const NWN::Vector2 & pt,
-	__in const PointVec & Points
+	nwn2dev__in const SurfaceMeshFace * Face,
+	nwn2dev__in const NWN::Vector2 & pt,
+	nwn2dev__in const PointVec & Points
 	)
 /*++
 

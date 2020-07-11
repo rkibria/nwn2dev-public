@@ -75,16 +75,16 @@ namespace Internal
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptGenerateCode(
-	__in NWScriptReaderState * Script,
+	nwn2dev__in NWScriptReaderState * Script,
 	__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-	__in NWSCRIPT_ACTION ActionCount,
-	__in ULONG AnalysisFlags,
+	nwn2dev__in NWSCRIPT_ACTION ActionCount,
+	nwn2dev__in ULONG AnalysisFlags,
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel,
-	__in INWScriptActions * ActionHandler,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in ULONG DebugLevel,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-	__out PNWSCRIPT_JITPROGRAM GeneratedProgram
+	nwn2dev__out PNWSCRIPT_JITPROGRAM GeneratedProgram
 	)
 /*++
 
@@ -279,7 +279,7 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptDeleteProgram(
-	__in NWSCRIPT_JITPROGRAM GeneratedProgram
+	nwn2dev__in NWSCRIPT_JITPROGRAM GeneratedProgram
 	)
 /*++
 
@@ -319,8 +319,8 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptSaveState(
-	__in NWSCRIPT_JITPROGRAM GeneratedProgram,
-	__out PNWSCRIPT_JITRESUME ResumeState
+	nwn2dev__in NWSCRIPT_JITPROGRAM GeneratedProgram,
+	nwn2dev__out PNWSCRIPT_JITRESUME ResumeState
 	)
 /*++
 
@@ -376,7 +376,7 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptDeleteSavedState(
-	__in NWSCRIPT_JITRESUME ResumeState
+	nwn2dev__in NWSCRIPT_JITRESUME ResumeState
 	)
 /*++
 
@@ -416,13 +416,13 @@ Environment:
 int
 NWSCRIPTJITAPI
 NWScriptExecuteScript(
-	__in NWSCRIPT_JITPROGRAM GeneratedProgram,
-	__in INWScriptStack * VMStack,
-	__in NWN::OBJECTID ObjectSelf,
+	nwn2dev__in NWSCRIPT_JITPROGRAM GeneratedProgram,
+	nwn2dev__in INWScriptStack * VMStack,
+	nwn2dev__in NWN::OBJECTID ObjectSelf,
 	__in_ecount_opt( ParamCount ) const NWScriptParamString * Params,
-	__in size_t ParamCount,
-	__in int DefaultReturnCode,
-	__in ULONG Flags
+	nwn2dev__in size_t ParamCount,
+	nwn2dev__in int DefaultReturnCode,
+	nwn2dev__in ULONG Flags
 	)
 /*++
 
@@ -489,8 +489,8 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptExecuteScriptSituation(
-	__in NWSCRIPT_JITRESUME ResumeState,
-	__in NWN::OBJECTID ObjectSelf
+	nwn2dev__in NWSCRIPT_JITRESUME ResumeState,
+	nwn2dev__in NWN::OBJECTID ObjectSelf
 	)
 /*++
 
@@ -536,7 +536,7 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptAbortScript(
-	__in NWSCRIPT_JITPROGRAM GeneratedProgram
+	nwn2dev__in NWSCRIPT_JITPROGRAM GeneratedProgram
 	)
 /*++
 
@@ -582,7 +582,7 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptIsScriptAborted(
-	__in NWSCRIPT_JITPROGRAM GeneratedProgram
+	nwn2dev__in NWSCRIPT_JITPROGRAM GeneratedProgram
 	)
 /*++
 
@@ -630,8 +630,8 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptCheckVersion(
-	__in NWSCRIPT_JIT_VERSION Version,
-	__in ULONG VersionValue
+	nwn2dev__in NWSCRIPT_JIT_VERSION Version,
+	nwn2dev__in ULONG VersionValue
 	)
 /*++
 
@@ -730,8 +730,8 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptDuplicateScriptSituation(
-	__in NWSCRIPT_JITRESUME SourceState,
-	__out PNWSCRIPT_JITRESUME ResumeState
+	nwn2dev__in NWSCRIPT_JITRESUME SourceState,
+	nwn2dev__out PNWSCRIPT_JITRESUME ResumeState
 	)
 /*++
 
@@ -789,13 +789,13 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptPushScriptSituation(
-	__in NWSCRIPT_JITRESUME SourceState,
-	__in INWScriptStack * VMStack,
-	__out PULONG ResumeMethodId,
-	__out NWSCRIPT_PROGRAM_COUNTER * ResumeMethodPC,
-	__out PULONG SaveGlobalCount,
-	__out PULONG SaveLocalCount,
-	__out NWN::OBJECTID * ObjectSelf
+	nwn2dev__in NWSCRIPT_JITRESUME SourceState,
+	nwn2dev__in INWScriptStack * VMStack,
+	nwn2dev__out PULONG ResumeMethodId,
+	nwn2dev__out NWSCRIPT_PROGRAM_COUNTER * ResumeMethodPC,
+	nwn2dev__out PULONG SaveGlobalCount,
+	nwn2dev__out PULONG SaveLocalCount,
+	nwn2dev__out NWN::OBJECTID * ObjectSelf
 	)
 /*++
 
@@ -879,14 +879,14 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptPopScriptSituation(
-	__in NWSCRIPT_JITPROGRAM GeneratedProgram,
-	__in INWScriptStack * VMStack,
-	__in ULONG ResumeMethodId,
-	__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
-	__in ULONG SaveGlobalCount,
-	__in ULONG SaveLocalCount,
-	__in NWN::OBJECTID ObjectSelf,
-	__out PNWSCRIPT_JITRESUME ResumeState
+	nwn2dev__in NWSCRIPT_JITPROGRAM GeneratedProgram,
+	nwn2dev__in INWScriptStack * VMStack,
+	nwn2dev__in ULONG ResumeMethodId,
+	nwn2dev__in NWSCRIPT_PROGRAM_COUNTER ResumeMethodPC,
+	nwn2dev__in ULONG SaveGlobalCount,
+	nwn2dev__in ULONG SaveLocalCount,
+	nwn2dev__in NWN::OBJECTID ObjectSelf,
+	nwn2dev__out PNWSCRIPT_JITRESUME ResumeState
 	)
 /*++
 
@@ -979,14 +979,14 @@ BOOLEAN
 NWSCRIPTJITAPI
 NWScriptCreateManagedSupport(
 	__in_ecount( ActionCount ) PCNWACTION_DEFINITION ActionDefs,
-	__in NWSCRIPT_ACTION ActionCount,
-	__in ULONG AnalysisFlags,
+	nwn2dev__in NWSCRIPT_ACTION ActionCount,
+	nwn2dev__in ULONG AnalysisFlags,
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel,
-	__in INWScriptActions * ActionHandler,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in ULONG DebugLevel,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams,
-	__out PNWSCRIPT_JITMANAGEDSUPPORT GeneratedManagedSupport
+	nwn2dev__out PNWSCRIPT_JITMANAGEDSUPPORT GeneratedManagedSupport
 	)
 /*++
 
@@ -1098,7 +1098,7 @@ Environment:
 BOOLEAN
 NWSCRIPTJITAPI
 NWScriptDeleteManagedSupport(
-	__in NWSCRIPT_JITMANAGEDSUPPORT GeneratedManagedSupport
+	nwn2dev__in NWSCRIPT_JITMANAGEDSUPPORT GeneratedManagedSupport
 	)
 /*++
 

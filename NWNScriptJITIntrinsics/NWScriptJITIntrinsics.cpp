@@ -24,7 +24,7 @@ using namespace NWScript;
 using namespace System::Reflection;
 
 NWScriptJITIntrinsics::NWScriptJITIntrinsics(
-	__in INWScriptProgram ^ Program
+	nwn2dev__in INWScriptProgram ^ Program
 	)
 /*++
 
@@ -79,7 +79,7 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_VMStackPushInt(
-	__in Int32 i
+	nwn2dev__in Int32 i
 	)
 /*++
 
@@ -134,7 +134,7 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_VMStackPushFloat(
-	__in Single f
+	nwn2dev__in Single f
 	)
 /*++
 
@@ -189,7 +189,7 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_VMStackPushString(
-	__in String ^ s
+	nwn2dev__in String ^ s
 	)
 /*++
 
@@ -244,7 +244,7 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_VMStackPushObjectId(
-	__in UInt32 o
+	nwn2dev__in UInt32 o
 	)
 /*++
 
@@ -299,8 +299,8 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_ExecuteActionService(
-	__in UInt32 ActionId,
-	__in UInt32 NumArguments
+	nwn2dev__in UInt32 ActionId,
+	nwn2dev__in UInt32 NumArguments
 	)
 /*++
 
@@ -335,10 +335,10 @@ Environment:
 void
 NWScriptJITIntrinsics::Intrinsic_StoreState(
 	__in_opt array< Object ^ > ^ Globals,
-	__in array< Object ^ > ^ Locals,
-	__in UInt32 ResumeMethodPC,
-	__in UInt32 ResumeMethodId,
-	__in IGeneratedScriptProgram ^ ProgramObject
+	nwn2dev__in array< Object ^ > ^ Locals,
+	nwn2dev__in UInt32 ResumeMethodPC,
+	nwn2dev__in UInt32 ResumeMethodId,
+	nwn2dev__in IGeneratedScriptProgram ^ ProgramObject
 	)
 /*++
 
@@ -385,9 +385,9 @@ Environment:
 
 Object ^
 NWScriptJITIntrinsics::Intrinsic_ExecuteActionServiceFast(
-	__in UInt32 ActionId,
-	__in UInt32 NumArguments,
-	__in ... array< Object ^ > ^ Arguments
+	nwn2dev__in UInt32 ActionId,
+	nwn2dev__in UInt32 NumArguments,
+	nwn2dev__in ... array< Object ^ > ^ Arguments
 	)
 /*++
 
@@ -431,7 +431,7 @@ Environment:
 
 NWScript::NeutralStringStorage
 NWScriptJITIntrinsics::Intrinsic_AllocateNeutralString(
-	__in String ^ Str
+	nwn2dev__in String ^ Str
 	)
 /*++
 
@@ -464,7 +464,7 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_DeleteNeutralString(
-	__in NWScript::NeutralStringStorage % Str
+	nwn2dev__in NWScript::NeutralStringStorage % Str
 	)
 /*++
 
@@ -493,7 +493,7 @@ Environment:
 
 String ^
 NWScriptJITIntrinsics::Intrinsic_NeutralStringToString(
-	__in NWScript::NeutralStringStorage % Str
+	nwn2dev__in NWScript::NeutralStringStorage % Str
 	)
 /*++
 
@@ -523,7 +523,7 @@ Environment:
 
 void
 NWScriptJITIntrinsics::Intrinsic_CheckScriptAbort(
-	__in bool ActionSucceeded
+	nwn2dev__in bool ActionSucceeded
 	)
 /*++
 

@@ -44,7 +44,7 @@ namespace NWN
 		bool
 		Uncompress(
 			__in_bcount( Length ) const unsigned char * Data,
-			__in size_t Length,
+			nwn2dev__in size_t Length,
 			__inout std::vector< unsigned char > & Plain
 			);
 

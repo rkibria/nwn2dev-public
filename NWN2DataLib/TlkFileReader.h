@@ -39,7 +39,7 @@ public:
 	//
 
 	TlkFileReader(
-		__in const std::string & FileName
+		nwn2dev__in const std::string & FileName
 		);
 
 	//
@@ -57,8 +57,8 @@ public:
 
 	bool
 	GetTalkString(
-		__in StrRef StringId,
-		__out std::string & String
+		nwn2dev__in StrRef StringId,
+		nwn2dev__out std::string & String
 		) const;
 
 	//
@@ -139,7 +139,7 @@ private:
 	inline
 	PCTLK_STRING
 	LookupStringDescriptor(
-		__in StrRef ResourceId
+		nwn2dev__in StrRef ResourceId
 		) const
 	{
 		if (ResourceId >= m_StringDir.size( ))

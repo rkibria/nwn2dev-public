@@ -20,11 +20,11 @@ Abstract:
 #include "NWScriptUtilities.h"
 
 NWScriptManagedSupport::NWScriptManagedSupport(
-	__in const NWScriptAnalyzer * Analyzer,
+	nwn2dev__in const NWScriptAnalyzer * Analyzer,
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel,
-	__in INWScriptActions * ActionHandler,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in ULONG DebugLevel,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__in_opt PCNWSCRIPT_JIT_PARAMS CodeGenParams
 	)
 /*++
@@ -125,9 +125,9 @@ Environment:
 
 void
 NWScriptManagedSupport::ErrorException(
-	__in Exception ^ Excpt,
+	nwn2dev__in Exception ^ Excpt,
 	__in_opt IDebugTextOut * TextOut,
-	__in ULONG DebugLevel
+	nwn2dev__in ULONG DebugLevel
 	)
 /*++
 

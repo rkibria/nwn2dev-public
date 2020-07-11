@@ -16,7 +16,7 @@ namespace swutil
 		inline
 		bool
 		GetField(
-			__out T &Field
+			nwn2dev__out T &Field
 			)
 		{
 			return GetData(
@@ -28,21 +28,21 @@ namespace swutil
 		virtual
 		bool
 		GetDataPtr(
-			__in size_t FieldLength,
-			__deref_out_bcount_full_opt( FieldLength ) const void **Field
+			nwn2dev__in size_t FieldLength,
+			nwn2dev__deref_out_bcount_full_opt ( FieldLength ) const void **Field
 			) = 0;
 
 		virtual
 		bool
 		GetData(
-			__in size_t FieldLength,
-			__out_bcount_full_opt( FieldLength ) void *Field
+			nwn2dev__in size_t FieldLength,
+			nwn2dev__out_bcount_full_opt( FieldLength ) void *Field
 			) = 0;
 
 		inline
 		bool
 		GetFieldBit(
-			__out bool &FieldBit
+			nwn2dev__out bool &FieldBit
 			)
 		{
 			unsigned __int64 Bits;
@@ -58,8 +58,8 @@ namespace swutil
 		inline
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned char &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned char &FieldBits
 			)
 		{
 			unsigned __int64 Bits;
@@ -78,8 +78,8 @@ namespace swutil
 		inline
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned short &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned short &FieldBits
 			)
 		{
 			unsigned __int64 Bits;
@@ -98,8 +98,8 @@ namespace swutil
 		inline
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned long &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned long &FieldBits
 			)
 		{
 			unsigned __int64 Bits;
@@ -118,8 +118,8 @@ namespace swutil
 		virtual
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned __int64 &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned __int64 &FieldBits
 			) = 0;
 
 		virtual
@@ -173,13 +173,13 @@ namespace swutil
 		virtual
 		bool
 		SkipData(
-			__in size_t FieldLength
+			nwn2dev__in size_t FieldLength
 			) = 0;
 
 		virtual
 		bool
 		SkipBits(
-			__in size_t NumBits
+			nwn2dev__in size_t NumBits
 			) = 0;
 
 		virtual
@@ -190,13 +190,13 @@ namespace swutil
 		virtual
 		void
 		SetHighestValidBitPos(
-			__in size_t HighestValidBitPos
+			nwn2dev__in size_t HighestValidBitPos
 			) = 0;
 
 		virtual
 		void
 		RebaseBuffer(
-			__in const void *Data
+			nwn2dev__in const void *Data
 			) = 0;
 
 	};
@@ -214,8 +214,8 @@ namespace swutil
 
 		BufferParser(
 			__in_bcount( Length ) const void *Data,
-			__in size_t Length,
-			__in BitOrderMode BitOrder = BitOrderLowToHigh
+			nwn2dev__in size_t Length,
+			nwn2dev__in BitOrderMode BitOrder = BitOrderLowToHigh
 			);
 
 		~BufferParser( );
@@ -223,22 +223,22 @@ namespace swutil
 		virtual
 		bool
 		GetDataPtr(
-			__in size_t FieldLength,
-			__deref_opt_out const void **Field
+			nwn2dev__in size_t FieldLength,
+			nwn2dev__deref_opt_out const void **Field
 			);
 
 		virtual
 		bool
 		GetData(
-			__in size_t FieldLength,
-			__out_bcount_full_opt( FieldLength ) void *Field
+			nwn2dev__in size_t FieldLength,
+			nwn2dev__out_bcount_full_opt( FieldLength ) void *Field
 			);
 
 		inline
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned char &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned char &FieldBits
 			)
 		{
 			unsigned __int64 Bits;
@@ -257,8 +257,8 @@ namespace swutil
 		inline
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned short &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned short &FieldBits
 			)
 		{
 			unsigned __int64 Bits;
@@ -277,8 +277,8 @@ namespace swutil
 		inline
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned long &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned long &FieldBits
 			)
 		{
 			unsigned __int64 Bits;
@@ -297,8 +297,8 @@ namespace swutil
 		virtual
 		bool
 		GetFieldBits(
-			__in size_t NumBits,
-			__out unsigned __int64 &FieldBits
+			nwn2dev__in size_t NumBits,
+			nwn2dev__out unsigned __int64 &FieldBits
 			);
 
 		virtual
@@ -378,13 +378,13 @@ namespace swutil
 		virtual
 		bool
 		SkipData(
-			__in size_t FieldLength
+			nwn2dev__in size_t FieldLength
 			);
 
 		virtual
 		bool
 		SkipBits(
-			__in size_t NumBits
+			nwn2dev__in size_t NumBits
 			);
 
 		virtual
@@ -395,13 +395,13 @@ namespace swutil
 		virtual
 		void
 		SetHighestValidBitPos(
-			__in size_t HighestValidBitPos
+			nwn2dev__in size_t HighestValidBitPos
 			);
 
 		virtual
 		void
 		RebaseBuffer(
-			__in const void *Data
+			nwn2dev__in const void *Data
 			);
 
 	private:

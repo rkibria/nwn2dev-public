@@ -20,7 +20,7 @@ Abstract:
 
 template< typename ResRefT >
 DirectoryFileReader< ResRefT >::DirectoryFileReader(
-	__in const std::string & DirectoryName
+	nwn2dev__in const std::string & DirectoryName
 	)
 /*++
 
@@ -82,8 +82,8 @@ Environment:
 template< typename ResRefT >
 typename DirectoryFileReader< ResRefT >::FileHandle
 DirectoryFileReader< ResRefT >::OpenFile(
-	__in const ResRefT & FileName,
-	__in ResType Type
+	nwn2dev__in const ResRefT & FileName,
+	nwn2dev__in ResType Type
 	)
 /*++
 
@@ -146,7 +146,7 @@ Environment:
 template< typename ResRefT >
 typename DirectoryFileReader< ResRefT >::FileHandle
 DirectoryFileReader< ResRefT >::OpenFileByIndex(
-	__in typename FileId FileIndex
+	nwn2dev__in typename FileId FileIndex
 	)
 /*++
 
@@ -195,7 +195,7 @@ Environment:
 template< typename ResRefT >
 bool
 DirectoryFileReader< ResRefT >::CloseFile(
-	__in typename DirectoryFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename DirectoryFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -228,10 +228,10 @@ Environment:
 template< typename ResRefT >
 bool
 DirectoryFileReader< ResRefT >::ReadEncapsulatedFile(
-	__in FileHandle File,
-	__in size_t Offset,
-	__in size_t BytesToRead,
-	__out size_t * BytesRead,
+	nwn2dev__in FileHandle File,
+	nwn2dev__in size_t Offset,
+	nwn2dev__in size_t BytesToRead,
+	nwn2dev__out size_t * BytesRead,
 	__out_bcount( BytesToRead ) void * Buffer
 	)
 /*++
@@ -285,7 +285,7 @@ Environment:
 template< typename ResRefT >
 size_t
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileSize(
-	__in typename DirectoryFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename DirectoryFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -321,7 +321,7 @@ Environment:
 template< typename ResRefT >
 typename DirectoryFileReader< ResRefT >::ResType
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileType(
-	__in typename DirectoryFileReader< ResRefT >::FileHandle File
+	nwn2dev__in typename DirectoryFileReader< ResRefT >::FileHandle File
 	)
 /*++
 
@@ -357,9 +357,9 @@ Environment:
 template< typename ResRefT >
 bool
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileEntry(
-	__in typename FileId FileIndex,
-	__out typename ResRefT & ResRef,
-	__out ResType & Type
+	nwn2dev__in typename FileId FileIndex,
+	nwn2dev__out typename ResRefT & ResRef,
+	nwn2dev__out ResType & Type
 	)
 /*++
 
@@ -432,8 +432,8 @@ Environment:
 template< typename ResRefT >
 typename DirectoryFileReader< ResRefT >::AccessorType
 DirectoryFileReader< ResRefT >::GetResourceAccessorName(
-	__in FileHandle File,
-	__out std::string & AccessorName
+	nwn2dev__in FileHandle File,
+	nwn2dev__out std::string & AccessorName
 	)
 /*++
 
@@ -467,8 +467,8 @@ Environment:
 template< typename ResRefT >
 void
 DirectoryFileReader< ResRefT >::ScanDirectory(
-	__in const std::string & Directory,
-	__in size_t RecursionLevel
+	nwn2dev__in const std::string & Directory,
+	nwn2dev__in size_t RecursionLevel
 	)
 /*++
 

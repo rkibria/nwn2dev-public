@@ -35,7 +35,7 @@ public:
 	static
 	std::string
 	ConvertString(
-		__in String ^ Str
+		nwn2dev__in String ^ Str
 		);
 
 	//
@@ -99,8 +99,8 @@ private:
 
 void
 VMStackPushEngineStructureInternal(
-	__in INWScriptStack * Stack,
-	__in EngineStructurePtr * EngStruct
+	nwn2dev__in INWScriptStack * Stack,
+	nwn2dev__in EngineStructurePtr * EngStruct
 	);
 
 

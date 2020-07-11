@@ -138,7 +138,7 @@ public:
 	inline
 	const VertexT &
 	GetPoint(
-		__in PointIndexT PointId
+		nwn2dev__in PointIndexT PointId
 		) const
 	{
 		return m_Points[ PointId ];
@@ -153,7 +153,7 @@ public:
 	inline
 	NWN::Vector3
 	GetPoint3(
-		__in PointIndexT PointId
+		nwn2dev__in PointIndexT PointId
 		) const
 	{
 		const VertexT & Point( GetPoint( PointId ) );
@@ -174,7 +174,7 @@ public:
 	inline
 	NWN::Vector3
 	GetLocalPoint3(
-		__in PointIndexT PointId
+		nwn2dev__in PointIndexT PointId
 		) const
 	{
 		const VertexT & Point( GetPoint( PointId ) );
@@ -194,8 +194,8 @@ public:
 	inline
 	float
 	GetVertexWeight(
-		__in PointIndexT PointId,
-		__in unsigned long WeightId
+		nwn2dev__in PointIndexT PointId,
+		nwn2dev__in unsigned long WeightId
 		) const
 	{
 		UNREFERENCED_PARAMETER( PointId );
@@ -207,8 +207,8 @@ public:
 	inline
 	unsigned long
 	GetVertexBone(
-		__in PointIndexT PointId,
-		__in unsigned long WeightId
+		nwn2dev__in PointIndexT PointId,
+		nwn2dev__in unsigned long WeightId
 		) const
 	{
 		UNREFERENCED_PARAMETER( PointId );
@@ -220,7 +220,7 @@ public:
 	inline
 	unsigned long
 	GetVertexWeightCount(
-		__in PointIndexT PointId
+		nwn2dev__in PointIndexT PointId
 		) const
 	{
 		UNREFERENCED_PARAMETER( PointId );
@@ -231,7 +231,7 @@ public:
 	inline
 	const FaceT &
 	GetFace(
-		__in FaceIndexT FaceId
+		nwn2dev__in FaceIndexT FaceId
 		) const
 	{
 		return m_Faces[ FaceId ];
@@ -240,7 +240,7 @@ public:
 	inline
 	void
 	AddPoint(
-		__in const VertexT & Point
+		nwn2dev__in const VertexT & Point
 		)
 	{
 		m_Points.push_back( Point );
@@ -249,7 +249,7 @@ public:
 	inline
 	void
 	AddFace(
-		__in const FaceT & Face
+		nwn2dev__in const FaceT & Face
 		)
 	{
 		m_Faces.push_back( Face );
@@ -261,7 +261,7 @@ public:
 
 //	void
 //	Update(
-//		__in const NWN::Matrix44 & M
+//		nwn2dev__in const NWN::Matrix44 & M
 //		);
 
 	//
@@ -292,7 +292,7 @@ public:
 	inline
 	void
 	CopyMeshDataTo(
-		__out SimpleMeshT & Mesh
+		nwn2dev__out SimpleMeshT & Mesh
 		) const
 	{
 		Mesh.m_Faces  = m_Faces;

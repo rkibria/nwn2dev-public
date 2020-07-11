@@ -11,8 +11,8 @@ using swutil::BufferParser;
 
 BufferParser::BufferParser(
 	__in_bcount( Length ) const void *Data,
-	__in size_t Length,
-	__in BitOrderMode BitOrder /* = BitOrderLowToHigh */
+	nwn2dev__in size_t Length,
+	nwn2dev__in BitOrderMode BitOrder /* = BitOrderLowToHigh */
 	)
 	: m_Data( reinterpret_cast< const unsigned char * >( Data ) ),
 	  m_DataLength( Length ),
@@ -30,8 +30,8 @@ BufferParser::~BufferParser()
 
 bool
 BufferParser::GetDataPtr(
-	__in size_t FieldLength,
-	__deref_opt_out const void **Field
+	nwn2dev__in size_t FieldLength,
+	nwn2dev__deref_opt_out const void **Field
 	)
 {
 	if (m_DataPosRemaining < FieldLength)
@@ -66,8 +66,8 @@ BufferParser::GetDataPtr(
 
 bool
 BufferParser::GetData(
-	__in size_t FieldLength,
-	__out_bcount_full_opt( FieldLength ) void *Field
+	nwn2dev__in size_t FieldLength,
+	nwn2dev__out_bcount_full_opt( FieldLength ) void *Field
 	)
 {
 	if (m_DataPosRemaining < FieldLength)
@@ -104,8 +104,8 @@ BufferParser::GetData(
 
 bool
 BufferParser::GetFieldBits(
-	__in size_t NumBits,
-	__out unsigned __int64 &FieldBits
+	nwn2dev__in size_t NumBits,
+	nwn2dev__out unsigned __int64 &FieldBits
 	)
 {
 	if (NumBits > 64)
@@ -235,7 +235,7 @@ BufferParser::GetFieldBits(
 
 bool
 BufferParser::SkipData(
-	__in size_t FieldLength
+	nwn2dev__in size_t FieldLength
 	)
 {
 	if (m_BitPos != 8)
@@ -262,7 +262,7 @@ BufferParser::SkipData(
 
 bool
 BufferParser::SkipBits(
-	__in size_t NumBits
+	nwn2dev__in size_t NumBits
 	)
 {
 
@@ -334,7 +334,7 @@ BufferParser::Reset(
 
 void
 BufferParser::SetHighestValidBitPos(
-	__in size_t HighestValidBitPos
+	nwn2dev__in size_t HighestValidBitPos
 	)
 {
 //	if (HighestValidBitPos > 8)
@@ -344,7 +344,7 @@ BufferParser::SetHighestValidBitPos(
 
 void
 BufferParser::RebaseBuffer(
-	__in const void *Data
+	nwn2dev__in const void *Data
 	)
 {
 	ptrdiff_t PtrDiff;

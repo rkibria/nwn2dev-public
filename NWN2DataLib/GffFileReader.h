@@ -58,14 +58,14 @@ public:
 	//
 
 	GffFileReader(
-		__in const std::string & FileName,
-		__in ResourceManager & ResMan
+		nwn2dev__in const std::string & FileName,
+		nwn2dev__in ResourceManager & ResMan
 		);
 
 	GffFileReader(
 		__in_bcount( DataSize ) const void * GffRawData,
-		__in size_t DataSize,
-		__in ResourceManager & ResMan
+		nwn2dev__in size_t DataSize,
+		nwn2dev__in ResourceManager & ResMan
 		);
 
 	//
@@ -83,7 +83,7 @@ public:
 	inline
 	void
 	SetDefaultLanguage(
-		__in GFF_LANGUAGE Language
+		nwn2dev__in GFF_LANGUAGE Language
 		)
 	{
 		m_Language = Language;
@@ -290,8 +290,8 @@ public:
 
 		inline
 		GffStruct(
-			__in const GffFileReader * Reader,
-			__in PCGFF_STRUCT_ENTRY StructEntry
+			nwn2dev__in const GffFileReader * Reader,
+			nwn2dev__in PCGFF_STRUCT_ENTRY StructEntry
 			)
 		: m_Reader( Reader ),
 		  m_StructEntry( *StructEntry )
@@ -347,8 +347,8 @@ public:
 		inline
 		bool
 		GetFieldType(
-			__in const char * FieldName,
-			__out GFF_FIELD_TYPE & FieldType
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out GFF_FIELD_TYPE & FieldType
 			) const
 		{
 			GFF_FIELD_ENTRY FieldEntry;
@@ -363,8 +363,8 @@ public:
 
 		bool
 		GetFieldType(
-			__in FIELD_INDEX FieldIndex,
-			__out GFF_FIELD_TYPE & FieldType
+			nwn2dev__in FIELD_INDEX FieldIndex,
+			nwn2dev__out GFF_FIELD_TYPE & FieldType
 			) const;
 
 		//
@@ -373,8 +373,8 @@ public:
 
 		bool
 		GetFieldName(
-			__in FIELD_INDEX FieldIndex,
-			__out std::string & FieldName
+			nwn2dev__in FIELD_INDEX FieldIndex,
+			nwn2dev__out std::string & FieldName
 			) const;
 
 		//
@@ -384,8 +384,8 @@ public:
 		inline
 		bool
 		GetFieldIndex(
-			__in const char * FieldName,
-			__out FIELD_INDEX & FieldIndex
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out FIELD_INDEX & FieldIndex
 			) const
 		{
 			return GetFieldIndexByName( FieldName, FieldIndex );
@@ -397,11 +397,11 @@ public:
 
 		bool
 		GetFieldRawData(
-			__in FIELD_INDEX FieldIndex,
-			__out std::vector< unsigned char > & FieldData,
-			__out std::string & FieldName,
-			__out GFF_FIELD_TYPE & FieldType,
-			__out bool & ComplexField
+			nwn2dev__in FIELD_INDEX FieldIndex,
+			nwn2dev__out std::vector< unsigned char > & FieldData,
+			nwn2dev__out std::string & FieldName,
+			nwn2dev__out GFF_FIELD_TYPE & FieldType,
+			nwn2dev__out bool & ComplexField
 			) const;
 
 		//
@@ -414,8 +414,8 @@ public:
 		inline
 		bool
 		GetBYTE(
-			__in const char * FieldName,
-			__out unsigned __int8 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out unsigned __int8 & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_BYTE, FieldName, Data );
@@ -424,8 +424,8 @@ public:
 		inline
 		bool
 		GetBYTEAsBool(
-			__in const char * FieldName,
-			__out bool & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out bool & Data
 			) const
 		{
 			unsigned __int8 b;
@@ -441,8 +441,8 @@ public:
 		inline
 		bool
 		GetCHAR(
-			__in const char * FieldName,
-			__out signed __int8 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out signed __int8 & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_CHAR, FieldName, Data );
@@ -451,8 +451,8 @@ public:
 		inline
 		bool
 		GetWORD(
-			__in const char * FieldName,
-			__out unsigned __int16 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out unsigned __int16 & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_WORD, FieldName, Data );
@@ -461,8 +461,8 @@ public:
 		inline
 		bool
 		GetSHORT(
-			__in const char * FieldName,
-			__out signed __int16 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out signed __int16 & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_SHORT, FieldName, Data );
@@ -471,8 +471,8 @@ public:
 		inline
 		bool
 		GetDWORD(
-			__in const char * FieldName,
-			__out unsigned __int32 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out unsigned __int32 & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_DWORD, FieldName, Data );
@@ -481,8 +481,8 @@ public:
 		inline
 		bool
 		GetDWORD(
-			__in const char * FieldName,
-			__out unsigned long & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out unsigned long & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_DWORD, FieldName, Data );
@@ -491,8 +491,8 @@ public:
 		inline
 		bool
 		GetINT(
-			__in const char * FieldName,
-			__out signed __int32 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out signed __int32 & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_INT, FieldName, Data );
@@ -501,8 +501,8 @@ public:
 		inline
 		bool
 		GetINTAsBool(
-			__in const char * FieldName,
-			__out bool & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out bool & Data
 			) const
 		{
 			signed __int32 i;
@@ -518,8 +518,8 @@ public:
 		inline
 		bool
 		GetDWORD64(
-			__in const char * FieldName,
-			__out unsigned __int64 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out unsigned __int64 & Data
 			) const
 		{
 			return GetLargeFieldByName( GFF_DWORD64, FieldName, Data );
@@ -528,8 +528,8 @@ public:
 		inline
 		bool
 		GetINT64(
-			__in const char * FieldName,
-			__out signed __int64 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out signed __int64 & Data
 			) const
 		{
 			return GetLargeFieldByName( GFF_INT64, FieldName, Data );
@@ -538,8 +538,8 @@ public:
 		inline
 		bool
 		GetFLOAT(
-			__in const char * FieldName,
-			__out float & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out float & Data
 			) const
 		{
 			return GetSmallFieldByName( GFF_FLOAT, FieldName, Data );
@@ -548,8 +548,8 @@ public:
 		inline
 		bool
 		GetDOUBLE(
-			__in const char * FieldName,
-			__out double & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out double & Data
 			) const
 		{
 			return GetLargeFieldByName( GFF_DOUBLE, FieldName, Data );
@@ -557,32 +557,32 @@ public:
 
 		bool
 		GetCExoString(
-			__in const char * FieldName,
-			__out std::string & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out std::string & Data
 			) const;
 
 		bool
 		GetCExoStringAsResRef(
-			__in const char * FieldName,
-			__out NWN::ResRef32 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out NWN::ResRef32 & Data
 			) const;
 
 		bool
 		GetResRef(
-			__in const char * FieldName,
-			__out NWN::ResRef32 & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out NWN::ResRef32 & Data
 			) const;
 
 		bool
 		GetCExoLocString(
-			__in const char * FieldName,
-			__out std::string & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out std::string & Data
 			) const;
 
 		bool
 		GetVOID(
-			__in const char * FieldName,
-			__out std::vector< unsigned char > & Data
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out std::vector< unsigned char > & Data
 			) const;
 
 		//
@@ -594,13 +594,13 @@ public:
 		bool
 		GetStruct(
 			__in_opt const char * FieldName,
-			__out GffStruct & Struct
+			nwn2dev__out GffStruct & Struct
 			) const;
 
 		bool
 		GetStructByIndex(
-			__in FIELD_INDEX FieldIndex,
-			__out GffStruct & Struct
+			nwn2dev__in FIELD_INDEX FieldIndex,
+			nwn2dev__out GffStruct & Struct
 			) const;
 
 		//
@@ -611,16 +611,16 @@ public:
 
 		bool
 		GetListElement(
-			__in const char * FieldName,
-			__in size_t Index,
-			__out GffStruct & Struct
+			nwn2dev__in const char * FieldName,
+			nwn2dev__in size_t Index,
+			nwn2dev__out GffStruct & Struct
 			) const;
 
 		bool
 		GetListElementByIndex(
-			__in FIELD_INDEX FieldIndex,
-			__in size_t Index,
-			__out GffStruct & Struct
+			nwn2dev__in FIELD_INDEX FieldIndex,
+			nwn2dev__in size_t Index,
+			nwn2dev__out GffStruct & Struct
 			) const;
 
 		//
@@ -630,8 +630,8 @@ public:
 		inline
 		bool
 		GetVector3_DEPRECATED(
-			__in const char * FieldName,
-			__out NWN::Vector3 & v
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out NWN::Vector3 & v
 			) const
 		{
 			return GetLargeFieldByName( GFF_VECTOR, FieldName, v );
@@ -645,7 +645,7 @@ public:
 		bool
 		GetVector(
 			__in_opt const char * FieldName,
-			__out NWN::Vector3 & v
+			nwn2dev__out NWN::Vector3 & v
 			) const
 		{
 			GffStruct s;
@@ -667,7 +667,7 @@ public:
 		bool
 		GetQuaternion(
 			__in_opt const char * FieldName,
-			__out NWN::Quaternion & q
+			nwn2dev__out NWN::Quaternion & q
 			) const
 		{
 			GffStruct s;
@@ -691,7 +691,7 @@ public:
 		bool
 		GetColor(
 			__in_opt const char * FieldName,
-			__out NWN::NWNCOLOR & c
+			nwn2dev__out NWN::NWNCOLOR & c
 			) const
 		{
 			GffStruct     s;
@@ -727,7 +727,7 @@ public:
 		bool
 		GetUVScroll(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_UVScrollSet & UVScroll
+			nwn2dev__out NWN::NWN2_UVScrollSet & UVScroll
 			) const
 		{
 			GffStruct s;
@@ -753,7 +753,7 @@ public:
 		bool
 		GetRawTintSet(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_TintSet & TintSet
+			nwn2dev__out NWN::NWN2_TintSet & TintSet
 			) const
 		{
 			GffStruct         Tint;
@@ -780,7 +780,7 @@ public:
 		bool
 		GetTintSet(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_TintSet & TintSet
+			nwn2dev__out NWN::NWN2_TintSet & TintSet
 			) const
 		{
 			GffStruct s;
@@ -798,7 +798,7 @@ public:
 		bool
 		GetTintable(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_TintSet & TintSet
+			nwn2dev__out NWN::NWN2_TintSet & TintSet
 			) const
 		{
 			GffStruct s;
@@ -816,7 +816,7 @@ public:
 		bool
 		GetArmorAccessory(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_ArmorAccessory & Accessory
+			nwn2dev__out NWN::NWN2_ArmorAccessory & Accessory
 			) const
 		{
 			GffStruct s;
@@ -840,7 +840,7 @@ public:
 		bool
 		GetArmorPiece(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_ArmorPiece & ArmorPiece
+			nwn2dev__out NWN::NWN2_ArmorPiece & ArmorPiece
 			) const
 		{
 			GffStruct s;
@@ -862,7 +862,7 @@ public:
 		bool
 		GetArmorPieceWithAccessories(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_ArmorPieceWithAccessories & ArmorPiece
+			nwn2dev__out NWN::NWN2_ArmorPieceWithAccessories & ArmorPiece
 			) const
 		{
 			GffStruct           s;
@@ -918,7 +918,7 @@ public:
 		bool
 		GetArmorAccessorySet(
 			__in_opt const char * FieldName,
-			__out NWN::NWN2_ArmorAccessorySet & ArmorAccessorySet
+			nwn2dev__out NWN::NWN2_ArmorAccessorySet & ArmorAccessorySet
 			) const
 		{
 			GffStruct s;
@@ -942,7 +942,7 @@ public:
 		bool
 		GetObjectLocation(
 			__in_opt const char * FieldName,
-			__out NWN::ObjectLocation & Location
+			nwn2dev__out NWN::ObjectLocation & Location
 			) const
 		{
 			GffStruct s;
@@ -979,9 +979,9 @@ public:
 		template< typename T >
 		bool
 		GetSmallFieldByName(
-			__in GFF_FIELD_TYPE FieldType,
-			__in const char * FieldName,
-			__out T & Data
+			nwn2dev__in GFF_FIELD_TYPE FieldType,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out T & Data
 			) const
 		{
 			GFF_FIELD_ENTRY FieldEntry;
@@ -1006,9 +1006,9 @@ public:
 		template< typename T >
 		bool
 		GetLargeFieldByName(
-			__in GFF_FIELD_TYPE FieldType,
-			__in const char * FieldName,
-			__out T & Data
+			nwn2dev__in GFF_FIELD_TYPE FieldType,
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out T & Data
 			) const
 		{
 			GFF_FIELD_ENTRY FieldEntry;
@@ -1029,10 +1029,10 @@ public:
 
 		bool
 		GetLargeFieldData(
-			__in const GFF_FIELD_ENTRY & FieldEntry,
+			nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
 			__out_bcount( Size ) void * Data,
-			__in size_t Size,
-			__in size_t Offset = 0
+			nwn2dev__in size_t Size,
+			nwn2dev__in size_t Offset = 0
 			) const;
 
 		//
@@ -1042,10 +1042,10 @@ public:
 
 		bool
 		GetListIndiciesData(
-			__in const GFF_FIELD_ENTRY & FieldEntry,
+			nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
 			__out_bcount( Size ) void * Data,
-			__in size_t Size,
-			__in size_t Offset = 0
+			nwn2dev__in size_t Size,
+			nwn2dev__in size_t Offset = 0
 			) const;
 
 		//
@@ -1055,8 +1055,8 @@ public:
 
 		bool
 		GetFieldByName(
-			__in const char * FieldName,
-			__out GFF_FIELD_ENTRY & FieldEntry
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 			) const;
 
 		//
@@ -1066,8 +1066,8 @@ public:
 
 		bool
 		GetFieldByIndex(
-			__in FIELD_INDEX Index,
-			__out GFF_FIELD_ENTRY & FieldEntry
+			nwn2dev__in FIELD_INDEX Index,
+			nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 			) const;
 
 		//
@@ -1077,8 +1077,8 @@ public:
 
 		bool
 		GetFieldIndexByName(
-			__in const char * FieldName,
-			__out FIELD_INDEX & Index
+			nwn2dev__in const char * FieldName,
+			nwn2dev__out FIELD_INDEX & Index
 			) const;
 
 		//
@@ -1088,15 +1088,15 @@ public:
 
 		bool
 		ValidateFieldDataRange(
-			__in const GFF_FIELD_ENTRY & FieldEntry,
-			__in FIELD_DATA_INDEX DataOffset,
-			__in size_t Length
+			nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
+			nwn2dev__in FIELD_DATA_INDEX DataOffset,
+			nwn2dev__in size_t Length
 			) const;
 
 		inline
 		void
 		SetReader(
-			__in GffFileReader * Reader
+			nwn2dev__in GffFileReader * Reader
 			)
 		{
 			m_Reader = Reader;
@@ -1105,7 +1105,7 @@ public:
 		inline
 		void
 		SetStructEntry(
-			__in PCGFF_STRUCT_ENTRY StructEntry
+			nwn2dev__in PCGFF_STRUCT_ENTRY StructEntry
 			)
 		{
 			m_StructEntry = *StructEntry;
@@ -1138,8 +1138,8 @@ private:
 
 	void
 	GetFieldByIndex(
-		__in FIELD_INDEX FieldIndex,
-		__out GFF_FIELD_ENTRY & FieldEntry
+		nwn2dev__in FIELD_INDEX FieldIndex,
+		nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 		) const;
 
 	//
@@ -1148,8 +1148,8 @@ private:
 
 	void
 	GetLabelByIndex(
-		__in LABEL_INDEX LabelIndex,
-		__out std::string & Label
+		nwn2dev__in LABEL_INDEX LabelIndex,
+		nwn2dev__out std::string & Label
 		) const;
 
 	//
@@ -1158,8 +1158,8 @@ private:
 
 	void
 	GetStructByIndex(
-		__in STRUCT_INDEX StructIndex,
-		__out GFF_STRUCT_ENTRY & StructEntry
+		nwn2dev__in STRUCT_INDEX StructIndex,
+		nwn2dev__out GFF_STRUCT_ENTRY & StructEntry
 		) const;
 
 	//
@@ -1168,8 +1168,8 @@ private:
 
 	bool
 	CompareFieldName(
-		__in const GFF_FIELD_ENTRY & FieldEntry,
-		__in const char * Name
+		nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
+		nwn2dev__in const char * Name
 		) const;
 
 	//
@@ -1178,9 +1178,9 @@ private:
 
 	bool
 	GetFieldByName(
-		__in PCGFF_STRUCT_ENTRY Struct,
-		__in const char * FieldName,
-		__out GFF_FIELD_ENTRY & FieldEntry
+		nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+		nwn2dev__in const char * FieldName,
+		nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 		) const;
 
 	//
@@ -1189,9 +1189,9 @@ private:
 
 	bool
 	GetFieldByIndex(
-		__in PCGFF_STRUCT_ENTRY Struct,
-		__in FIELD_INDEX FieldIndex,
-		__out GFF_FIELD_ENTRY & FieldEntry
+		nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+		nwn2dev__in FIELD_INDEX FieldIndex,
+		nwn2dev__out GFF_FIELD_ENTRY & FieldEntry
 		) const;
 
 	//
@@ -1200,9 +1200,9 @@ private:
 
 	bool
 	GetFieldIndexByName(
-		__in PCGFF_STRUCT_ENTRY Struct,
-		__in const char * FieldName,
-		__out FIELD_INDEX & FieldIndex
+		nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+		nwn2dev__in const char * FieldName,
+		nwn2dev__out FIELD_INDEX & FieldIndex
 		) const;
 
 	//
@@ -1211,9 +1211,9 @@ private:
 
 	bool
 	GetFieldType(
-		__in PCGFF_STRUCT_ENTRY Struct,
-		__in FIELD_INDEX FieldIndex,
-		__out GFF_FIELD_TYPE & FieldType
+		nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+		nwn2dev__in FIELD_INDEX FieldIndex,
+		nwn2dev__out GFF_FIELD_TYPE & FieldType
 		) const;
 
 	//
@@ -1222,9 +1222,9 @@ private:
 
 	bool
 	GetFieldName(
-		__in PCGFF_STRUCT_ENTRY Struct,
-		__in FIELD_INDEX FieldIndex,
-		__out std::string & FieldName
+		nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+		nwn2dev__in FIELD_INDEX FieldIndex,
+		nwn2dev__out std::string & FieldName
 		) const;
 
 	//
@@ -1233,12 +1233,12 @@ private:
 
 	bool
 	GetFieldRawData(
-		__in PCGFF_STRUCT_ENTRY Struct,
-		__in FIELD_INDEX FieldIndex,
-		__out std::vector< unsigned char > & FieldData,
-		__out std::string & FieldName,
-		__out GFF_FIELD_TYPE & Type,
-		__out bool & ComplexField
+		nwn2dev__in PCGFF_STRUCT_ENTRY Struct,
+		nwn2dev__in FIELD_INDEX FieldIndex,
+		nwn2dev__out std::vector< unsigned char > & FieldData,
+		nwn2dev__out std::string & FieldName,
+		nwn2dev__out GFF_FIELD_TYPE & Type,
+		nwn2dev__out bool & ComplexField
 		) const;
 
 	//
@@ -1247,9 +1247,9 @@ private:
 
 	bool
 	ReadFieldData(
-		__in FIELD_DATA_INDEX FieldDataIndex,
+		nwn2dev__in FIELD_DATA_INDEX FieldDataIndex,
 		__out_bcount( Length ) void * Buffer,
-		__in size_t Length
+		nwn2dev__in size_t Length
 		) const;
 
 	//
@@ -1258,9 +1258,9 @@ private:
 
 	bool
 	ReadListIndicies(
-		__in LIST_INDICIES_INDEX ListIndiciesIndex,
+		nwn2dev__in LIST_INDICIES_INDEX ListIndiciesIndex,
 		__out_bcount( Length ) void * Buffer,
-		__in size_t Length
+		nwn2dev__in size_t Length
 		) const;
 
 	//
@@ -1270,8 +1270,8 @@ private:
 
 	bool
 	ValidateFieldDataRange(
-		__in FIELD_DATA_INDEX FieldDataIndex,
-		__in size_t Length
+		nwn2dev__in FIELD_DATA_INDEX FieldDataIndex,
+		nwn2dev__in size_t Length
 		) const;
 
 	//
@@ -1285,9 +1285,9 @@ private:
 
 	bool
 	GetFieldSizeAndData(
-		__in const GFF_FIELD_ENTRY & FieldEntry,
-		__deref __out const void * * FieldData,
-		__out size_t * FieldDataLength
+		nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
+		__deref nwn2dev__out const void * * FieldData,
+		nwn2dev__out size_t * FieldDataLength
 		) const;
 
 	//
@@ -1296,8 +1296,8 @@ private:
 
 	bool
 	GetTalkString(
-		__in unsigned long StrRef,
-		__out std::string & Str
+		nwn2dev__in unsigned long StrRef,
+		nwn2dev__out std::string & Str
 		) const;
 		
 	//
@@ -1306,7 +1306,7 @@ private:
 
 	NWN::ResRef32
 	ResRef32FromStr(
-		__in const std::string & Str
+		nwn2dev__in const std::string & Str
 		) const;
 
 	//

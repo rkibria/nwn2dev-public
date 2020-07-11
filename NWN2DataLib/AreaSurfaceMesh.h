@@ -176,8 +176,8 @@ public:
 		inline
 		bool
 		GetVisible(
-			__in unsigned long FromFace,
-			__in unsigned long ToFace
+			nwn2dev__in unsigned long FromFace,
+			nwn2dev__in unsigned long ToFace
 			) const
 		{
 			unsigned char NodeIndex1;
@@ -221,8 +221,8 @@ public:
 		inline
 		unsigned long
 		GetNext(
-			__in unsigned long FromFace,
-			__in unsigned long ToFace
+			nwn2dev__in unsigned long FromFace,
+			nwn2dev__in unsigned long ToFace
 			) const
 		{
 			unsigned char NodeIndex1;
@@ -269,7 +269,7 @@ public:
 		inline
 		void
 		Validate(
-			__in size_t NumFaces
+			nwn2dev__in size_t NumFaces
 			) const
 		{
 			if (m_PathNodes.size( ) != (size_t) (m_Header.NodeCount * m_Header.NodeCount))
@@ -367,7 +367,7 @@ public:
 		inline
 		void
 		AddAdjacent(
-			__in unsigned long Adjacent
+			nwn2dev__in unsigned long Adjacent
 			)
 		{
 			m_Adjacent.push_back( Adjacent );
@@ -376,7 +376,7 @@ public:
 		inline
 		void
 		AddAdjacentDist(
-			__in float AdjacentDist
+			nwn2dev__in float AdjacentDist
 			)
 		{
 			m_AdjacentDist.push_back( AdjacentDist );
@@ -385,7 +385,7 @@ public:
 		inline
 		void
 		AddExitFace(
-			__in unsigned long ExitFace
+			nwn2dev__in unsigned long ExitFace
 			)
 		{
 			m_ExitFace.push_back( ExitFace );
@@ -394,8 +394,8 @@ public:
 		inline
 		void
 		Validate(
-			__in size_t FaceListSize,
-			__in size_t IslandTableSize
+			nwn2dev__in size_t FaceListSize,
+			nwn2dev__in size_t IslandTableSize
 			) const
 		{
 			for (FaceIndexVec::const_iterator it = m_ExitFace.begin( );
@@ -453,8 +453,8 @@ public:
 		inline
 		void
 		Validate(
-			__in size_t IslandTableSize,
-			__in size_t FaceTableSize
+			nwn2dev__in size_t IslandTableSize,
+			nwn2dev__in size_t FaceTableSize
 			) const
 		{
 			SurfaceMeshBase::Validate( IslandTableSize );
@@ -475,15 +475,15 @@ public:
 
 		const SurfaceMeshFace *
 		FindFace(
-			__in const NWN::Vector2 & pt,
-			__in const PointVec & Points
+			nwn2dev__in const NWN::Vector2 & pt,
+			nwn2dev__in const PointVec & Points
 			) const;
 
 		inline
 		const SurfaceMeshFace *
 		FindFace(
-			__in const NWN::Vector2 & pt,
-			__in const AreaSurfaceMesh * SurfaceMesh
+			nwn2dev__in const NWN::Vector2 & pt,
+			nwn2dev__in const AreaSurfaceMesh * SurfaceMesh
 			) const
 		{
 			return FindFace( pt, SurfaceMesh->GetPoints( ) );
@@ -497,7 +497,7 @@ public:
 		inline
 		unsigned long
 		GetFaceId(
-			__in const SurfaceMeshFace * Face
+			nwn2dev__in const SurfaceMeshFace * Face
 			) const
 		{
 			return (unsigned long) (Face - m_Faces);
@@ -510,7 +510,7 @@ public:
 		inline
 		const SurfaceMeshFace *
 		GetFace(
-			__in unsigned long LocalFaceId
+			nwn2dev__in unsigned long LocalFaceId
 			) const
 		{
 			return &m_Faces[ LocalFaceId ];
@@ -523,11 +523,11 @@ public:
 
 		bool
 		StraightPathExists(
-			__in const NWN::Vector2 & Start,
-			__in const NWN::Vector2 & End,
-			__in const SurfaceMeshFace * Face1,
-			__in const SurfaceMeshFace * Face2,
-			__in const AreaSurfaceMesh * SurfaceMesh,
+			nwn2dev__in const NWN::Vector2 & Start,
+			nwn2dev__in const NWN::Vector2 & End,
+			nwn2dev__in const SurfaceMeshFace * Face1,
+			nwn2dev__in const SurfaceMeshFace * Face2,
+			nwn2dev__in const AreaSurfaceMesh * SurfaceMesh,
 			__out_opt const SurfaceMeshFace * * LastFace = NULL
 			) const;
 
@@ -538,12 +538,12 @@ public:
 
 		bool
 		CalcContact(
-			__in const NWN::Vector3 & Origin,
-			__in const NWN::Vector3 & NormDir,
-			__in const SurfaceMeshFace * Face1,
-			__in const SurfaceMeshFace * Face2,
-			__in const AreaSurfaceMesh * SurfaceMesh,
-			__out float & IntersectDistance,
+			nwn2dev__in const NWN::Vector3 & Origin,
+			nwn2dev__in const NWN::Vector3 & NormDir,
+			nwn2dev__in const SurfaceMeshFace * Face1,
+			nwn2dev__in const SurfaceMeshFace * Face2,
+			nwn2dev__in const AreaSurfaceMesh * SurfaceMesh,
+			nwn2dev__out float & IntersectDistance,
 			__out_opt const SurfaceMeshFace * * IntersectFace
 			) const;
 
@@ -575,7 +575,7 @@ public:
 	inline
 	void
 	AddTileSurfaceMesh(
-		__in const TileSurfaceMesh & Mesh
+		nwn2dev__in const TileSurfaceMesh & Mesh
 		)
 	{
 		m_TileSurfaceMeshes.push_back( Mesh );
@@ -584,7 +584,7 @@ public:
 	inline
 	void
 	AddIsland(
-		__in const Island & Isle
+		nwn2dev__in const Island & Isle
 		)
 	{
 		m_Islands.push_back( Isle );
@@ -601,7 +601,7 @@ public:
 	inline
 	void
 	SetTileGridHeight(
-		__in unsigned long TileGridHeight
+		nwn2dev__in unsigned long TileGridHeight
 		)
 	{
 		m_TileGridHeight = TileGridHeight;
@@ -618,7 +618,7 @@ public:
 	inline
 	void
 	SetTileGridWidth(
-		__in unsigned long TileGridWidth
+		nwn2dev__in unsigned long TileGridWidth
 		)
 	{
 		m_TileGridWidth = TileGridWidth;
@@ -635,7 +635,7 @@ public:
 	inline
 	void
 	SetTileBorderSize(
-		__in unsigned long TileBorderSize
+		nwn2dev__in unsigned long TileBorderSize
 		)
 	{
 		m_TileBorderSize = TileBorderSize;
@@ -652,7 +652,7 @@ public:
 	inline
 	void
 	SetFlags(
-		__in unsigned long Flags
+		nwn2dev__in unsigned long Flags
 		)
 	{
 		m_Flags = Flags;
@@ -669,7 +669,7 @@ public:
 	inline
 	void
 	SetTileSize(
-		__in float TileSize
+		nwn2dev__in float TileSize
 		)
 	{
 		m_TileSize = TileSize;
@@ -790,8 +790,8 @@ public:
 	inline
 	const TileSurfaceMesh &
 	GetTileSurfaceMesh(
-		__in unsigned long x,
-		__in unsigned long y
+		nwn2dev__in unsigned long x,
+		nwn2dev__in unsigned long y
 		) const
 	{
 		size_t Offset;
@@ -811,7 +811,7 @@ public:
 	inline
 	const TileSurfaceMesh &
 	GetTileSurfaceMesh(
-		__in unsigned long Offset
+		nwn2dev__in unsigned long Offset
 		) const
 	{
 		if (Offset >= m_TileSurfaceMeshes.size( ))
@@ -827,7 +827,7 @@ public:
 	inline
 	const TileSurfaceMesh &
 	GetTileSurfaceMesh(
-		__in const SurfaceMeshFace * Face
+		nwn2dev__in const SurfaceMeshFace * Face
 		) const
 	{
 		unsigned long FaceId;
@@ -856,7 +856,7 @@ public:
 	inline
 	bool
 	IsPointInTileSurfaceMeshGrid(
-		__in const NWN::Vector2 & pt
+		nwn2dev__in const NWN::Vector2 & pt
 		) const
 	{
 		const unsigned int FixedPointShift = 1 << 6;
@@ -893,7 +893,7 @@ public:
 	inline
 	const SurfaceMeshFace *
 	FindFace(
-		__in const NWN::Vector2 & pt,
+		nwn2dev__in const NWN::Vector2 & pt,
 		__out_opt const TileSurfaceMesh * * SurfaceMesh = NULL
 		) const
 	{
@@ -1022,13 +1022,13 @@ public:
 
 	bool
 	GetLineSegmentFacesAndMesh(
-		__in const NWN::Vector2 & Start,
-		__in const NWN::Vector2 & End,
+		nwn2dev__in const NWN::Vector2 & Start,
+		nwn2dev__in const NWN::Vector2 & End,
 		__in_opt const TileSurfaceMesh * ExcludeSurfaceMesh,
-		__in bool Walkable,
-		__out const SurfaceMeshFace * * Face1,
-		__out const SurfaceMeshFace * * Face2,
-		__out const TileSurfaceMesh * * SurfaceMesh
+		nwn2dev__in bool Walkable,
+		nwn2dev__out const SurfaceMeshFace * * Face1,
+		nwn2dev__out const SurfaceMeshFace * * Face2,
+		nwn2dev__out const TileSurfaceMesh * * SurfaceMesh
 		) const;
 
 	//
@@ -1039,7 +1039,7 @@ public:
 	inline
 	unsigned long
 	GetFaceId(
-		__in const SurfaceMeshFace * Face
+		nwn2dev__in const SurfaceMeshFace * Face
 		) const
 	{
 		return (unsigned long) (Face - &GetTriangles( )[ 0 ]);
@@ -1052,7 +1052,7 @@ public:
 	inline
 	const SurfaceMeshFace *
 	GetFace(
-		__in unsigned long FaceId
+		nwn2dev__in unsigned long FaceId
 		) const
 	{
 		return &GetTriangles( )[ FaceId ];
@@ -1065,7 +1065,7 @@ public:
 	inline
 	const SurfaceMeshPoint *
 	GetPoint(
-		__in unsigned long PointId
+		nwn2dev__in unsigned long PointId
 		) const
 	{
 		return &GetPoints( )[ PointId ];
@@ -1078,7 +1078,7 @@ public:
 	inline
 	const SurfaceMeshEdge *
 	GetEdge(
-		__in unsigned long EdgeId
+		nwn2dev__in unsigned long EdgeId
 		) const
 	{
 		return &GetEdges( )[ EdgeId ];
@@ -1092,8 +1092,8 @@ public:
 	inline
 	const SurfaceMeshFace *
 	GetNextEnteranceFace(
-		__in const SurfaceMeshFace * ExitFace,
-		__in unsigned short NextIsland
+		nwn2dev__in const SurfaceMeshFace * ExitFace,
+		nwn2dev__in unsigned short NextIsland
 		) const
 	{
 		for (size_t i = 0; i < 3; i += 1)
@@ -1124,7 +1124,7 @@ public:
 	inline
 	bool
 	PositionWalkable(
-		__in const NWN::Vector2 & v
+		nwn2dev__in const NWN::Vector2 & v
 		) const
 	{
 		const SurfaceMeshFace * Face = FindFace( v );
@@ -1142,8 +1142,8 @@ public:
 	inline
 	unsigned short
 	GetNextIsland(
-		__in unsigned short Island1,
-		__in unsigned short Island2
+		nwn2dev__in unsigned short Island1,
+		nwn2dev__in unsigned short Island2
 		) const
 	{
 //		if ((Island1 >= m_Islands.size( )) ||
@@ -1160,8 +1160,8 @@ public:
 	inline
 	unsigned long
 	GetNextIslandExit(
-		__in unsigned short Island1,
-		__in unsigned short Island2
+		nwn2dev__in unsigned short Island1,
+		nwn2dev__in unsigned short Island2
 		) const
 	{
 		unsigned short NextIsland;
@@ -1192,8 +1192,8 @@ public:
 	inline
 	bool
 	PathExists(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		) const
 	{
 		const SurfaceMeshFace * face1;
@@ -1237,8 +1237,8 @@ public:
 
 	bool
 	StraightPathExists(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2,
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2,
 		__out_opt NWN::Vector2 * LastFaceCentroid = NULL
 		) const;
 
@@ -1251,9 +1251,9 @@ public:
 
 	bool
 	CalcContact(
-		__in const NWN::Vector3 & Origin,
-		__in const NWN::Vector3 & NormDir,
-		__out float & IntersectDistance,
+		nwn2dev__in const NWN::Vector3 & Origin,
+		nwn2dev__in const NWN::Vector3 & NormDir,
+		nwn2dev__out float & IntersectDistance,
 		__out_opt const SurfaceMeshFace * * IntersectFace
 		) const;
 
@@ -1265,8 +1265,8 @@ public:
 	inline
 	unsigned long
 	PathIslandLength(
-		__in const NWN::Vector2 & v1,
-		__in const NWN::Vector2 & v2
+		nwn2dev__in const NWN::Vector2 & v1,
+		nwn2dev__in const NWN::Vector2 & v2
 		) const
 	{
 		const SurfaceMeshFace * face1;
@@ -1370,7 +1370,7 @@ public:
 
 	float
 	GetPointHeight(
-		__in const NWN::Vector2 & pt
+		nwn2dev__in const NWN::Vector2 & pt
 		) const;
 
 	//
@@ -1382,7 +1382,7 @@ public:
 	inline
 	float
 	GetPointHeight(
-		__in const NWN::Vector3 & pt3
+		nwn2dev__in const NWN::Vector3 & pt3
 		) const
 	{
 		NWN::Vector2 pt;
@@ -1403,9 +1403,9 @@ public:
 
 	void
 	IntersectTileSurfaceMeshGrid(
-		__out Vector2Vec & IntersectionPoints,
-		__in const NWN::Vector2 & Start,
-		__in const NWN::Vector2 & End
+		nwn2dev__out Vector2Vec & IntersectionPoints,
+		nwn2dev__in const NWN::Vector2 & Start,
+		nwn2dev__in const NWN::Vector2 & End
 		) const;
 
 private:
@@ -1417,7 +1417,7 @@ private:
 	inline
 	float
 	TileGridFloor(
-		__in float f
+		nwn2dev__in float f
 		) const
 	{
 		return (f * m_TileSize) / m_TileSize;

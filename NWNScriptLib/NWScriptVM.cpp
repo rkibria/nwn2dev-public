@@ -57,10 +57,10 @@ Abstract:
 
 
 NWScriptVM::NWScriptVM(
-	__in INWScriptActions * ActionHandler,
-	__in IDebugTextOut * TextOut,
+	nwn2dev__in INWScriptActions * ActionHandler,
+	nwn2dev__in IDebugTextOut * TextOut,
 	__in_ecount_opt( ActionCount ) PCNWACTION_DEFINITION ActionDefs /* = NULL */,
-	__in NWSCRIPT_ACTION ActionCount
+	nwn2dev__in NWSCRIPT_ACTION ActionCount
 	)
 /*++
 
@@ -134,12 +134,12 @@ Environment:
 
 int
 NWScriptVM::ExecuteScript(
-	__in NWScriptReaderPtr Script,
-	__in NWN::OBJECTID ObjectSelf,
-	__in NWN::OBJECTID ObjectInvalid,
-	__in const ScriptParamVec & Params,
-	__in int DefaultReturnCode /* = 0 */,
-	__in ULONG Flags /* = 0 */
+	nwn2dev__in NWScriptReaderPtr Script,
+	nwn2dev__in NWN::OBJECTID ObjectSelf,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in const ScriptParamVec & Params,
+	nwn2dev__in int DefaultReturnCode /* = 0 */,
+	nwn2dev__in ULONG Flags /* = 0 */
 	)
 /*++
 
@@ -257,7 +257,7 @@ Environment:
 
 void
 NWScriptVM::SetDebugLevel(
-	__in ExecDebugLevel DebugLevel
+	nwn2dev__in ExecDebugLevel DebugLevel
 	)
 /*++
 
@@ -285,14 +285,14 @@ Environment:
 
 int
 NWScriptVM::ExecuteScriptInternal(
-	__in NWScriptReaderPtr & Script,
-	__in NWN::OBJECTID ObjectSelf,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in NWScriptReaderPtr & Script,
+	nwn2dev__in NWN::OBJECTID ObjectSelf,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__inout NWScriptStack & VMStack,
-	__in PROGRAM_COUNTER ProgramCounter,
+	nwn2dev__in PROGRAM_COUNTER ProgramCounter,
 	__in_opt const ScriptParamVec * Params,
-	__in int DefaultReturnCode,
-	__in ULONG Flags
+	nwn2dev__in int DefaultReturnCode,
+	nwn2dev__in ULONG Flags
 	)
 /*++
 
@@ -696,8 +696,8 @@ Environment:
 
 void
 NWScriptVM::DebugPrint(
-	__in ExecDebugLevel Level,
-	__in __format_string const char * Fmt,
+	nwn2dev__in ExecDebugLevel Level,
+	nwn2dev__in __format_string const char * Fmt,
 	...
 	) const
 /*++
@@ -736,8 +736,8 @@ Environment:
 
 void
 NWScriptVM::ApplyNCSFixups(
-	__in NWScriptReader * Script,
-	__in bool HasParams
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__in bool HasParams
 	) const
 /*++
 
@@ -911,7 +911,7 @@ Environment:
 
 bool
 NWScriptVM::ScriptHasGlobals(
-	__in NWScriptReader * Script
+	nwn2dev__in NWScriptReader * Script
 	) const
 /*++
 
@@ -965,10 +965,10 @@ Environment:
 
 ULONG
 NWScriptVM::DecodeInstruction(
-	__in NWScriptReader * Script,
-	__out UCHAR & Opcode,
-	__out UCHAR & TypeOpcode,
-	__out ULONG & PCOffset
+	nwn2dev__in NWScriptReader * Script,
+	nwn2dev__out UCHAR & Opcode,
+	nwn2dev__out UCHAR & TypeOpcode,
+	nwn2dev__out ULONG & PCOffset
 	)
 /*++
 
@@ -1150,14 +1150,14 @@ Environment:
 
 int
 NWScriptVM::ExecuteInstructions(
-	__in NWScriptReaderPtr & Script,
-	__in NWN::OBJECTID ObjectSelf,
-	__in NWN::OBJECTID ObjectInvalid,
+	nwn2dev__in NWScriptReaderPtr & Script,
+	nwn2dev__in NWN::OBJECTID ObjectSelf,
+	nwn2dev__in NWN::OBJECTID ObjectInvalid,
 	__inout NWScriptStack & VMStack,
 	__in_opt const ScriptParamVec * Params,
-	__in bool NeedFixup,
-	__in int DefaultReturnCode,
-	__in ULONG Flags
+	nwn2dev__in bool NeedFixup,
+	nwn2dev__in int DefaultReturnCode,
+	nwn2dev__in ULONG Flags
 	)
 /*++
 
@@ -3360,8 +3360,8 @@ Environment:
 #if ANALYZE_SCRIPT
 void
 NWScriptVM::AnalyzeScript(
-	__in NWScriptReaderPtr & Script,
-	__in ULONG Flags
+	nwn2dev__in NWScriptReaderPtr & Script,
+	nwn2dev__in ULONG Flags
 	)
 /*++
 
@@ -3474,10 +3474,10 @@ Environment:
 
 void
 NWScriptVM::PushEntrypointParameters(
-	__in const ScriptParamVec * Params,
-	__in NWScriptReaderPtr & Script,
+	nwn2dev__in const ScriptParamVec * Params,
+	nwn2dev__in NWScriptReaderPtr & Script,
 	__inout NWScriptStack & VMStack,
-	__in ULONG Flags
+	nwn2dev__in ULONG Flags
 	)
 /*++
 
@@ -3594,9 +3594,9 @@ Environment:
 __declspec(noinline)
 void
 NWScriptVM::VMDebuggerCheckForBreakpoint(
-	__in const char * ScriptName,
-	__in PROGRAM_COUNTER PC,
-	__in const NWScriptStack & VMStack,
+	nwn2dev__in const char * ScriptName,
+	nwn2dev__in PROGRAM_COUNTER PC,
+	nwn2dev__in const NWScriptStack & VMStack,
 	__in_opt const char * SymbolName
 	)
 /*++
@@ -3734,7 +3734,7 @@ Environment:
 
 const char *
 NWScriptVM::GetInstructionName(
-	__in UCHAR Opcode
+	nwn2dev__in UCHAR Opcode
 	)
 /*++
 
@@ -3814,7 +3814,7 @@ Environment:
 
 const char *
 NWScriptVM::GetTypeOpcodeName(
-	__in UCHAR TypeOpcode
+	nwn2dev__in UCHAR TypeOpcode
 	)
 /*++
 

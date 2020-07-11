@@ -21,10 +21,10 @@ Abstract:
 #include "WorldObject.h"
 
 WorldObject::WorldObject(
-	__in ResourceManager & ResMan,
-	__in IDebugTextOut * TextWriter,
-	__in const std::vector< std::string > & MDBResRefs,
-	__in const std::string & GR2ResRef
+	nwn2dev__in ResourceManager & ResMan,
+	nwn2dev__in IDebugTextOut * TextWriter,
+	nwn2dev__in const std::vector< std::string > & MDBResRefs,
+	nwn2dev__in const std::string & GR2ResRef
 	)
 /*++
 
@@ -117,9 +117,9 @@ Environment:
 
 bool
 WorldObject::IntersectRay(
-	__in const NWN::Vector3 & Origin,
-	__in const NWN::Vector3 & NormDir,
-	__out NWN::Vector3 & IntersectNormal,
+	nwn2dev__in const NWN::Vector3 & Origin,
+	nwn2dev__in const NWN::Vector3 & NormDir,
+	nwn2dev__out NWN::Vector3 & IntersectNormal,
 	__out_opt float * IntersectDistance
 	) const
 /*++
@@ -171,8 +171,8 @@ Environment:
 
 NWN::Vector3
 WorldObject::LocalToWorld(
-	__in const NWN::Vector3 & pt,
-	__in NWN::NWN2_BodyPieceSlot Slot /* = NWN::BPS_DEFAULT */
+	nwn2dev__in const NWN::Vector3 & pt,
+	nwn2dev__in NWN::NWN2_BodyPieceSlot Slot /* = NWN::BPS_DEFAULT */
 	) const
 /*++
 
@@ -213,9 +213,9 @@ Environment:
 
 void
 WorldObject::UpdateWorldTransformForHeading(
-	__in const NWN::Vector3 & Heading,
-	__in const NWN::Vector3 & Up,
-	__in const NWN::Vector3 & Scale
+	nwn2dev__in const NWN::Vector3 & Heading,
+	nwn2dev__in const NWN::Vector3 & Up,
+	nwn2dev__in const NWN::Vector3 & Scale
 	)
 /*++
 
@@ -307,7 +307,7 @@ Environment:
 
 void
 WorldObject::UpdateWorldTransformForRotation(
-	__in const NWN::Quaternion & Rotation
+	nwn2dev__in const NWN::Quaternion & Rotation
 	)
 /*++
 
@@ -337,8 +337,8 @@ Environment:
 
 void
 WorldObject::UpdateWorldTransformForScale(
-	__in const NWN::Vector3 & Scale,
-	__in const NWN::Vector3 & PrevScale
+	nwn2dev__in const NWN::Vector3 & Scale,
+	nwn2dev__in const NWN::Vector3 & PrevScale
 	)
 /*++
 
@@ -406,7 +406,7 @@ Environment:
 
 WorldObject::ModelColliderPtr
 WorldObject::LoadModel(
-	__in const NWN::ResRef32 & ResRef
+	nwn2dev__in const NWN::ResRef32 & ResRef
 	)
 /*++
 
@@ -449,7 +449,7 @@ Environment:
 
 WorldObject::ModelSkeletonPtr
 WorldObject::LoadSkeleton(
-	__in const NWN::ResRef32 & ResRef
+	nwn2dev__in const NWN::ResRef32 & ResRef
 	)
 /*++
 

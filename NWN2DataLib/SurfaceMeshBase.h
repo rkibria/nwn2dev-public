@@ -141,7 +141,7 @@ public:
 	inline
 	void
 	AddPoint(
-		__in const NWN::Vector3 & v
+		nwn2dev__in const NWN::Vector3 & v
 		)
 	{
 		m_Points.push_back( v );
@@ -150,7 +150,7 @@ public:
 	inline
 	void
 	AddEdge(
-		__in const SurfaceMeshEdge & Edge
+		nwn2dev__in const SurfaceMeshEdge & Edge
 		)
 	{
 		m_Edges.push_back( Edge );
@@ -159,7 +159,7 @@ public:
 	inline
 	void
 	AddTriangle(
-		__in const SurfaceMeshTriangle & Triangle
+		nwn2dev__in const SurfaceMeshTriangle & Triangle
 		)
 	{
 		m_Triangles.push_back( Triangle );
@@ -174,7 +174,7 @@ public:
 	inline
 	void
 	Validate(
-		__in size_t IslandTableSize
+		nwn2dev__in size_t IslandTableSize
 		) const
 	{
 		for (EdgeVec::const_iterator it = m_Edges.begin( );
@@ -270,9 +270,9 @@ public:
 	static
 	bool
 	IsPointInTriangle(
-		__in const SurfaceMeshFace * Face,
-		__in const NWN::Vector2 & pt,
-		__in const PointVec & Points
+		nwn2dev__in const SurfaceMeshFace * Face,
+		nwn2dev__in const NWN::Vector2 & pt,
+		nwn2dev__in const PointVec & Points
 		);
 
 	//
@@ -282,7 +282,7 @@ public:
 	inline
 	void
 	UpdateBoundingBox(
-		__in const SurfaceMeshPoint * Pt
+		nwn2dev__in const SurfaceMeshPoint * Pt
 		)
 	{
 		if (Pt->x < m_MinBound.x)
