@@ -6,9 +6,19 @@
 int main( int argc, char* argv[] )
 {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[ 0 ] << " <CLASSES.2DA file>" << std::endl;
+        std::cerr << "Usage: " << argv[ 0 ] << " <dialog.TLK file>" << std::endl;
         return 1;
     }
 
-    TlkFileReader<NWN::ResRef16> tlk( "" );
+    using TlkFileReader16 = TlkFileReader<NWN::ResRef16>;
+
+    const auto filepath = argv[ 1 ];
+    TlkFileReader16 tlk( filepath );
+
+    std::string strVal;
+    for( TlkFileReader16::StrRef ref = 0; ref < 10; ++ref ) {
+        if( tlk.GetTalkString( ref, strVal ) ) {
+            std::cout << ref << ": " << strVal << std::endl;
+        }
+    }
 }
