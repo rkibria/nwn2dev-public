@@ -80,7 +80,7 @@ Environment:
 }
 
 template< typename ResRefT >
-typename DirectoryFileReader< ResRefT >::FileHandle
+FileHandle
 DirectoryFileReader< ResRefT >::OpenFile(
 	nwn2dev__in const ResRefT & FileName,
 	nwn2dev__in ResType Type
@@ -126,7 +126,7 @@ Environment:
 		FileNameStr.append( FileName.RefStr, p - FileName.RefStr );
 
 	FileNameStr += ".";
-	FileNameStr += ResTypeToExt( Type );
+    FileNameStr += this->ResTypeToExt( Type );
 
 	h = CreateFileA(
 		FileNameStr.c_str( ),
@@ -144,9 +144,9 @@ Environment:
 }
 
 template< typename ResRefT >
-typename DirectoryFileReader< ResRefT >::FileHandle
+FileHandle
 DirectoryFileReader< ResRefT >::OpenFileByIndex(
-	nwn2dev__in typename FileId FileIndex
+    nwn2dev__in FileId FileIndex
 	)
 /*++
 
@@ -195,7 +195,7 @@ Environment:
 template< typename ResRefT >
 bool
 DirectoryFileReader< ResRefT >::CloseFile(
-	nwn2dev__in typename DirectoryFileReader< ResRefT >::FileHandle File
+    nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -285,7 +285,7 @@ Environment:
 template< typename ResRefT >
 size_t
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileSize(
-	nwn2dev__in typename DirectoryFileReader< ResRefT >::FileHandle File
+    nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -319,9 +319,9 @@ Environment:
 }
 
 template< typename ResRefT >
-typename DirectoryFileReader< ResRefT >::ResType
+ResType
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileType(
-	nwn2dev__in typename DirectoryFileReader< ResRefT >::FileHandle File
+    nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -357,8 +357,8 @@ Environment:
 template< typename ResRefT >
 bool
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileEntry(
-	nwn2dev__in typename FileId FileIndex,
-	nwn2dev__out typename ResRefT & ResRef,
+    nwn2dev__in FileId FileIndex,
+    nwn2dev__out ResRefT & ResRef,
 	nwn2dev__out ResType & Type
 	)
 /*++
@@ -401,7 +401,7 @@ Environment:
 }
 
 template< typename ResRefT >
-typename DirectoryFileReader< ResRefT >::FileId
+FileId
 DirectoryFileReader< ResRefT >::GetEncapsulatedFileCount(
 	)
 /*++
@@ -430,7 +430,7 @@ Environment:
 }
 
 template< typename ResRefT >
-typename DirectoryFileReader< ResRefT >::AccessorType
+AccessorType
 DirectoryFileReader< ResRefT >::GetResourceAccessorName(
 	nwn2dev__in FileHandle File,
 	nwn2dev__out std::string & AccessorName
@@ -550,7 +550,7 @@ Environment:
 				continue;
 			}
 
-			Type = ExtToResType( Ext + 1 );
+            Type = this->ExtToResType( Ext + 1 );
 
 			//
 			// Ignore unrecognized types.
@@ -575,7 +575,7 @@ Environment:
 
 			ZeroMemory( &Entry.Name, sizeof( Entry.Name ) );
 
-			memcpy( &Entry.Name, ResName, min( Len, sizeof( Entry.Name ) ) );
+            memcpy( &Entry.Name, ResName, std::min( Len, sizeof( Entry.Name ) ) );
 
 			m_DirectoryEntries.push_back( Entry );
 
@@ -590,4 +590,4 @@ Environment:
 	FindClose( Find );
 }
 
-template DirectoryFileReader< NWN::ResRef32 >;
+// template DirectoryFileReader< NWN::ResRef32 >;

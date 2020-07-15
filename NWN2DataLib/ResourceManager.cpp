@@ -25,7 +25,7 @@ Abstract:
 // Define to 1 to enable performance statistics tracing.
 //
 
-#define RES_DEBUG 0
+#define RES_DEBUG 1
 
 
 
@@ -1823,7 +1823,7 @@ Environment:
 
 	Handle = Accessor->OpenFileByIndex( FileIndex );
 
-	if (Handle == IResourceAccessor< ResRefType >::INVALID_FILE)
+    if (Handle == INVALID_FILE)
 		throw std::runtime_error( "OpenFileByIndex failed." );
 
 	//

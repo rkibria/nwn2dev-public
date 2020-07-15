@@ -43,11 +43,11 @@ enum AccessorType
         AccessorTypeCustom
 };
 
+static const FileHandle INVALID_FILE = 0;
+
 template< typename ResRefT >
 struct IResourceAccessor
 {
-
-	static const FileHandle INVALID_FILE = 0;
 
 	//
 	// Open an encapsulated file by resref.
