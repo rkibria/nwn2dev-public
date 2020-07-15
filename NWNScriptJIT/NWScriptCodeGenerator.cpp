@@ -154,7 +154,7 @@ Environment:
   m_ILGenCtx( nullptr ),
   m_EngineStructureTypes( nullptr )
 {
-	C_ASSERT( NUM_ENGINE_STRUCTURE_TYPES == LAST_ENGINE_STRUCTURE + 1 );
+	//REENABLE_ME_C_ASSERT( NUM_ENGINE_STRUCTURE_TYPES == LAST_ENGINE_STRUCTURE + 1 );
 }
 
 NWScriptCodeGenerator::!NWScriptCodeGenerator(

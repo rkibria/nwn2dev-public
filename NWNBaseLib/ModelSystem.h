@@ -171,7 +171,7 @@ namespace NWN
 		Num_Accessories
 	};
 
-	C_ASSERT( Num_Accessories == 22 );
+	//REENABLE_ME_C_ASSERT( Num_Accessories == 22 );
 
 	//
 	// Animation system parameters.

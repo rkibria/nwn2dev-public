@@ -266,7 +266,7 @@ private:
 	};
 
 	typedef std::vector <DefineEntry *> DefineVec;
-	typedef stdext::hash_map <FastHashMapStr, DefineEntry *,
+	typedef std::unordered_map <FastHashMapStr, DefineEntry *,
 		FastHashMapStrHasher> DefineLookupMap;
 	typedef std::stack <PreprocessorIf> PreprocessorIfStack;
 

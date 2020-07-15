@@ -608,7 +608,7 @@ namespace NWNScriptLib
 
 	typedef stdext::hash_set< VariablePtr > VariableEquivalenceSet;
 	typedef swutil::SharedPtr< VariableEquivalenceSet > EquivalenceSetPtr;
-	typedef stdext::hash_map< VariablePtr, EquivalenceSetPtr > EquivalenceSetMap;
+	typedef std::unordered_map< VariablePtr, EquivalenceSetPtr > EquivalenceSetMap;
 
 }
 

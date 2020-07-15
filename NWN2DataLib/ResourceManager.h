@@ -438,7 +438,7 @@ public:
 			return false;
 
 		ZeroMemory( &Value, sizeof( Value ) );
-		memcpy( &Value, V.data( ), min( V.size( ), sizeof( Value ) ) );
+                memcpy( &Value, V.data( ), std::min( V.size( ), sizeof( Value ) ) );
 
 		return true;
 	}
@@ -461,7 +461,7 @@ public:
 			return false;
 
 		ZeroMemory( &Value, sizeof( Value ) );
-		memcpy( &Value, V.data( ), min( V.size( ), sizeof( Value ) ) );
+                memcpy( &Value, V.data( ), std::min( V.size( ), sizeof( Value ) ) );
 
 		return true;
 	}
@@ -763,7 +763,7 @@ public:
 		ZeroMemory( &ResRef, sizeof( ResRef ) ); // Satisfy overzealous compiler
 
 		l = Str.length( );
-		l = min( l, sizeof( ResRef ) );
+                l = std::min( l, sizeof( ResRef ) );
 
 		if (l != 0)
 		{
@@ -788,7 +788,7 @@ public:
 		size_t        l;
 
 		l = Str.length( );
-		l = min( l, sizeof( ResRef ) );
+                l = std::min( l, sizeof( ResRef ) );
 
 		if (l != 0)
 		{
@@ -1012,7 +1012,7 @@ public:
 	void
 	LoadEncapsulatedFile(
 		nwn2dev__in IResourceAccessor< ResRefType > * Accessor,
-		nwn2dev__in typename IResourceAccessor< ResRefType >::FileId FileIndex,
+		nwn2dev__in FileId FileIndex,
 		nwn2dev__out std::vector< unsigned char > & FileContents
 		);
 
@@ -1280,29 +1280,11 @@ private:
 	GetHakFiles(
 		)
 	{
-		C_ASSERT( sizeof( ResRefLoadType ) != sizeof( ResRefLoadType ) );
+		//REENABLE_ME_C_ASSERT( sizeof( ResRefLoadType ) != sizeof( ResRefLoadType ) );
 
 		NWN_ASSERT( 0 );
 
 		return *new std::vector< swutil::SharedPtr< ResRefLoadType > >( );
-	}
-
-	template< >
-	inline
-	std::vector< swutil::SharedPtr< ::ErfFileReader< NWN::ResRef32 > > > &
-	GetHakFiles(
-		)
-	{
-		return m_HakFiles;
-	}
-
-	template< >
-	inline
-	std::vector< swutil::SharedPtr< ::ErfFileReader< NWN::ResRef16 > > > &
-	GetHakFiles(
-		)
-	{
-		return m_HakFiles16;
 	}
 
 	//
@@ -1385,7 +1367,7 @@ private:
 		bool        Delete;
 	};
 
-	typedef const enum _PROVIDER_TYPE * PCPROVIDER_TYPE;
+        // typedef const enum _PROVIDER_TYPE * PCPROVIDER_TYPE;
 
 	//
 	// Define the resource directory entry, used to provide quick access to
@@ -1475,7 +1457,7 @@ private:
 	// by name quickly.
 	//
 
-	typedef stdext::hash_map< std::string, size_t > ResourceEntryMap;
+	typedef std::unordered_map< std::string, size_t > ResourceEntryMap;
 
 	//
 	// Define the array of all known resources.
@@ -1753,5 +1735,23 @@ private:
 typedef DemandResource< std::string >   DemandResourceStr;
 typedef DemandResource< NWN::ResRef32 > DemandResource32;
 typedef DemandResource< NWN::ResRef16 > DemandResource16;
+
+template< >
+inline
+std::vector< swutil::SharedPtr< ::ErfFileReader< NWN::ResRef32 > > > &
+ResourceManager::GetHakFiles(
+        )
+{
+        return m_HakFiles;
+}
+
+template< >
+inline
+std::vector< swutil::SharedPtr< ::ErfFileReader< NWN::ResRef16 > > > &
+ResourceManager::GetHakFiles(
+        )
+{
+        return m_HakFiles16;
+}
 
 #endif

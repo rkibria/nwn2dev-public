@@ -33,19 +33,19 @@ Abstract:
 #include "TextOut.h"
 #define ResDebug m_TextWriter->WriteText
 #else
-#define ResDebug  __noop
+#define ResDebug
 #endif // RES_DEBUG
 
 #if RES_DEBUG >= 1
 #define ResDebug1 ResDebug
 #else
-#define ResDebug1 __noop
+#define ResDebug1
 #endif // RES_DEBUG >= 1
 
 #if RES_DEBUG >= 2
 #define ResDebug2 ResDebug
 #else
-#define ResDebug2 __noop
+#define ResDebug2
 #endif // RES_DEBUG >= 2
 
 //
@@ -606,7 +606,7 @@ Environment:
 				if (!Entry->Accessor->ReadEncapsulatedFile(
 					Handle,
 					Offset,
-					min( BytesLeft, CHUNK_SIZE ),
+                    std::min( BytesLeft, static_cast<size_t>(CHUNK_SIZE) ),
 					&Read,
 					Buffer))
 				{
@@ -1163,7 +1163,7 @@ Environment:
 	}
 }
 
-ResourceManager::FileHandle
+FileHandle
 ResourceManager::OpenFile(
 	nwn2dev__in const ResRefT & FileName,
 	nwn2dev__in ResType Type
@@ -1364,7 +1364,7 @@ Environment:
 	return INVALID_FILE;
 }
 
-ResourceManager::FileHandle
+FileHandle
 ResourceManager::OpenFileByIndex(
 	nwn2dev__in FileId FileIndex
 	)
@@ -1617,7 +1617,7 @@ Environment:
 	return it->second.Accessor->GetEncapsulatedFileSize( it->second.Handle );
 }
 
-ResourceManager::ResType
+ResType
 ResourceManager::GetEncapsulatedFileType(
 	nwn2dev__in FileHandle File
 	)
@@ -1700,7 +1700,7 @@ Environment:
 		Type);
 }
 
-ResourceManager::FileId
+FileId
 ResourceManager::GetEncapsulatedFileCount(
 	)
 /*++
@@ -1728,7 +1728,7 @@ Environment:
 	return m_ResourceEntries.size( );
 }
 
-ResourceManager::AccessorType
+AccessorType
 ResourceManager::GetResourceAccessorName(
 	nwn2dev__in FileHandle File,
 	nwn2dev__out std::string & AccessorName
@@ -1782,7 +1782,7 @@ template< typename ResRefType >
 void
 ResourceManager::LoadEncapsulatedFile(
 	nwn2dev__in IResourceAccessor< ResRefType > * Accessor,
-	nwn2dev__in typename IResourceAccessor< ResRefType >::FileId FileIndex,
+    nwn2dev__in FileId FileIndex,
 	nwn2dev__out std::vector< unsigned char > & FileContents
 	)
 /*++
@@ -1811,7 +1811,7 @@ Environment:
 
 --*/
 {
-	IResourceAccessor< ResRefType >::FileHandle   Handle;
+    FileHandle   Handle;
 	size_t                                        FileSize;
 	size_t                                        BytesLeft;
 	size_t                                        Offset;
@@ -2284,8 +2284,8 @@ Environment:
 
 --*/
 {
-	typedef swutil::SharedPtr< typename ::ErfFileReader< typename ResRefLoadType > > ErfFileReaderPtr;
-	typedef std::vector< typename ErfFileReaderPtr > HakVecType;
+    typedef swutil::SharedPtr< ::ErfFileReader< ResRefLoadType > > ErfFileReaderPtr;
+    typedef std::vector< ErfFileReaderPtr > HakVecType;
 
 	HakVecType & HakFiles = GetHakFiles< ResRefLoadType >( );
 
@@ -3921,7 +3921,7 @@ Environment:
 #endif
 }
 
-ResourceManager::FileHandle
+FileHandle
 ResourceManager::AllocateFileHandle(
 	)
 /*++
@@ -4060,15 +4060,15 @@ Environment:
 	return it->second.get( );
 }
 
-template DemandResource< std::string >;
-template DemandResource< NWN::ResRef16 >;
-template DemandResource< NWN::ResRef32 >;
+//template DemandResource< std::string >;
+//template DemandResource< NWN::ResRef16 >;
+//template DemandResource< NWN::ResRef32 >;
 
 template
 void
 ResourceManager::LoadEncapsulatedFile< NWN::ResRef16 >(
 	nwn2dev__in IResourceAccessor< NWN::ResRef16 > * Accessor,
-	nwn2dev__in IResourceAccessor< NWN::ResRef16 >::FileId FileIndex,
+    nwn2dev__in FileId FileIndex,
 	nwn2dev__out std::vector< unsigned char > & FileContents
 	);
 
@@ -4076,6 +4076,6 @@ template
 void
 ResourceManager::LoadEncapsulatedFile< NWN::ResRef32 >(
 	nwn2dev__in IResourceAccessor< NWN::ResRef32 > * Accessor,
-	nwn2dev__in IResourceAccessor< NWN::ResRef32 >::FileId FileIndex,
+    nwn2dev__in FileId FileIndex,
 	nwn2dev__out std::vector< unsigned char > & FileContents
 	);

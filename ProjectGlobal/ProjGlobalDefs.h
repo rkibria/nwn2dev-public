@@ -32,6 +32,8 @@ extern "C"
 #define nwn2dev__out_bcount_full_opt( FieldLength )
 #define nwn2dev__deref_opt_out
 #define nwn2dev__in_bcount_opt( FieldLength )
+#define nwn2dev__deref
+#define nwn2dev__format_string
 
 //
 // Test if an argument is present (i.e. non-NULL) or not.
@@ -50,11 +52,8 @@ extern "C"
 // assertion instrumentation).
 //
 
-#define NWN_ASSERT( _exp )                            \
-	((!(_exp)) ?                                      \
-	(__annotation( L"Debug", L"AssertFail", L#_exp ), \
-	 DbgRaiseAssertionFailure( ), FALSE) :            \
-	 TRUE)
+#define NWN_ASSERT( x ) assert( (x) )
+
 
 #ifdef _MSC_VER
 #if defined(_X86_) || defined(_AMD64_)

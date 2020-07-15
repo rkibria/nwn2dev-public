@@ -32,7 +32,7 @@ namespace GrannyNative
 		ULONG Reserved[ 2  ];
 	};
 
-	C_ASSERT( sizeof( GrnFileBaseHeader ) == 0x20 );
+	//REENABLE_ME_C_ASSERT( sizeof( GrnFileBaseHeader ) == 0x20 );
 
 	struct GrnReference
 	{
@@ -40,7 +40,7 @@ namespace GrannyNative
 		ULONG Offset;
 	};
 
-	C_ASSERT( sizeof( GrnReference ) == 0x8 );
+	//REENABLE_ME_C_ASSERT( sizeof( GrnReference ) == 0x8 );
 
 	struct GrnSection
 	{
@@ -56,7 +56,7 @@ namespace GrannyNative
 		ULONG MixedMarshallingFixupArrayCount;
 	};
 
-	C_ASSERT( sizeof( GrnSection ) == 0x2C );
+	//REENABLE_ME_C_ASSERT( sizeof( GrnSection ) == 0x2C );
 
 	struct GrnPointerFixup
 	{
@@ -64,7 +64,7 @@ namespace GrannyNative
 		GrnReference To;
 	};
 
-	C_ASSERT( sizeof( GrnPointerFixup ) == 0xC );
+	//REENABLE_ME_C_ASSERT( sizeof( GrnPointerFixup ) == 0xC );
 
 	struct GrnMixedMarshallingFixup
 	{
@@ -73,7 +73,7 @@ namespace GrannyNative
 		GrnReference Type[ 2 ];
 	};
 
-	C_ASSERT( sizeof( GrnMixedMarshallingFixup ) == 0x10 );
+	//REENABLE_ME_C_ASSERT( sizeof( GrnMixedMarshallingFixup ) == 0x10 );
 
 	struct GrnFileHeader
 	{
@@ -89,7 +89,7 @@ namespace GrannyNative
 		ULONG             ExtraTags;
 	};
 
-	C_ASSERT( sizeof( GrnFileHeader ) == 0x38 + sizeof( GrnFileBaseHeader ) );
+	//REENABLE_ME_C_ASSERT( sizeof( GrnFileHeader ) == 0x38 + sizeof( GrnFileBaseHeader ) );
 
 #include <poppack.h>
 }

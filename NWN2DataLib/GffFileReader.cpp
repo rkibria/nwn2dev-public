@@ -1093,7 +1093,7 @@ Environment:
 bool
 GffFileReader::GetFieldSizeAndData(
 	nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
-	__deref nwn2dev__out const void * * FieldData,
+	nwn2dev__deref nwn2dev__out const void * * FieldData,
 	nwn2dev__out size_t * FieldDataLength
 	) const
 /*++

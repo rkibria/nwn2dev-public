@@ -36,7 +36,7 @@ struct CollisionSphereFile
 	float         Radius;
 };
 
-C_ASSERT( sizeof( CollisionSphereFile ) == 8 );
+//REENABLE_ME_C_ASSERT( sizeof( CollisionSphereFile ) == 8 );
 #include <poppack.h>
 
 struct CollisionSphere
@@ -68,7 +68,7 @@ public:
 		unsigned long  NumItems;
 	};
 
-	C_ASSERT( sizeof( CollisionSpheresHeader ) == 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( CollisionSpheresHeader ) == 4 );
 
 #include <poppack.h>
 

@@ -75,7 +75,7 @@ public:
 		unsigned long FaceOffset; // Version 0x6C or later
 	};
 
-	C_ASSERT( sizeof( TileSurfaceMeshHeader ) == 57 );
+	//REENABLE_ME_C_ASSERT( sizeof( TileSurfaceMeshHeader ) == 57 );
 
 	struct PathTableHeader
 	{
@@ -85,7 +85,7 @@ public:
 		unsigned long RLETableSize;
 	};
 
-	C_ASSERT( sizeof( PathTableHeader ) == 13 );
+	//REENABLE_ME_C_ASSERT( sizeof( PathTableHeader ) == 13 );
 
 	struct IslandHeader
 	{
@@ -95,7 +95,7 @@ public:
 		unsigned long FaceCount;
 	};
 
-	C_ASSERT( sizeof( IslandHeader ) == 24 );
+	//REENABLE_ME_C_ASSERT( sizeof( IslandHeader ) == 24 );
 
 #include <poppack.h>
 
@@ -106,7 +106,7 @@ public:
 		float          m_Weight;
 	};
 
-	C_ASSERT( sizeof( IslandPathNode ) == 8 );
+	//REENABLE_ME_C_ASSERT( sizeof( IslandPathNode ) == 8 );
 
 	typedef unsigned char PathNode;
 

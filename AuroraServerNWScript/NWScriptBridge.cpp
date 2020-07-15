@@ -1065,7 +1065,7 @@ Environment:
 	unsigned long               ParamsSize;
 	NWScriptStack               Stack;
 
-	C_ASSERT( MAX_ACTION_ID == MAX_ACTION_ID_NWN2 );
+	//REENABLE_ME_C_ASSERT( MAX_ACTION_ID == MAX_ACTION_ID_NWN2 );
 
 	m_IntegerSPSize = Stack.GetStackIntegerSize( );
 

@@ -47,7 +47,7 @@ struct WMVertexFile
 	NWN::Vector3 Position;
 };
 
-C_ASSERT( sizeof( WMVertexFile ) == 3 * 4 );
+//REENABLE_ME_C_ASSERT( sizeof( WMVertexFile ) == 3 * 4 );
 
 struct WMFaceFile
 {
@@ -55,7 +55,7 @@ struct WMFaceFile
 	unsigned long  Flags;
 };
 
-C_ASSERT( sizeof( WMFaceFile ) == 3 * 2 + 4 );
+//REENABLE_ME_C_ASSERT( sizeof( WMFaceFile ) == 3 * 2 + 4 );
 
 #include <poppack.h>
 
@@ -104,7 +104,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	C_ASSERT( sizeof( WalkHeader ) == 32 + 12 );
+	//REENABLE_ME_C_ASSERT( sizeof( WalkHeader ) == 32 + 12 );
 
 #include <poppack.h>
 

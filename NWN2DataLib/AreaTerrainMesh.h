@@ -82,7 +82,7 @@ public:
 		NWN::Vector2          weights; // XY1
 	};
 
-	C_ASSERT( sizeof( TerrainVertex ) == 44 );
+	//REENABLE_ME_C_ASSERT( sizeof( TerrainVertex ) == 44 );
 
 	typedef unsigned short TerrainFaceVertexIndex;
 
@@ -91,7 +91,7 @@ public:
 		unsigned short Vertex[ 3 ]; // Must match TerrainFaceVertexIndex
 	};
 
-	C_ASSERT( sizeof( TerrainFace ) == 6 );
+	//REENABLE_ME_C_ASSERT( sizeof( TerrainFace ) == 6 );
 
 	struct TerrainGrassHeader
 	{
@@ -100,7 +100,7 @@ public:
 		unsigned long Blades;
 	};
 
-	C_ASSERT( sizeof( TerrainGrassHeader ) == 64 + 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( TerrainGrassHeader ) == 64 + 4 );
 
 	struct TerrainGrassBlade
 	{
@@ -109,7 +109,7 @@ public:
 		NWN::Vector3 uv_0; // Offset
 	};
 
-	C_ASSERT( sizeof( TerrainGrassBlade ) == 3 * (3 * 4 ) );
+	//REENABLE_ME_C_ASSERT( sizeof( TerrainGrassBlade ) == 3 * (3 * 4 ) );
 
 #include <poppack.h>
 

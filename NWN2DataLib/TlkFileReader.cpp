@@ -85,8 +85,8 @@ Environment:
 		throw;
 	}
 
-	C_ASSERT( sizeof( TLK_HEADER ) == 5 * 4 );
-	C_ASSERT( sizeof( TLK_STRING ) == 6 * 4 + sizeof( ResRefT ) );
+	//REENABLE_ME_C_ASSERT( sizeof( TLK_HEADER ) == 5 * 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( TLK_STRING ) == 6 * 4 + sizeof( ResRefT ) );
 }
 
 template< typename ResRefT >

@@ -751,7 +751,7 @@ Environment:
 	{
 		ERF_KEY Key;
 
-		C_ASSERT( sizeof( Key.FileName ) <= sizeof( (*it)->ResRef ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Key.FileName ) <= sizeof( (*it)->ResRef ) );
 
 		memcpy( &Key.FileName, &(*it)->ResRef, sizeof( Key.FileName ) );
 

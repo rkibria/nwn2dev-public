@@ -191,8 +191,8 @@ Environment:
 
 			Skeleton->AddBone( Bone );
 
-			C_ASSERT( sizeof( M33 ) == sizeof( granny2::RHMatrix3 ) );
-			C_ASSERT( sizeof( M44 ) == sizeof( granny2::RHMatrix4 ) );
+			//REENABLE_ME_C_ASSERT( sizeof( M33 ) == sizeof( granny2::RHMatrix3 ) );
+			//REENABLE_ME_C_ASSERT( sizeof( M44 ) == sizeof( granny2::RHMatrix4 ) );
 		}
 
 		//

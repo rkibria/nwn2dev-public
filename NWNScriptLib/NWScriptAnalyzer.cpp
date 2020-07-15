@@ -34,7 +34,7 @@ Abstract:
 
 void
 DebugPrintOutStdErr(
-	nwn2dev__in __format_string const char * Fmt,
+	nwn2dev__in nwn2dev__format_string const char * Fmt,
 	...
 	)
 /*++
@@ -747,8 +747,8 @@ void
 NWScriptAnalyzer::GetInstructionNames(
 	nwn2dev__in UCHAR Opcode,
 	nwn2dev__in UCHAR TypeOpcode,
-	__deref nwn2dev__out const char * * OpcodeName,
-	__deref nwn2dev__out const char * * TypeOpcodeName
+	nwn2dev__deref nwn2dev__out const char * * OpcodeName,
+	nwn2dev__deref nwn2dev__out const char * * TypeOpcodeName
 	)
 /*++
 

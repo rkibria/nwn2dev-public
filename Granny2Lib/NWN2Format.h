@@ -34,14 +34,14 @@ typedef struct RHMatrix3
 	Point3 m[3];
 } RHMatrix3;
 
-C_ASSERT( sizeof( RHMatrix3 ) == 3 * 3 * 4 );
+//REENABLE_ME_C_ASSERT( sizeof( RHMatrix3 ) == 3 * 3 * 4 );
 
 typedef struct RHMatrix4
 {
 	Point4 m[4];
 } RHMatrix4;
 
-C_ASSERT( sizeof( RHMatrix4 ) == 4 * 4 * 4 );
+//REENABLE_ME_C_ASSERT( sizeof( RHMatrix4 ) == 4 * 4 * 4 );
 
 #include <poppack.h>
 

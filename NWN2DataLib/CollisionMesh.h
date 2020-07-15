@@ -53,14 +53,14 @@ struct CMVertexFile
 	NWN::Vector3 uvw; // Texture vertex
 };
 
-C_ASSERT( sizeof( CMVertexFile ) == 9 * 4 );
+//REENABLE_ME_C_ASSERT( sizeof( CMVertexFile ) == 9 * 4 );
 
 struct CMFaceFile
 {
 	unsigned short Corners[ 3 ];
 };
 
-C_ASSERT( sizeof( CMFaceFile ) == 3 * 2 );
+//REENABLE_ME_C_ASSERT( sizeof( CMFaceFile ) == 3 * 2 );
 
 #include <poppack.h>
 
@@ -106,7 +106,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	C_ASSERT( sizeof( CollisionHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 );
+	//REENABLE_ME_C_ASSERT( sizeof( CollisionHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 );
 
 #include <poppack.h>
 

@@ -124,7 +124,7 @@ public:
 	bool
 	GetEncapsulatedFileEntry(
 		nwn2dev__in FileId FileIndex,
-		nwn2dev__out typename ResRefT & ResRef,
+                nwn2dev__out ResRefT & ResRef,
 		nwn2dev__out ResType & Type
 		);
 

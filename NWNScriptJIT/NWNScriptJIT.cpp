@@ -857,7 +857,7 @@ Environment:
 		NWScriptSavedState ^ State   = (NWScriptSavedState ^) Handle.Target;
 		NWScriptProgram    ^ Program = State->GetProgram( );
 
-		C_ASSERT( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) );
+		//REENABLE_ME_C_ASSERT( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) );
 
 		Program->PushSavedState(
 			State,
@@ -953,7 +953,7 @@ Environment:
 		NWScriptSavedState ^ SavedState;
 		GCHandle             RetHandle;
 
-		C_ASSERT( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) );
+		//REENABLE_ME_C_ASSERT( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) );
 
 		SavedState = Program->PopSavedState(
 			VMStack,

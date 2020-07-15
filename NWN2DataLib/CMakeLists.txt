@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 add_library( NWN2DataLib STATIC
     2DAFileReader.cpp
     TlkFileReader.cpp
+    ResourceManager.cpp
     )
 
 target_compile_definitions( NWN2DataLib PUBLIC SKIP_ATLENC )

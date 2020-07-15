@@ -195,7 +195,7 @@ public:
 
 	typedef const struct _GFF_HEADER * PCGFF_HEADER;
 
-	C_ASSERT( sizeof( GFF_HEADER ) == 14 * 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_HEADER ) == 14 * 4 );
 
 	typedef struct _GFF_STRUCT_ENTRY
 	{
@@ -206,7 +206,7 @@ public:
 
 	typedef const struct _GFF_STRUCT_ENTRY * PCGFF_STRUCT_ENTRY;
 
-	C_ASSERT( sizeof( GFF_STRUCT_ENTRY ) == 12 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_STRUCT_ENTRY ) == 12 );
 
 	typedef struct _GFF_FIELD_ENTRY
 	{
@@ -217,7 +217,7 @@ public:
 
 	typedef const struct _GFF_FIELD_ENTRY * PCGFF_FIELD_ENTRY;
 
-	C_ASSERT( sizeof( GFF_FIELD_ENTRY ) == 12 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_FIELD_ENTRY ) == 12 );
 
 	typedef struct _GFF_LABEL_ENTRY
 	{
@@ -226,7 +226,7 @@ public:
 
 	typedef const struct _GFF_LABEL_ENTRY * PCGFF_LABEL_ENTRY;
 
-	C_ASSERT( sizeof( GFF_LABEL_ENTRY ) == 16 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_LABEL_ENTRY ) == 16 );
 
 	typedef struct _GFF_LIST_ENTRY
 	{
@@ -236,7 +236,7 @@ public:
 
 	typedef const struct _GFF_LIST_ENTRY * PCGFF_LIST_ENTRY;
 
-	C_ASSERT( sizeof( GFF_LIST_ENTRY ) == 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_LIST_ENTRY ) == 4 );
 
 	typedef struct _GFF_CEXOLOCSUBSTRING_ENTRY
 	{
@@ -247,7 +247,7 @@ public:
 
 	typedef const struct _GFF_CEXOLOCSUBSTRING_ENTRY * PCGFF_CEXOLOCSUBSTRING_ENTRY;
 
-	C_ASSERT( sizeof( GFF_CEXOLOCSUBSTRING_ENTRY ) == 8 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_CEXOLOCSUBSTRING_ENTRY ) == 8 );
 
 	typedef struct _GFF_CEXOLOCSTRING_ENTRY
 	{
@@ -259,7 +259,7 @@ public:
 
 	typedef const struct _GFF_CEXOLOCSTRING_ENTRY * PCGFF_CEXOLOCSTRING_ENTRY;
 
-	C_ASSERT( sizeof( GFF_CEXOLOCSTRING_ENTRY ) == 12 );
+	//REENABLE_ME_C_ASSERT( sizeof( GFF_CEXOLOCSTRING_ENTRY ) == 12 );
 
 #include <poppack.h>
 
@@ -1286,7 +1286,7 @@ private:
 	bool
 	GetFieldSizeAndData(
 		nwn2dev__in const GFF_FIELD_ENTRY & FieldEntry,
-		__deref nwn2dev__out const void * * FieldData,
+		nwn2dev__deref nwn2dev__out const void * * FieldData,
 		nwn2dev__out size_t * FieldDataLength
 		) const;
 

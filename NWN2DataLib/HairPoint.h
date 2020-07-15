@@ -47,7 +47,7 @@ public:
 		NWN::Matrix33  Orientation;
 	};
 
-	C_ASSERT( sizeof( HairHeader ) == 36 + 4 * 3 + 9 * 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( HairHeader ) == 36 + 4 * 3 + 9 * 4 );
 
 #include <poppack.h>
 

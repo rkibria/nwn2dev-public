@@ -32,7 +32,7 @@ struct IDebugTextOut
 	virtual
 	void
 	WriteText(
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		...
 		) = 0;
 
@@ -40,14 +40,14 @@ struct IDebugTextOut
 	void
 	WriteText(
 		nwn2dev__in WORD Attributes,
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		...
 		) = 0;
 
 	virtual
 	void
 	WriteTextV(
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		nwn2dev__in va_list ap
 		) = 0;
 
@@ -55,7 +55,7 @@ struct IDebugTextOut
 	void
 	WriteTextV(
 		nwn2dev__in WORD Attributes,
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		nwn2dev__in va_list ap
 		) = 0;
 };

@@ -540,7 +540,7 @@ Environment:
 	}
 	else
 	{
-		C_ASSERT( sizeof( WalkmeshHeader ) >= sizeof( CompressHeader ) );
+		//REENABLE_ME_C_ASSERT( sizeof( WalkmeshHeader ) >= sizeof( CompressHeader ) );
 
 		//
 		// This is not a compressed ASWM header.  Copy the data we read back

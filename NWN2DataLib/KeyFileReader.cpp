@@ -97,9 +97,9 @@ Environment:
 
 	CloseHandle( File );
 
-	C_ASSERT( sizeof( KEY_HEADER ) == 64 );
-	C_ASSERT( sizeof( KEY_FILE ) == 12 );
-	C_ASSERT( sizeof( KEY_RESOURCE ) == 6 + sizeof( ResRefT ) );
+	//REENABLE_ME_C_ASSERT( sizeof( KEY_HEADER ) == 64 );
+	//REENABLE_ME_C_ASSERT( sizeof( KEY_FILE ) == 12 );
+	//REENABLE_ME_C_ASSERT( sizeof( KEY_RESOURCE ) == 6 + sizeof( ResRefT ) );
 }
 
 template< typename ResRefT >
@@ -483,7 +483,7 @@ Environment:
 {
 	PCKEY_RESOURCE_DESCRIPTOR ResKey;
 
-	C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+	//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
 
 	ResKey = LookupResourceKey( (ResID) FileIndex );
 

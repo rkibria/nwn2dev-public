@@ -58,7 +58,7 @@ public:
 	virtual
 	void
 	WriteText(
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		...
 		)
 	{
@@ -74,7 +74,7 @@ public:
 	void
 	WriteText(
 		nwn2dev__in WORD Attributes,
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		...
 		)
 	{
@@ -91,7 +91,7 @@ public:
 	virtual
 	void
 	WriteTextV(
-		nwn2dev__in __format_string const char* fmt,
+		nwn2dev__in nwn2dev__format_string const char* fmt,
 		nwn2dev__in va_list ap
 		)
 	{

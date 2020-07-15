@@ -576,7 +576,7 @@ Environment:
 
 	ValueI = BYTESWAP_ULONG( ValueI );
 
-	C_ASSERT( sizeof( f ) == sizeof( ValueI ) );
+	//REENABLE_ME_C_ASSERT( sizeof( f ) == sizeof( ValueI ) );
 	memcpy( &f, &ValueI, sizeof( f ) );
 
 	return f;

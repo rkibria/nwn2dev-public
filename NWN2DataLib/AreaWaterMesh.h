@@ -62,7 +62,7 @@ public:
 		NWN::Vector2 uv_1; // XY1
 	};
 
-	C_ASSERT( sizeof( WaterVertex ) == 28 );
+	//REENABLE_ME_C_ASSERT( sizeof( WaterVertex ) == 28 );
 
 	typedef unsigned short WaterFaceVertexIndex;
 
@@ -71,14 +71,14 @@ public:
 		unsigned short Vertex[ 3 ]; // Must match WaterFaceVertexIndex
 	};
 
-	C_ASSERT( sizeof( WaterFace ) == 6 );
+	//REENABLE_ME_C_ASSERT( sizeof( WaterFace ) == 6 );
 
 	struct WaterBitmap
 	{
 		unsigned long Bits[ 24 ][ 48 ];
 	};
 
-	C_ASSERT( sizeof( WaterBitmap ) == 1152 * 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( WaterBitmap ) == 1152 * 4 );
 
 #include <poppack.h>
 

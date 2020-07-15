@@ -47,14 +47,14 @@ struct SMVertexFile
 	float         BoneCount;
 };
 
-C_ASSERT( sizeof( SMVertexFile ) == 15 * 4 + 4 * 4 + 4 + 4 );
+//REENABLE_ME_C_ASSERT( sizeof( SMVertexFile ) == 15 * 4 + 4 * 4 + 4 + 4 );
 
 struct SMFaceFile
 {
 	unsigned short Corners[ 3 ];
 };
 
-C_ASSERT( sizeof( SMFaceFile ) == 3 * 2 );
+//REENABLE_ME_C_ASSERT( sizeof( SMFaceFile ) == 3 * 2 );
 
 #include <poppack.h>
 
@@ -108,7 +108,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	C_ASSERT( sizeof( SkinHeader ) == 64 + sizeof( MODEL_MATERIAL ) + 8 );
+	//REENABLE_ME_C_ASSERT( sizeof( SkinHeader ) == 64 + sizeof( MODEL_MATERIAL ) + 8 );
 
 #include <poppack.h>
 

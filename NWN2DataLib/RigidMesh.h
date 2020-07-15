@@ -44,14 +44,14 @@ struct RMVertexFile
 	NWN::Vector3 uvw; // Texture vertex
 };
 
-C_ASSERT( sizeof( RMVertexFile ) == 15 * 4 );
+//REENABLE_ME_C_ASSERT( sizeof( RMVertexFile ) == 15 * 4 );
 
 struct RMFaceFile
 {
 	unsigned short Corners[ 3 ];
 };
 
-C_ASSERT( sizeof( RMFaceFile ) == 3 * 2 );
+//REENABLE_ME_C_ASSERT( sizeof( RMFaceFile ) == 3 * 2 );
 
 #include <poppack.h>
 
@@ -101,7 +101,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	C_ASSERT( sizeof( RigidHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 );
+	//REENABLE_ME_C_ASSERT( sizeof( RigidHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 );
 
 #include <poppack.h>
 

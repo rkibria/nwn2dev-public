@@ -136,7 +136,7 @@ public:
 	bool
 	GetEncapsulatedFileEntry(
 		nwn2dev__in FileId FileIndex,
-		nwn2dev__out typename ResRefIf & ResRef,
+                nwn2dev__out ResRefIf & ResRef,
 		nwn2dev__out ResType & Type
 		);
 
@@ -217,7 +217,7 @@ private:
 		unsigned long ResID;                   // Bits 0-19 -> BIF file index (within BIF's resource table), bits 20-31 -> BIF index (within key file table)
 	} KEY_RESOURCE, * PKEY_RESOURCE;
 
-	typedef const struct _KEY_FILE * PCKEY_FILE;
+        // typedef const struct _KEY_FILE * PCKEY_FILE;
 
 #include <poppack.h>
 
@@ -247,9 +247,9 @@ private:
 		nwn2dev__in ResType Type
 		) const
 	{
-		C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+		//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
 
-		for (KeyResVec::const_iterator it = m_KeyResDir.begin( );
+                for (auto it = m_KeyResDir.begin( );
 		     it != m_KeyResDir.end( );
 		     ++it)
 		{

@@ -97,7 +97,7 @@ public:
 			nwn2dev__in PROGRAM_COUNTER PC,
 			nwn2dev__in int StackIndex,
 			nwn2dev__in const char * What,
-			nwn2dev__in __format_string const char * Fmt,
+			nwn2dev__in nwn2dev__format_string const char * Fmt,
 			...
 			)
 			: runtime_error( What ),
@@ -523,7 +523,7 @@ private:
 		}
 	};
 
-	typedef stdext::hash_map< Variable *, VariableData > VariableDataMap;
+	typedef std::unordered_map< Variable *, VariableData > VariableDataMap;
 	typedef stdext::hash_multimap< Variable *, Variable * > VariableCopiedToMap;
 	typedef std::pair< VariableCopiedToMap::iterator, 
 		VariableCopiedToMap::iterator > CopiedToMapEqualRange;
@@ -546,7 +546,7 @@ private:
 	// at different places but represent the same variable.
 	//
 
-	typedef stdext::hash_map< PROGRAM_COUNTER, VariableWeakPtrVec > 
+	typedef std::unordered_map< PROGRAM_COUNTER, VariableWeakPtrVec > 
 		FlowEndStackMap;
 
 	//
@@ -568,7 +568,7 @@ private:
 	//
 
 	typedef stdext::hash_set< UCHAR > OpcodeTypeSet;
-	typedef stdext::hash_map< UCHAR, OpcodeTypeSet > ValidOpcodeTypeMap;
+	typedef std::unordered_map< UCHAR, OpcodeTypeSet > ValidOpcodeTypeMap;
 	//
 	// Decode an instruction, returning the opcode data and the length.
 	//
@@ -591,8 +591,8 @@ private:
 	GetInstructionNames(
 		nwn2dev__in UCHAR Opcode,
 		nwn2dev__in UCHAR TypeOpcode,
-		__deref nwn2dev__out const char * * OpcodeName,
-		__deref nwn2dev__out const char * * TypeOpcodeName
+		nwn2dev__deref nwn2dev__out const char * * OpcodeName,
+		nwn2dev__deref nwn2dev__out const char * * TypeOpcodeName
 		);
 
 	//
@@ -848,7 +848,7 @@ private:
 	inline
 	void
 	ThrowError(
-		nwn2dev__in __format_string const char * Fmt,
+		nwn2dev__in nwn2dev__format_string const char * Fmt,
 		...
 		)
 	{

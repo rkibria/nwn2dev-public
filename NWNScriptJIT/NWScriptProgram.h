@@ -410,7 +410,7 @@ public:
 	Intrinsic_VMStackPopObjectId(
 		);
 
-	C_ASSERT( sizeof( UInt32 ) == sizeof( NWN::OBJECTID ) );
+	//REENABLE_ME_C_ASSERT( sizeof( UInt32 ) == sizeof( NWN::OBJECTID ) );
 
 	//
 	// Push an engine structure value onto the VM stack (for an action call),

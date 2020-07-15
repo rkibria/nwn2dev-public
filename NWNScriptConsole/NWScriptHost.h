@@ -327,7 +327,7 @@ private:
 	    nwn2dev__in size_t NumArguments             \
 	    );                                   \
 	                                         \
-	C_ASSERT( Ordinal < MAX_ACTION_ID );     
+	//REENABLE_ME_C_ASSERT( Ordinal < MAX_ACTION_ID );     
 
 #include "NWScriptActionDefs.h"
 #undef DECLARE_NSS_HANDLER

@@ -67,7 +67,7 @@ typedef struct _MODEL_MATERIAL
 	unsigned long TextureFlags;
 } MODEL_MATERIAL, * PMODEL_MATERIAL;
 
-C_ASSERT( sizeof( MODEL_MATERIAL ) == 128 + 6*4 + 8 + 4 );
+//REENABLE_ME_C_ASSERT( sizeof( MODEL_MATERIAL ) == 128 + 6*4 + 8 + 4 );
 
 typedef const struct _MATERIAL * PCMATERIAL;
 

@@ -454,9 +454,9 @@ namespace swutil
 	// incompatible).
 	//
 
-	C_ASSERT( offsetof( SharedBuffer< int >, m_SharedState ) == 0 );
-	C_ASSERT( offsetof( SharedBuffer< int >, m_Buf ) == sizeof( void * ) );
-	C_ASSERT( offsetof( SharedBuffer< int >, m_Size ) == sizeof( void * ) + sizeof( void * ) );
+	//REENABLE_ME_C_ASSERT( offsetof( SharedBuffer< int >, m_SharedState ) == 0 );
+	//REENABLE_ME_C_ASSERT( offsetof( SharedBuffer< int >, m_Buf ) == sizeof( void * ) );
+	//REENABLE_ME_C_ASSERT( offsetof( SharedBuffer< int >, m_Size ) == sizeof( void * ) + sizeof( void * ) );
 
 
 
@@ -651,8 +651,8 @@ namespace swutil
 	// incompatible).
 	//
 
-	C_ASSERT( offsetof( SharedPtr< int >, m_SharedState ) == 0 );
-	C_ASSERT( offsetof( SharedPtr< int >, m_Ptr ) == sizeof( void * ) );
+	//REENABLE_ME_C_ASSERT( offsetof( SharedPtr< int >, m_SharedState ) == 0 );
+	//REENABLE_ME_C_ASSERT( offsetof( SharedPtr< int >, m_Ptr ) == sizeof( void * ) );
 
 
 	

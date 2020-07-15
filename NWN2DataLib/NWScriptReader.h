@@ -357,7 +357,7 @@ private:
 
 	typedef const struct _NCS_HEADER * PCNCS_HEADER;
 
-	C_ASSERT( sizeof( NCS_HEADER ) == 8 + 1 + 4 );
+	//REENABLE_ME_C_ASSERT( sizeof( NCS_HEADER ) == 8 + 1 + 4 );
 
 	typedef swutil::SharedPtr< swutil::BufferParser > BufferParserPtr;
 	

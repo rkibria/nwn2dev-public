@@ -28,13 +28,24 @@ Abstract:
 // system.
 //
 
+typedef ULONG64 FileHandle;
+typedef NWN::ResType ResType;
+typedef ULONG64 FileId;
+
+enum AccessorType
+{
+        AccessorTypeBif,
+        AccessorTypeErf,
+        AccessorTypeDirectory,
+        AccessorTypeKey,
+        AccessorTypeZip,
+        AccessorTypeResourceManager,
+        AccessorTypeCustom
+};
+
 template< typename ResRefT >
 struct IResourceAccessor
 {
-
-	typedef ULONG64 FileHandle;
-	typedef NWN::ResType ResType;
-	typedef ULONG64 FileId;
 
 	static const FileHandle INVALID_FILE = 0;
 
@@ -113,7 +124,7 @@ struct IResourceAccessor
 	bool
 	GetEncapsulatedFileEntry(
 		nwn2dev__in FileId FileIndex,
-		nwn2dev__out typename ResRefT & ResRef,
+		nwn2dev__out ResRefT & ResRef,
 		nwn2dev__out ResType & Type
 		) = 0;
 
@@ -125,17 +136,6 @@ struct IResourceAccessor
 	FileId
 	GetEncapsulatedFileCount(
 		) = 0;
-
-	enum AccessorType
-	{
-		AccessorTypeBif,
-		AccessorTypeErf,
-		AccessorTypeDirectory,
-		AccessorTypeKey,
-		AccessorTypeZip,
-		AccessorTypeResourceManager,
-		AccessorTypeCustom
-	};
 
 	//
 	// Get the logical name of this accessor.

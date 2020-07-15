@@ -67,7 +67,7 @@ public:
 
 };
 
-C_ASSERT( sizeof( CExoString ) == 8 );
+//REENABLE_ME_C_ASSERT( sizeof( CExoString ) == 8 );
 
 typedef int SCRIPT_STATUS;
 
@@ -130,7 +130,7 @@ public:
 
 };
 
-C_ASSERT( sizeof( CVirtualMachineCmdImplementer ) == 4 );
+//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineCmdImplementer ) == 4 );
 
 class CRes
 {
@@ -151,7 +151,7 @@ public:
 	unsigned long          m_nRefs;
 };
 
-C_ASSERT( sizeof( CRes ) == 0x38 );
+//REENABLE_ME_C_ASSERT( sizeof( CRes ) == 0x38 );
 
 class CResNDB : public CRes
 {
@@ -164,9 +164,9 @@ public:
 
 };
 
-C_ASSERT( sizeof( CResNDB ) == 0x44 );
-C_ASSERT( offsetof( CResNDB, m_NDBSize ) == 0x3C );
-C_ASSERT( offsetof( CResNDB, m_NDBPtr ) == 0x40 );
+//REENABLE_ME_C_ASSERT( sizeof( CResNDB ) == 0x44 );
+//REENABLE_ME_C_ASSERT( offsetof( CResNDB, m_NDBSize ) == 0x3C );
+//REENABLE_ME_C_ASSERT( offsetof( CResNDB, m_NDBPtr ) == 0x40 );
 
 class CVirtualMachineDebugLoader
 {
@@ -198,8 +198,8 @@ public:
 
 };
 
-C_ASSERT( sizeof( CVirtualMachineDebugLoader ) == 0x30 );
-C_ASSERT( offsetof( CVirtualMachineDebugLoader, NDB ) == 0x8 );
+//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineDebugLoader ) == 0x30 );
+//REENABLE_ME_C_ASSERT( offsetof( CVirtualMachineDebugLoader, NDB ) == 0x8 );
 
 class CVirtualMachine;
 class CVirtualMachineCache;
@@ -400,7 +400,7 @@ public:
 
 };
 
-C_ASSERT( sizeof( CVirtualMachineStack ) == 0x18 );
+//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineStack ) == 0x18 );
 
 class CVirtualMachineScript
 {
@@ -419,7 +419,7 @@ public:
 
 };
 
-C_ASSERT( sizeof( CVirtualMachineScript ) == 0x28 );
+//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineScript ) == 0x28 );
 
 class CRes;
 class CResNCS;
@@ -436,7 +436,7 @@ public:
 
 };
 
-C_ASSERT( sizeof( CVirtualMachineFile ) == 0x2c );
+//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineFile ) == 0x2c );
 
 class CScriptParameterWrapper
 {
@@ -466,7 +466,7 @@ public:
 	ParameterType             m_eType;
 };
 
-C_ASSERT( sizeof( CScriptParameterWrapper ) == 0x14 );
+//REENABLE_ME_C_ASSERT( sizeof( CScriptParameterWrapper ) == 0x14 );
 
 template< typename T >
 class CExoArrayList
@@ -480,7 +480,7 @@ public:
 
 };
 
-C_ASSERT( sizeof( CExoArrayList< CScriptParameterWrapper > ) == 0x0c );
+//REENABLE_ME_C_ASSERT( sizeof( CExoArrayList< CScriptParameterWrapper > ) == 0x0c );
 
 class CVirtualMachine
 {
@@ -518,7 +518,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 		
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.ExecuteCode = &CVirtualMachine::ExecuteCode;
 		return Ptr.RawPtr;
@@ -543,7 +543,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_INTEGER)
 			return false;
@@ -568,7 +568,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_FLOAT)
 			return false;
@@ -593,7 +593,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_STRING)
 			return false;
@@ -643,7 +643,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_STRING)
 			return false;
@@ -703,7 +703,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (!m_cRunTimeStack.CheckVectorOnTopOfStack( ))
 			return false;
@@ -728,7 +728,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_OBJECT)
 			return false;
@@ -755,7 +755,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		if (GetTopOfStackType( ) != (int) EType + CVirtualMachineStack::ST_ENGINE_0)
 			return false;
@@ -781,7 +781,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushInteger;
 
@@ -803,7 +803,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushFloat;
 
@@ -825,7 +825,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushString;
 
@@ -868,7 +868,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushVector;
 
@@ -890,7 +890,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushObject;
 
@@ -914,7 +914,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushEngineStructure;
 
@@ -1072,10 +1072,10 @@ public:
 	CExoString                                     m_sLastScriptRun;
 };
 
-C_ASSERT( sizeof( CVirtualMachine ) == 0x3f4 );
-C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_oidObjectRunScript ) == 0x158 );
-C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_nInstructPtrLevel  ) == 0x190 );
-C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_pCmdImplementer    ) == 0x3a0 );
+//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachine ) == 0x3f4 );
+//REENABLE_ME_C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_oidObjectRunScript ) == 0x158 );
+//REENABLE_ME_C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_nInstructPtrLevel  ) == 0x190 );
+//REENABLE_ME_C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_pCmdImplementer    ) == 0x3a0 );
 
 //
 // Pick a relatively unlikely error to use if something goes wrong.

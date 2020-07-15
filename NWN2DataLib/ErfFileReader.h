@@ -137,7 +137,7 @@ public:
 	bool
 	GetEncapsulatedFileEntry(
 		nwn2dev__in FileId FileIndex,
-		nwn2dev__out typename ResRefIf & ResRef,
+		nwn2dev__out ResRefIf & ResRef,
 		nwn2dev__out ResType & Type
 		);
 
@@ -236,9 +236,9 @@ private:
 		nwn2dev__in ResType Type
 		) const
 	{
-		C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+		//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
 
-		for (ErfKeyVec::const_iterator it = m_KeyDir.begin( );
+		for (auto it = m_KeyDir.begin( );
 		     it != m_KeyDir.end( );
 		     ++it)
 		{

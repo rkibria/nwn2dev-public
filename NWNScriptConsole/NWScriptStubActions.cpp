@@ -55,7 +55,7 @@ Abstract:
 		}                                                      \
 	                                                           \
 	                                                           \
-	    C_ASSERT( Ordinal < MAX_ACTION_ID );                   \
+	    //REENABLE_ME_C_ASSERT( Ordinal < MAX_ACTION_ID );                   \
 	}                                                          \
 
 // int Random(int nMaxInteger);

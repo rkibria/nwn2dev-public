@@ -629,7 +629,7 @@ NscCompiler::NscCompileScript (
 	)
 {
 	std::vector< UINT8 >        FileContents;
-	ResourceManager::FileHandle Handle;
+	FileHandle Handle;
 	size_t                      FileSize;
 	size_t                      BytesLeft;
 	size_t                      Offset;
@@ -1182,7 +1182,7 @@ NscCompiler::LoadResource (
 	)
 {
 	unsigned char               * FileContents;
-	ResourceManager::FileHandle   Handle;
+	FileHandle   Handle;
 	size_t                        FileSize;
 	size_t                        BytesLeft;
 	size_t                        Offset;

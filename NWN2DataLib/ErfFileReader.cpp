@@ -107,9 +107,9 @@ Environment:
 		throw;
 	}
 
-	C_ASSERT( sizeof( ERF_HEADER ) == 160 );
-	C_ASSERT( sizeof( ERF_KEY ) == 8 + sizeof( ResRefT ) );
-	C_ASSERT( sizeof( RESOURCE_LIST_ELEMENT ) == 8 );
+	//REENABLE_ME_C_ASSERT( sizeof( ERF_HEADER ) == 160 );
+	//REENABLE_ME_C_ASSERT( sizeof( ERF_KEY ) == 8 + sizeof( ResRefT ) );
+	//REENABLE_ME_C_ASSERT( sizeof( RESOURCE_LIST_ELEMENT ) == 8 );
 }
 
 template< typename ResRefT >
@@ -504,7 +504,7 @@ Environment:
 {
 	PCERF_KEY ResKey;
 
-	C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+	//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
 
 	ResKey = LookupResourceKey( (ResID) FileIndex );
 

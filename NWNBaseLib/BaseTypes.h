@@ -149,7 +149,7 @@ namespace NWN
 		float z;
 	};
 
-	C_ASSERT( sizeof( Vector3 ) == 3 * sizeof( float ) );
+	//REENABLE_ME_C_ASSERT( sizeof( Vector3 ) == 3 * sizeof( float ) );
 
 	//
 	// Define the on-network format of a 2-tuple of floats typically, though not
@@ -162,7 +162,7 @@ namespace NWN
 		float y;
 	};
 
-	C_ASSERT( sizeof( Vector2 ) == 2 * sizeof( float ) );
+	//REENABLE_ME_C_ASSERT( sizeof( Vector2 ) == 2 * sizeof( float ) );
 
 	//
 	// Define a 4x4 matrix (raw data only).
@@ -209,7 +209,7 @@ namespace NWN
 		const static Matrix33 IDENTITY;
 	};
 
-	C_ASSERT( sizeof( Matrix44 ) == 16 * sizeof( float ) );
+	//REENABLE_ME_C_ASSERT( sizeof( Matrix44 ) == 16 * sizeof( float ) );
 
 	//
 	// Define the wire format of a Quaternion.
@@ -223,7 +223,7 @@ namespace NWN
 		float w;
 	};
 
-	C_ASSERT( sizeof( Quaternion ) == 4 * sizeof( float ) );
+	//REENABLE_ME_C_ASSERT( sizeof( Quaternion ) == 4 * sizeof( float ) );
 
 	//
 	// Define simple float-based rectangle and triangle types.

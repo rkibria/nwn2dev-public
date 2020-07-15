@@ -697,7 +697,7 @@ Environment:
 void
 NWScriptVM::DebugPrint(
 	nwn2dev__in ExecDebugLevel Level,
-	nwn2dev__in __format_string const char * Fmt,
+	nwn2dev__in nwn2dev__format_string const char * Fmt,
 	...
 	) const
 /*++
