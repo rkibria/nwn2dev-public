@@ -1065,7 +1065,7 @@ Environment:
 	unsigned long               ParamsSize;
 	NWScriptStack               Stack;
 
-	//REENABLE_ME_C_ASSERT( MAX_ACTION_ID == MAX_ACTION_ID_NWN2 );
+	static_assert( MAX_ACTION_ID == MAX_ACTION_ID_NWN2 , "compile time assert failed" );
 
 	m_IntegerSPSize = Stack.GetStackIntegerSize( );
 

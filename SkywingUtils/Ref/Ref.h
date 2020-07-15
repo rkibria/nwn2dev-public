@@ -454,9 +454,9 @@ namespace swutil
 	// incompatible).
 	//
 
-	//REENABLE_ME_C_ASSERT( offsetof( SharedBuffer< int >, m_SharedState ) == 0 );
-	//REENABLE_ME_C_ASSERT( offsetof( SharedBuffer< int >, m_Buf ) == sizeof( void * ) );
-	//REENABLE_ME_C_ASSERT( offsetof( SharedBuffer< int >, m_Size ) == sizeof( void * ) + sizeof( void * ) );
+	static_assert( offsetof( SharedBuffer< int >, m_SharedState ) == 0 , "compile time assert failed" );
+	static_assert( offsetof( SharedBuffer< int >, m_Buf ) == sizeof( void * ) , "compile time assert failed" );
+	static_assert( offsetof( SharedBuffer< int >, m_Size ) == sizeof( void * ) + sizeof( void * ) , "compile time assert failed" );
 
 
 
@@ -651,8 +651,8 @@ namespace swutil
 	// incompatible).
 	//
 
-	//REENABLE_ME_C_ASSERT( offsetof( SharedPtr< int >, m_SharedState ) == 0 );
-	//REENABLE_ME_C_ASSERT( offsetof( SharedPtr< int >, m_Ptr ) == sizeof( void * ) );
+	static_assert( offsetof( SharedPtr< int >, m_SharedState ) == 0 , "compile time assert failed" );
+	static_assert( offsetof( SharedPtr< int >, m_Ptr ) == sizeof( void * ) , "compile time assert failed" );
 
 
 	

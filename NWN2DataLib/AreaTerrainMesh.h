@@ -82,7 +82,7 @@ public:
 		NWN::Vector2          weights; // XY1
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( TerrainVertex ) == 44 );
+	static_assert( sizeof( TerrainVertex ) == 44 , "compile time assert failed" );
 
 	typedef unsigned short TerrainFaceVertexIndex;
 
@@ -91,7 +91,7 @@ public:
 		unsigned short Vertex[ 3 ]; // Must match TerrainFaceVertexIndex
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( TerrainFace ) == 6 );
+	static_assert( sizeof( TerrainFace ) == 6 , "compile time assert failed" );
 
 	struct TerrainGrassHeader
 	{
@@ -100,7 +100,7 @@ public:
 		unsigned long Blades;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( TerrainGrassHeader ) == 64 + 4 );
+	static_assert( sizeof( TerrainGrassHeader ) == 64 + 4 , "compile time assert failed" );
 
 	struct TerrainGrassBlade
 	{
@@ -109,7 +109,7 @@ public:
 		NWN::Vector3 uv_0; // Offset
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( TerrainGrassBlade ) == 3 * (3 * 4 ) );
+	static_assert( sizeof( TerrainGrassBlade ) == 3 * (3 * 4 ) , "compile time assert failed" );
 
 #include <poppack.h>
 

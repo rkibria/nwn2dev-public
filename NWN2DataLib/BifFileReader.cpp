@@ -107,8 +107,8 @@ Environment:
 		throw;
 	}
 
-	//REENABLE_ME_C_ASSERT( sizeof( BIF_HEADER ) == 5 * 4 );
-	//REENABLE_ME_C_ASSERT( sizeof( BIF_RESOURCE ) == 4 * 4 );
+	static_assert( sizeof( BIF_HEADER ) == 5 * 4 , "compile time assert failed" );
+	static_assert( sizeof( BIF_RESOURCE ) == 4 * 4 , "compile time assert failed" );
 }
 
 template< typename ResRefT >

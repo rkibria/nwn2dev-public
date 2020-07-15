@@ -751,7 +751,7 @@ Environment:
 	{
 		ERF_KEY Key;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Key.FileName ) <= sizeof( (*it)->ResRef ) );
+		static_assert( sizeof( Key.FileName ) <= sizeof( (*it)->ResRef ) , "compile time assert failed" );
 
 		memcpy( &Key.FileName, &(*it)->ResRef, sizeof( Key.FileName ) );
 

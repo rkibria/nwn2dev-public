@@ -36,7 +36,7 @@ struct CollisionSphereFile
 	float         Radius;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CollisionSphereFile ) == 8 );
+static_assert( sizeof( CollisionSphereFile ) == 8 , "compile time assert failed" );
 #include <poppack.h>
 
 struct CollisionSphere
@@ -68,7 +68,7 @@ public:
 		unsigned long  NumItems;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( CollisionSpheresHeader ) == 4 );
+	static_assert( sizeof( CollisionSpheresHeader ) == 4 , "compile time assert failed" );
 
 #include <poppack.h>
 

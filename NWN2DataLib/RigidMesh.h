@@ -44,14 +44,14 @@ struct RMVertexFile
 	NWN::Vector3 uvw; // Texture vertex
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( RMVertexFile ) == 15 * 4 );
+static_assert( sizeof( RMVertexFile ) == 15 * 4 , "compile time assert failed" );
 
 struct RMFaceFile
 {
 	unsigned short Corners[ 3 ];
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( RMFaceFile ) == 3 * 2 );
+static_assert( sizeof( RMFaceFile ) == 3 * 2 , "compile time assert failed" );
 
 #include <poppack.h>
 
@@ -101,7 +101,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( RigidHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 );
+	static_assert( sizeof( RigidHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 , "compile time assert failed" );
 
 #include <poppack.h>
 

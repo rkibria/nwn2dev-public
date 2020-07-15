@@ -245,7 +245,7 @@ private:
 		unsigned long  ResourceCount;
 	} TRX_HEADER, * PTRX_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( TRX_HEADER ) == 0x0C );
+	static_assert( sizeof( TRX_HEADER ) == 0x0C , "compile time assert failed" );
 
 	typedef const struct _TRX_HEADER * PCTRX_HEADER;
 
@@ -256,7 +256,7 @@ private:
 		unsigned long Length;
 	} RESOURCE_HEADER, * PRESOURCE_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( RESOURCE_HEADER ) == 0x08 );
+	static_assert( sizeof( RESOURCE_HEADER ) == 0x08 , "compile time assert failed" );
 
 	typedef const struct _RESOURCE_HEADER * PCRESOURCE_HEADER;
 
@@ -267,7 +267,7 @@ private:
 		unsigned long Offset;
 	} RESOURCE_ENTRY, * PRESOURCE_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( RESOURCE_ENTRY ) == 0x08 );
+	static_assert( sizeof( RESOURCE_ENTRY ) == 0x08 , "compile time assert failed" );
 
 	typedef const struct _RESOURCE_ENTRY * PCRESOURCE_ENTRY;
 
@@ -279,7 +279,7 @@ private:
 		unsigned long UncompressedSize;
 	} COMPRESSION_HEADER, * PCOMPRESSION_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( COMPRESSION_HEADER ) == 0x0C );
+	static_assert( sizeof( COMPRESSION_HEADER ) == 0x0C , "compile time assert failed" );
 
 	typedef const struct _COMPRESSION_HEADER * PCCOMPRESSION_HEADER;
 
@@ -291,7 +291,7 @@ private:
 		unsigned long IdNumber;
 	} TRWH_HEADER, * PTRWH_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( TRWH_HEADER ) == 0x0C );
+	static_assert( sizeof( TRWH_HEADER ) == 0x0C , "compile time assert failed" );
 
 	typedef const struct _TRWH_HEADER * PCTRWH_HEADER;
 
@@ -310,7 +310,7 @@ private:
 		unsigned long FaceOffset;
 	} ASWM_HEADER, * PASWM_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( ASWM_HEADER ) == 37 + 16 );
+	static_assert( sizeof( ASWM_HEADER ) == 37 + 16 , "compile time assert failed" );
 
 	typedef const struct _ASWM_HEADER * PCASWM_HEADER;
 
@@ -326,7 +326,7 @@ private:
 		unsigned long    NumFaces;
 	} MODEL_MESH_HEADER, * PMODEL_MESH_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( MODEL_MESH_HEADER ) == 40 + sizeof( MODEL_MATERIAL ) );
+	static_assert( sizeof( MODEL_MESH_HEADER ) == 40 + sizeof( MODEL_MATERIAL ) , "compile time assert failed" );
 
 	typedef const struct _MODEL_MESH_HEADER * PCMODEL_MESH_HEADER;
 
@@ -360,7 +360,7 @@ private:
 
 	typedef const struct _WATR_TEXTURE * PCWATR_TEXTURE;
 
-	//REENABLE_ME_C_ASSERT( sizeof( WATR_TEXTURE ) == 48 );
+	static_assert( sizeof( WATR_TEXTURE ) == 48 , "compile time assert failed" );
 
 	typedef struct _WATR_HEADER
 	{
@@ -381,7 +381,7 @@ private:
 
 	typedef const struct _WATR_HEADER * PCWATR_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( WATR_HEADER ) == 128 + 12 + 28 + 48*3 + 16 );
+	static_assert( sizeof( WATR_HEADER ) == 128 + 12 + 28 + 48*3 + 16 , "compile time assert failed" );
 
 	//
 	// TRRN on-disk format.
@@ -394,8 +394,8 @@ private:
 
 	typedef const struct _TRRN_TEXTURE * PCTRRN_TEXTURE;
 
-	//REENABLE_ME_C_ASSERT( sizeof( TRRN_TEXTURE ) == 32 );
-	//REENABLE_ME_C_ASSERT( sizeof( TRRN_TEXTURE ) == sizeof( NWN::ResRef32 ) );
+	static_assert( sizeof( TRRN_TEXTURE ) == 32 , "compile time assert failed" );
+	static_assert( sizeof( TRRN_TEXTURE ) == sizeof( NWN::ResRef32 ) , "compile time assert failed" );
 
 	typedef struct _TRRN_HEADER
 	{
@@ -406,7 +406,7 @@ private:
 		unsigned long TriangleCount;
 	} TRRN_HEADER, * PTRRN_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( TRRN_HEADER ) == 128 + 6*32 + 6*12 + 2*4 );
+	static_assert( sizeof( TRRN_HEADER ) == 128 + 6*32 + 6*12 + 2*4 , "compile time assert failed" );
 
 	typedef const struct _TRRN_HEADER * PCTRRN_HEADER;
 

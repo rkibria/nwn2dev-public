@@ -32,7 +32,7 @@ namespace GrannyNative
 		ULONG Reserved[ 2  ];
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( GrnFileBaseHeader ) == 0x20 );
+	static_assert( sizeof( GrnFileBaseHeader ) == 0x20 , "compile time assert failed" );
 
 	struct GrnReference
 	{
@@ -40,7 +40,7 @@ namespace GrannyNative
 		ULONG Offset;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( GrnReference ) == 0x8 );
+	static_assert( sizeof( GrnReference ) == 0x8 , "compile time assert failed" );
 
 	struct GrnSection
 	{
@@ -56,7 +56,7 @@ namespace GrannyNative
 		ULONG MixedMarshallingFixupArrayCount;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( GrnSection ) == 0x2C );
+	static_assert( sizeof( GrnSection ) == 0x2C , "compile time assert failed" );
 
 	struct GrnPointerFixup
 	{
@@ -64,7 +64,7 @@ namespace GrannyNative
 		GrnReference To;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( GrnPointerFixup ) == 0xC );
+	static_assert( sizeof( GrnPointerFixup ) == 0xC , "compile time assert failed" );
 
 	struct GrnMixedMarshallingFixup
 	{
@@ -73,7 +73,7 @@ namespace GrannyNative
 		GrnReference Type[ 2 ];
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( GrnMixedMarshallingFixup ) == 0x10 );
+	static_assert( sizeof( GrnMixedMarshallingFixup ) == 0x10 , "compile time assert failed" );
 
 	struct GrnFileHeader
 	{
@@ -89,7 +89,7 @@ namespace GrannyNative
 		ULONG             ExtraTags;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( GrnFileHeader ) == 0x38 + sizeof( GrnFileBaseHeader ) );
+	static_assert( sizeof( GrnFileHeader ) == 0x38 + sizeof( GrnFileBaseHeader ) , "compile time assert failed" );
 
 #include <poppack.h>
 }

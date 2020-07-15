@@ -154,7 +154,7 @@ Environment:
   m_ILGenCtx( nullptr ),
   m_EngineStructureTypes( nullptr )
 {
-	//REENABLE_ME_C_ASSERT( NUM_ENGINE_STRUCTURE_TYPES == LAST_ENGINE_STRUCTURE + 1 );
+	static_assert( NUM_ENGINE_STRUCTURE_TYPES == LAST_ENGINE_STRUCTURE + 1 , "compile time assert failed" );
 }
 
 NWScriptCodeGenerator::!NWScriptCodeGenerator(

@@ -1280,7 +1280,7 @@ private:
 	GetHakFiles(
 		)
 	{
-		//REENABLE_ME_C_ASSERT( sizeof( ResRefLoadType ) != sizeof( ResRefLoadType ) );
+		static_assert( sizeof( ResRefLoadType ) != sizeof( ResRefLoadType ) , "compile time assert failed" );
 
 		NWN_ASSERT( 0 );
 

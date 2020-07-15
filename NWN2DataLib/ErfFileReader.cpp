@@ -107,9 +107,9 @@ Environment:
 		throw;
 	}
 
-	//REENABLE_ME_C_ASSERT( sizeof( ERF_HEADER ) == 160 );
-	//REENABLE_ME_C_ASSERT( sizeof( ERF_KEY ) == 8 + sizeof( ResRefT ) );
-	//REENABLE_ME_C_ASSERT( sizeof( RESOURCE_LIST_ELEMENT ) == 8 );
+	static_assert( sizeof( ERF_HEADER ) == 160 , "compile time assert failed" );
+	static_assert( sizeof( ERF_KEY ) == 8 + sizeof( ResRefT ) , "compile time assert failed" );
+	static_assert( sizeof( RESOURCE_LIST_ELEMENT ) == 8 , "compile time assert failed" );
 }
 
 template< typename ResRefT >
@@ -504,7 +504,7 @@ Environment:
 {
 	PCERF_KEY ResKey;
 
-	//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+	static_assert( sizeof( ResRefT ) <= sizeof( ResRefIf ) , "compile time assert failed" );
 
 	ResKey = LookupResourceKey( (ResID) FileIndex );
 

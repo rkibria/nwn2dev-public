@@ -34,14 +34,14 @@ typedef struct RHMatrix3
 	Point3 m[3];
 } RHMatrix3;
 
-//REENABLE_ME_C_ASSERT( sizeof( RHMatrix3 ) == 3 * 3 * 4 );
+static_assert( sizeof( RHMatrix3 ) == 3 * 3 * 4 , "compile time assert failed" );
 
 typedef struct RHMatrix4
 {
 	Point4 m[4];
 } RHMatrix4;
 
-//REENABLE_ME_C_ASSERT( sizeof( RHMatrix4 ) == 4 * 4 * 4 );
+static_assert( sizeof( RHMatrix4 ) == 4 * 4 * 4 , "compile time assert failed" );
 
 #include <poppack.h>
 

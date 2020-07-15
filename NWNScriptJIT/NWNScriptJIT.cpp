@@ -857,7 +857,7 @@ Environment:
 		NWScriptSavedState ^ State   = (NWScriptSavedState ^) Handle.Target;
 		NWScriptProgram    ^ Program = State->GetProgram( );
 
-		//REENABLE_ME_C_ASSERT( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) );
+		static_assert( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) , "compile time assert failed" );
 
 		Program->PushSavedState(
 			State,
@@ -953,7 +953,7 @@ Environment:
 		NWScriptSavedState ^ SavedState;
 		GCHandle             RetHandle;
 
-		//REENABLE_ME_C_ASSERT( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) );
+		static_assert( sizeof( NWSCRIPT_PROGRAM_COUNTER ) == sizeof( NWNScriptLib::PROGRAM_COUNTER ) , "compile time assert failed" );
 
 		SavedState = Program->PopSavedState(
 			VMStack,

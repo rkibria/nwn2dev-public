@@ -101,7 +101,7 @@ public:
 	typedef struct SurfaceMeshTriangle SurfaceMeshFace;
 	typedef struct NWN::Vector3 SurfaceMeshPoint;
 
-	//REENABLE_ME_C_ASSERT( sizeof( SurfaceMeshTriangle ) == 64 );
+	static_assert( sizeof( SurfaceMeshTriangle ) == 64 , "compile time assert failed" );
 
 	typedef std::vector< NWN::Vector3 > PointVec;
 	typedef std::vector< SurfaceMeshEdge > EdgeVec;

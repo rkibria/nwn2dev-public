@@ -195,7 +195,7 @@ public:
 
 	typedef const struct _GFF_HEADER * PCGFF_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_HEADER ) == 14 * 4 );
+	static_assert( sizeof( GFF_HEADER ) == 14 * 4 , "compile time assert failed" );
 
 	typedef struct _GFF_STRUCT_ENTRY
 	{
@@ -206,7 +206,7 @@ public:
 
 	typedef const struct _GFF_STRUCT_ENTRY * PCGFF_STRUCT_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_STRUCT_ENTRY ) == 12 );
+	static_assert( sizeof( GFF_STRUCT_ENTRY ) == 12 , "compile time assert failed" );
 
 	typedef struct _GFF_FIELD_ENTRY
 	{
@@ -217,7 +217,7 @@ public:
 
 	typedef const struct _GFF_FIELD_ENTRY * PCGFF_FIELD_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_FIELD_ENTRY ) == 12 );
+	static_assert( sizeof( GFF_FIELD_ENTRY ) == 12 , "compile time assert failed" );
 
 	typedef struct _GFF_LABEL_ENTRY
 	{
@@ -226,7 +226,7 @@ public:
 
 	typedef const struct _GFF_LABEL_ENTRY * PCGFF_LABEL_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_LABEL_ENTRY ) == 16 );
+	static_assert( sizeof( GFF_LABEL_ENTRY ) == 16 , "compile time assert failed" );
 
 	typedef struct _GFF_LIST_ENTRY
 	{
@@ -236,7 +236,7 @@ public:
 
 	typedef const struct _GFF_LIST_ENTRY * PCGFF_LIST_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_LIST_ENTRY ) == 4 );
+	static_assert( sizeof( GFF_LIST_ENTRY ) == 4 , "compile time assert failed" );
 
 	typedef struct _GFF_CEXOLOCSUBSTRING_ENTRY
 	{
@@ -247,7 +247,7 @@ public:
 
 	typedef const struct _GFF_CEXOLOCSUBSTRING_ENTRY * PCGFF_CEXOLOCSUBSTRING_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_CEXOLOCSUBSTRING_ENTRY ) == 8 );
+	static_assert( sizeof( GFF_CEXOLOCSUBSTRING_ENTRY ) == 8 , "compile time assert failed" );
 
 	typedef struct _GFF_CEXOLOCSTRING_ENTRY
 	{
@@ -259,7 +259,7 @@ public:
 
 	typedef const struct _GFF_CEXOLOCSTRING_ENTRY * PCGFF_CEXOLOCSTRING_ENTRY;
 
-	//REENABLE_ME_C_ASSERT( sizeof( GFF_CEXOLOCSTRING_ENTRY ) == 12 );
+	static_assert( sizeof( GFF_CEXOLOCSTRING_ENTRY ) == 12 , "compile time assert failed" );
 
 #include <poppack.h>
 

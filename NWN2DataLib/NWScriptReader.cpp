@@ -576,7 +576,7 @@ Environment:
 
 	ValueI = BYTESWAP_ULONG( ValueI );
 
-	//REENABLE_ME_C_ASSERT( sizeof( f ) == sizeof( ValueI ) );
+	static_assert( sizeof( f ) == sizeof( ValueI ) , "compile time assert failed" );
 	memcpy( &f, &ValueI, sizeof( f ) );
 
 	return f;

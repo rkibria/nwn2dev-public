@@ -85,8 +85,8 @@ Environment:
 		throw;
 	}
 
-	//REENABLE_ME_C_ASSERT( sizeof( TLK_HEADER ) == 5 * 4 );
-	//REENABLE_ME_C_ASSERT( sizeof( TLK_STRING ) == 6 * 4 + sizeof( ResRefT ) );
+	static_assert( sizeof( TLK_HEADER ) == 5 * 4 , "compile time assert failed" );
+	static_assert( sizeof( TLK_STRING ) == 6 * 4 + sizeof( ResRefT ) , "compile time assert failed" );
 }
 
 template< typename ResRefT >

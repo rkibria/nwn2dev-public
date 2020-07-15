@@ -171,7 +171,7 @@ namespace NWN
 		Num_Accessories
 	};
 
-	//REENABLE_ME_C_ASSERT( Num_Accessories == 22 );
+	static_assert( Num_Accessories == 22 , "compile time assert failed" );
 
 	//
 	// Animation system parameters.

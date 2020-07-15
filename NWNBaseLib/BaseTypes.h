@@ -149,7 +149,7 @@ namespace NWN
 		float z;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( Vector3 ) == 3 * sizeof( float ) );
+	static_assert( sizeof( Vector3 ) == 3 * sizeof( float ) , "compile time assert failed" );
 
 	//
 	// Define the on-network format of a 2-tuple of floats typically, though not
@@ -162,7 +162,7 @@ namespace NWN
 		float y;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( Vector2 ) == 2 * sizeof( float ) );
+	static_assert( sizeof( Vector2 ) == 2 * sizeof( float ) , "compile time assert failed" );
 
 	//
 	// Define a 4x4 matrix (raw data only).
@@ -209,7 +209,7 @@ namespace NWN
 		const static Matrix33 IDENTITY;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( Matrix44 ) == 16 * sizeof( float ) );
+	static_assert( sizeof( Matrix44 ) == 16 * sizeof( float ) , "compile time assert failed" );
 
 	//
 	// Define the wire format of a Quaternion.
@@ -223,7 +223,7 @@ namespace NWN
 		float w;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( Quaternion ) == 4 * sizeof( float ) );
+	static_assert( sizeof( Quaternion ) == 4 * sizeof( float ) , "compile time assert failed" );
 
 	//
 	// Define simple float-based rectangle and triangle types.

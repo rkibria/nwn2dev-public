@@ -97,9 +97,9 @@ Environment:
 
 	CloseHandle( File );
 
-	//REENABLE_ME_C_ASSERT( sizeof( KEY_HEADER ) == 64 );
-	//REENABLE_ME_C_ASSERT( sizeof( KEY_FILE ) == 12 );
-	//REENABLE_ME_C_ASSERT( sizeof( KEY_RESOURCE ) == 6 + sizeof( ResRefT ) );
+	static_assert( sizeof( KEY_HEADER ) == 64 , "compile time assert failed" );
+	static_assert( sizeof( KEY_FILE ) == 12 , "compile time assert failed" );
+	static_assert( sizeof( KEY_RESOURCE ) == 6 + sizeof( ResRefT ) , "compile time assert failed" );
 }
 
 template< typename ResRefT >
@@ -483,7 +483,7 @@ Environment:
 {
 	PCKEY_RESOURCE_DESCRIPTOR ResKey;
 
-	//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+	static_assert( sizeof( ResRefT ) <= sizeof( ResRefIf ) , "compile time assert failed" );
 
 	ResKey = LookupResourceKey( (ResID) FileIndex );
 

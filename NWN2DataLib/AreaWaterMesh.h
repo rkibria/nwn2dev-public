@@ -62,7 +62,7 @@ public:
 		NWN::Vector2 uv_1; // XY1
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( WaterVertex ) == 28 );
+	static_assert( sizeof( WaterVertex ) == 28 , "compile time assert failed" );
 
 	typedef unsigned short WaterFaceVertexIndex;
 
@@ -71,14 +71,14 @@ public:
 		unsigned short Vertex[ 3 ]; // Must match WaterFaceVertexIndex
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( WaterFace ) == 6 );
+	static_assert( sizeof( WaterFace ) == 6 , "compile time assert failed" );
 
 	struct WaterBitmap
 	{
 		unsigned long Bits[ 24 ][ 48 ];
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( WaterBitmap ) == 1152 * 4 );
+	static_assert( sizeof( WaterBitmap ) == 1152 * 4 , "compile time assert failed" );
 
 #include <poppack.h>
 

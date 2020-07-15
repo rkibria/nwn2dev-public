@@ -357,7 +357,7 @@ private:
 
 	typedef const struct _NCS_HEADER * PCNCS_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( NCS_HEADER ) == 8 + 1 + 4 );
+	static_assert( sizeof( NCS_HEADER ) == 8 + 1 + 4 , "compile time assert failed" );
 
 	typedef swutil::SharedPtr< swutil::BufferParser > BufferParserPtr;
 	

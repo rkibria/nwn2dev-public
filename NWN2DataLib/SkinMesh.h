@@ -47,14 +47,14 @@ struct SMVertexFile
 	float         BoneCount;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( SMVertexFile ) == 15 * 4 + 4 * 4 + 4 + 4 );
+static_assert( sizeof( SMVertexFile ) == 15 * 4 + 4 * 4 + 4 + 4 , "compile time assert failed" );
 
 struct SMFaceFile
 {
 	unsigned short Corners[ 3 ];
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( SMFaceFile ) == 3 * 2 );
+static_assert( sizeof( SMFaceFile ) == 3 * 2 , "compile time assert failed" );
 
 #include <poppack.h>
 
@@ -108,7 +108,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( SkinHeader ) == 64 + sizeof( MODEL_MATERIAL ) + 8 );
+	static_assert( sizeof( SkinHeader ) == 64 + sizeof( MODEL_MATERIAL ) + 8 , "compile time assert failed" );
 
 #include <poppack.h>
 

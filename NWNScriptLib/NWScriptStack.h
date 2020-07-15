@@ -206,14 +206,14 @@ public:
 	//
 
 	typedef UCHAR ENGINE_STRUCTURE_NUMBER;
-	//REENABLE_ME_C_ASSERT( sizeof( ENGINE_STRUCTURE_NUMBER ) == 1 );
+	static_assert( sizeof( ENGINE_STRUCTURE_NUMBER ) == 1 , "compile time assert failed" );
 
 	//
 	// Define the type of a stack pointer.
 	//
 
 	typedef LONG STACK_POINTER;
-	//REENABLE_ME_C_ASSERT( sizeof( STACK_POINTER ) == 4 );
+	static_assert( sizeof( STACK_POINTER ) == 4 , "compile time assert failed" );
 
 	//
 	// Define a pointer to an instruction.
@@ -791,7 +791,7 @@ private:
 
 	typedef UCHAR STACK_TYPE_CODE;
 
-	//REENABLE_ME_C_ASSERT( sizeof( STACK_TYPE_CODE ) == 1 );
+	static_assert( sizeof( STACK_TYPE_CODE ) == 1 , "compile time assert failed" );
 
 	//
 	// Define a stack of type codes, parallel to the main stack.
@@ -808,7 +808,7 @@ private:
 
 	typedef ULONG STRING_HANDLE;
 
-	//REENABLE_ME_C_ASSERT( sizeof( STRING_HANDLE ) == 4 );
+	static_assert( sizeof( STRING_HANDLE ) == 4 , "compile time assert failed" );
 
 	
 	//
@@ -826,7 +826,7 @@ private:
 
 	typedef ULONG ENGINE_HANDLE;
 
-	//REENABLE_ME_C_ASSERT( sizeof( ENGINE_HANDLE ) == 4 );
+	static_assert( sizeof( ENGINE_HANDLE ) == 4 , "compile time assert failed" );
 
 
 	//
@@ -862,7 +862,7 @@ private:
 	enum { STACK_ENTRY_SIZE = sizeof( STACK_ENTRY ) };
 	enum { STACK_MAXIMUM_SIZE = 1 * 1024 * 1024 }; // 1MB max stack
 
-	//REENABLE_ME_C_ASSERT( STACK_ENTRY_SIZE == 4 );
+	static_assert( STACK_ENTRY_SIZE == 4 , "compile time assert failed" );
 
 	//
 	// Define a stack of stack entries (i.e. main stack).

@@ -540,7 +540,7 @@ Environment:
 	}
 	else
 	{
-		//REENABLE_ME_C_ASSERT( sizeof( WalkmeshHeader ) >= sizeof( CompressHeader ) );
+		static_assert( sizeof( WalkmeshHeader ) >= sizeof( CompressHeader ) , "compile time assert failed" );
 
 		//
 		// This is not a compressed ASWM header.  Copy the data we read back

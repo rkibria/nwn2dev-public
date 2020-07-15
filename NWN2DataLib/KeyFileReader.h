@@ -247,7 +247,7 @@ private:
 		nwn2dev__in ResType Type
 		) const
 	{
-		//REENABLE_ME_C_ASSERT( sizeof( ResRefT ) <= sizeof( ResRefIf ) );
+		static_assert( sizeof( ResRefT ) <= sizeof( ResRefIf ) , "compile time assert failed" );
 
                 for (auto it = m_KeyResDir.begin( );
 		     it != m_KeyResDir.end( );

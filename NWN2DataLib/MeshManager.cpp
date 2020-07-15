@@ -202,7 +202,7 @@ Environment:
 		// A new case statement must be added if a new mesh type is defined.
 		//
 
-		//REENABLE_ME_C_ASSERT( MeshLinkageTraits::MT_LastMesh == MeshLinkageTraits::MT_AreaWaterMesh + 1 );
+		static_assert( MeshLinkageTraits::MT_LastMesh == MeshLinkageTraits::MT_AreaWaterMesh + 1 , "compile time assert failed" );
 		__assume( 0 );
 
 	}

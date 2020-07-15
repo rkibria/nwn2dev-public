@@ -327,7 +327,7 @@ private:
 	    nwn2dev__in size_t NumArguments             \
 	    );                                   \
 	                                         \
-	//REENABLE_ME_C_ASSERT( Ordinal < MAX_ACTION_ID );     
+	static_assert( Ordinal < MAX_ACTION_ID , "compile time assert failed" );     
 
 #include "NWScriptActionDefs.h"
 #undef DECLARE_NSS_HANDLER

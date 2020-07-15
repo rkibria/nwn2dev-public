@@ -75,7 +75,7 @@ public:
 		unsigned long FaceOffset; // Version 0x6C or later
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( TileSurfaceMeshHeader ) == 57 );
+	static_assert( sizeof( TileSurfaceMeshHeader ) == 57 , "compile time assert failed" );
 
 	struct PathTableHeader
 	{
@@ -85,7 +85,7 @@ public:
 		unsigned long RLETableSize;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( PathTableHeader ) == 13 );
+	static_assert( sizeof( PathTableHeader ) == 13 , "compile time assert failed" );
 
 	struct IslandHeader
 	{
@@ -95,7 +95,7 @@ public:
 		unsigned long FaceCount;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( IslandHeader ) == 24 );
+	static_assert( sizeof( IslandHeader ) == 24 , "compile time assert failed" );
 
 #include <poppack.h>
 
@@ -106,7 +106,7 @@ public:
 		float          m_Weight;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( IslandPathNode ) == 8 );
+	static_assert( sizeof( IslandPathNode ) == 8 , "compile time assert failed" );
 
 	typedef unsigned char PathNode;
 

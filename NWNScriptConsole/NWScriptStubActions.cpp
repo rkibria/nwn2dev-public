@@ -55,7 +55,7 @@ Abstract:
 		}                                                      \
 	                                                           \
 	                                                           \
-	    //REENABLE_ME_C_ASSERT( Ordinal < MAX_ACTION_ID );                   \
+	    static_assert( Ordinal < MAX_ACTION_ID , "compile time assert failed" );                   \
 	}                                                          \
 
 // int Random(int nMaxInteger);

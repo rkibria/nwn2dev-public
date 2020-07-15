@@ -47,7 +47,7 @@ public:
 		NWN::Matrix33  Orientation;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( HelmHeader ) == 36 + 4 * 3 + 9 * 4 );
+	static_assert( sizeof( HelmHeader ) == 36 + 4 * 3 + 9 * 4 , "compile time assert failed" );
 
 #include <poppack.h>
 

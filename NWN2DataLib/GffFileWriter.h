@@ -171,7 +171,7 @@ class GffFileWriter
 	// N.B.  GFF_LABEL_ENTRY must match the size of FieldLabel above.
 	//
 
-	//REENABLE_ME_C_ASSERT( sizeof( GffFileReader::GFF_LABEL_ENTRY ) == 16 );
+	static_assert( sizeof( GffFileReader::GFF_LABEL_ENTRY ) == 16 , "compile time assert failed" );
 
 	typedef std::vector< FieldEntry > FieldEntryVec;
 
@@ -761,7 +761,7 @@ public:
 			GFF_CEXOLOCSUBSTRING_ENTRY   LocSubStr;
 			const size_t                 HeaderSize = sizeof( LocStr ) + sizeof( LocSubStr );
 
-			//REENABLE_ME_C_ASSERT( HeaderSize == 20 );
+			static_assert( HeaderSize == 20 , "compile time assert failed" );
 
 			Size = (unsigned long) Data.size( );
 
@@ -1375,7 +1375,7 @@ public:
 				const char * Endp;
 				size_t       LabelLen;
 
-				//REENABLE_ME_C_ASSERT( sizeof( it->FieldLabel ) == 16 );
+				static_assert( sizeof( it->FieldLabel ) == 16 , "compile time assert failed" );
 
 				Endp = (const char *) memchr(
 					it->FieldLabel,

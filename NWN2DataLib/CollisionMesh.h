@@ -53,14 +53,14 @@ struct CMVertexFile
 	NWN::Vector3 uvw; // Texture vertex
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CMVertexFile ) == 9 * 4 );
+static_assert( sizeof( CMVertexFile ) == 9 * 4 , "compile time assert failed" );
 
 struct CMFaceFile
 {
 	unsigned short Corners[ 3 ];
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CMFaceFile ) == 3 * 2 );
+static_assert( sizeof( CMFaceFile ) == 3 * 2 , "compile time assert failed" );
 
 #include <poppack.h>
 
@@ -106,7 +106,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( CollisionHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 );
+	static_assert( sizeof( CollisionHeader ) == 32 + sizeof( MODEL_MATERIAL ) + 8 , "compile time assert failed" );
 
 #include <poppack.h>
 

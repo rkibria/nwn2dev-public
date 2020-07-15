@@ -34,7 +34,7 @@ namespace Trx
 		unsigned int ABitMask;
 	} DDS_PIXELFORMAT;
 
-	//REENABLE_ME_C_ASSERT( sizeof( DDS_PIXELFORMAT ) == 32 );
+	static_assert( sizeof( DDS_PIXELFORMAT ) == 32 , "compile time assert failed" );
 
 	typedef const struct _DDS_PIXELFORMAT * PCDDS_PIXELFORMAT;
 
@@ -55,7 +55,7 @@ namespace Trx
 		unsigned long Reserved2;
 	} DDS_HEADER, * PDDS_HEADER;
 
-	//REENABLE_ME_C_ASSERT( sizeof( DDS_HEADER ) == 124 );
+	static_assert( sizeof( DDS_HEADER ) == 124 , "compile time assert failed" );
 
 	typedef const struct _DDS_HEADER * PCDDS_HEADER;
 

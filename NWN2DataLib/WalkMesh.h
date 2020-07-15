@@ -47,7 +47,7 @@ struct WMVertexFile
 	NWN::Vector3 Position;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( WMVertexFile ) == 3 * 4 );
+static_assert( sizeof( WMVertexFile ) == 3 * 4 , "compile time assert failed" );
 
 struct WMFaceFile
 {
@@ -55,7 +55,7 @@ struct WMFaceFile
 	unsigned long  Flags;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( WMFaceFile ) == 3 * 2 + 4 );
+static_assert( sizeof( WMFaceFile ) == 3 * 2 + 4 , "compile time assert failed" );
 
 #include <poppack.h>
 
@@ -104,7 +104,7 @@ public:
 		unsigned long  NumFaces;
 	};
 
-	//REENABLE_ME_C_ASSERT( sizeof( WalkHeader ) == 32 + 12 );
+	static_assert( sizeof( WalkHeader ) == 32 + 12 , "compile time assert failed" );
 
 #include <poppack.h>
 

@@ -410,7 +410,7 @@ public:
 	Intrinsic_VMStackPopObjectId(
 		);
 
-	//REENABLE_ME_C_ASSERT( sizeof( UInt32 ) == sizeof( NWN::OBJECTID ) );
+	static_assert( sizeof( UInt32 ) == sizeof( NWN::OBJECTID ) , "compile time assert failed" );
 
 	//
 	// Push an engine structure value onto the VM stack (for an action call),

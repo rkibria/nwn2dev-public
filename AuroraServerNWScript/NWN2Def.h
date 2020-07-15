@@ -67,7 +67,7 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CExoString ) == 8 );
+static_assert( sizeof( CExoString ) == 8 , "compile time assert failed" );
 
 typedef int SCRIPT_STATUS;
 
@@ -130,7 +130,7 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineCmdImplementer ) == 4 );
+static_assert( sizeof( CVirtualMachineCmdImplementer ) == 4 , "compile time assert failed" );
 
 class CRes
 {
@@ -151,7 +151,7 @@ public:
 	unsigned long          m_nRefs;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CRes ) == 0x38 );
+static_assert( sizeof( CRes ) == 0x38 , "compile time assert failed" );
 
 class CResNDB : public CRes
 {
@@ -164,9 +164,9 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CResNDB ) == 0x44 );
-//REENABLE_ME_C_ASSERT( offsetof( CResNDB, m_NDBSize ) == 0x3C );
-//REENABLE_ME_C_ASSERT( offsetof( CResNDB, m_NDBPtr ) == 0x40 );
+static_assert( sizeof( CResNDB ) == 0x44 , "compile time assert failed" );
+static_assert( offsetof( CResNDB, m_NDBSize ) == 0x3C , "compile time assert failed" );
+static_assert( offsetof( CResNDB, m_NDBPtr ) == 0x40 , "compile time assert failed" );
 
 class CVirtualMachineDebugLoader
 {
@@ -198,8 +198,8 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineDebugLoader ) == 0x30 );
-//REENABLE_ME_C_ASSERT( offsetof( CVirtualMachineDebugLoader, NDB ) == 0x8 );
+static_assert( sizeof( CVirtualMachineDebugLoader ) == 0x30 , "compile time assert failed" );
+static_assert( offsetof( CVirtualMachineDebugLoader, NDB ) == 0x8 , "compile time assert failed" );
 
 class CVirtualMachine;
 class CVirtualMachineCache;
@@ -400,7 +400,7 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineStack ) == 0x18 );
+static_assert( sizeof( CVirtualMachineStack ) == 0x18 , "compile time assert failed" );
 
 class CVirtualMachineScript
 {
@@ -419,7 +419,7 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineScript ) == 0x28 );
+static_assert( sizeof( CVirtualMachineScript ) == 0x28 , "compile time assert failed" );
 
 class CRes;
 class CResNCS;
@@ -436,7 +436,7 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachineFile ) == 0x2c );
+static_assert( sizeof( CVirtualMachineFile ) == 0x2c , "compile time assert failed" );
 
 class CScriptParameterWrapper
 {
@@ -466,7 +466,7 @@ public:
 	ParameterType             m_eType;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CScriptParameterWrapper ) == 0x14 );
+static_assert( sizeof( CScriptParameterWrapper ) == 0x14 , "compile time assert failed" );
 
 template< typename T >
 class CExoArrayList
@@ -480,7 +480,7 @@ public:
 
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CExoArrayList< CScriptParameterWrapper > ) == 0x0c );
+static_assert( sizeof( CExoArrayList< CScriptParameterWrapper > ) == 0x0c , "compile time assert failed" );
 
 class CVirtualMachine
 {
@@ -518,7 +518,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 		
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.ExecuteCode = &CVirtualMachine::ExecuteCode;
 		return Ptr.RawPtr;
@@ -543,7 +543,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_INTEGER)
 			return false;
@@ -568,7 +568,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_FLOAT)
 			return false;
@@ -593,7 +593,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_STRING)
 			return false;
@@ -643,7 +643,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_STRING)
 			return false;
@@ -703,7 +703,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (!m_cRunTimeStack.CheckVectorOnTopOfStack( ))
 			return false;
@@ -728,7 +728,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (GetTopOfStackType( ) != CVirtualMachineStack::ST_OBJECT)
 			return false;
@@ -755,7 +755,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		if (GetTopOfStackType( ) != (int) EType + CVirtualMachineStack::ST_ENGINE_0)
 			return false;
@@ -781,7 +781,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushInteger;
 
@@ -803,7 +803,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushFloat;
 
@@ -825,7 +825,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushString;
 
@@ -868,7 +868,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushVector;
 
@@ -890,7 +890,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushObject;
 
@@ -914,7 +914,7 @@ public:
 			void * RawPtr;
 		} Ptr;
 
-		//REENABLE_ME_C_ASSERT( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) );
+		static_assert( sizeof( Ptr ) == sizeof( Ptr.RawPtr ) , "compile time assert failed" );
 
 		Ptr.RawPtr = (void *) OFFS_VM_StackPushEngineStructure;
 
@@ -1072,10 +1072,10 @@ public:
 	CExoString                                     m_sLastScriptRun;
 };
 
-//REENABLE_ME_C_ASSERT( sizeof( CVirtualMachine ) == 0x3f4 );
-//REENABLE_ME_C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_oidObjectRunScript ) == 0x158 );
-//REENABLE_ME_C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_nInstructPtrLevel  ) == 0x190 );
-//REENABLE_ME_C_ASSERT( FIELD_OFFSET( CVirtualMachine, m_pCmdImplementer    ) == 0x3a0 );
+static_assert( sizeof( CVirtualMachine ) == 0x3f4 , "compile time assert failed" );
+static_assert( FIELD_OFFSET( CVirtualMachine, m_oidObjectRunScript ) == 0x158 , "compile time assert failed" );
+static_assert( FIELD_OFFSET( CVirtualMachine, m_nInstructPtrLevel  ) == 0x190 , "compile time assert failed" );
+static_assert( FIELD_OFFSET( CVirtualMachine, m_pCmdImplementer    ) == 0x3a0 , "compile time assert failed" );
 
 //
 // Pick a relatively unlikely error to use if something goes wrong.

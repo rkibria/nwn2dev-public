@@ -191,8 +191,8 @@ Environment:
 
 			Skeleton->AddBone( Bone );
 
-			//REENABLE_ME_C_ASSERT( sizeof( M33 ) == sizeof( granny2::RHMatrix3 ) );
-			//REENABLE_ME_C_ASSERT( sizeof( M44 ) == sizeof( granny2::RHMatrix4 ) );
+			static_assert( sizeof( M33 ) == sizeof( granny2::RHMatrix3 ) , "compile time assert failed" );
+			static_assert( sizeof( M44 ) == sizeof( granny2::RHMatrix4 ) , "compile time assert failed" );
 		}
 
 		//
