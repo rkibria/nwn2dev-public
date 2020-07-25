@@ -70,7 +70,7 @@ Environment:
 				NULL);
 
 		if (File == INVALID_HANDLE_VALUE)
-			throw std::exception( "Failed to open ERF file." );
+            throw std::runtime_error( "Failed to open ERF file." );
 	}
 
 	m_File = File;
@@ -94,7 +94,7 @@ Environment:
 		m_FileSize = GetFileSize( File, NULL );
 
 		if ((m_FileSize == 0xFFFFFFFF) && (GetLastError( ) != NO_ERROR))
-			throw std::exception( "Failed to read file size." );
+            throw std::runtime_error( "Failed to read file size." );
 
 		ParseErfFile( );
 	}
@@ -144,7 +144,7 @@ Environment:
 }
 
 template< typename ResRefT >
-typename ErfFileReader< ResRefT >::FileHandle
+FileHandle
 ErfFileReader< ResRefT >::OpenFile(
 	nwn2dev__in const ResRefIf & FileName,
 	nwn2dev__in ResType Type
@@ -191,9 +191,9 @@ Environment:
 }
 
 template< typename ResRefT >
-typename ErfFileReader< ResRefT >::FileHandle
+FileHandle
 ErfFileReader< ResRefT >::OpenFileByIndex(
-	nwn2dev__in typename FileId FileIndex
+    nwn2dev__in FileId FileIndex
 	)
 /*++
 
@@ -235,7 +235,7 @@ Environment:
 template< typename ResRefT >
 bool
 ErfFileReader< ResRefT >::CloseFile(
-	nwn2dev__in typename ErfFileReader< ResRefT >::FileHandle File
+    nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -355,7 +355,7 @@ Environment:
 template< typename ResRefT >
 size_t
 ErfFileReader< ResRefT >::GetEncapsulatedFileSize(
-	nwn2dev__in typename ErfFileReader< ResRefT >::FileHandle File
+    nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -394,7 +394,7 @@ Environment:
 }
 
 template< typename ResRefT >
-typename ErfFileReader< ResRefT >::AccessorType
+AccessorType
 ErfFileReader< ResRefT >::GetResourceAccessorName(
 	nwn2dev__in FileHandle File,
 	nwn2dev__out std::string & AccessorName
@@ -429,9 +429,9 @@ Environment:
 }
 
 template< typename ResRefT >
-typename ErfFileReader< ResRefT >::ResType
+ResType
 ErfFileReader< ResRefT >::GetEncapsulatedFileType(
-	nwn2dev__in typename ErfFileReader< ResRefT >::FileHandle File
+    nwn2dev__in FileHandle File
 	)
 /*++
 
@@ -472,8 +472,8 @@ Environment:
 template< typename ResRefT >
 bool
 ErfFileReader< ResRefT >::GetEncapsulatedFileEntry(
-	nwn2dev__in typename FileId FileIndex,
-	nwn2dev__out typename ResRefIf & ResRef,
+    nwn2dev__in FileId FileIndex,
+    nwn2dev__out ResRefIf & ResRef,
 	nwn2dev__out ResType & Type
 	)
 /*++
@@ -519,7 +519,7 @@ Environment:
 }
 
 template< typename ResRefT >
-typename ErfFileReader< ResRefT >::FileId
+FileId
 ErfFileReader< ResRefT >::GetEncapsulatedFileCount(
 	)
 /*++
@@ -632,5 +632,5 @@ Environment:
 	}
 }
 
-template ErfFileReader< NWN::ResRef32 >;
-template ErfFileReader< NWN::ResRef16 >;
+//template ErfFileReader< NWN::ResRef32 >;
+//template ErfFileReader< NWN::ResRef16 >;
