@@ -323,7 +323,7 @@ Environment:
 	if (Offset >= ResElem->ResourceSize)
 		return false;
 
-	BytesToRead = min( BytesToRead, ResElem->ResourceSize - Offset);
+    BytesToRead = std::min( BytesToRead, ResElem->ResourceSize - Offset);
 
 	try
 	{
@@ -632,5 +632,5 @@ Environment:
 	}
 }
 
-//template ErfFileReader< NWN::ResRef32 >;
-//template ErfFileReader< NWN::ResRef16 >;
+template class ErfFileReader< NWN::ResRef32 >;
+template class ErfFileReader< NWN::ResRef16 >;
